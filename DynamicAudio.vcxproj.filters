@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Files\AudioLoaders">
+      <UniqueIdentifier>{577f616c-aa52-4330-a4cb-d5718eb95d27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Result.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioLoaderWav.h">
+      <Filter>Files\AudioLoaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Note.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chord.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tune.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectBase.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
