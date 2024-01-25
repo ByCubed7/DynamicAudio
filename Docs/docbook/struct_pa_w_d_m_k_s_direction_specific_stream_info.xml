@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_w_d_m_k_s_direction_specific_stream_info" xml:lang="en-US">
+<title>PaWDMKSDirectionSpecificStreamInfo Struct Reference</title>
+<indexterm><primary>PaWDMKSDirectionSpecificStreamInfo</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1a37ff146054a9ae1c16b87f589874949a"/><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> <emphasis role="strong">device</emphasis></para>
+</listitem>
+            <listitem><para>unsigned <link linkend="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1a5bea6996e1aa45e8525769b13eca32a0">channels</link></para>
+</listitem>
+            <listitem><para>unsigned <link linkend="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1a5b5248935d8b586285805bb827e1592f">framesPerHostBuffer</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1a92bdda98baa8976a19d99da20eb6d21a">endpointPinId</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1ae4a79825046710f1fee6309b451983de">muxNodeId</link></para>
+</listitem>
+            <listitem><para>PaWDMKSSubType <link linkend="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1a38c7069753a67167c66a926f7859d1f3">streamingSubType</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1a5bea6996e1aa45e8525769b13eca32a0"/><section>
+    <title>channels</title>
+<indexterm><primary>channels</primary><secondary>PaWDMKSDirectionSpecificStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWDMKSDirectionSpecificStreamInfo</primary><secondary>channels</secondary></indexterm>
+<para><computeroutput>unsigned PaWDMKSDirectionSpecificStreamInfo::channels</computeroutput></para>
+<para>No of channels the device is opened with </para>
+</section>
+<anchor xml:id="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1a92bdda98baa8976a19d99da20eb6d21a"/><section>
+    <title>endpointPinId</title>
+<indexterm><primary>endpointPinId</primary><secondary>PaWDMKSDirectionSpecificStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWDMKSDirectionSpecificStreamInfo</primary><secondary>endpointPinId</secondary></indexterm>
+<para><computeroutput>int PaWDMKSDirectionSpecificStreamInfo::endpointPinId</computeroutput></para>
+<para>Endpoint pin ID (on topology filter if topologyName is not empty) </para>
+</section>
+<anchor xml:id="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1a5b5248935d8b586285805bb827e1592f"/><section>
+    <title>framesPerHostBuffer</title>
+<indexterm><primary>framesPerHostBuffer</primary><secondary>PaWDMKSDirectionSpecificStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWDMKSDirectionSpecificStreamInfo</primary><secondary>framesPerHostBuffer</secondary></indexterm>
+<para><computeroutput>unsigned PaWDMKSDirectionSpecificStreamInfo::framesPerHostBuffer</computeroutput></para>
+<para>No of frames of the device buffer </para>
+</section>
+<anchor xml:id="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1ae4a79825046710f1fee6309b451983de"/><section>
+    <title>muxNodeId</title>
+<indexterm><primary>muxNodeId</primary><secondary>PaWDMKSDirectionSpecificStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWDMKSDirectionSpecificStreamInfo</primary><secondary>muxNodeId</secondary></indexterm>
+<para><computeroutput>int PaWDMKSDirectionSpecificStreamInfo::muxNodeId</computeroutput></para>
+<para>Only valid for input </para>
+</section>
+<anchor xml:id="_struct_pa_w_d_m_k_s_direction_specific_stream_info_1a38c7069753a67167c66a926f7859d1f3"/><section>
+    <title>streamingSubType</title>
+<indexterm><primary>streamingSubType</primary><secondary>PaWDMKSDirectionSpecificStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWDMKSDirectionSpecificStreamInfo</primary><secondary>streamingSubType</secondary></indexterm>
+<para><computeroutput>PaWDMKSSubType PaWDMKSDirectionSpecificStreamInfo::streamingSubType</computeroutput></para>
+<para>Not known until device is opened for streaming </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_pa__win__wdmks_8h">pa_win_wdmks.h</link></section>
+</section>

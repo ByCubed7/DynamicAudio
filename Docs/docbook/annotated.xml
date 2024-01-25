@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
+<title>Class List</title>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_struct_effect_1_1_abstract">Effect::Abstract</link>
+<para>The base class for an effect </para>
+<link linkend="_struct_audio_loader_wav">AudioLoaderWav</link><link linkend="_class_dynamic_audio_1_1_chord">DynamicAudio::Chord</link><link linkend="_struct_audio_loader_wav_1_1_chunk_info">AudioLoaderWav::ChunkInfo</link><link linkend="_struct_effect_1_1_const">Effect::Const</link>
+<para>Gets a constant value </para>
+<link linkend="_struct_audio_loader_wav_1_1_data">AudioLoaderWav::Data</link><link linkend="_struct_audio_loader_wav_1_1_format">AudioLoaderWav::Format</link><link linkend="_struct_dynamic_audio_1_1_note">DynamicAudio::Note</link><link linkend="_struct_effect_1_1_random">Effect::Random</link>
+<para>Gets a random value </para>
+<link linkend="_struct_audio_loader_wav_1_1_r_i_f_f">AudioLoaderWav::RIFF</link><link linkend="_struct_effect_1_1_time_since">Effect::TimeSince</link>
+<para>Returns the time stamp from start </para>
+<link linkend="_struct_dynamic_audio_1_1_tune">DynamicAudio::Tune</link><link linkend="_struct_audio_loader_wav_1_1_wav">AudioLoaderWav::Wav</link><link linkend="_struct_effect_1_1_wav_stream">Effect::WavStream</link>
+<para>Gets the values of the WAV stream at the current time stamp </para>
+</section>

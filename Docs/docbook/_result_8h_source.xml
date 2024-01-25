@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__result_8h_source" xml:lang="en-US">
+<title>Result.h</title>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 
+3 <emphasis role="keyword">enum</emphasis>&#32;Result&#32;{
+4 &#32;&#32;&#32;&#32;Success,&#32;
+5 &#32;&#32;&#32;&#32;CannotOpenFile,
+6 &#32;&#32;&#32;&#32;BadFormatting,
+7 &#32;&#32;&#32;&#32;ProblemReadingData,
+8 &#32;&#32;&#32;&#32;UnknownError
+9 };
+</programlisting></section>

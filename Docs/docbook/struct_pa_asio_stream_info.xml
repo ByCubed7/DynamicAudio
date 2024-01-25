@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_asio_stream_info" xml:lang="en-US">
+<title>PaAsioStreamInfo Struct Reference</title>
+<indexterm><primary>PaAsioStreamInfo</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>unsigned long <link linkend="_struct_pa_asio_stream_info_1a64b7653dba1527f04b9d1ab3b642687e">size</link></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> <link linkend="_struct_pa_asio_stream_info_1aa89dc033f30cd1549d33f44074c79358">hostApiType</link></para>
+</listitem>
+            <listitem><para>unsigned long <link linkend="_struct_pa_asio_stream_info_1a1399d6368fe7cfd3297667c1140a24a0">version</link></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_asio_stream_info_1abcf467d6508d8fbcb4ddbe95d17669f4"/>unsigned long <emphasis role="strong">flags</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_asio_stream_info_1a2a04b8c7166044c009af7fdeca754c4d"/>int * <emphasis role="strong">channelSelectors</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_pa_asio_stream_info_1aa89dc033f30cd1549d33f44074c79358"/><section>
+    <title>hostApiType</title>
+<indexterm><primary>hostApiType</primary><secondary>PaAsioStreamInfo</secondary></indexterm>
+<indexterm><primary>PaAsioStreamInfo</primary><secondary>hostApiType</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> PaAsioStreamInfo::hostApiType</computeroutput></para>
+<para>paASIO </para>
+</section>
+<anchor xml:id="_struct_pa_asio_stream_info_1a64b7653dba1527f04b9d1ab3b642687e"/><section>
+    <title>size</title>
+<indexterm><primary>size</primary><secondary>PaAsioStreamInfo</secondary></indexterm>
+<indexterm><primary>PaAsioStreamInfo</primary><secondary>size</secondary></indexterm>
+<para><computeroutput>unsigned long PaAsioStreamInfo::size</computeroutput></para>
+<para>sizeof(PaAsioStreamInfo) </para>
+</section>
+<anchor xml:id="_struct_pa_asio_stream_info_1a1399d6368fe7cfd3297667c1140a24a0"/><section>
+    <title>version</title>
+<indexterm><primary>version</primary><secondary>PaAsioStreamInfo</secondary></indexterm>
+<indexterm><primary>PaAsioStreamInfo</primary><secondary>version</secondary></indexterm>
+<para><computeroutput>unsigned long PaAsioStreamInfo::version</computeroutput></para>
+<para>1 </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_pa__asio_8h">pa_asio.h</link></section>
+</section>

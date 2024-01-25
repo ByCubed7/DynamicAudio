@@ -1,0 +1,63 @@
+\doxysection{packages/portaudio.0.19.1/build/native/include/pa\+\_\+win\+\_\+wdmks.h File Reference}
+\hypertarget{pa__win__wdmks_8h}{}\label{pa__win__wdmks_8h}\index{packages/portaudio.0.19.1/build/native/include/pa\_win\_wdmks.h@{packages/portaudio.0.19.1/build/native/include/pa\_win\_wdmks.h}}
+
+
+WDM Kernel Streaming-\/specific Port\+Audio API extension header file.  
+
+
+{\ttfamily \#include "{}portaudio.\+h"{}}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{Pa\+Win\+WDMKSInfo}}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info}{Pa\+Win\+WDMKSDevice\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{Pa\+WDMKSDirection\+Specific\+Stream\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info}{Pa\+WDMKSSpecific\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pa__win__wdmks_8h_a5c908c7323f6478676a8c2ce8acd71f2}\label{pa__win__wdmks_8h_a5c908c7323f6478676a8c2ce8acd71f2} 
+typedef struct Pa\+Win\+WDMKSInfo {\bfseries Pa\+Win\+WDMKSInfo}
+\item 
+\Hypertarget{pa__win__wdmks_8h_aed95d8decaad8511126206f575287df4}\label{pa__win__wdmks_8h_aed95d8decaad8511126206f575287df4} 
+typedef enum Pa\+WDMKSType {\bfseries Pa\+WDMKSType}
+\item 
+\Hypertarget{pa__win__wdmks_8h_aea1e9e518e29ef55658d1d2ae8745991}\label{pa__win__wdmks_8h_aea1e9e518e29ef55658d1d2ae8745991} 
+typedef enum Pa\+WDMKSSub\+Type {\bfseries Pa\+WDMKSSub\+Type}
+\item 
+\Hypertarget{pa__win__wdmks_8h_ad0f32a25b7b56fce987a6adf9576a1ec}\label{pa__win__wdmks_8h_ad0f32a25b7b56fce987a6adf9576a1ec} 
+typedef struct Pa\+Win\+WDMKSDevice\+Info {\bfseries Pa\+Win\+WDMKSDevice\+Info}
+\item 
+\Hypertarget{pa__win__wdmks_8h_a58357b969802c0f04f37f9237b5165f9}\label{pa__win__wdmks_8h_a58357b969802c0f04f37f9237b5165f9} 
+typedef struct Pa\+WDMKSDirection\+Specific\+Stream\+Info {\bfseries Pa\+WDMKSDirection\+Specific\+Stream\+Info}
+\item 
+\Hypertarget{pa__win__wdmks_8h_acce060d2c2c243c34649513537f13d95}\label{pa__win__wdmks_8h_acce060d2c2c243c34649513537f13d95} 
+typedef struct Pa\+WDMKSSpecific\+Stream\+Info {\bfseries Pa\+WDMKSSpecific\+Stream\+Info}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}\label{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8} 
+enum {\bfseries Pa\+WDMKSType} \{ {\bfseries Type\+\_\+k\+Not\+Used}
+, {\bfseries Type\+\_\+k\+Wave\+Cyclic}
+, {\bfseries Type\+\_\+k\+Wave\+RT}
+, {\bfseries Type\+\_\+k\+Cnt}
+ \}
+\item 
+\Hypertarget{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}\label{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2} 
+enum {\bfseries Pa\+WDMKSSub\+Type} \{ {\bfseries Sub\+Type\+\_\+k\+Unknown}
+, {\bfseries Sub\+Type\+\_\+k\+Notification}
+, {\bfseries Sub\+Type\+\_\+k\+Polled}
+, {\bfseries Sub\+Type\+\_\+k\+Cnt}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+WDM Kernel Streaming-\/specific Port\+Audio API extension header file. 
+

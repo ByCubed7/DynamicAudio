@@ -1,0 +1,73 @@
+\doxysection{Dynamic\+Audio\+::Note Struct Reference}
+\hypertarget{struct_dynamic_audio_1_1_note}{}\label{struct_dynamic_audio_1_1_note}\index{DynamicAudio::Note@{DynamicAudio::Note}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries Duration}
+\item 
+struct {\bfseries Value}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dynamic_audio_1_1_note_a423696fc1f0170418afa313057355084}\label{struct_dynamic_audio_1_1_note_a423696fc1f0170418afa313057355084} 
+{\bfseries Note} (Note\+Value\+Type \+\_\+value, Note\+Duration\+Type \+\_\+duration)
+\item 
+\Hypertarget{struct_dynamic_audio_1_1_note_ab409989bba7afbdd9622d9a7e0cf169d}\label{struct_dynamic_audio_1_1_note_ab409989bba7afbdd9622d9a7e0cf169d} 
+{\bfseries Note} (Note\+Value\+Type \+\_\+value)
+\item 
+void \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a8827919f5db76b634058ce1ff14c91a5}{transpose}} (Note\+Value\+Type semitones)
+\begin{DoxyCompactList}\small\item\em Transpose the \doxylink{struct_dynamic_audio_1_1_note}{Note}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_note_ab6afeb3e78f615b0d623b5a27e5c6ce0}\label{struct_dynamic_audio_1_1_note_ab6afeb3e78f615b0d623b5a27e5c6ce0} 
+double {\bfseries calculate\+Frequency} ()
+\begin{DoxyCompactList}\small\item\em Calculates the notes frequency. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_note_a93afb4fad6c3c44795659b03c04f9083}\label{struct_dynamic_audio_1_1_note_a93afb4fad6c3c44795659b03c04f9083} 
+\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} {\bfseries operator+} (const Note\+Value\+Type \&semitones)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dynamic_audio_1_1_note_ab81b6ba8f0d63618aa7cf6b6e87b0d23}\label{struct_dynamic_audio_1_1_note_ab81b6ba8f0d63618aa7cf6b6e87b0d23} 
+static \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} {\bfseries null} (Note\+Duration\+Type \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}{duration}}=Duration\+::\+Semibreve)
+\begin{DoxyCompactList}\small\item\em Returns a \doxylink{struct_dynamic_audio_1_1_note}{Note} with no value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}\label{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262} 
+Note\+Value\+Type {\bfseries value}
+\begin{DoxyCompactList}\small\item\em The value of the note. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}\label{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919} 
+Note\+Duration\+Type {\bfseries duration}
+\begin{DoxyCompactList}\small\item\em The duration of the note. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dynamic_audio_1_1_note_a0b9e8ca84f1ee30aff88f8c524c9f583}\label{struct_dynamic_audio_1_1_note_a0b9e8ca84f1ee30aff88f8c524c9f583} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \&lhs, const \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \&rhs)
+\item 
+\Hypertarget{struct_dynamic_audio_1_1_note_a5d88c24438eacd611b572221345fbfe8}\label{struct_dynamic_audio_1_1_note_a5d88c24438eacd611b572221345fbfe8} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \&lhs, const \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_dynamic_audio_1_1_note_a8827919f5db76b634058ce1ff14c91a5}\label{struct_dynamic_audio_1_1_note_a8827919f5db76b634058ce1ff14c91a5} 
+\index{DynamicAudio::Note@{DynamicAudio::Note}!transpose@{transpose}}
+\index{transpose@{transpose}!DynamicAudio::Note@{DynamicAudio::Note}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily void Dynamic\+Audio\+::\+Note\+::transpose (\begin{DoxyParamCaption}\item[{Note\+Value\+Type}]{semitones }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transpose the \doxylink{struct_dynamic_audio_1_1_note}{Note}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em semitones} & The amount of semitones to transpose by. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Note.\+h\end{DoxyCompactItemize}

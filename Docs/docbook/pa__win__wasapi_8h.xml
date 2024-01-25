@@ -1,0 +1,477 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pa__win__wasapi_8h" xml:lang="en-US">
+<title>packages/portaudio.0.19.1/build/native/include/pa_win_wasapi.h File Reference</title>
+<indexterm><primary>packages/portaudio.0.19.1/build/native/include/pa_win_wasapi.h</primary></indexterm>
+<para>
+
+<para>WASAPI-specific PortAudio API extension header file. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;portaudio.h&quot;<?linebreak?>#include &quot;pa_win_waveformat.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_pa_wasapi_jack_description">PaWasapiJackDescription</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_pa_wasapi_stream_info">PaWasapiStreamInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1a52079738ea6bdb82c7672850d72643d0"/>#define <emphasis role="strong">paWinWasapiExclusive</emphasis>&#160;&#160;&#160;(paWinWasapiExclusive)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1a04b5df0ea5e1b6e9299b07963e96f1ff"/>#define <emphasis role="strong">paWinWasapiRedirectHostProcessor</emphasis>&#160;&#160;&#160;(paWinWasapiRedirectHostProcessor)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1af47a337bb1cf6a3036978844001da434"/>#define <emphasis role="strong">paWinWasapiUseChannelMask</emphasis>&#160;&#160;&#160;(paWinWasapiUseChannelMask)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1ab7cfc855244ee76f5fddb20584218270"/>#define <emphasis role="strong">paWinWasapiPolling</emphasis>&#160;&#160;&#160;(paWinWasapiPolling)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1adb59e164778bb67e97fc7ac1dacb6af9"/>#define <emphasis role="strong">paWinWasapiThreadPriority</emphasis>&#160;&#160;&#160;(paWinWasapiThreadPriority)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1aca93d4fb6ff41577bf28a1709ce92315"/>typedef enum PaWasapiFlags <emphasis role="strong">PaWasapiFlags</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1ae3d91dd8eaeff3cbe9ff3bfafc5e6006"/>typedef void(* <emphasis role="strong">PaWasapiHostProcessorCallback</emphasis>) (void *inputBuffer, long inputFrames, void *outputBuffer, long outputFrames, void *userData)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1ad7a1d18abc52a140d31c2626b178c60f"/>typedef enum PaWasapiDeviceRole <emphasis role="strong">PaWasapiDeviceRole</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1aeb2cb341fe64427ae7c9f3d15eb630f7"/>typedef enum PaWasapiJackConnectionType <emphasis role="strong">PaWasapiJackConnectionType</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1a77d9dd45efc5838ad3ebc1921472ff3c"/>typedef enum PaWasapiJackGeoLocation <emphasis role="strong">PaWasapiJackGeoLocation</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1a37e4450ba37d9a290b476f7a76073434"/>typedef enum PaWasapiJackGenLocation <emphasis role="strong">PaWasapiJackGenLocation</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1a9840a1ca66f5ad6a2a51268e1efdb9e1"/>typedef enum PaWasapiJackPortConnection <emphasis role="strong">PaWasapiJackPortConnection</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1a988e1a219d7df7ad42d5874fd86b2415"/>typedef enum <link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661">PaWasapiThreadPriority</link> <emphasis role="strong">PaWasapiThreadPriority</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1aa0a6e4c17a3e55f1f8e52fa3e68b7376"/>typedef struct PaWasapiJackDescription <emphasis role="strong">PaWasapiJackDescription</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1a9c03609bc5516f40cc62744e03a75811"/>typedef struct PaWasapiStreamInfo <emphasis role="strong">PaWasapiStreamInfo</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1a5d5e585f667bc748c7cab4c9c4a725be"/>enum <emphasis role="strong">PaWasapiFlags</emphasis> { <?linebreak?><emphasis role="strong">paWinWasapiExclusive</emphasis> = (1 &lt;&lt; 0)
+, <emphasis role="strong">paWinWasapiRedirectHostProcessor</emphasis> = (1 &lt;&lt; 1)
+, <emphasis role="strong">paWinWasapiUseChannelMask</emphasis> = (1 &lt;&lt; 2)
+, <emphasis role="strong">paWinWasapiPolling</emphasis> = (1 &lt;&lt; 3)
+, <?linebreak?><emphasis role="strong">paWinWasapiThreadPriority</emphasis> = (1 &lt;&lt; 4)
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1a9456f380d3e74aa733b80315010a40de"/>enum <emphasis role="strong">PaWasapiDeviceRole</emphasis> { <?linebreak?><emphasis role="strong">eRoleRemoteNetworkDevice</emphasis> = 0
+, <emphasis role="strong">eRoleSpeakers</emphasis>
+, <emphasis role="strong">eRoleLineLevel</emphasis>
+, <emphasis role="strong">eRoleHeadphones</emphasis>
+, <?linebreak?><emphasis role="strong">eRoleMicrophone</emphasis>
+, <emphasis role="strong">eRoleHeadset</emphasis>
+, <emphasis role="strong">eRoleHandset</emphasis>
+, <emphasis role="strong">eRoleUnknownDigitalPassthrough</emphasis>
+, <?linebreak?><emphasis role="strong">eRoleSPDIF</emphasis>
+, <emphasis role="strong">eRoleHDMI</emphasis>
+, <emphasis role="strong">eRoleUnknownFormFactor</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1a40b6ae7a53886196c59afe8b704695e1"/>enum <emphasis role="strong">PaWasapiJackConnectionType</emphasis> { <?linebreak?><emphasis role="strong">eJackConnTypeUnknown</emphasis>
+, <emphasis role="strong">eJackConnType3Point5mm</emphasis>
+, <emphasis role="strong">eJackConnTypeQuarter</emphasis>
+, <emphasis role="strong">eJackConnTypeAtapiInternal</emphasis>
+, <?linebreak?><emphasis role="strong">eJackConnTypeRCA</emphasis>
+, <emphasis role="strong">eJackConnTypeOptical</emphasis>
+, <emphasis role="strong">eJackConnTypeOtherDigital</emphasis>
+, <emphasis role="strong">eJackConnTypeOtherAnalog</emphasis>
+, <?linebreak?><emphasis role="strong">eJackConnTypeMultichannelAnalogDIN</emphasis>
+, <emphasis role="strong">eJackConnTypeXlrProfessional</emphasis>
+, <emphasis role="strong">eJackConnTypeRJ11Modem</emphasis>
+, <emphasis role="strong">eJackConnTypeCombination</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1ae869986af2827bbd6257bca43d9a8188"/>enum <emphasis role="strong">PaWasapiJackGeoLocation</emphasis> { <?linebreak?><emphasis role="strong">eJackGeoLocUnk</emphasis> = 0
+, <emphasis role="strong">eJackGeoLocRear</emphasis> = 0x1
+, <emphasis role="strong">eJackGeoLocFront</emphasis>
+, <emphasis role="strong">eJackGeoLocLeft</emphasis>
+, <?linebreak?><emphasis role="strong">eJackGeoLocRight</emphasis>
+, <emphasis role="strong">eJackGeoLocTop</emphasis>
+, <emphasis role="strong">eJackGeoLocBottom</emphasis>
+, <emphasis role="strong">eJackGeoLocRearPanel</emphasis>
+, <?linebreak?><emphasis role="strong">eJackGeoLocRiser</emphasis>
+, <emphasis role="strong">eJackGeoLocInsideMobileLid</emphasis>
+, <emphasis role="strong">eJackGeoLocDrivebay</emphasis>
+, <emphasis role="strong">eJackGeoLocHDMI</emphasis>
+, <?linebreak?><emphasis role="strong">eJackGeoLocOutsideMobileLid</emphasis>
+, <emphasis role="strong">eJackGeoLocATAPI</emphasis>
+, <emphasis role="strong">eJackGeoLocReserved5</emphasis>
+, <emphasis role="strong">eJackGeoLocReserved6</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1ac205e0ea20ca795edcfd9f19135cf4cf"/>enum <emphasis role="strong">PaWasapiJackGenLocation</emphasis> { <emphasis role="strong">eJackGenLocPrimaryBox</emphasis> = 0
+, <emphasis role="strong">eJackGenLocInternal</emphasis>
+, <emphasis role="strong">eJackGenLocSeparate</emphasis>
+, <emphasis role="strong">eJackGenLocOther</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wasapi_8h_1aa4c63b1465e5de66f108facd3ddf893d"/>enum <emphasis role="strong">PaWasapiJackPortConnection</emphasis> { <emphasis role="strong">eJackPortConnJack</emphasis> = 0
+, <emphasis role="strong">eJackPortConnIntegratedDevice</emphasis>
+, <emphasis role="strong">eJackPortConnBothIntegratedAndJack</emphasis>
+, <emphasis role="strong">eJackPortConnUnknown</emphasis>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661">PaWasapiThreadPriority</link> { <?linebreak?><emphasis role="strong">eThreadPriorityNone</emphasis> = 0
+, <link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661a06c9f997fd5d9e11d4ef8bf67342f031">eThreadPriorityAudio</link>
+, <emphasis role="strong">eThreadPriorityCapture</emphasis>
+, <emphasis role="strong">eThreadPriorityDistribution</emphasis>
+, <?linebreak?><emphasis role="strong">eThreadPriorityGames</emphasis>
+, <emphasis role="strong">eThreadPriorityPlayback</emphasis>
+, <link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661a9a34413b0a045f4c44d10a49d3357187">eThreadPriorityProAudio</link>
+, <emphasis role="strong">eThreadPriorityWindowManager</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_pa__win__wasapi_8h_1aa42c66da0ae19959d25a190e9dd82005">PaWasapi_GetDeviceDefaultFormat</link> (void *pFormat, unsigned int nFormatSize, <link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> nDevice)</para>
+</listitem>
+            <listitem><para>int <link linkend="_pa__win__wasapi_8h_1a6a8c5307dff661ae7ee0d7bb8bf73469">PaWasapi_GetDeviceRole</link> (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> nDevice)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__win__wasapi_8h_1a2d48ae4d2124209ed8a6264c6febedc7">PaWasapi_ThreadPriorityBoost</link> (void **hTask, <link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661">PaWasapiThreadPriority</link> nPriorityClass)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__win__wasapi_8h_1ac5c875fb9165712ff696512f750f7de3">PaWasapi_ThreadPriorityRevert</link> (void *hTask)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__win__wasapi_8h_1af8f04003c6123e6fdcfdf7308761a75e">PaWasapi_GetFramesPerHostBuffer</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *pStream, unsigned int *nInput, unsigned int *nOutput)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__win__wasapi_8h_1a46583f8e4b1132c198e2451fd48f7490">PaWasapi_GetJackCount</link> (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> nDevice, int *jcount)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__win__wasapi_8h_1a042829efac1aca1d77608d136a523465">PaWasapi_GetJackDescription</link> (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> nDevice, int jindex, <link linkend="_struct_pa_wasapi_jack_description">PaWasapiJackDescription</link> *pJackDescription)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>WASAPI-specific PortAudio API extension header file. </para>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661"/><section>
+    <title>PaWasapiThreadPriority</title>
+<indexterm><primary>PaWasapiThreadPriority</primary><secondary>pa_win_wasapi.h</secondary></indexterm>
+<indexterm><primary>pa_win_wasapi.h</primary><secondary>PaWasapiThreadPriority</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661">PaWasapiThreadPriority</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>eThreadPriorityAudio</primary><secondary>pa_win_wasapi.h</secondary></indexterm>
+<indexterm><primary>pa_win_wasapi.h</primary><secondary>eThreadPriorityAudio</secondary></indexterm>
+<anchor xml:id="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661a06c9f997fd5d9e11d4ef8bf67342f031"/>eThreadPriorityAudio</entry><entry>
+<para>Default for Shared mode. </para>
+</entry></row><row><entry><indexterm><primary>eThreadPriorityProAudio</primary><secondary>pa_win_wasapi.h</secondary></indexterm>
+<indexterm><primary>pa_win_wasapi.h</primary><secondary>eThreadPriorityProAudio</secondary></indexterm>
+<anchor xml:id="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661a9a34413b0a045f4c44d10a49d3357187"/>eThreadPriorityProAudio</entry><entry>
+<para>Default for Exclusive mode. </para>
+</entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_pa__win__wasapi_8h_1aa42c66da0ae19959d25a190e9dd82005"/><section>
+    <title>PaWasapi_GetDeviceDefaultFormat()</title>
+<indexterm><primary>PaWasapi_GetDeviceDefaultFormat</primary><secondary>pa_win_wasapi.h</secondary></indexterm>
+<indexterm><primary>pa_win_wasapi.h</primary><secondary>PaWasapi_GetDeviceDefaultFormat</secondary></indexterm>
+<para><computeroutput>int PaWasapi_GetDeviceDefaultFormat (void * pFormat, unsigned int nFormatSize, <link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> nDevice)</computeroutput></para>
+<para>Returns default sound format for device. Format is represented by <link linkend="_struct_pa_win_wave_format">PaWinWaveFormat</link> or WAVEFORMATEXTENSIBLE structure.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pFormat</entry><entry>
+<para>Pointer to <link linkend="_struct_pa_win_wave_format">PaWinWaveFormat</link> or WAVEFORMATEXTENSIBLE structure. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nFormatSize</entry><entry>
+<para>Size of <link linkend="_struct_pa_win_wave_format">PaWinWaveFormat</link> or WAVEFORMATEXTENSIBLE structure in bytes. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nDevice</entry><entry>
+<para>Device index.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Non-negative value indicating the number of bytes copied into format decriptor or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_pa__win__wasapi_8h_1a6a8c5307dff661ae7ee0d7bb8bf73469"/><section>
+    <title>PaWasapi_GetDeviceRole()</title>
+<indexterm><primary>PaWasapi_GetDeviceRole</primary><secondary>pa_win_wasapi.h</secondary></indexterm>
+<indexterm><primary>pa_win_wasapi.h</primary><secondary>PaWasapi_GetDeviceRole</secondary></indexterm>
+<para><computeroutput>int PaWasapi_GetDeviceRole (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> nDevice)</computeroutput></para>
+<para>Returns device role (PaWasapiDeviceRole enum).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>nDevice</entry><entry>
+<para>device index.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Non-negative value indicating device role or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_pa__win__wasapi_8h_1af8f04003c6123e6fdcfdf7308761a75e"/><section>
+    <title>PaWasapi_GetFramesPerHostBuffer()</title>
+<indexterm><primary>PaWasapi_GetFramesPerHostBuffer</primary><secondary>pa_win_wasapi.h</secondary></indexterm>
+<indexterm><primary>pa_win_wasapi.h</primary><secondary>PaWasapi_GetFramesPerHostBuffer</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaWasapi_GetFramesPerHostBuffer (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * pStream, unsigned int * nInput, unsigned int * nOutput)</computeroutput></para>
+<para>Get number of frames per host buffer. This is maximal value of frames of WASAPI buffer which can be locked for operations. Use this method as helper to findout maximal values of inputFrames/outputFrames of PaWasapiHostProcessorCallback.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pStream</entry><entry>
+<para>Pointer to PaStream to query. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nInput</entry><entry>
+<para>Pointer to variable to receive number of input frames. Can be NULL. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nOutput</entry><entry>
+<para>Pointer to variable to receive number of output frames. Can be NULL. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Error code indicating success or failure. </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para>PaWasapiHostProcessorCallback </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_pa__win__wasapi_8h_1a46583f8e4b1132c198e2451fd48f7490"/><section>
+    <title>PaWasapi_GetJackCount()</title>
+<indexterm><primary>PaWasapi_GetJackCount</primary><secondary>pa_win_wasapi.h</secondary></indexterm>
+<indexterm><primary>pa_win_wasapi.h</primary><secondary>PaWasapi_GetJackCount</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaWasapi_GetJackCount (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> nDevice, int * jcount)</computeroutput></para>
+<para>Get number of jacks associated with a WASAPI device. Use this method to determine if there are any jacks associated with the provided WASAPI device. Not all audio devices will support this capability. This is valid for both input and output devices. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>nDevice</entry><entry>
+<para>device index. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>jcount</entry><entry>
+<para>Number of jacks is returned in this variable </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Error code indicating success or failure </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_pa__win__wasapi_8h_1a042829efac1aca1d77608d136a523465">PaWasapi_GetJackDescription</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_pa__win__wasapi_8h_1a042829efac1aca1d77608d136a523465"/><section>
+    <title>PaWasapi_GetJackDescription()</title>
+<indexterm><primary>PaWasapi_GetJackDescription</primary><secondary>pa_win_wasapi.h</secondary></indexterm>
+<indexterm><primary>pa_win_wasapi.h</primary><secondary>PaWasapi_GetJackDescription</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaWasapi_GetJackDescription (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> nDevice, int jindex, <link linkend="_struct_pa_wasapi_jack_description">PaWasapiJackDescription</link> * pJackDescription)</computeroutput></para>
+<para>Get the jack description associated with a WASAPI device and jack number Before this function is called, use PaWasapi_GetJackCount to determine the number of jacks associated with device. If jcount is greater than zero, then each jack from 0 to jcount can be queried with this function to get the jack description. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>nDevice</entry><entry>
+<para>device index. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>jindex</entry><entry>
+<para>Which jack to return information </para>
+</entry>
+                            </row>
+                            <row>
+<entry>KSJACK_DESCRIPTION</entry><entry>
+<para>This structure filled in on success. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Error code indicating success or failure </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_pa__win__wasapi_8h_1a46583f8e4b1132c198e2451fd48f7490">PaWasapi_GetJackCount</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_pa__win__wasapi_8h_1a2d48ae4d2124209ed8a6264c6febedc7"/><section>
+    <title>PaWasapi_ThreadPriorityBoost()</title>
+<indexterm><primary>PaWasapi_ThreadPriorityBoost</primary><secondary>pa_win_wasapi.h</secondary></indexterm>
+<indexterm><primary>pa_win_wasapi.h</primary><secondary>PaWasapi_ThreadPriorityBoost</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaWasapi_ThreadPriorityBoost (void ** hTask, <link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661">PaWasapiThreadPriority</link> nPriorityClass)</computeroutput></para>
+<para>Boost thread priority of calling thread (MMCSS). Use it for Blocking Interface only for thread which makes calls to Pa_WriteStream/Pa_ReadStream.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>hTask</entry><entry>
+<para>Handle to pointer to priority task. Must be used with PaWasapi_RevertThreadPriority method to revert thread priority to initial state.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>nPriorityClass</entry><entry>
+<para>Id of thread priority of PaWasapiThreadPriority type. Specifying eThreadPriorityNone does nothing.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Error code indicating success or failure. </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para>PaWasapi_RevertThreadPriority </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_pa__win__wasapi_8h_1ac5c875fb9165712ff696512f750f7de3"/><section>
+    <title>PaWasapi_ThreadPriorityRevert()</title>
+<indexterm><primary>PaWasapi_ThreadPriorityRevert</primary><secondary>pa_win_wasapi.h</secondary></indexterm>
+<indexterm><primary>pa_win_wasapi.h</primary><secondary>PaWasapi_ThreadPriorityRevert</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaWasapi_ThreadPriorityRevert (void * hTask)</computeroutput></para>
+<para>Boost thread priority of calling thread (MMCSS). Use it for Blocking Interface only for thread which makes calls to Pa_WriteStream/Pa_ReadStream.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>hTask</entry><entry>
+<para>Task handle obtained by PaWasapi_BoostThreadPriority method. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Error code indicating success or failure. </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para>PaWasapi_BoostThreadPriority </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

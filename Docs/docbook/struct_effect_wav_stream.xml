@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_effect_wav_stream" xml:lang="en-US">
+<title>EffectWavStream Struct Reference</title>
+<indexterm><primary>EffectWavStream</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_wav_stream_1aa072b9d8b9c86ae2475faca72aea17ce"/><emphasis role="strong">EffectWavStream</emphasis> (<link linkend="_struct_effect_abstract">EffectAbstract</link> *timestamp_, <link linkend="_struct_audio_loader_wav_1_1_wav">AudioLoaderWav::Wav</link> wav_)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_wav_stream_1a3e84f67d7fee5bfc10c5854e797e0eb3"/>value <emphasis role="strong">get</emphasis> (value in)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_wav_stream_1a735e7131f42e8334a229e37a789a475c"/><link linkend="_struct_effect_abstract">EffectAbstract</link> * <emphasis role="strong">timestamp</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_wav_stream_1a71a4aac5795e6a43ee0193bbe0f38dca"/><link linkend="_struct_audio_loader_wav_1_1_wav">AudioLoaderWav::Wav</link> <emphasis role="strong">wav</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+EffectBase.h</section>

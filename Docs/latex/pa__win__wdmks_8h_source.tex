@@ -1,0 +1,105 @@
+\doxysection{pa\+\_\+win\+\_\+wdmks.\+h}
+\hypertarget{pa__win__wdmks_8h_source}{}\label{pa__win__wdmks_8h_source}\index{packages/portaudio.0.19.1/build/native/include/pa\_win\_wdmks.h@{packages/portaudio.0.19.1/build/native/include/pa\_win\_wdmks.h}}
+\mbox{\hyperlink{pa__win__wdmks_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PA\_WIN\_WDMKS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PA\_WIN\_WDMKS\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \$Id:\ pa\_win\_wdmks.h\ 1812\ 2012-\/02-\/14\ 09:32:57Z\ robiwan\ \$}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ PortAudio\ Portable\ Real-\/Time\ Audio\ Library}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ WDM/KS\ specific\ extensions}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ Copyright\ (c)\ 1999-\/2007\ Ross\ Bencina\ and\ Phil\ Burk}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ a\ copy\ of\ this\ software\ and\ associated\ documentation\ files}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ included\ in\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,\ OUT\ OF\ OR\ IN\ CONNECTION}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ The\ text\ above\ constitutes\ the\ entire\ PortAudio\ license;\ however,\ }}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ the\ PortAudio\ community\ also\ makes\ the\ following\ non-\/binding\ requests:}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ Any\ person\ wishing\ to\ distribute\ modifications\ to\ the\ Software\ is}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ requested\ to\ send\ the\ modifications\ to\ the\ original\ developer\ so\ that}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ they\ can\ be\ incorporated\ into\ the\ canonical\ version.\ It\ is\ also\ }}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ requested\ that\ these\ non-\/binding\ requests\ be\ included\ along\ with\ the\ }}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ license\ above.}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00052\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{PaWinWDMKSInfo}}\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info_a550f4ab63732471599e64a2961a63125}{size}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}}\ \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info_a28bff7039063cc48ebab4e13cd1bf3c7}{hostApiType}};\ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info_a17221c5458a73c0295dff5cef739eb7d}{version}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ The\ number\ of\ packets\ to\ use\ for\ WaveCyclic\ devices,\ range\ is\ [2,\ 8].\ Set\ to\ zero\ for\ default\ value\ of\ 2.\ */}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ noOfPackets;}
+\DoxyCodeLine{00062\ \ \ \ \ \}\ \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{PaWinWDMKSInfo}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ PaWDMKSType}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Type\_kNotUsed,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ Type\_kWaveCyclic,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ Type\_kWaveRT,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ Type\_kCnt,}
+\DoxyCodeLine{00070\ \ \ \ \ \}\ PaWDMKSType;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ PaWDMKSSubType}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ SubType\_kUnknown,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ SubType\_kNotification,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ SubType\_kPolled,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ SubType\_kCnt,}
+\DoxyCodeLine{00078\ \ \ \ \ \}\ PaWDMKSSubType;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info}{PaWinWDMKSDeviceInfo}}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{wchar\_t}\ \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info_aef789b50c6cf1e05c5c6e1e18e2a233c}{filterPath}}[MAX\_PATH];\ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{wchar\_t}\ \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info_a89df08f196f4bc367794e7d76e404a04}{topologyPath}}[MAX\_PATH];\ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ PaWDMKSType\ streamingType;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ GUID\ \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info_a183f5caf8ae9c7e62bcf6e19c8d2e4ad}{deviceProductGuid}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \}\ \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info}{PaWinWDMKSDeviceInfo}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{PaWDMKSDirectionSpecificStreamInfo}}}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ device;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_a5bea6996e1aa45e8525769b13eca32a0}{channels}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_a5b5248935d8b586285805bb827e1592f}{framesPerHostBuffer}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_a92bdda98baa8976a19d99da20eb6d21a}{endpointPinId}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_ae4a79825046710f1fee6309b451983de}{muxNodeId}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ PaWDMKSSubType\ \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_a38c7069753a67167c66a926f7859d1f3}{streamingSubType}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \}\ \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{PaWDMKSDirectionSpecificStreamInfo}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info}{PaWDMKSSpecificStreamInfo}}\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{PaWDMKSDirectionSpecificStreamInfo}}\ input;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{PaWDMKSDirectionSpecificStreamInfo}}\ output;}
+\DoxyCodeLine{00100\ \ \ \ \ \}\ \mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info}{PaWDMKSSpecificStreamInfo}};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PA\_WIN\_DS\_H\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+
+\end{DoxyCode}

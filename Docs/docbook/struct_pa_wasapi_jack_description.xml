@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_wasapi_jack_description" xml:lang="en-US">
+<title>PaWasapiJackDescription Struct Reference</title>
+<indexterm><primary>PaWasapiJackDescription</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_jack_description_1afc8865aab64ab827315a7ce645b627f4"/>unsigned long <emphasis role="strong">channelMapping</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_jack_description_1a2a0d9cd5e745192482afeda572941d15"/>unsigned long <emphasis role="strong">color</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_jack_description_1ae9fd6f09268cc8d3c510965305025a7e"/>PaWasapiJackConnectionType <emphasis role="strong">connectionType</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_jack_description_1aed082cc704160dc568aec7da9b778328"/>PaWasapiJackGeoLocation <emphasis role="strong">geoLocation</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_jack_description_1a852b2bcb200801d995b4b250bb0bad6c"/>PaWasapiJackGenLocation <emphasis role="strong">genLocation</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_jack_description_1a5c78feaba82b02de3997a698231b5f05"/>PaWasapiJackPortConnection <emphasis role="strong">portConnection</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_jack_description_1a76f80f4664be933cc4d760b37d1ff410"/>unsigned int <emphasis role="strong">isConnected</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_pa__win__wasapi_8h">pa_win_wasapi.h</link></section>

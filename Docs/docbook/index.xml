@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>Dynamic Audio</title>
+    </info>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="struct_effect_1_1_abstract.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_audio_loader_wav.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_dynamic_audio_1_1_chord.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_audio_loader_wav_1_1_chunk_info.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_effect_1_1_const.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_audio_loader_wav_1_1_data.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_audio_loader_wav_1_1_format.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_dynamic_audio_1_1_note.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_effect_1_1_random.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_audio_loader_wav_1_1_r_i_f_f.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_effect_1_1_time_since.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_dynamic_audio_1_1_tune.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_audio_loader_wav_1_1_wav.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_effect_1_1_wav_stream.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="_audio_loader_wav_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_chord_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_effect_base_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="framework_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_note_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="pch_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_result_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_tune_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

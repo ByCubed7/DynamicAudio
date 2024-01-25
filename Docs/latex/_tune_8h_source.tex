@@ -1,0 +1,110 @@
+\doxysection{Tune.\+h}
+\hypertarget{_tune_8h_source}{}\label{_tune_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Chord.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }DynamicAudio\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_dynamic_audio_1_1_tune}{Tune}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ std::vector<Chord>\ chords;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune}{Tune}}()\ :\ chords()\ \{\}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune_abe1641e3c9b7f448f9dba3af8114530d}{addChord}}(\mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\ chord)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ chords.push\_back(chord);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\&\ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune_ab3014aa041e1b95ae24f0adcc8019fca}{addSingle}}(\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}\ note)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\ chord\ =\ \mbox{\hyperlink{class_dynamic_audio_1_1_chord_ae45ea9ad5dea672253c02a5a31402fe2}{Chord::fromNote}}(note);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ chords.push\_back(chord);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ chords[chords.size()-\/1];}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\&\ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune_a443b8d75d4a1268ebc69b718db8b3a52}{addSilence}}(\textcolor{keywordtype}{double}\ duration)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\ chord\ =\ \mbox{\hyperlink{class_dynamic_audio_1_1_chord_ae45ea9ad5dea672253c02a5a31402fe2}{Chord::fromNote}}(\mbox{\hyperlink{struct_dynamic_audio_1_1_note_ab81b6ba8f0d63618aa7cf6b6e87b0d23}{Note::null}}(duration));}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ chords.push\_back(chord);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ chords[chords.size()\ -\/\ 1];}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune_a08363fd1404122e5c0f5bc7405919bb3}{getChord}}(uint8\_t\ index)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ chords[index];}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune_a7bf223c99b7a3e3c0866c528fd8c17d4}{size}}()\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ chords.size();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune_aa45438a0e1ff6fa170e02f2001c561dd}{getChordIndexAtTime}}(\textcolor{keywordtype}{double}\ time)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ timeTillTarget\ =\ time;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\&\ chord\ :\ chords)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ next\ chord\ begins\ AFTER\ the\ longest\ notes\ ends}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ timeTillTarget\ -\/=\ chord.maxDuration();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ past\ the\ target\ time}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (timeTillTarget\ <=\ 0)\ \textcolor{keywordflow}{return}\ index;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ chord\ was\ found}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune_a58bd66670a69c57d1139340947deb2ed}{getChordAtTime}}(\textcolor{keywordtype}{double}\ time)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\ =\ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune_aa45438a0e1ff6fa170e02f2001c561dd}{getChordIndexAtTime}}(time);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ ==\ -\/1)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_dynamic_audio_1_1_chord_a473fb03158b675b5309a00c9aa5d3d40}{Chord::empty}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ chords[index];}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune_af3be2de9a02db2bbc023024982f1cc92}{getNotesAtTime}}(\textcolor{keywordtype}{double}\ time)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Note>\ current\ =\ \{\};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ timeTillTarget\ =\ time;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\&\ chord\ :\ chords)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ next\ chord\ begins\ AFTER\ the\ longest\ notes\ ends}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ timeTillTarget\ -\/=\ chord.\mbox{\hyperlink{class_dynamic_audio_1_1_chord_a786a2518b3d5bf8cb402a9921cdb1c3f}{maxDuration}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ past\ the\ target\ time}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (timeTillTarget\ <=\ 0)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ note\ will\ be\ played\ at\ our\ designated\ time,\ add\ it}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}\&\ note\ :\ chord.allNotes())}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (timeTillTarget\ <=\ note.duration)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current.push\_back(note);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_tune_a1dcdaccb3d7f79732f270980ffe020a2}{getNoteAtTime}}(\textcolor{keywordtype}{double}\ time)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ timeTillTarget\ =\ time;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}}\&\ chord\ :\ chords)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ next\ chord\ begins\ AFTER\ the\ longest\ notes\ ends}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ timeTillTarget\ -\/=\ chord.maxDuration();}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ past\ the\ target\ time}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (timeTillTarget\ <=\ 0)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ note\ will\ be\ played\ at\ our\ designated\ time\ return\ it}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}\&\ note\ :\ chord.allNotes())}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (timeTillTarget\ <=\ note.duration)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ note;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Notes::null;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \};}
+\DoxyCodeLine{00114\ \}}
+
+\end{DoxyCode}

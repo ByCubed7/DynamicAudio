@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_win_w_d_m_k_s_device_info" xml:lang="en-US">
+<title>PaWinWDMKSDeviceInfo Struct Reference</title>
+<indexterm><primary>PaWinWDMKSDeviceInfo</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>wchar_t <link linkend="_struct_pa_win_w_d_m_k_s_device_info_1aef789b50c6cf1e05c5c6e1e18e2a233c">filterPath</link> [MAX_PATH]</para>
+</listitem>
+            <listitem><para>wchar_t <link linkend="_struct_pa_win_w_d_m_k_s_device_info_1a89df08f196f4bc367794e7d76e404a04">topologyPath</link> [MAX_PATH]</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_win_w_d_m_k_s_device_info_1a65b71d52a0990fdb97201d0cea3f05f1"/>PaWDMKSType <emphasis role="strong">streamingType</emphasis></para>
+</listitem>
+            <listitem><para>GUID <link linkend="_struct_pa_win_w_d_m_k_s_device_info_1a183f5caf8ae9c7e62bcf6e19c8d2e4ad">deviceProductGuid</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_pa_win_w_d_m_k_s_device_info_1a183f5caf8ae9c7e62bcf6e19c8d2e4ad"/><section>
+    <title>deviceProductGuid</title>
+<indexterm><primary>deviceProductGuid</primary><secondary>PaWinWDMKSDeviceInfo</secondary></indexterm>
+<indexterm><primary>PaWinWDMKSDeviceInfo</primary><secondary>deviceProductGuid</secondary></indexterm>
+<para><computeroutput>GUID PaWinWDMKSDeviceInfo::deviceProductGuid</computeroutput></para>
+<para>The product GUID of the device (if supported) </para>
+</section>
+<anchor xml:id="_struct_pa_win_w_d_m_k_s_device_info_1aef789b50c6cf1e05c5c6e1e18e2a233c"/><section>
+    <title>filterPath</title>
+<indexterm><primary>filterPath</primary><secondary>PaWinWDMKSDeviceInfo</secondary></indexterm>
+<indexterm><primary>PaWinWDMKSDeviceInfo</primary><secondary>filterPath</secondary></indexterm>
+<para><computeroutput>wchar_t PaWinWDMKSDeviceInfo::filterPath[MAX_PATH]</computeroutput></para>
+<para>KS filter path in Unicode! </para>
+</section>
+<anchor xml:id="_struct_pa_win_w_d_m_k_s_device_info_1a89df08f196f4bc367794e7d76e404a04"/><section>
+    <title>topologyPath</title>
+<indexterm><primary>topologyPath</primary><secondary>PaWinWDMKSDeviceInfo</secondary></indexterm>
+<indexterm><primary>PaWinWDMKSDeviceInfo</primary><secondary>topologyPath</secondary></indexterm>
+<para><computeroutput>wchar_t PaWinWDMKSDeviceInfo::topologyPath[MAX_PATH]</computeroutput></para>
+<para>Topology filter path in Unicode! </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_pa__win__wdmks_8h">pa_win_wdmks.h</link></section>
+</section>

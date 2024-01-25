@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_win_wave_format" xml:lang="en-US">
+<title>PaWinWaveFormat Struct Reference</title>
+<indexterm><primary>PaWinWaveFormat</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_pa_win_wave_format_1a1857b636da839476d43d6ee1220b273b"/>unsigned char <emphasis role="strong">fields</emphasis> [PAWIN_SIZEOF_WAVEFORMATEXTENSIBLE]</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_win_wave_format_1a2749d19cc78ddc3ced94da57e75c87ce"/>unsigned long <emphasis role="strong">extraLongForAlignment</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_pa__win__waveformat_8h">pa_win_waveformat.h</link></section>

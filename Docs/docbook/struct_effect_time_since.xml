@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_effect_time_since" xml:lang="en-US">
+<title>EffectTimeSince Struct Reference</title>
+<indexterm><primary>EffectTimeSince</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_time_since_1a520c9727695dede4de6ef765317557c0"/>value <emphasis role="strong">get</emphasis> (value in)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_time_since_1a951618d4374a00b21b551f44a30b8ce1"/>std::chrono::steady_clock::time_point <emphasis role="strong">start</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+EffectBase.h</section>

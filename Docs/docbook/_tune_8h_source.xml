@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__tune_8h_source" xml:lang="en-US">
+<title>Tune.h</title>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 
+3 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+4 <emphasis role="preprocessor">#include&#32;&lt;tuple&gt;</emphasis>
+5 
+6 <emphasis role="preprocessor">#include&#32;&quot;Chord.h&quot;</emphasis>
+7 
+8 <emphasis role="keyword">namespace&#32;</emphasis>DynamicAudio&#32;{
+9 
+10 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_dynamic_audio_1_1_tune">Tune</link>&#32;{
+11 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;Chord&gt;&#32;chords;
+12 
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_dynamic_audio_1_1_tune">Tune</link>()&#32;:&#32;chords()&#32;{}
+14 
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_dynamic_audio_1_1_tune_1abe1641e3c9b7f448f9dba3af8114530d">addChord</link>(<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;chord)&#32;{
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chords.push_back(chord);
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+19 
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&amp;&#32;<link linkend="_struct_dynamic_audio_1_1_tune_1ab3014aa041e1b95ae24f0adcc8019fca">addSingle</link>(<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&#32;note)&#32;{
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;chord&#32;=&#32;<link linkend="_class_dynamic_audio_1_1_chord_1ae45ea9ad5dea672253c02a5a31402fe2">Chord::fromNote</link>(note);
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chords.push_back(chord);
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;chords[chords.size()-1];
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+26 
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&amp;&#32;<link linkend="_struct_dynamic_audio_1_1_tune_1a443b8d75d4a1268ebc69b718db8b3a52">addSilence</link>(<emphasis role="keywordtype">double</emphasis>&#32;duration)&#32;{
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;chord&#32;=&#32;<link linkend="_class_dynamic_audio_1_1_chord_1ae45ea9ad5dea672253c02a5a31402fe2">Chord::fromNote</link>(<link linkend="_struct_dynamic_audio_1_1_note_1ab81b6ba8f0d63618aa7cf6b6e87b0d23">Note::null</link>(duration));
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chords.push_back(chord);
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;chords[chords.size()&#32;-&#32;1];
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+33 
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;<link linkend="_struct_dynamic_audio_1_1_tune_1a08363fd1404122e5c0f5bc7405919bb3">getChord</link>(uint8_t&#32;index)&#32;{
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;chords[index];
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+38 
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_struct_dynamic_audio_1_1_tune_1a7bf223c99b7a3e3c0866c528fd8c17d4">size</link>()&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;chords.size();
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+43 
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_dynamic_audio_1_1_tune_1aa45438a0e1ff6fa170e02f2001c561dd">getChordIndexAtTime</link>(<emphasis role="keywordtype">double</emphasis>&#32;time)&#32;{
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;timeTillTarget&#32;=&#32;time;
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;index&#32;=&#32;0;
+48 
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&amp;&#32;chord&#32;:&#32;chords)
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;next&#32;chord&#32;begins&#32;AFTER&#32;the&#32;longest&#32;notes&#32;ends</emphasis>
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;timeTillTarget&#32;-=&#32;chord.maxDuration();
+53 
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;past&#32;the&#32;target&#32;time</emphasis>
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(timeTillTarget&#32;&lt;=&#32;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;index;
+56 
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;index++;
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+59 
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;No&#32;chord&#32;was&#32;found</emphasis>
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+63 
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;<link linkend="_struct_dynamic_audio_1_1_tune_1a58bd66670a69c57d1139340947deb2ed">getChordAtTime</link>(<emphasis role="keywordtype">double</emphasis>&#32;time)&#32;{
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;index&#32;=&#32;<link linkend="_struct_dynamic_audio_1_1_tune_1aa45438a0e1ff6fa170e02f2001c561dd">getChordIndexAtTime</link>(time);
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(index&#32;==&#32;-1)&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1a473fb03158b675b5309a00c9aa5d3d40">Chord::empty</link>();
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;chords[index];
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+70 
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;<link linkend="_struct_dynamic_audio_1_1_tune_1af3be2de9a02db2bbc023024982f1cc92">getNotesAtTime</link>(<emphasis role="keywordtype">double</emphasis>&#32;time)&#32;{
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;Note&gt;&#32;current&#32;=&#32;{};
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;timeTillTarget&#32;=&#32;time;
+75 
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&amp;&#32;chord&#32;:&#32;chords)
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;next&#32;chord&#32;begins&#32;AFTER&#32;the&#32;longest&#32;notes&#32;ends</emphasis>
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;timeTillTarget&#32;-=&#32;chord.<link linkend="_class_dynamic_audio_1_1_chord_1a786a2518b3d5bf8cb402a9921cdb1c3f">maxDuration</link>();
+80 
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;past&#32;the&#32;target&#32;time</emphasis>
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(timeTillTarget&#32;&lt;=&#32;0)&#32;<emphasis role="keywordflow">break</emphasis>;
+83 
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;the&#32;note&#32;will&#32;be&#32;played&#32;at&#32;our&#32;designated&#32;time,&#32;add&#32;it</emphasis>
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&amp;&#32;note&#32;:&#32;chord.allNotes())
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(timeTillTarget&#32;&lt;=&#32;note.duration)
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;current.push_back(note);
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+89 
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;current;
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+92 
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&#32;<link linkend="_struct_dynamic_audio_1_1_tune_1a1dcdaccb3d7f79732f270980ffe020a2">getNoteAtTime</link>(<emphasis role="keywordtype">double</emphasis>&#32;time)&#32;{
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;timeTillTarget&#32;=&#32;time;
+96 
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&amp;&#32;chord&#32;:&#32;chords)
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;next&#32;chord&#32;begins&#32;AFTER&#32;the&#32;longest&#32;notes&#32;ends</emphasis>
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;timeTillTarget&#32;-=&#32;chord.maxDuration();
+101 
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;past&#32;the&#32;target&#32;time</emphasis>
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(timeTillTarget&#32;&lt;=&#32;0)&#32;<emphasis role="keywordflow">break</emphasis>;
+104 
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;the&#32;note&#32;will&#32;be&#32;played&#32;at&#32;our&#32;designated&#32;time&#32;return&#32;it</emphasis>
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&amp;&#32;note&#32;:&#32;chord.allNotes())
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(timeTillTarget&#32;&lt;=&#32;note.duration)
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;note;
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+110 
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Notes::null;
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+113 &#32;&#32;&#32;&#32;};
+114 }
+</programlisting></section>

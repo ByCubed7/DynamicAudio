@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_audio_loader_wav_1_1_wav" xml:lang="en-US">
+<title>AudioLoaderWav::Wav Struct Reference</title>
+<indexterm><primary>AudioLoaderWav::Wav</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_wav_1a022b7a8874164c5b8b246cac9bd2331d"/><emphasis role="strong">Wav</emphasis> (<link linkend="_struct_audio_loader_wav_1_1_r_i_f_f">RIFF</link> riff_, <link linkend="_struct_audio_loader_wav_1_1_format">Format</link> fmt_, <link linkend="_struct_audio_loader_wav_1_1_data">Data</link> data_)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_wav_1a0f2d5f9ab5b83f92b7f2d7a9f1a46d95"/>void <emphasis role="strong">rawAll</emphasis> (uint8_t *&amp;start, uint32_t &amp;size) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_wav_1af7680639c84501a0a1a76dfc4b769adb"/><link linkend="_struct_audio_loader_wav_1_1_r_i_f_f">RIFF</link> <emphasis role="strong">riff</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_wav_1ab2b716252ee72597d76fd74ea71bf442"/><link linkend="_struct_audio_loader_wav_1_1_format">Format</link> <emphasis role="strong">fmt</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_wav_1ace6a0b45a5642faeeef82b3eaf498042"/><link linkend="_struct_audio_loader_wav_1_1_data">Data</link> <emphasis role="strong">data</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+AudioLoaderWav.h</section>

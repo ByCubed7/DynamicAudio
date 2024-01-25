@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pa__linux__alsa_8h" xml:lang="en-US">
+<title>packages/portaudio.0.19.1/build/native/include/pa_linux_alsa.h File Reference</title>
+<indexterm><primary>packages/portaudio.0.19.1/build/native/include/pa_linux_alsa.h</primary></indexterm>
+<para>
+
+<para>ALSA-specific PortAudio API extension header file. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;portaudio.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_pa_alsa_stream_info">PaAlsaStreamInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_pa__linux__alsa_8h_1a8f4a367ba01a76664eac8522af151d7e"/>typedef struct PaAlsaStreamInfo <emphasis role="strong">PaAlsaStreamInfo</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_pa__linux__alsa_8h_1ac33a394742540a3b6666d77698a72e82">PaAlsa_InitializeStreamInfo</link> (<link linkend="_struct_pa_alsa_stream_info">PaAlsaStreamInfo</link> *info)</para>
+</listitem>
+            <listitem><para>void <link linkend="_pa__linux__alsa_8h_1accc41e7fd89dc0a6163d54a4f25fb242">PaAlsa_EnableRealtimeScheduling</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *s, int enable)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__linux__alsa_8h_1ac31edeb99ef568fc89418d77bd4ca624">PaAlsa_GetStreamInputCard</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *s, int *card)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__linux__alsa_8h_1a04d7cd7252120eadf0ab3141ba5a7d93">PaAlsa_GetStreamOutputCard</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *s, int *card)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__linux__alsa_8h_1a76f60d6f1ba6a298c038a9f3a6dccc53">PaAlsa_SetNumPeriods</link> (int numPeriods)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__linux__alsa_8h_1a2992cf7c30de5aaea222ec762fc56ad1">PaAlsa_SetRetriesBusy</link> (int retries)</para>
+</listitem>
+            <listitem><para>void <link linkend="_pa__linux__alsa_8h_1a7517c2e54801c8bd73c2f6db30aeaff9">PaAlsa_SetLibraryPathName</link> (const char *pathName)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>ALSA-specific PortAudio API extension header file. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_pa__linux__alsa_8h_1accc41e7fd89dc0a6163d54a4f25fb242"/><section>
+    <title>PaAlsa_EnableRealtimeScheduling()</title>
+<indexterm><primary>PaAlsa_EnableRealtimeScheduling</primary><secondary>pa_linux_alsa.h</secondary></indexterm>
+<indexterm><primary>pa_linux_alsa.h</primary><secondary>PaAlsa_EnableRealtimeScheduling</secondary></indexterm>
+<para><computeroutput>void PaAlsa_EnableRealtimeScheduling (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * s, int enable)</computeroutput></para>
+<para>Instruct whether to enable real-time priority when starting the audio thread.</para>
+
+<para>If this is turned on by the stream is started, the audio callback thread will be created with the FIFO scheduling policy, which is suitable for realtime operation. </para>
+</section>
+<anchor xml:id="_pa__linux__alsa_8h_1ac31edeb99ef568fc89418d77bd4ca624"/><section>
+    <title>PaAlsa_GetStreamInputCard()</title>
+<indexterm><primary>PaAlsa_GetStreamInputCard</primary><secondary>pa_linux_alsa.h</secondary></indexterm>
+<indexterm><primary>pa_linux_alsa.h</primary><secondary>PaAlsa_GetStreamInputCard</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaAlsa_GetStreamInputCard (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * s, int * card)</computeroutput></para>
+<para>Get the ALSA-lib card index of this stream&apos;s input device. </para>
+</section>
+<anchor xml:id="_pa__linux__alsa_8h_1a04d7cd7252120eadf0ab3141ba5a7d93"/><section>
+    <title>PaAlsa_GetStreamOutputCard()</title>
+<indexterm><primary>PaAlsa_GetStreamOutputCard</primary><secondary>pa_linux_alsa.h</secondary></indexterm>
+<indexterm><primary>pa_linux_alsa.h</primary><secondary>PaAlsa_GetStreamOutputCard</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaAlsa_GetStreamOutputCard (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * s, int * card)</computeroutput></para>
+<para>Get the ALSA-lib card index of this stream&apos;s output device. </para>
+</section>
+<anchor xml:id="_pa__linux__alsa_8h_1ac33a394742540a3b6666d77698a72e82"/><section>
+    <title>PaAlsa_InitializeStreamInfo()</title>
+<indexterm><primary>PaAlsa_InitializeStreamInfo</primary><secondary>pa_linux_alsa.h</secondary></indexterm>
+<indexterm><primary>pa_linux_alsa.h</primary><secondary>PaAlsa_InitializeStreamInfo</secondary></indexterm>
+<para><computeroutput>void PaAlsa_InitializeStreamInfo (<link linkend="_struct_pa_alsa_stream_info">PaAlsaStreamInfo</link> * info)</computeroutput></para>
+<para>Initialize host API specific structure, call this before setting relevant attributes. </para>
+</section>
+<anchor xml:id="_pa__linux__alsa_8h_1a7517c2e54801c8bd73c2f6db30aeaff9"/><section>
+    <title>PaAlsa_SetLibraryPathName()</title>
+<indexterm><primary>PaAlsa_SetLibraryPathName</primary><secondary>pa_linux_alsa.h</secondary></indexterm>
+<indexterm><primary>pa_linux_alsa.h</primary><secondary>PaAlsa_SetLibraryPathName</secondary></indexterm>
+<para><computeroutput>void PaAlsa_SetLibraryPathName (const char * pathName)</computeroutput></para>
+<para>Set the path and name of ALSA library file if PortAudio is configured to load it dynamically (see PA_ALSA_DYNAMIC). This setting will overwrite the default name set by PA_ALSA_PATHNAME define. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pathName</entry><entry>
+<para>Full path with filename. Only filename can be used, but dlopen() will lookup default searchable directories (/usr/lib;/usr/local/lib) then. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_pa__linux__alsa_8h_1a76f60d6f1ba6a298c038a9f3a6dccc53"/><section>
+    <title>PaAlsa_SetNumPeriods()</title>
+<indexterm><primary>PaAlsa_SetNumPeriods</primary><secondary>pa_linux_alsa.h</secondary></indexterm>
+<indexterm><primary>pa_linux_alsa.h</primary><secondary>PaAlsa_SetNumPeriods</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaAlsa_SetNumPeriods (int numPeriods)</computeroutput></para>
+<para>Set the number of periods (buffer fragments) to configure devices with.</para>
+
+<para>By default the number of periods is 4, this is the lowest number of periods that works well on the author&apos;s soundcard. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>numPeriods</entry><entry>
+<para>The number of periods. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_pa__linux__alsa_8h_1a2992cf7c30de5aaea222ec762fc56ad1"/><section>
+    <title>PaAlsa_SetRetriesBusy()</title>
+<indexterm><primary>PaAlsa_SetRetriesBusy</primary><secondary>pa_linux_alsa.h</secondary></indexterm>
+<indexterm><primary>pa_linux_alsa.h</primary><secondary>PaAlsa_SetRetriesBusy</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaAlsa_SetRetriesBusy (int retries)</computeroutput></para>
+<para>Set the maximum number of times to retry opening busy device (sleeping for a short interval inbetween). </para>
+</section>
+</section>
+</section>

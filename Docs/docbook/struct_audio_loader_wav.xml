@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_audio_loader_wav" xml:lang="en-US">
+<title>AudioLoaderWav Struct Reference</title>
+<indexterm><primary>AudioLoaderWav</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_audio_loader_wav_1_1_chunk_info">ChunkInfo</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_audio_loader_wav_1_1_data">Data</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_audio_loader_wav_1_1_format">Format</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_audio_loader_wav_1_1_r_i_f_f">RIFF</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_audio_loader_wav_1_1_wav">Wav</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1ae253794926fddb3c76a623c3caaee671"/>static bool <emphasis role="strong">isFORMAT</emphasis> (uint8_t *id)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1a45da6d4c453a8c0f9bed4a94daedf11b"/>static bool <emphasis role="strong">isRIFF</emphasis> (uint8_t *id)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1a942ea9a56a9b3df5680c64e07220f58d"/>static bool <emphasis role="strong">isFMT</emphasis> (uint8_t *id)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1a3220990814224ca0ba75ea89c0f4552d"/>static bool <emphasis role="strong">isDATA</emphasis> (uint8_t *id)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1a64e7aa179405038ed7f6bf6d6d02bee9"/>static Result <emphasis role="strong">loadRawFile</emphasis> (std::string filepath, <link linkend="_struct_audio_loader_wav_1_1_wav">Wav</link> &amp;wav)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1ae0b389d6d08779f4fdc10611cbc50459"/>static bool <emphasis role="strong">checkResultForErrors</emphasis> (Result result)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1ad103bb98d9cc345f92f4d32915ba25a5"/>static <link linkend="_struct_audio_loader_wav_1_1_wav">Wav</link> <emphasis role="strong">load</emphasis> (std::string filepath)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1a90953df53f304c087f06c05ec2fac19c"/>static void <emphasis role="strong">debug_printInfo</emphasis> (const <link linkend="_struct_audio_loader_wav_1_1_wav">Wav</link> &amp;wav)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1a201ef142fbb241a883ce1eab3221ff23"/>static void <emphasis role="strong">debug_play</emphasis> (const <link linkend="_struct_audio_loader_wav_1_1_wav">Wav</link> &amp;wav)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1af083e907b54cac5bb58ee7b4bad82ef6"/>static constexpr char <emphasis role="strong">FORMAT</emphasis> [4] = { &apos;W&apos;,&apos;A&apos;,&apos;V&apos;,&apos;E&apos; }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1a24de69175475797c59b39da6ad14fb0c"/>static constexpr char <emphasis role="strong">ID_RIFF</emphasis> [4] = { &apos;R&apos;,&apos;I&apos;,&apos;F&apos;,&apos;F&apos; }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1a8bf9f84d093005705ddf6a4d55d890dd"/>static constexpr char <emphasis role="strong">ID_FMT</emphasis> [4] = { &apos;f&apos;,&apos;m&apos;,&apos;t&apos;,&apos; &apos; }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1a78700405d74a4d85c8c8995f7aca5bc6"/>static constexpr char <emphasis role="strong">ID_DATA</emphasis> [4] = { &apos;d&apos;,&apos;a&apos;,&apos;t&apos;,&apos;a&apos; }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+AudioLoaderWav.h</section>

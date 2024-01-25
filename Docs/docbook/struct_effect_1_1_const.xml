@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_effect_1_1_const" xml:lang="en-US">
+<title>Effect::Const Struct Reference</title>
+<indexterm><primary>Effect::Const</primary></indexterm>
+<para>
+
+<para>Gets a constant value. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;EffectBase.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Effect::Const:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_effect_1_1_const.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_const_1a491f5975492e1777c847bdd68d466750"/><emphasis role="strong">Const</emphasis> (value constant_)</para>
+
+<para>Constructor Definition. </para>
+</listitem>
+            <listitem><para>value <link linkend="_struct_effect_1_1_const_1a0b9b495edd1a6809bd91219ae8008057">get</link> (value in) override</para>
+
+<para>Gets the calculated effects value. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_const_1a03ed3f65d2a2d90956a7326f89810aa9"/><emphasis role="strong">operator value</emphasis> ()</para>
+
+<para>Casting to a value should return the constant. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_const_1a84ebb30250a1bced112c221e3b969304"/><emphasis role="strong">operator const value</emphasis> () const</para>
+
+<para>Casting to a value should return the constant. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_const_1a648b4cff4cc43fccbf55a0692361e0e7"/>value <emphasis role="strong">constant</emphasis></para>
+
+<para>The value to represent. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Gets a constant value. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_effect_1_1_const_1a0b9b495edd1a6809bd91219ae8008057"/><section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>Effect::Const</secondary></indexterm>
+<indexterm><primary>Effect::Const</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>value Effect::Const::get (value in)<computeroutput>[inline]</computeroutput>, <computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Gets the calculated effects value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>
+<para>The value passed in. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The value passed out. </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_struct_effect_1_1_abstract_1ac72d7f8db28f06f9794ad457cc6d4d86">Effect::Abstract</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+EffectBase.h</section>
+</section>

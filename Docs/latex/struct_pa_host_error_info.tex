@@ -1,0 +1,44 @@
+\doxysection{Pa\+Host\+Error\+Info Struct Reference}
+\hypertarget{struct_pa_host_error_info}{}\label{struct_pa_host_error_info}\index{PaHostErrorInfo@{PaHostErrorInfo}}
+
+
+{\ttfamily \#include $<$portaudio.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} \mbox{\hyperlink{struct_pa_host_error_info_aeadfc0e22fee75e94541876d6d7a91f7}{host\+Api\+Type}}
+\item 
+long \mbox{\hyperlink{struct_pa_host_error_info_a2ab15f358cd7f0a5e8f3d54e161a2fec}{error\+Code}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_pa_host_error_info_aa40a7ed0c73b85b39563d80f7877876c}{error\+Text}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure used to return information about a host error condition. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_pa_host_error_info_a2ab15f358cd7f0a5e8f3d54e161a2fec}\label{struct_pa_host_error_info_a2ab15f358cd7f0a5e8f3d54e161a2fec} 
+\index{PaHostErrorInfo@{PaHostErrorInfo}!errorCode@{errorCode}}
+\index{errorCode@{errorCode}!PaHostErrorInfo@{PaHostErrorInfo}}
+\doxysubsubsection{\texorpdfstring{errorCode}{errorCode}}
+{\footnotesize\ttfamily long Pa\+Host\+Error\+Info\+::error\+Code}
+
+the error code returned \Hypertarget{struct_pa_host_error_info_aa40a7ed0c73b85b39563d80f7877876c}\label{struct_pa_host_error_info_aa40a7ed0c73b85b39563d80f7877876c} 
+\index{PaHostErrorInfo@{PaHostErrorInfo}!errorText@{errorText}}
+\index{errorText@{errorText}!PaHostErrorInfo@{PaHostErrorInfo}}
+\doxysubsubsection{\texorpdfstring{errorText}{errorText}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} Pa\+Host\+Error\+Info\+::error\+Text}
+
+a textual description of the error if available, otherwise a zero-\/length string \Hypertarget{struct_pa_host_error_info_aeadfc0e22fee75e94541876d6d7a91f7}\label{struct_pa_host_error_info_aeadfc0e22fee75e94541876d6d7a91f7} 
+\index{PaHostErrorInfo@{PaHostErrorInfo}!hostApiType@{hostApiType}}
+\index{hostApiType@{hostApiType}!PaHostErrorInfo@{PaHostErrorInfo}}
+\doxysubsubsection{\texorpdfstring{hostApiType}{hostApiType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} Pa\+Host\+Error\+Info\+::host\+Api\+Type}
+
+the host API which returned the error code 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+packages/portaudio.\+0.\+19.\+1/build/native/include/\mbox{\hyperlink{portaudio_8h}{portaudio.\+h}}\end{DoxyCompactItemize}

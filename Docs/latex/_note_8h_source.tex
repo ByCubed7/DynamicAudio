@@ -1,0 +1,171 @@
+\doxysection{Note.\+h}
+\hypertarget{_note_8h_source}{}\label{_note_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }DynamicAudio\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{typedef}\ uint16\_t\ NoteValueType;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ NoteDurationType;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{struct\ }Value\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Cf\ =\ 59;\ \textcolor{comment}{//\ MIDI\ value\ for\ C\ flat}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ C\ =\ 60;\ \textcolor{comment}{//\ MIDI\ value\ for\ C\ natural}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Cs\ =\ 61;\ \textcolor{comment}{//\ MIDI\ value\ for\ C\ sharp}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Df\ =\ 61;\ \textcolor{comment}{//\ MIDI\ value\ for\ D\ flat}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ D\ =\ 62;\ \textcolor{comment}{//\ MIDI\ value\ for\ D\ natural}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Ds\ =\ 63;\ \textcolor{comment}{//\ MIDI\ value\ for\ D\ sharp}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Ef\ =\ 63;\ \textcolor{comment}{//\ MIDI\ value\ for\ E\ flat}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ E\ =\ 64;\ \textcolor{comment}{//\ MIDI\ value\ for\ E\ natural}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ F\ =\ 65;\ \textcolor{comment}{//\ MIDI\ value\ for\ F\ natural}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Fs\ =\ 66;\ \textcolor{comment}{//\ MIDI\ value\ for\ F\ sharp}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Gf\ =\ 66;\ \textcolor{comment}{//\ MIDI\ value\ for\ G\ flat}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ G\ =\ 67;\ \textcolor{comment}{//\ MIDI\ value\ for\ G\ natural}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Gs\ =\ 68;\ \textcolor{comment}{//\ MIDI\ value\ for\ G\ sharp}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Af\ =\ 68;\ \textcolor{comment}{//\ MIDI\ value\ for\ A\ flat}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ A\ =\ 69;\ \textcolor{comment}{//\ MIDI\ value\ for\ A\ natural\ (A440\ reference)}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ As\ =\ 70;\ \textcolor{comment}{//\ MIDI\ value\ for\ A\ sharp}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Bf\ =\ 70;\ \textcolor{comment}{//\ MIDI\ value\ for\ B\ flat}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ B\ =\ 71;\ \textcolor{comment}{//\ MIDI\ value\ for\ B\ natural}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ Middle\_C\ =\ C;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ MIDI\_A440\ =\ A;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteValueType\ null\ =\ 0;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isNull(\textcolor{keyword}{const}\ NoteValueType\&\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}})\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}}\ ==\ null;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isValid(\textcolor{keyword}{const}\ NoteValueType\&\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}})\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !isNull(\mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ NoteValueType\ transpose(\textcolor{keyword}{const}\ NoteValueType\&\ originalNote,\ \textcolor{keyword}{const}\ NoteValueType\ semitones)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ originalNote\ +\ semitones;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_ab6afeb3e78f615b0d623b5a27e5c6ce0}{calculateFrequency}}(\textcolor{keyword}{const}\ NoteValueType\&\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}})\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isNull(\mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}}))\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MIDI\ note\ 69\ (A440)\ is\ set\ to\ 440\ Hz}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 440.0\ *\ pow(2.0,\ (\mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}}\ -\/\ 69)\ /\ 12.0);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Define\ the\ noteMap}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<std::string,\ NoteValueType>\ mapStringToValue;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ NoteValueType>\ mapStringToValue\ =\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}C"{}},\ \ Note::Value::C\},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}Cs"{}},\ Note::Value::Cs\},}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}D"{}},\ \ Note::Value::D\},}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}Ds"{}},\ Note::Value::Ds\},}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}E"{}},\ \ Note::Value::E\},}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}F"{}},\ \ Note::Value::F\},}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}Fs"{}},\ Note::Value::Fs\},}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}G"{}},\ \ Note::Value::G\},}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}Gs"{}},\ Note::Value::Gs\},}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}A"{}},\ \ Note::Value::A\},}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}As"{}},\ Note::Value::As\},}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}B"{}},\ \ Note::Value::B\}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ NoteValueType\ fromString(\textcolor{keyword}{const}\ std::string\&\ noteString)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ mapStringToValue.find(noteString);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ found,\ return\ note}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ mapStringToValue.end())}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Else\ default\ to\ null}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ null;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{struct\ }Duration\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Using\ the\ British\ naming\ convension}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Maxima;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Long;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Breve;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Semibreve;\ \textcolor{comment}{//\ 1\ whole\ note}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Minim;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Crotchet;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Quaver;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Semiquaver;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Maxima\ =\ 1\ *\ 8;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Long\ =\ 1\ *\ 4;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Breve\ =\ 1\ *\ 2;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Semibreve\ =\ 1;\ \textcolor{comment}{//\ 1\ whole\ note}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Minim\ =\ 1\ /\ 2;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Crotchet\ =\ 1\ /\ 4;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Quaver\ =\ 1\ /\ 8;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Semiquaver\ =\ 1\ /\ 16;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ bit\ excessive:}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Demisemiquaver;\ \ \textcolor{comment}{//\ 1/32}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Hemidemisemiquaver;\ \ \textcolor{comment}{//\ 1/64}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Semihemidemisemiquaver;\ \ \textcolor{comment}{//\ 1/128}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ NoteDurationType\ Demisemihemidemisemiquaver;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Demisemiquaver\ =\ 1\ /\ 32;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Hemidemisemiquaver\ =\ 1\ /\ 64;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Semihemidemisemiquaver\ =\ 1\ /\ 128;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ NoteDurationType\ Demisemihemidemisemiquaver\ =\ 1\ /\ 256;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ NoteValueType\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ NoteDurationType\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}{duration}};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}(NoteValueType\ \_value,\ NoteDurationType\ \_duration)\ :\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}}(\_value),\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}{duration}}(\_duration)\ \{\}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}(NoteValueType\ \_value)\ :\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}}(\_value),\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}{duration}}(Duration::Semibreve)\ \{\}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ Note()\ :\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}}(Value::\mbox{\hyperlink{struct_dynamic_audio_1_1_note_ab81b6ba8f0d63618aa7cf6b6e87b0d23}{null}}),\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}{duration}}(Duration::Semibreve)\ \{\}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a8827919f5db76b634058ce1ff14c91a5}{transpose}}(NoteValueType\ semitones)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}}\ =\ Value::transpose(\mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}},\ semitones);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_ab6afeb3e78f615b0d623b5a27e5c6ce0}{calculateFrequency}}()\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Value::calculateFrequency(\mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{//implicit\ operator\ uint8\_t\ ()\ const\ \{\ return\ value;\ \}}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{comment}{//explicit\ operator\ auto()\ const\ \{\ return\ value;\ \}\ }}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}\ operator+(\textcolor{keyword}{const}\ NoteValueType\&\ semitones)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}(\mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}},\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}{duration}});}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ result.transpose(semitones);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_ab81b6ba8f0d63618aa7cf6b6e87b0d23}{null}}(NoteDurationType\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}{duration}}\ =\ Duration::Semibreve)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}(Value::null,\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}{duration}});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}\&\ rhs)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lhs.\mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}}\ !=\ rhs.\mbox{\hyperlink{struct_dynamic_audio_1_1_note_a495e3b2c5015739a97b00977af10b262}{value}})}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lhs.\mbox{\hyperlink{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}{duration}}\ !=\ rhs.\mbox{\hyperlink{struct_dynamic_audio_1_1_note_a63379e312a71432e2c3d81ebedf2a919}{duration}})}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ Note\&\ lhs,\ \textcolor{keyword}{const}\ Note\&\ rhs)\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !operator==(lhs,\ rhs);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \};}
+\DoxyCodeLine{00189\ \}}
+
+\end{DoxyCode}

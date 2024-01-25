@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_wasapi_stream_info" xml:lang="en-US">
+<title>PaWasapiStreamInfo Struct Reference</title>
+<indexterm><primary>PaWasapiStreamInfo</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>unsigned long <link linkend="_struct_pa_wasapi_stream_info_1ae491f41ce5954cddd438624dc69eba1b">size</link></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> <link linkend="_struct_pa_wasapi_stream_info_1a931bf93691d5b36b621d49402d1d2255">hostApiType</link></para>
+</listitem>
+            <listitem><para>unsigned long <link linkend="_struct_pa_wasapi_stream_info_1a3045f4432a92d761e4a1b95eba97ae49">version</link></para>
+</listitem>
+            <listitem><para>unsigned long <link linkend="_struct_pa_wasapi_stream_info_1a85bfbe1a00e6b48df75528eb6f967a2c">flags</link></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_stream_info_1a3e893ff6c6f81fb7171ac325136a7dd1"/>PaWinWaveFormatChannelMask <emphasis role="strong">channelMask</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_stream_info_1a300576059815d6ab77af37f708f818ac"/>PaWasapiHostProcessorCallback <emphasis role="strong">hostProcessorOutput</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_stream_info_1a0cb8bd209c8b453e9d1d08909e63ac38"/>PaWasapiHostProcessorCallback <emphasis role="strong">hostProcessorInput</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_wasapi_stream_info_1a81ed024aceceb79e593aa4f1ec28594a"/><link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661">PaWasapiThreadPriority</link> <emphasis role="strong">threadPriority</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_pa_wasapi_stream_info_1a85bfbe1a00e6b48df75528eb6f967a2c"/><section>
+    <title>flags</title>
+<indexterm><primary>flags</primary><secondary>PaWasapiStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWasapiStreamInfo</primary><secondary>flags</secondary></indexterm>
+<para><computeroutput>unsigned long PaWasapiStreamInfo::flags</computeroutput></para>
+<para>collection of PaWasapiFlags </para>
+</section>
+<anchor xml:id="_struct_pa_wasapi_stream_info_1a931bf93691d5b36b621d49402d1d2255"/><section>
+    <title>hostApiType</title>
+<indexterm><primary>hostApiType</primary><secondary>PaWasapiStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWasapiStreamInfo</primary><secondary>hostApiType</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> PaWasapiStreamInfo::hostApiType</computeroutput></para>
+<para>paWASAPI </para>
+</section>
+<anchor xml:id="_struct_pa_wasapi_stream_info_1ae491f41ce5954cddd438624dc69eba1b"/><section>
+    <title>size</title>
+<indexterm><primary>size</primary><secondary>PaWasapiStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWasapiStreamInfo</primary><secondary>size</secondary></indexterm>
+<para><computeroutput>unsigned long PaWasapiStreamInfo::size</computeroutput></para>
+<para>sizeof(PaWasapiStreamInfo) </para>
+</section>
+<anchor xml:id="_struct_pa_wasapi_stream_info_1a3045f4432a92d761e4a1b95eba97ae49"/><section>
+    <title>version</title>
+<indexterm><primary>version</primary><secondary>PaWasapiStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWasapiStreamInfo</primary><secondary>version</secondary></indexterm>
+<para><computeroutput>unsigned long PaWasapiStreamInfo::version</computeroutput></para>
+<para>1 </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_pa__win__wasapi_8h">pa_win_wasapi.h</link></section>
+</section>

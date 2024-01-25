@@ -1,0 +1,200 @@
+\doxysection{pa\+\_\+win\+\_\+waveformat.\+h}
+\hypertarget{pa__win__waveformat_8h_source}{}\label{pa__win__waveformat_8h_source}\index{packages/portaudio.0.19.1/build/native/include/pa\_win\_waveformat.h@{packages/portaudio.0.19.1/build/native/include/pa\_win\_waveformat.h}}
+\mbox{\hyperlink{pa__win__waveformat_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PA\_WIN\_WAVEFORMAT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PA\_WIN\_WAVEFORMAT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ PortAudio\ Portable\ Real-\/Time\ Audio\ Library}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Windows\ WAVEFORMAT*\ data\ structure\ utilities}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ portaudio.h\ should\ be\ included\ before\ this\ file.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2007\ Ross\ Bencina}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ a\ copy\ of\ this\ software\ and\ associated\ documentation\ files}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ included\ in\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,\ OUT\ OF\ OR\ IN\ CONNECTION}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ The\ text\ above\ constitutes\ the\ entire\ PortAudio\ license;\ however,\ }}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ the\ PortAudio\ community\ also\ makes\ the\ following\ non-\/binding\ requests:}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ Any\ person\ wishing\ to\ distribute\ modifications\ to\ the\ Software\ is}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ requested\ to\ send\ the\ modifications\ to\ the\ original\ developer\ so\ that}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ they\ can\ be\ incorporated\ into\ the\ canonical\ version.\ It\ is\ also\ }}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ requested\ that\ these\ non-\/binding\ requests\ be\ included\ along\ with\ the\ }}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ license\ above.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00048\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ \ \ \ The\ following\ \#defines\ for\ speaker\ channel\ masks\ are\ the\ same}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ as\ those\ in\ ksmedia.h,\ except\ with\ PAWIN\_\ prepended,\ KSAUDIO\_\ removed}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ \ in\ some\ cases,\ and\ casts\ to\ PaWinWaveFormatChannelMask\ added.}}
+\DoxyCodeLine{00055\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ PaWinWaveFormatChannelMask;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{/*\ Speaker\ Positions:\ */}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_FRONT\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x1)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_FRONT\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x2)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_FRONT\_CENTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x4)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_LOW\_FREQUENCY\ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x8)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_BACK\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x10)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_BACK\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x20)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_FRONT\_LEFT\_OF\_CENTER\ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x40)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_FRONT\_RIGHT\_OF\_CENTER\ \ \ \ \ ((PaWinWaveFormatChannelMask)0x80)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_BACK\_CENTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x100)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_SIDE\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x200)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_SIDE\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x400)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_TOP\_CENTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x800)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_TOP\_FRONT\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x1000)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_TOP\_FRONT\_CENTER\ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x2000)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_TOP\_FRONT\_RIGHT\ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x4000)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_TOP\_BACK\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x8000)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_TOP\_BACK\_CENTER\ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x10000)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_TOP\_BACK\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x20000)}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{/*\ Bit\ mask\ locations\ reserved\ for\ future\ use\ */}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_RESERVED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x7FFC0000)}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{/*\ Used\ to\ specify\ that\ any\ possible\ permutation\ of\ speaker\ configurations\ */}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_ALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PaWinWaveFormatChannelMask)0x80000000)}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{comment}{/*\ DirectSound\ Speaker\ Config\ */}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_DIRECTOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_MONO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PAWIN\_SPEAKER\_FRONT\_CENTER)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_STEREO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PAWIN\_SPEAKER\_FRONT\_LEFT\ |\ PAWIN\_SPEAKER\_FRONT\_RIGHT)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_QUAD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PAWIN\_SPEAKER\_FRONT\_LEFT\ |\ PAWIN\_SPEAKER\_FRONT\_RIGHT\ |\ \(\backslash\)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_BACK\_LEFT\ \ |\ PAWIN\_SPEAKER\_BACK\_RIGHT)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_SURROUND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PAWIN\_SPEAKER\_FRONT\_LEFT\ |\ PAWIN\_SPEAKER\_FRONT\_RIGHT\ |\ \(\backslash\)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_FRONT\_CENTER\ |\ PAWIN\_SPEAKER\_BACK\_CENTER)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_5POINT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PAWIN\_SPEAKER\_FRONT\_LEFT\ |\ PAWIN\_SPEAKER\_FRONT\_RIGHT\ |\ \(\backslash\)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_FRONT\_CENTER\ |\ PAWIN\_SPEAKER\_LOW\_FREQUENCY\ |\ \(\backslash\)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_BACK\_LEFT\ \ |\ PAWIN\_SPEAKER\_BACK\_RIGHT)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_7POINT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PAWIN\_SPEAKER\_FRONT\_LEFT\ |\ PAWIN\_SPEAKER\_FRONT\_RIGHT\ |\ \(\backslash\)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_FRONT\_CENTER\ |\ PAWIN\_SPEAKER\_LOW\_FREQUENCY\ |\ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_BACK\_LEFT\ |\ PAWIN\_SPEAKER\_BACK\_RIGHT\ |\ \(\backslash\)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_FRONT\_LEFT\_OF\_CENTER\ |\ PAWIN\_SPEAKER\_FRONT\_RIGHT\_OF\_CENTER)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_5POINT1\_SURROUND\ \ \ \ \ \ \ \ \ \ (PAWIN\_SPEAKER\_FRONT\_LEFT\ |\ PAWIN\_SPEAKER\_FRONT\_RIGHT\ |\ \(\backslash\)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_FRONT\_CENTER\ |\ PAWIN\_SPEAKER\_LOW\_FREQUENCY\ |\ \(\backslash\)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_SIDE\_LEFT\ \ |\ PAWIN\_SPEAKER\_SIDE\_RIGHT)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_7POINT1\_SURROUND\ \ \ \ \ \ \ \ \ \ (PAWIN\_SPEAKER\_FRONT\_LEFT\ |\ PAWIN\_SPEAKER\_FRONT\_RIGHT\ |\ \(\backslash\)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_FRONT\_CENTER\ |\ PAWIN\_SPEAKER\_LOW\_FREQUENCY\ |\ \(\backslash\)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_BACK\_LEFT\ |\ PAWIN\_SPEAKER\_BACK\_RIGHT\ |\ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_SIDE\_LEFT\ |\ PAWIN\_SPEAKER\_SIDE\_RIGHT)}}
+\DoxyCodeLine{00107\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ According\ to\ the\ Microsoft\ documentation:}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ The\ following\ are\ obsolete\ 5.1\ and\ 7.1\ settings\ (they\ lack\ side\ speakers).\ \ Note\ this\ means}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ that\ the\ default\ 5.1\ and\ 7.1\ settings\ (KSAUDIO\_SPEAKER\_5POINT1\ and\ KSAUDIO\_SPEAKER\_7POINT1\ are}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ similarly\ obsolete\ but\ are\ unchanged\ for\ compatibility\ reasons).}}
+\DoxyCodeLine{00112\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_5POINT1\_BACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_5POINT1}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_7POINT1\_WIDE\ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_7POINT1}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{comment}{/*\ DVD\ Speaker\ Positions\ */}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_GROUND\_FRONT\_LEFT\ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_FRONT\_LEFT}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_GROUND\_FRONT\_CENTER\ \ \ \ \ \ \ PAWIN\_SPEAKER\_FRONT\_CENTER}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_GROUND\_FRONT\_RIGHT\ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_FRONT\_RIGHT}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_GROUND\_REAR\_LEFT\ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_BACK\_LEFT}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_GROUND\_REAR\_RIGHT\ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_BACK\_RIGHT}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_TOP\_MIDDLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_TOP\_CENTER}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ PAWIN\_SPEAKER\_SUPER\_WOOFER\ \ \ \ \ \ \ \ \ \ \ \ \ \ PAWIN\_SPEAKER\_LOW\_FREQUENCY}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00127\ \textcolor{comment}{\ \ \ \ PaWinWaveFormat\ is\ defined\ here\ to\ provide\ compatibility\ with}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ \ \ compilation\ environments\ which\ don't\ have\ headers\ defining\ }}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ \ \ \ WAVEFORMATEXTENSIBLE\ (e.g.\ older\ versions\ of\ MSVC,\ Borland\ C++\ etc.}}
+\DoxyCodeLine{00130\ \textcolor{comment}{}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ \ \ \ The\ fields\ for\ WAVEFORMATEX\ and\ WAVEFORMATEXTENSIBLE\ are\ declared\ as\ an}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ \ \ \ unsigned\ char\ array\ here\ to\ avoid\ clients\ who\ include\ this\ file\ having\ }}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ \ \ \ a\ dependency\ on\ windows.h\ and\ mmsystem.h,\ and\ also\ to\ to\ avoid\ having}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ \ \ \ to\ write\ separate\ packing\ pragmas\ for\ each\ compiler.}}
+\DoxyCodeLine{00135\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ PAWIN\_SIZEOF\_WAVEFORMATEX\ \ \ 18}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ PAWIN\_SIZEOF\_WAVEFORMATEXTENSIBLE\ (PAWIN\_SIZEOF\_WAVEFORMATEX\ +\ 22)}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ fields[\ PAWIN\_SIZEOF\_WAVEFORMATEXTENSIBLE\ ];}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ extraLongForAlignment;\ \textcolor{comment}{/*\ ensure\ that\ compiler\ aligns\ struct\ to\ DWORD\ */}\ }
+\DoxyCodeLine{00142\ \}\ \mbox{\hyperlink{struct_pa_win_wave_format}{PaWinWaveFormat}};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ \ \ \ WAVEFORMATEXTENSIBLE\ fields:}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{comment}{\ \ \ \ union\ \ \{}}
+\DoxyCodeLine{00148\ \textcolor{comment}{\ \ \ \ \ \ \ \ WORD\ \ wValidBitsPerSample;\ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{comment}{\ \ \ \ \ \ \ \ WORD\ \ wSamplesPerBlock;\ \ \ \ }}
+\DoxyCodeLine{00150\ \textcolor{comment}{\ \ \ \ \ \ \ \ WORD\ \ wReserved;\ \ }}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ \ \ \ \}\ Samples;}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ \ \ \ DWORD\ \ dwChannelMask;\ \ }}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ \ \ \ GUID\ \ SubFormat;}}
+\DoxyCodeLine{00154\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ PAWIN\_INDEXOF\_WVALIDBITSPERSAMPLE\ \ \ (PAWIN\_SIZEOF\_WAVEFORMATEX+0)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ PAWIN\_INDEXOF\_DWCHANNELMASK\ \ \ \ \ \ \ \ \ (PAWIN\_SIZEOF\_WAVEFORMATEX+2)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ PAWIN\_INDEXOF\_SUBFORMAT\ \ \ \ \ \ \ \ \ \ \ \ \ (PAWIN\_SIZEOF\_WAVEFORMATEX+6)}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00162\ \textcolor{comment}{\ \ \ \ Valid\ values\ to\ pass\ for\ the\ waveFormatTag\ PaWin\_InitializeWaveFormatEx\ and}}
+\DoxyCodeLine{00163\ \textcolor{comment}{\ \ \ \ PaWin\_InitializeWaveFormatExtensible\ functions\ below.\ These\ must\ match}}
+\DoxyCodeLine{00164\ \textcolor{comment}{\ \ \ \ the\ standard\ Windows\ WAVE\_FORMAT\_*\ values.}}
+\DoxyCodeLine{00165\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ PAWIN\_WAVE\_FORMAT\_PCM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ PAWIN\_WAVE\_FORMAT\_IEEE\_FLOAT\ \ \ \ \ \ \ \ (3)}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ PAWIN\_WAVE\_FORMAT\_DOLBY\_AC3\_SPDIF\ \ \ (0x0092)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ PAWIN\_WAVE\_FORMAT\_WMA\_SPDIF\ \ \ \ \ \ \ \ \ (0x0164)}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ \ \ \ returns\ PAWIN\_WAVE\_FORMAT\_PCM\ or\ PAWIN\_WAVE\_FORMAT\_IEEE\_FLOAT}}
+\DoxyCodeLine{00174\ \textcolor{comment}{\ \ \ \ depending\ on\ the\ sampleFormat\ parameter.}}
+\DoxyCodeLine{00175\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00176\ \textcolor{keywordtype}{int}\ PaWin\_SampleFormatToLinearWaveFormatTag(\ \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}}\ sampleFormat\ );}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00179\ \textcolor{comment}{\ \ \ \ Use\ the\ following\ two\ functions\ to\ initialize\ the\ waveformat\ structure.}}
+\DoxyCodeLine{00180\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{keywordtype}{void}\ PaWin\_InitializeWaveFormatEx(\ \mbox{\hyperlink{struct_pa_win_wave_format}{PaWinWaveFormat}}\ *waveFormat,\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numChannels,\ \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}}\ sampleFormat,\ \textcolor{keywordtype}{int}\ waveFormatTag,\ \textcolor{keywordtype}{double}\ sampleRate\ );}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{keywordtype}{void}\ PaWin\_InitializeWaveFormatExtensible(\ \mbox{\hyperlink{struct_pa_win_wave_format}{PaWinWaveFormat}}\ *waveFormat,\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numChannels,\ \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}}\ sampleFormat,\ \textcolor{keywordtype}{int}\ waveFormatTag,\ \textcolor{keywordtype}{double}\ sampleRate,}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ PaWinWaveFormatChannelMask\ channelMask\ );}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{comment}{/*\ Map\ a\ channel\ count\ to\ a\ speaker\ channel\ mask\ */}}
+\DoxyCodeLine{00192\ PaWinWaveFormatChannelMask\ PaWin\_DefaultChannelMask(\ \textcolor{keywordtype}{int}\ numChannels\ );}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00196\ \}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PA\_WIN\_WAVEFORMAT\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

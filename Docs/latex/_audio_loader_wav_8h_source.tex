@@ -1,0 +1,299 @@
+\doxysection{Audio\+Loader\+Wav.\+h}
+\hypertarget{_audio_loader_wav_8h_source}{}\label{_audio_loader_wav_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Result.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <windows.h>}\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <playsoundapi.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <mmsystem.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ comment(lib,\ "{}winmm.lib"{})}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_audio_loader_wav}{AudioLoaderWav}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{comment}{//private:}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ FORMAT[4]\ =\ \{\ \textcolor{charliteral}{'W'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'E'}\ \};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ ID\_RIFF[4]\ =\ \{\ \textcolor{charliteral}{'R'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'F'},\textcolor{charliteral}{'F'}\ \};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ ID\_FMT[4]\ =\ \{\ \textcolor{charliteral}{'f'},\textcolor{charliteral}{'m'},\textcolor{charliteral}{'t'},\textcolor{charliteral}{'\ '}\ \};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ ID\_DATA[4]\ =\ \{\ \textcolor{charliteral}{'d'},\textcolor{charliteral}{'a'},\textcolor{charliteral}{'t'},\textcolor{charliteral}{'a'}\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isFORMAT(uint8\_t*\ \textcolor{keywordtype}{id})\ \{\ \textcolor{keywordflow}{return}\ memcmp(\textcolor{keywordtype}{id},\ FORMAT,\ 4)\ ==\ 0;\ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isRIFF(uint8\_t*\ \textcolor{keywordtype}{id})\ \ \ \{\ \textcolor{keywordflow}{return}\ memcmp(\textcolor{keywordtype}{id},\ ID\_RIFF,\ 4)\ ==\ 0;\ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isFMT(uint8\_t*\ \textcolor{keywordtype}{id})\ \ \ \ \{\ \textcolor{keywordflow}{return}\ memcmp(\textcolor{keywordtype}{id},\ ID\_FMT,\ 4)\ \ ==\ 0;\ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isDATA(uint8\_t*\ \textcolor{keywordtype}{id})\ \ \ \{\ \textcolor{keywordflow}{return}\ memcmp(\textcolor{keywordtype}{id},\ ID\_DATA,\ 4)\ ==\ 0;\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ A\ chunk\ of\ info\ }}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_audio_loader_wav_1_1_chunk_info}{ChunkInfo}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ uint8\_t\ chunkID[4];}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ uint32\_t\ chunkSize;}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_audio_loader_wav_1_1_r_i_f_f}{RIFF}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_audio_loader_wav_1_1_chunk_info}{ChunkInfo}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ uint8\_t\ \ format[4];}
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Format\ of\ the\ sound\ infomation}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_audio_loader_wav_1_1_format}{Format}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_audio_loader_wav_1_1_chunk_info}{ChunkInfo}}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ uint16\_t\ audioFormat;\ \ \ \textcolor{comment}{//\ Audio\ format\ 1=PCM,\ 6=mulaw,\ 7=alaw,\ \ 257=IBM\ Mu-\/Law,\ 258=IBM\ A-\/Law,\ 259=ADPCM}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ uint16\_t\ numChannels;\ \ \ \textcolor{comment}{//\ Number\ of\ channels\ 1=Mono\ 2=Sterio}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ uint32\_t\ sampleRate;\ \ \ \ \textcolor{comment}{//\ Sampling\ Frequency\ in\ Hz}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ uint32\_t\ byteRate;\ \ \ \ \ \ \textcolor{comment}{//\ bytes\ per\ second}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ uint16\_t\ blockAlign;\ \ \ \ \textcolor{comment}{//\ 2=16-\/bit\ mono,\ 4=16-\/bit\ stereo}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ uint16\_t\ bitsPerSample;\ \textcolor{comment}{//\ Number\ of\ bits\ per\ sample}}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Contains\ the\ sound\ infomation\ and\ raw\ data}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ BUG:\ We\ assume\ 16-\/bit\ monochannel\ samples}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_audio_loader_wav_1_1_data}{Data}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_audio_loader_wav_1_1_chunk_info}{ChunkInfo}}\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ uint8\_t*\ data;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ the\ number\ of\ elements\ in\ the\ data\ array}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ chunkSize\ /\ \textcolor{keyword}{sizeof}(uint8\_t);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{Wav}}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_audio_loader_wav_1_1_r_i_f_f}{RIFF}}\ riff;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_audio_loader_wav_1_1_format}{Format}}\ fmt;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_audio_loader_wav_1_1_data}{Data}}\ data;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{Wav}}()\ :}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ riff(),\ fmt(),\ data()\ \{\}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{Wav}}(\mbox{\hyperlink{struct_audio_loader_wav_1_1_r_i_f_f}{RIFF}}\ riff\_,\ \mbox{\hyperlink{struct_audio_loader_wav_1_1_format}{Format}}\ fmt\_,\ \mbox{\hyperlink{struct_audio_loader_wav_1_1_data}{Data}}\ data\_)\ :}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ riff(riff\_),\ fmt(fmt\_),\ data(data\_)\ \{\}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rawAll(uint8\_t*\&\ start,\ uint32\_t\&\ size)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00075\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}riff\ chunksize:\ "{}}\ <<\ riff.chunkSize\ +\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_audio_loader_wav_1_1_chunk_info}{ChunkInfo}})\ <<\ std::endl;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}attempt\ size:\ "{}}\ <<\ (\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_audio_loader_wav_1_1_r_i_f_f}{RIFF}})\ +\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_audio_loader_wav_1_1_format}{Format}})\ +\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_audio_loader_wav_1_1_data}{Data}})\ -\/\ \textcolor{keyword}{sizeof}(uint8\_t*)\ +\ data.size())\ <<\ std::endl;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ size\ =\ (riff.chunkSize\ +\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_audio_loader_wav_1_1_chunk_info}{ChunkInfo}}))\ /\ \textcolor{keyword}{sizeof}(uint8\_t);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ start\ =\ \textcolor{keyword}{new}\ uint8\_t[size];}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ ptr\ =\ start;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ target\ =\ start\ +\ size;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}start:\ "{}}\ <<\ (\textcolor{keywordtype}{void}*)start\ <<\ std::endl;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}target:\ "{}}\ <<\ (\textcolor{keywordtype}{void}*)target\ <<\ std::endl;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//memcpy\_s(ptr,\ size,\ \&riff,\ sizeof(RIFF));}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ *(\mbox{\hyperlink{struct_audio_loader_wav_1_1_r_i_f_f}{RIFF}}*)ptr\ =\ riff;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_audio_loader_wav_1_1_r_i_f_f}{RIFF}});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//memcpy\_s(ptr,\ size,\ \&fmt,\ sizeof(Format));}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ *(\mbox{\hyperlink{struct_audio_loader_wav_1_1_format}{Format}}*)ptr\ =\ fmt;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_audio_loader_wav_1_1_format}{Format}});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ *(\mbox{\hyperlink{struct_audio_loader_wav_1_1_data}{Data}}*)ptr\ =\ data;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_audio_loader_wav_1_1_data}{Data}})\ -\/\ \textcolor{keyword}{sizeof}(uint8\_t*);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ dataSize\ =\ data.chunkSize\ /\ \textcolor{keyword}{sizeof}(uint8\_t);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}is\ same:\ "{}}\ <<\ (ptr\ +\ dataSize\ ==\ target)\ <<\ std::endl;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ firs\ =\ data.data;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ last\ =\ data.data\ +\ dataSize;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::copy(firs,\ last,\ ptr);}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ +=\ dataSize;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}is\ same:\ "{}}\ <<\ (ptr\ ==\ target)\ <<\ std::endl;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}arr:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size\ -\/\ data.size();\ i++)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ (char)*(start\ +\ i);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}done"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//memcpy(rawTar,\ \&data.data,\ data.chunkSize\ /\ sizeof(uint8\_t));}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{static}\ Result\ loadRawFile(std::string\ filepath,\ \mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{Wav}}\&\ wav)}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Open\ File}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ std::ifstream\ ifs\{\ filepath,\ std::ios\_base::binary\ \};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ifs.fail())\ \textcolor{keywordflow}{return}\ CannotOpenFile;}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ file\ length}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ifs.seekg(0,\ ifs.end);}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//int\ length\ =\ ifs.tellg();\ //\ tellg\ returns\ pos}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ifs.seekg(0,\ ifs.beg);}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ RIFF\ header}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ RIFF\ riff;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ ifs.read((\textcolor{keywordtype}{char}*)\&riff,\ \textcolor{keyword}{sizeof}(RIFF));}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ifs\ ||\ !isRIFF(riff.chunkID)\ ||\ !isFORMAT(riff.format))\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ ifs.close();}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BadFormatting;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ chunk\ infos\ iteratively}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ ChunkInfo\ ch;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ Format\ fmt;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ Data\ data;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ fmt\_read\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ data\_read\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ifs.read((\textcolor{keywordtype}{char}*)\&ch,\ \textcolor{keyword}{sizeof}(ChunkInfo)))}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fmt\ chunk}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isFMT(ch.chunkID))\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::copy(std::begin(ch.chunkID),\ std::end(ch.chunkID),\ std::begin(fmt.chunkID));}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fmt.chunkSize\ =\ ch.chunkSize;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ifs.read((\textcolor{keywordtype}{char}*)\&fmt\ +\ \textcolor{keyword}{sizeof}(ChunkInfo),\ ch.chunkSize);\ \textcolor{comment}{//\ We've\ already\ read\ ChunkInfo}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fmt\_read)\ std::cerr\ <<\ \textcolor{stringliteral}{"{}Multiple\ FMT\ chunks\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fmt\_read\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Data\ chunk}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (isDATA(ch.chunkID))\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::copy(std::begin(ch.chunkID),\ std::end(ch.chunkID),\ std::begin(data.chunkID));}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.chunkSize\ =\ ch.chunkSize;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.data\ =\ \textcolor{keyword}{new}\ uint8\_t[data.size()];}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ifs.read((\textcolor{keywordtype}{char}*)data.data\ +\ \textcolor{keyword}{sizeof}(ChunkInfo),\ ch.chunkSize);\ \textcolor{comment}{//\ We've\ already\ read\ ChunkInfo}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\_read)\ std::cerr\ <<\ \textcolor{stringliteral}{"{}Multiple\ Data\ chunks\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data\_read\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Otherwise,\ skip}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ ifs.seekg(ch.chunkSize,\ std::ios\_base::cur);}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ ifs.close();}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!data\_read\ ||\ !fmt\_read)\ \textcolor{keywordflow}{return}\ ProblemReadingData;}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ wav\ =\ Wav(}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ riff,\ fmt,\ data}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Success;}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{comment}{//\ TODO:\ Move\ to\ results?}}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ checkResultForErrors(Result\ result)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (result)\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Success:\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CannotOpenFile:}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Cannot\ open\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BadFormatting:}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Bad\ formatting"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ProblemReadingData:}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Problem\ when\ reading\ data"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00210\ \ \ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{static}\ Wav\ load(std::string\ filepath)}
+\DoxyCodeLine{00215\ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ Wav\ wavFile;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ Result\ res\ =\ loadRawFile(filepath,\ wavFile);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (checkResultForErrors(res))\ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Error\ occurred"{}};}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ wavFile;}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ debug\_printInfo(\textcolor{keyword}{const}\ Wav\&\ wav)}
+\DoxyCodeLine{00224\ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/\ RIFF\ -\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}id:\ "{}};\ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ wav.riff.chunkID)\ std::cout\ <<\ (char)val;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ (should\ be:\ "{}};\ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ ID\_RIFF)\ std::cout\ <<\ (char)val;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}size:\ "{}}\ <<\ std::to\_string(wav.riff.chunkSize)\ <<\ std::endl;}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}format:\ "{}};}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ std::cout\ <<\ wav.riff.format[i];}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ (should\ be:\ "{}};\ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ FORMAT)\ std::cout\ <<\ (char)val;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/\ FMT\ -\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}id:\ "{}};\ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ wav.fmt.chunkID)\ std::cout\ <<\ (char)val;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ (should\ be:\ "{}};\ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ ID\_FMT)\ std::cout\ <<\ (char)val;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}chunkSize:\ "{}}\ <<\ std::to\_string(wav.fmt.chunkSize)\ <<\ std::endl;}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}audioFormat:\ "{}}\ <<\ std::to\_string(wav.fmt.audioFormat)\ <<\ std::endl;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}numChannels:\ "{}}\ <<\ std::to\_string(wav.fmt.numChannels)\ <<\ std::endl;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}sampleRate:\ "{}}\ <<\ std::to\_string(wav.fmt.sampleRate)\ <<\ std::endl;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}byteRate:\ "{}}\ <<\ std::to\_string(wav.fmt.byteRate)\ <<\ std::endl;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}blockAlign:\ "{}}\ <<\ std::to\_string(wav.fmt.blockAlign)\ <<\ std::endl;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}bitsPerSample:\ "{}}\ <<\ std::to\_string(wav.fmt.bitsPerSample)\ <<\ std::endl;}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/\ DATA\ -\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}id:\ "{}};\ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ wav.data.chunkID)\ std::cout\ <<\ (char)val;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ (should\ be:\ "{}};\ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ ID\_DATA)\ std::cout\ <<\ (char)val;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}chunkSize:\ "{}}\ <<\ std::to\_string(wav.data.chunkSize)\ <<\ std::endl;}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}nb\ of\ samples:\ "{}\ <<\ std::to\_string(wav.data.nb\_of\_samples)\ <<\ std::endl;}}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ debug\_play(\textcolor{keyword}{const}\ Wav\&\ wav)}
+\DoxyCodeLine{00270\ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PlaySoundA((LPCSTR)\ "{}C:\(\backslash\)\(\backslash\)kenny\ g.WAV"{},\ NULL,\ SND\_FILENAME\ |\ SND\_ASYNC);}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Playing\ sound"{}\ <<\ std::endl;}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ uint8\_t*\ value\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ uint32\_t\ size;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ wav.rawAll(value,\ size);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ std::cout\ <<\ (value\ ==\ \textcolor{keyword}{nullptr})\ <<\ std::endl;}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{comment}{//for\ (int\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ std::cout\ <<\ (char)*(value\ +\ i);}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ PlaySound(}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ (LPCWSTR)(\textcolor{keywordtype}{char}*)(value),}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ NULL,}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ SND\_MEMORY\ \textcolor{comment}{//|\ SND\_SYNC}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,43 @@
+\doxysection{Dynamic\+Audio\+::Tune Struct Reference}
+\hypertarget{struct_dynamic_audio_1_1_tune}{}\label{struct_dynamic_audio_1_1_tune}\index{DynamicAudio::Tune@{DynamicAudio::Tune}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dynamic_audio_1_1_tune_abe1641e3c9b7f448f9dba3af8114530d}\label{struct_dynamic_audio_1_1_tune_abe1641e3c9b7f448f9dba3af8114530d} 
+void {\bfseries add\+Chord} (\mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} chord)
+\begin{DoxyCompactList}\small\item\em Adds a chord to the tune. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_tune_ab3014aa041e1b95ae24f0adcc8019fca}\label{struct_dynamic_audio_1_1_tune_ab3014aa041e1b95ae24f0adcc8019fca} 
+\mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} \& {\bfseries add\+Single} (\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} note)
+\begin{DoxyCompactList}\small\item\em Adds a single note as a chord to the tune. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_tune_a443b8d75d4a1268ebc69b718db8b3a52}\label{struct_dynamic_audio_1_1_tune_a443b8d75d4a1268ebc69b718db8b3a52} 
+\mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} \& {\bfseries add\+Silence} (double duration)
+\begin{DoxyCompactList}\small\item\em Adds an amount of silence to the tune. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_tune_a08363fd1404122e5c0f5bc7405919bb3}\label{struct_dynamic_audio_1_1_tune_a08363fd1404122e5c0f5bc7405919bb3} 
+\mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} {\bfseries get\+Chord} (uint8\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Gets chord by index. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_tune_a7bf223c99b7a3e3c0866c528fd8c17d4}\label{struct_dynamic_audio_1_1_tune_a7bf223c99b7a3e3c0866c528fd8c17d4} 
+size\+\_\+t {\bfseries size} ()
+\begin{DoxyCompactList}\small\item\em The amount of chords in the tune. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_tune_aa45438a0e1ff6fa170e02f2001c561dd}\label{struct_dynamic_audio_1_1_tune_aa45438a0e1ff6fa170e02f2001c561dd} 
+int {\bfseries get\+Chord\+Index\+At\+Time} (double time)
+\begin{DoxyCompactList}\small\item\em Gets the most recent chord index to the given time. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_tune_a58bd66670a69c57d1139340947deb2ed}\label{struct_dynamic_audio_1_1_tune_a58bd66670a69c57d1139340947deb2ed} 
+\mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} {\bfseries get\+Chord\+At\+Time} (double time)
+\begin{DoxyCompactList}\small\item\em Gets the most recent chord to the given time. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_tune_af3be2de9a02db2bbc023024982f1cc92}\label{struct_dynamic_audio_1_1_tune_af3be2de9a02db2bbc023024982f1cc92} 
+\mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} {\bfseries get\+Notes\+At\+Time} (double time)
+\begin{DoxyCompactList}\small\item\em Gets all of the notes being played at this time. \end{DoxyCompactList}\item 
+\Hypertarget{struct_dynamic_audio_1_1_tune_a1dcdaccb3d7f79732f270980ffe020a2}\label{struct_dynamic_audio_1_1_tune_a1dcdaccb3d7f79732f270980ffe020a2} 
+\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} {\bfseries get\+Note\+At\+Time} (double time)
+\begin{DoxyCompactList}\small\item\em Gets the most recent note being played at this time. This is for times where you only want one note. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dynamic_audio_1_1_tune_a9e1345eb636e9792c441a7263e412599}\label{struct_dynamic_audio_1_1_tune_a9e1345eb636e9792c441a7263e412599} 
+std\+::vector$<$ \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} $>$ {\bfseries chords}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tune.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_device_info" xml:lang="en-US">
+<title>PaDeviceInfo Struct Reference</title>
+<indexterm><primary>PaDeviceInfo</primary></indexterm>
+<para>
+<computeroutput>#include &lt;portaudio.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_pa_device_info_1a2d726add4cd2af78a94c052b3a7df568"/>int <emphasis role="strong">structVersion</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_device_info_1a1bc26d68f1d89472ae67eaa49a542aea"/>const char * <emphasis role="strong">name</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> <link linkend="_struct_pa_device_info_1afe741e4d185069577f7e74b78fdef5a4">hostApi</link></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_device_info_1ad0baeeb2b6ceaf7fc9bb76109a7555e9"/>int <emphasis role="strong">maxInputChannels</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_device_info_1a48f908b21e8a11fdf0a88132b18fe7b0"/>int <emphasis role="strong">maxOutputChannels</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> <link linkend="_struct_pa_device_info_1aad6629064b8c7cf043d237ea0a5cc534">defaultLowInputLatency</link></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_device_info_1a89e60515505eea8d668ede3a26a19ac6"/><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> <emphasis role="strong">defaultLowOutputLatency</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> <link linkend="_struct_pa_device_info_1a4214826038fcaf374beb9816024e6c9f">defaultHighInputLatency</link></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_device_info_1a2a43dbc2b158806a937065bda037070e"/><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> <emphasis role="strong">defaultHighOutputLatency</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_device_info_1a68f435353bfe1a4c9b632203a9afcacb"/>double <emphasis role="strong">defaultSampleRate</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A structure providing information and capabilities of PortAudio devices. Devices may support input, output or both input and output. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_pa_device_info_1a4214826038fcaf374beb9816024e6c9f"/><section>
+    <title>defaultHighInputLatency</title>
+<indexterm><primary>defaultHighInputLatency</primary><secondary>PaDeviceInfo</secondary></indexterm>
+<indexterm><primary>PaDeviceInfo</primary><secondary>defaultHighInputLatency</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> PaDeviceInfo::defaultHighInputLatency</computeroutput></para>
+<para>Default latency values for robust non-interactive applications (eg. playing sound files). </para>
+</section>
+<anchor xml:id="_struct_pa_device_info_1aad6629064b8c7cf043d237ea0a5cc534"/><section>
+    <title>defaultLowInputLatency</title>
+<indexterm><primary>defaultLowInputLatency</primary><secondary>PaDeviceInfo</secondary></indexterm>
+<indexterm><primary>PaDeviceInfo</primary><secondary>defaultLowInputLatency</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> PaDeviceInfo::defaultLowInputLatency</computeroutput></para>
+<para>Default latency values for interactive performance. </para>
+</section>
+<anchor xml:id="_struct_pa_device_info_1afe741e4d185069577f7e74b78fdef5a4"/><section>
+    <title>hostApi</title>
+<indexterm><primary>hostApi</primary><secondary>PaDeviceInfo</secondary></indexterm>
+<indexterm><primary>PaDeviceInfo</primary><secondary>hostApi</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> PaDeviceInfo::hostApi</computeroutput></para>
+<para>note this is a host API index, not a type id </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_portaudio_8h">portaudio.h</link></section>
+</section>

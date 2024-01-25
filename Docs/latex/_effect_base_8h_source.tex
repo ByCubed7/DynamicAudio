@@ -1,0 +1,91 @@
+\doxysection{Effect\+Base.\+h}
+\hypertarget{_effect_base_8h_source}{}\label{_effect_base_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}AudioLoaderWav.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}AudioLoaderWav.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }Effect\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ Unknown\ what\ the\ return\ type\ is}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ Maybe\ template\ it?}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ \#define\ value\ uint8\_t}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ value\ \mbox{\hyperlink{struct_effect_1_1_abstract_ac72d7f8db28f06f9794ad457cc6d4d86}{get}}(value\ in\ =\ 0)\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_effect_1_1_const}{Const}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ value\ \mbox{\hyperlink{struct_effect_1_1_const_a648b4cff4cc43fccbf55a0692361e0e7}{constant}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_effect_1_1_const_a491f5975492e1777c847bdd68d466750}{Const}}(value\ constant\_)\ :\ \mbox{\hyperlink{struct_effect_1_1_const_a648b4cff4cc43fccbf55a0692361e0e7}{constant}}(constant\_)\ \{\}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ value\ \mbox{\hyperlink{struct_effect_1_1_const_a0b9b495edd1a6809bd91219ae8008057}{get}}(value\ in)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_effect_1_1_const_a648b4cff4cc43fccbf55a0692361e0e7}{constant}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ value()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_effect_1_1_const_a648b4cff4cc43fccbf55a0692361e0e7}{constant}};\ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ \textcolor{keyword}{const}\ value()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_effect_1_1_const_a648b4cff4cc43fccbf55a0692361e0e7}{constant}};\ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_effect_1_1_random}{Random}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ seed;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}*\ minu;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}*\ maxi;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_effect_1_1_random_a95b9e103c637bde804bb5356e2e63db3}{Random}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ seed\_,\ \mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}*\ minu\_,\ \mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}*\ maxi\_)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ :\ seed(seed\_),\ minu(minu\_),\ maxi(maxi\_)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ std::srand(seed);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ value\ \mbox{\hyperlink{struct_effect_1_1_random_a03c81b2cc63e72f3fedfae9e06b0abbb}{get}}(value\ in)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ minu-\/>\mbox{\hyperlink{struct_effect_1_1_abstract_ac72d7f8db28f06f9794ad457cc6d4d86}{get}}(in)\ +\ std::rand()\ \%\ (maxi-\/>\mbox{\hyperlink{struct_effect_1_1_abstract_ac72d7f8db28f06f9794ad457cc6d4d86}{get}}(in)\ -\/\ minu-\/>\mbox{\hyperlink{struct_effect_1_1_abstract_ac72d7f8db28f06f9794ad457cc6d4d86}{get}}(in));}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_effect_1_1_time_since}{TimeSince}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::chrono::steady\_clock::time\_point\ start;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_effect_1_1_time_since_aa3021b93d970ec6400a428a2fa5b5e4c}{TimeSince}}()}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ :\ start(std::chrono::high\_resolution\_clock::now())\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ value\ \mbox{\hyperlink{struct_effect_1_1_time_since_a45899ea4231e0fbcdf6e97a414355b3c}{get}}(value\ in)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::steady\_clock::time\_point\ now\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ duration\ =\ std::chrono::duration\_cast<std::chrono::seconds>(now\ -\/\ start);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ duration.count();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#ifdef\ max}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#undef\ max}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#undef\ min}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_effect_1_1_wav_stream}{WavStream}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}*\ timestamp;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{AudioLoaderWav::Wav}}\ wav;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_effect_1_1_wav_stream_a5be119ba3aab435e3d3d606b788b8aef}{WavStream}}(\mbox{\hyperlink{struct_effect_1_1_abstract}{Abstract}}*\ timestamp\_,\ \mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{AudioLoaderWav::Wav}}\ wav\_)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ :\ timestamp(timestamp\_),\ wav(wav\_)\ \{\}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ value\ \mbox{\hyperlink{struct_effect_1_1_wav_stream_acc11dabc6d262d8dc997ea2fe4b39352}{get}}(value\ in)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ multiply\ timestamp\ by\ wav\ streams\ per\ second,\ ect..}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ stamp\ =\ std::max(timestamp-\/>\mbox{\hyperlink{struct_effect_1_1_abstract_ac72d7f8db28f06f9794ad457cc6d4d86}{get}}(),\ (uint8\_t)wav.data.chunkSize);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ wav.data.data[stamp];}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}

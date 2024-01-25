@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_effect_const" xml:lang="en-US">
+<title>EffectConst Struct Reference</title>
+<indexterm><primary>EffectConst</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_const_1a43e32a109627ddd202017f1faaff6b3e"/><emphasis role="strong">EffectConst</emphasis> (value constant_)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_const_1a020425f7912a13acea1e20620642e9c4"/>value <emphasis role="strong">get</emphasis> (value in)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_const_1a4f308dcfad88772036822b3c48dbc7fa"/><emphasis role="strong">operator value</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_const_1a33ccb10e4505dc0138517c1582e0d3fa"/><emphasis role="strong">operator const value</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_const_1a3ddf354089d38bd77cc2d08f9b67b1ab"/>value <emphasis role="strong">constant</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+EffectBase.h</section>

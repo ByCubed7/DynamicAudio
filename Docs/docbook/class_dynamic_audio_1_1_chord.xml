@@ -1,0 +1,457 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_dynamic_audio_1_1_chord" xml:lang="en-US">
+<title>DynamicAudio::Chord Class Reference</title>
+<indexterm><primary>DynamicAudio::Chord</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_dynamic_audio_1_1_chord_1a39a962330e9b97b0c3e88d5cefc7f83a"/><emphasis role="strong">Chord</emphasis> (const std::vector&lt; <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &gt; &amp;notes)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_dynamic_audio_1_1_chord_1aeaafcbcfe06743f8739c144b769e7064">addNote</link> (const <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &amp;note)</para>
+
+<para>Adds a <link linkend="_struct_dynamic_audio_1_1_note">Note</link> to the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_dynamic_audio_1_1_chord_1aaf29475c17f6a870177d64f9a313f06d">addNull</link> (double duration)</para>
+
+<para>Adds an empty <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_dynamic_audio_1_1_chord_1adf95fabc477782c8145fb9d7f48b71e6"/>const std::vector&lt; <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &gt; &amp; <emphasis role="strong">allNotes</emphasis> () const</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A vector of the <link linkend="_struct_dynamic_audio_1_1_note">Note</link> collection. </para>
+</formalpara>
+</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_dynamic_audio_1_1_chord_1ac9f75e81eefc82d166a89b17c2e76b40">removeNote</link> (const <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &amp;note)</para>
+
+<para>Removes the given <link linkend="_struct_dynamic_audio_1_1_note">Note</link> from the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_dynamic_audio_1_1_chord_1a230dd2fb9472a272153ae00800535b7b">removeNote</link> (int index)</para>
+
+<para>Remove a <link linkend="_struct_dynamic_audio_1_1_note">Note</link> by index. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_dynamic_audio_1_1_chord_1a2818fc32db79290a616fee3ffdcf0a39">hasNote</link> (const <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &amp;note) const</para>
+
+<para>Whether the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> has the given <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_dynamic_audio_1_1_chord_1adbed9edfabdc85f351d0378590d850db">transpose</link> (const NoteValue &amp;semitones)</para>
+
+<para>Transpose the entire <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_struct_dynamic_audio_1_1_note">Note</link> <link linkend="_class_dynamic_audio_1_1_chord_1a1a21766f30d571e99fead468a58b014e">first</link> () const</para>
+
+<para>The first <link linkend="_struct_dynamic_audio_1_1_note">Note</link> in the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</listitem>
+            <listitem><para>double <link linkend="_class_dynamic_audio_1_1_chord_1a786a2518b3d5bf8cb402a9921cdb1c3f">maxDuration</link> () const</para>
+
+<para>Gets the longest <link linkend="_struct_dynamic_audio_1_1_note">Note</link> in the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. This is how long the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> will play for. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> <link linkend="_class_dynamic_audio_1_1_chord_1a03c53471b220dcec7d49f8a1c45ec1ed">getScale</link> (<link linkend="_struct_dynamic_audio_1_1_note">Note</link> root)</para>
+
+<para>Calculates the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> scale. For simplicity, we&apos;ll assume a major <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</listitem>
+            <listitem><para>static <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> <link linkend="_class_dynamic_audio_1_1_chord_1ace3534997f4ee6423d2cc116d710dea0">getArpeggio</link> (<link linkend="_struct_dynamic_audio_1_1_note">Note</link> root)</para>
+
+<para>Calculates the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> arpeggio. For simplicity, we&apos;ll assume a major <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</listitem>
+            <listitem><para>static <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> <link linkend="_class_dynamic_audio_1_1_chord_1a34b9e5af3c2b4813d53b02df1a4bbddf">null</link> (NoteLength length)</para>
+
+<para>Creates a null <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> of a given duration. This just contains a null <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</listitem>
+            <listitem><para>static <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> <link linkend="_class_dynamic_audio_1_1_chord_1ae45ea9ad5dea672253c02a5a31402fe2">fromNote</link> (<link linkend="_struct_dynamic_audio_1_1_note">Note</link> note)</para>
+
+<para>Converts the given <link linkend="_struct_dynamic_audio_1_1_note">Note</link> to a given <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</listitem>
+            <listitem><para>static <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> <link linkend="_class_dynamic_audio_1_1_chord_1a473fb03158b675b5309a00c9aa5d3d40">empty</link> ()</para>
+
+<para>An empty <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1aeaafcbcfe06743f8739c144b769e7064"/><section>
+    <title>addNote()</title>
+<indexterm><primary>addNote</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>addNote</secondary></indexterm>
+<para><computeroutput>void DynamicAudio::Chord::addNote (const <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &amp; note)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Adds a <link linkend="_struct_dynamic_audio_1_1_note">Note</link> to the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>note</entry><entry>
+<para>The note to add. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1aaf29475c17f6a870177d64f9a313f06d"/><section>
+    <title>addNull()</title>
+<indexterm><primary>addNull</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>addNull</secondary></indexterm>
+<para><computeroutput>void DynamicAudio::Chord::addNull (double duration)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Adds an empty <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>duration</entry><entry>
+<para>The duration of the empty <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1a473fb03158b675b5309a00c9aa5d3d40"/><section>
+    <title>empty()</title>
+<indexterm><primary>empty</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>empty</secondary></indexterm>
+<para><computeroutput>static <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> DynamicAudio::Chord::empty ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>An empty <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> with nothing inside. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1a1a21766f30d571e99fead468a58b014e"/><section>
+    <title>first()</title>
+<indexterm><primary>first</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>first</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_dynamic_audio_1_1_note">Note</link> DynamicAudio::Chord::first ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>The first <link linkend="_struct_dynamic_audio_1_1_note">Note</link> in the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The first <link linkend="_struct_dynamic_audio_1_1_note">Note</link> in the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1ae45ea9ad5dea672253c02a5a31402fe2"/><section>
+    <title>fromNote()</title>
+<indexterm><primary>fromNote</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>fromNote</secondary></indexterm>
+<para><computeroutput>static <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> DynamicAudio::Chord::fromNote (<link linkend="_struct_dynamic_audio_1_1_note">Note</link> note)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Converts the given <link linkend="_struct_dynamic_audio_1_1_note">Note</link> to a given <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>note</entry><entry>
+<para>The <link linkend="_struct_dynamic_audio_1_1_note">Note</link> to convert. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The converted <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1ace3534997f4ee6423d2cc116d710dea0"/><section>
+    <title>getArpeggio()</title>
+<indexterm><primary>getArpeggio</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>getArpeggio</secondary></indexterm>
+<para><computeroutput>static <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> DynamicAudio::Chord::getArpeggio (<link linkend="_struct_dynamic_audio_1_1_note">Note</link> root)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Calculates the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> arpeggio. For simplicity, we&apos;ll assume a major <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>root</entry><entry>
+<para>The root <link linkend="_struct_dynamic_audio_1_1_note">Note</link> to calculate. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> of the arpeggio-ed <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1a03c53471b220dcec7d49f8a1c45ec1ed"/><section>
+    <title>getScale()</title>
+<indexterm><primary>getScale</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>getScale</secondary></indexterm>
+<para><computeroutput>static <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> DynamicAudio::Chord::getScale (<link linkend="_struct_dynamic_audio_1_1_note">Note</link> root)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Calculates the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> scale. For simplicity, we&apos;ll assume a major <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>root</entry><entry>
+<para>The root <link linkend="_struct_dynamic_audio_1_1_note">Note</link> to calculate. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> of the scaled <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1a2818fc32db79290a616fee3ffdcf0a39"/><section>
+    <title>hasNote()</title>
+<indexterm><primary>hasNote</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>hasNote</secondary></indexterm>
+<para><computeroutput>bool DynamicAudio::Chord::hasNote (const <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &amp; note) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Whether the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> has the given <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>note</entry><entry>
+<para>The <link linkend="_struct_dynamic_audio_1_1_note">Note</link> to check for. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Whether the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> has the given <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1a786a2518b3d5bf8cb402a9921cdb1c3f"/><section>
+    <title>maxDuration()</title>
+<indexterm><primary>maxDuration</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>maxDuration</secondary></indexterm>
+<para><computeroutput>double DynamicAudio::Chord::maxDuration ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gets the longest <link linkend="_struct_dynamic_audio_1_1_note">Note</link> in the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. This is how long the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> will play for. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The length on the longest <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1a34b9e5af3c2b4813d53b02df1a4bbddf"/><section>
+    <title>null()</title>
+<indexterm><primary>null</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>null</secondary></indexterm>
+<para><computeroutput>static <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> DynamicAudio::Chord::null (NoteLength length)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Creates a null <link linkend="_class_dynamic_audio_1_1_chord">Chord</link> of a given duration. This just contains a null <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>length</entry><entry>
+<para>The duration of the nulled <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A null <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1ac9f75e81eefc82d166a89b17c2e76b40"/><section>
+    <title>removeNote()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>removeNote</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>removeNote</secondary></indexterm>
+<para><computeroutput>void DynamicAudio::Chord::removeNote (const <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &amp; note)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Removes the given <link linkend="_struct_dynamic_audio_1_1_note">Note</link> from the <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>note</entry><entry>
+<para>The <link linkend="_struct_dynamic_audio_1_1_note">Note</link> to remove. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1a230dd2fb9472a272153ae00800535b7b"/><section>
+    <title>removeNote()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>removeNote</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>removeNote</secondary></indexterm>
+<para><computeroutput>void DynamicAudio::Chord::removeNote (int index)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Remove a <link linkend="_struct_dynamic_audio_1_1_note">Note</link> by index. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>index</entry><entry>
+<para>The index of the <link linkend="_struct_dynamic_audio_1_1_note">Note</link> to remove. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_dynamic_audio_1_1_chord_1adbed9edfabdc85f351d0378590d850db"/><section>
+    <title>transpose()</title>
+<indexterm><primary>transpose</primary><secondary>DynamicAudio::Chord</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Chord</primary><secondary>transpose</secondary></indexterm>
+<para><computeroutput>void DynamicAudio::Chord::transpose (const NoteValue &amp; semitones)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Transpose the entire <link linkend="_class_dynamic_audio_1_1_chord">Chord</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>semitones</entry><entry>
+<para>The amount of semitones to transpose by. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Chord.h</section>
+</section>

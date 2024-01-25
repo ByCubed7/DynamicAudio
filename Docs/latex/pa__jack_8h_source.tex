@@ -1,0 +1,62 @@
+\doxysection{pa\+\_\+jack.\+h}
+\hypertarget{pa__jack_8h_source}{}\label{pa__jack_8h_source}\index{packages/portaudio.0.19.1/build/native/include/pa\_jack.h@{packages/portaudio.0.19.1/build/native/include/pa\_jack.h}}
+\mbox{\hyperlink{pa__jack_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PA\_JACK\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PA\_JACK\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \$Id:}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ PortAudio\ Portable\ Real-\/Time\ Audio\ Library}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ JACK-\/specific\ extensions}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ Copyright\ (c)\ 1999-\/2000\ Ross\ Bencina\ and\ Phil\ Burk}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ a\ copy\ of\ this\ software\ and\ associated\ documentation\ files}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ included\ in\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,\ OUT\ OF\ OR\ IN\ CONNECTION}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ The\ text\ above\ constitutes\ the\ entire\ PortAudio\ license;\ however,\ }}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ the\ PortAudio\ community\ also\ makes\ the\ following\ non-\/binding\ requests:}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ Any\ person\ wishing\ to\ distribute\ modifications\ to\ the\ Software\ is}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ requested\ to\ send\ the\ modifications\ to\ the\ original\ developer\ so\ that}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ they\ can\ be\ incorporated\ into\ the\ canonical\ version.\ It\ is\ also\ }}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ requested\ that\ these\ non-\/binding\ requests\ be\ included\ along\ with\ the\ }}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ license\ above.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00050\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00065\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__jack_8h_a20862b4b1a9dacea0deac5bedd225fc6}{PaJack\_SetClientName}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name\ );}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__jack_8h_a0582bde20a75bf2a8e70c46c71ac9a5e}{PaJack\_GetClientName}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ clientName);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

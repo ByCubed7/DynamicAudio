@@ -1,0 +1,405 @@
+\doxysection{portaudio.\+h}
+\hypertarget{portaudio_8h_source}{}\label{portaudio_8h_source}\index{packages/portaudio.0.19.1/build/native/include/portaudio.h@{packages/portaudio.0.19.1/build/native/include/portaudio.h}}
+\mbox{\hyperlink{portaudio_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PORTAUDIO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PORTAUDIO\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \$Id:\ portaudio.h\ 1859\ 2012-\/09-\/01\ 00:10:13Z\ philburk\ \$}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ PortAudio\ Portable\ Real-\/Time\ Audio\ Library}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ PortAudio\ API\ Header\ File}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Latest\ version\ available\ at:\ http://www.portaudio.com/}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ Copyright\ (c)\ 1999-\/2002\ Ross\ Bencina\ and\ Phil\ Burk}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ a\ copy\ of\ this\ software\ and\ associated\ documentation\ files}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ included\ in\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,\ OUT\ OF\ OR\ IN\ CONNECTION}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ The\ text\ above\ constitutes\ the\ entire\ PortAudio\ license;\ however,\ }}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ the\ PortAudio\ community\ also\ makes\ the\ following\ non-\/binding\ requests:}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ Any\ person\ wishing\ to\ distribute\ modifications\ to\ the\ Software\ is}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ requested\ to\ send\ the\ modifications\ to\ the\ original\ developer\ so\ that}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ they\ can\ be\ incorporated\ into\ the\ canonical\ version.\ It\ is\ also\ }}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ requested\ that\ these\ non-\/binding\ requests\ be\ included\ along\ with\ the\ }}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ license\ above.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{portaudio_8h_a66da08bcf908e0849c62a6b47f50d7b4}{Pa\_GetVersion}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{portaudio_8h_a5bc90e52be8c57a8a7dc8f44693412f0}{Pa\_GetVersionText}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}};}
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ PaErrorCode}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ paNoError\ =\ 0,}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ paNotInitialized\ =\ -\/10000,}
+\DoxyCodeLine{00076\ \ \ \ \ paUnanticipatedHostError,}
+\DoxyCodeLine{00077\ \ \ \ \ paInvalidChannelCount,}
+\DoxyCodeLine{00078\ \ \ \ \ paInvalidSampleRate,}
+\DoxyCodeLine{00079\ \ \ \ \ paInvalidDevice,}
+\DoxyCodeLine{00080\ \ \ \ \ paInvalidFlag,}
+\DoxyCodeLine{00081\ \ \ \ \ paSampleFormatNotSupported,}
+\DoxyCodeLine{00082\ \ \ \ \ paBadIODeviceCombination,}
+\DoxyCodeLine{00083\ \ \ \ \ paInsufficientMemory,}
+\DoxyCodeLine{00084\ \ \ \ \ paBufferTooBig,}
+\DoxyCodeLine{00085\ \ \ \ \ paBufferTooSmall,}
+\DoxyCodeLine{00086\ \ \ \ \ paNullCallback,}
+\DoxyCodeLine{00087\ \ \ \ \ paBadStreamPtr,}
+\DoxyCodeLine{00088\ \ \ \ \ paTimedOut,}
+\DoxyCodeLine{00089\ \ \ \ \ paInternalError,}
+\DoxyCodeLine{00090\ \ \ \ \ paDeviceUnavailable,}
+\DoxyCodeLine{00091\ \ \ \ \ paIncompatibleHostApiSpecificStreamInfo,}
+\DoxyCodeLine{00092\ \ \ \ \ paStreamIsStopped,}
+\DoxyCodeLine{00093\ \ \ \ \ paStreamIsNotStopped,}
+\DoxyCodeLine{00094\ \ \ \ \ paInputOverflowed,}
+\DoxyCodeLine{00095\ \ \ \ \ paOutputUnderflowed,}
+\DoxyCodeLine{00096\ \ \ \ \ paHostApiNotFound,}
+\DoxyCodeLine{00097\ \ \ \ \ paInvalidHostApi,}
+\DoxyCodeLine{00098\ \ \ \ \ paCanNotReadFromACallbackStream,}
+\DoxyCodeLine{00099\ \ \ \ \ paCanNotWriteToACallbackStream,}
+\DoxyCodeLine{00100\ \ \ \ \ paCanNotReadFromAnOutputOnlyStream,}
+\DoxyCodeLine{00101\ \ \ \ \ paCanNotWriteToAnInputOnlyStream,}
+\DoxyCodeLine{00102\ \ \ \ \ paIncompatibleStreamHostApi,}
+\DoxyCodeLine{00103\ \ \ \ \ paBadBufferPtr}
+\DoxyCodeLine{00104\ \}\ PaErrorCode;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{portaudio_8h_ae84ae07ba25bf959e00f3b0ab4d17acb}{Pa\_GetErrorText}}(\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ errorCode\ );}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00132\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\_Initialize}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00151\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\_Terminate}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00161\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ paNoDevice\ ((PaDeviceIndex)-\/1)}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ paUseHostApiSpecificDeviceSpecification\ ((PaDeviceIndex)-\/2)}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{comment}{/*\ Host\ API\ enumeration\ mechanism\ */}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00187\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00199\ \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}}\ \mbox{\hyperlink{portaudio_8h_a19dbdb7c8702e3f4bfc0cdb99dac3dd9}{Pa\_GetHostApiCount}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00210\ \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}}\ \mbox{\hyperlink{portaudio_8h_ae55c77f9b7e3f8eb301a6f1c0e2347ac}{Pa\_GetDefaultHostApi}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00224\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}}}
+\DoxyCodeLine{00225\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ paInDevelopment=0,\ \textcolor{comment}{/*\ use\ while\ developing\ support\ for\ a\ new\ host\ API\ */}}
+\DoxyCodeLine{00227\ \ \ \ \ paDirectSound=1,}
+\DoxyCodeLine{00228\ \ \ \ \ paMME=2,}
+\DoxyCodeLine{00229\ \ \ \ \ paASIO=3,}
+\DoxyCodeLine{00230\ \ \ \ \ paSoundManager=4,}
+\DoxyCodeLine{00231\ \ \ \ \ paCoreAudio=5,}
+\DoxyCodeLine{00232\ \ \ \ \ paOSS=7,}
+\DoxyCodeLine{00233\ \ \ \ \ paALSA=8,}
+\DoxyCodeLine{00234\ \ \ \ \ paAL=9,}
+\DoxyCodeLine{00235\ \ \ \ \ paBeOS=10,}
+\DoxyCodeLine{00236\ \ \ \ \ paWDMKS=11,}
+\DoxyCodeLine{00237\ \ \ \ \ paJACK=12,}
+\DoxyCodeLine{00238\ \ \ \ \ paWASAPI=13,}
+\DoxyCodeLine{00239\ \ \ \ \ paAudioScienceHPI=14}
+\DoxyCodeLine{00240\ \}\ \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00245\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_host_api_info}{PaHostApiInfo}}}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pa_host_api_info_a1f3a8c465488e7af8024237256d80c14}{structVersion}};}
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}}\ \mbox{\hyperlink{struct_pa_host_api_info_a5424bfcdf9f73b17cddc89e827a45d3f}{type}};}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_pa_host_api_info_a78afe5d557543c82cd9773229e25a8ec}{name}};}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pa_host_api_info_a44e3adfaba0117a6780e2493468c96b1}{deviceCount}};}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00265\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ \mbox{\hyperlink{struct_pa_host_api_info_a85a62057c3479d3efaa477d8562cf21d}{defaultInputDevice}};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00271\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ \mbox{\hyperlink{struct_pa_host_api_info_a62632690b5f7906d3c9bfdab91e7f4b2}{defaultOutputDevice}};}
+\DoxyCodeLine{00272\ \ \ \ \ }
+\DoxyCodeLine{00273\ \}\ \mbox{\hyperlink{portaudio_8h_ae32c4bc6235b2d0e5233d2148b4dfef0}{PaHostApiInfo}};}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00289\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pa_host_api_info}{PaHostApiInfo}}\ *\ \mbox{\hyperlink{portaudio_8h_afdd67ffc394c90f3ee78d51e51f8f22f}{Pa\_GetHostApiInfo}}(\ \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}}\ hostApi\ );}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00307\ \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}}\ \mbox{\hyperlink{portaudio_8h_a081c3975126d20b4226facfb7ba0620f}{Pa\_HostApiTypeIdToHostApiIndex}}(\ \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}}\ type\ );}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00331\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ \mbox{\hyperlink{portaudio_8h_a54f306b5e5258323c95a27c5722258cd}{Pa\_HostApiDeviceIndexToDeviceIndex}}(\ \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}}\ hostApi,}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hostApiDeviceIndex\ );}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00338\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_host_error_info}{PaHostErrorInfo}}\{}
+\DoxyCodeLine{00339\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}}\ \mbox{\hyperlink{struct_pa_host_error_info_aeadfc0e22fee75e94541876d6d7a91f7}{hostApiType}};\ \ \ \ }
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_pa_host_error_info_a2ab15f358cd7f0a5e8f3d54e161a2fec}{errorCode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_pa_host_error_info_aa40a7ed0c73b85b39563d80f7877876c}{errorText}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00342\ \}\mbox{\hyperlink{portaudio_8h_aae5f7523aa88f6e1ab05230103bd3560}{PaHostErrorInfo}};}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00358\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pa_host_error_info}{PaHostErrorInfo}}*\ \mbox{\hyperlink{portaudio_8h_a1d0652aef223200f9401bb28fe04a3ad}{Pa\_GetLastHostErrorInfo}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \textcolor{comment}{/*\ Device\ enumeration\ and\ capabilities\ */}}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00371\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ \mbox{\hyperlink{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}{Pa\_GetDeviceCount}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00380\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ \mbox{\hyperlink{portaudio_8h_abf9f2f82da95553d5adb929af670f74b}{Pa\_GetDefaultInputDevice}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00398\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ \mbox{\hyperlink{portaudio_8h_adc955dfab007624000695c48d4f876dc}{Pa\_GetDefaultOutputDevice}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00409\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}};}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00433\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}};}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#define\ paFloat32\ \ \ \ \ \ \ \ ((PaSampleFormat)\ 0x00000001)\ }}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ paInt32\ \ \ \ \ \ \ \ \ \ ((PaSampleFormat)\ 0x00000002)\ }}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#define\ paInt24\ \ \ \ \ \ \ \ \ \ ((PaSampleFormat)\ 0x00000004)\ }}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\#define\ paInt16\ \ \ \ \ \ \ \ \ \ ((PaSampleFormat)\ 0x00000008)\ }}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#define\ paInt8\ \ \ \ \ \ \ \ \ \ \ ((PaSampleFormat)\ 0x00000010)\ }}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ paUInt8\ \ \ \ \ \ \ \ \ \ ((PaSampleFormat)\ 0x00000020)\ }}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ paCustomFormat\ \ \ ((PaSampleFormat)\ 0x00010000)\ }}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#define\ paNonInterleaved\ ((PaSampleFormat)\ 0x80000000)\ }}
+\DoxyCodeLine{00449\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_device_info}{PaDeviceInfo}}}
+\DoxyCodeLine{00450\ \{}
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordtype}{int}\ structVersion;\ \ \textcolor{comment}{/*\ this\ is\ struct\ version\ 2\ */}}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name;}
+\DoxyCodeLine{00453\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}}\ \mbox{\hyperlink{struct_pa_device_info_afe741e4d185069577f7e74b78fdef5a4}{hostApi}};\ }
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordtype}{int}\ maxInputChannels;}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordtype}{int}\ maxOutputChannels;}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00459\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ \mbox{\hyperlink{struct_pa_device_info_aad6629064b8c7cf043d237ea0a5cc534}{defaultLowInputLatency}};}
+\DoxyCodeLine{00460\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ defaultLowOutputLatency;}
+\DoxyCodeLine{00462\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ \mbox{\hyperlink{struct_pa_device_info_a4214826038fcaf374beb9816024e6c9f}{defaultHighInputLatency}};}
+\DoxyCodeLine{00463\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ defaultHighOutputLatency;}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordtype}{double}\ defaultSampleRate;}
+\DoxyCodeLine{00466\ \}\ \mbox{\hyperlink{portaudio_8h_a6c6fa3fb5640759651ae5a5e69e45cdc}{PaDeviceInfo}};}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00482\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pa_device_info}{PaDeviceInfo}}*\ \mbox{\hyperlink{portaudio_8h_ab7a149915fdbf90cff993d588619e7e8}{Pa\_GetDeviceInfo}}(\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ device\ );}
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00487\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}}}
+\DoxyCodeLine{00488\ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ \mbox{\hyperlink{struct_pa_stream_parameters_aebaf648b4d11dd1252a747b76b8da084}{device}};}
+\DoxyCodeLine{00496\ \ \ \ \ }
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pa_stream_parameters_a861ff361da71fc2572dd356c9c9878ca}{channelCount}};}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00508\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}}\ \mbox{\hyperlink{struct_pa_stream_parameters_ad8d2d3063757b812f9e5f8709f41052b}{sampleFormat}};}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00521\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ \mbox{\hyperlink{struct_pa_stream_parameters_aa1e80ac0551162fd091db8936ccbe9a0}{suggestedLatency}};}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00528\ \ \ \ \ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{struct_pa_stream_parameters_aff01b9fa0710ad1654471e97665c06a9}{hostApiSpecificStreamInfo}};}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \}\ \mbox{\hyperlink{portaudio_8h_a978b2ed65ea4740d6999a402b0c3ee76}{PaStreamParameters}};}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ paFormatIsSupported\ (0)}}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00558\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_abdb313743d6efef26cecdae787a2bd3d}{Pa\_IsFormatSupported}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}}\ *inputParameters,}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}}\ *outputParameters,}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sampleRate\ );}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \textcolor{comment}{/*\ Streaming\ types\ and\ functions\ */}}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00566\ }
+\DoxyCodeLine{00584\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}};}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00586\ }
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#define\ paFramesPerBufferUnspecified\ \ (0)}}
+\DoxyCodeLine{00592\ }
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00602\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{PaStreamFlags}};}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00605\ \textcolor{preprocessor}{\#define\ \ \ paNoFlag\ \ \ \ \ \ \ \ \ \ ((PaStreamFlags)\ 0)}}
+\DoxyCodeLine{00606\ }
+\DoxyCodeLine{00610\ \textcolor{preprocessor}{\#define\ \ \ paClipOff\ \ \ \ \ \ \ \ \ ((PaStreamFlags)\ 0x00000001)}}
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00615\ \textcolor{preprocessor}{\#define\ \ \ paDitherOff\ \ \ \ \ \ \ ((PaStreamFlags)\ 0x00000002)}}
+\DoxyCodeLine{00616\ }
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#define\ \ \ paNeverDropInput\ \ ((PaStreamFlags)\ 0x00000004)}}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\#define\ \ \ paPrimeOutputBuffersUsingStreamCallback\ ((PaStreamFlags)\ 0x00000008)}}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00639\ \textcolor{preprocessor}{\#define\ \ \ paPlatformSpecificFlags\ ((PaStreamFlags)0xFFFF0000)}}
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00648\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}}\{}
+\DoxyCodeLine{00649\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ \mbox{\hyperlink{struct_pa_stream_callback_time_info_ad114a6d5e1cf2cdd75837c33c1c8bb4c}{inputBufferAdcTime}};\ \ }
+\DoxyCodeLine{00650\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ \mbox{\hyperlink{struct_pa_stream_callback_time_info_af21eb5482cadb212dae38fdbbd9bebfb}{currentTime}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00651\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ \mbox{\hyperlink{struct_pa_stream_callback_time_info_aa2052c42394fca748e83517fc8942609}{outputBufferDacTime}};\ }
+\DoxyCodeLine{00652\ \}\ \mbox{\hyperlink{portaudio_8h_a1832c268abf8a9074265c436c7f1207d}{PaStreamCallbackTimeInfo}};}
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00654\ }
+\DoxyCodeLine{00661\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}};}
+\DoxyCodeLine{00662\ }
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#define\ paInputUnderflow\ \ \ ((PaStreamCallbackFlags)\ 0x00000001)}}
+\DoxyCodeLine{00671\ }
+\DoxyCodeLine{00679\ \textcolor{preprocessor}{\#define\ paInputOverflow\ \ \ \ ((PaStreamCallbackFlags)\ 0x00000002)}}
+\DoxyCodeLine{00680\ }
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\#define\ paOutputUnderflow\ \ ((PaStreamCallbackFlags)\ 0x00000004)}}
+\DoxyCodeLine{00686\ }
+\DoxyCodeLine{00690\ \textcolor{preprocessor}{\#define\ paOutputOverflow\ \ \ ((PaStreamCallbackFlags)\ 0x00000008)}}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00696\ \textcolor{preprocessor}{\#define\ paPrimingOutput\ \ \ \ ((PaStreamCallbackFlags)\ 0x00000010)}}
+\DoxyCodeLine{00697\ }
+\DoxyCodeLine{00702\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32}{PaStreamCallbackResult}}}
+\DoxyCodeLine{00703\ \{}
+\DoxyCodeLine{00704\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32acba49cbf0e3bf605bb3deecef3b4fce3}{paContinue}}=0,\ \ \ }
+\DoxyCodeLine{00705\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32aa01800db52ead393d8b0016f63d76650}{paComplete}}=1,\ \ \ }
+\DoxyCodeLine{00706\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32acaf141eb5d71420ffb4474da1dbd8de2}{paAbort}}=2\ \ \ \ \ \ \ }
+\DoxyCodeLine{00707\ \}\ \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32}{PaStreamCallbackResult}};}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00779\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{PaStreamCallback}}(}
+\DoxyCodeLine{00780\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *input,\ \textcolor{keywordtype}{void}\ *output,}
+\DoxyCodeLine{00781\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ frameCount,}
+\DoxyCodeLine{00782\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}}*\ timeInfo,}
+\DoxyCodeLine{00783\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}}\ statusFlags,}
+\DoxyCodeLine{00784\ \ \ \ \ \textcolor{keywordtype}{void}\ *userData\ );}
+\DoxyCodeLine{00785\ }
+\DoxyCodeLine{00786\ }
+\DoxyCodeLine{00841\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\_OpenStream}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}**\ stream,}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}}\ *inputParameters,}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}}\ *outputParameters,}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sampleRate,}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ framesPerBuffer,}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{PaStreamFlags}}\ streamFlags,}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{PaStreamCallback}}\ *streamCallback,}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *userData\ );}
+\DoxyCodeLine{00849\ }
+\DoxyCodeLine{00850\ }
+\DoxyCodeLine{00881\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a0a12735ac191200f696a43b87667b714}{Pa\_OpenDefaultStream}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}**\ stream,}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numInputChannels,}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numOutputChannels,}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}}\ sampleFormat,}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sampleRate,}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ framesPerBuffer,}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{PaStreamCallback}}\ *streamCallback,}
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *userData\ );}
+\DoxyCodeLine{00889\ }
+\DoxyCodeLine{00890\ }
+\DoxyCodeLine{00894\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a92f56f88cbd14da0e8e03077e835d104}{Pa\_CloseStream}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}\ *stream\ );}
+\DoxyCodeLine{00895\ }
+\DoxyCodeLine{00896\ }
+\DoxyCodeLine{00911\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{PaStreamFinishedCallback}}(\ \textcolor{keywordtype}{void}\ *userData\ );}
+\DoxyCodeLine{00912\ }
+\DoxyCodeLine{00913\ }
+\DoxyCodeLine{00932\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_aa11e7b06b2cde8621551f5d527965838}{Pa\_SetStreamFinishedCallback}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}\ *stream,\ \mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{PaStreamFinishedCallback}}*\ streamFinishedCallback\ );\ }
+\DoxyCodeLine{00933\ }
+\DoxyCodeLine{00934\ }
+\DoxyCodeLine{00937\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a7432aadd26c40452da12fa99fc1a047b}{Pa\_StartStream}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}\ *stream\ );}
+\DoxyCodeLine{00938\ }
+\DoxyCodeLine{00939\ }
+\DoxyCodeLine{00943\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\_StopStream}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}\ *stream\ );}
+\DoxyCodeLine{00944\ }
+\DoxyCodeLine{00945\ }
+\DoxyCodeLine{00949\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a138e57abde4e833c457b64895f638a25}{Pa\_AbortStream}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}\ *stream\ );}
+\DoxyCodeLine{00950\ }
+\DoxyCodeLine{00951\ }
+\DoxyCodeLine{00964\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a52d778c985ae9d566de7e13529cc771f}{Pa\_IsStreamStopped}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}\ *stream\ );}
+\DoxyCodeLine{00965\ }
+\DoxyCodeLine{00966\ }
+\DoxyCodeLine{00980\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a1f8709c4971932643681a6f374c4bb5a}{Pa\_IsStreamActive}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}\ *stream\ );}
+\DoxyCodeLine{00981\ }
+\DoxyCodeLine{00982\ }
+\DoxyCodeLine{00983\ }
+\DoxyCodeLine{00988\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_stream_info}{PaStreamInfo}}}
+\DoxyCodeLine{00989\ \{}
+\DoxyCodeLine{00991\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pa_stream_info_a5e053a3f0f6232a5d1ec0dee0f9a943b}{structVersion}};}
+\DoxyCodeLine{00992\ }
+\DoxyCodeLine{00999\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ \mbox{\hyperlink{struct_pa_stream_info_a1f5339e0fef75cea66d9153235698399}{inputLatency}};}
+\DoxyCodeLine{01000\ }
+\DoxyCodeLine{01007\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ \mbox{\hyperlink{struct_pa_stream_info_a372a81f39d90a85ae62225e9f57a7840}{outputLatency}};}
+\DoxyCodeLine{01008\ }
+\DoxyCodeLine{01016\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_pa_stream_info_a9200fdee790d9155bc35d03be51ee2dd}{sampleRate}};}
+\DoxyCodeLine{01017\ \ \ \ \ }
+\DoxyCodeLine{01018\ \}\ \mbox{\hyperlink{portaudio_8h_a65f7a59ec586145cf5de77fccd1ecac9}{PaStreamInfo}};}
+\DoxyCodeLine{01019\ }
+\DoxyCodeLine{01020\ }
+\DoxyCodeLine{01034\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pa_stream_info}{PaStreamInfo}}*\ \mbox{\hyperlink{portaudio_8h_ab9207d6191bb1f1725470a9cae98436d}{Pa\_GetStreamInfo}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}\ *stream\ );}
+\DoxyCodeLine{01035\ }
+\DoxyCodeLine{01036\ }
+\DoxyCodeLine{01052\ \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}\ \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\_GetStreamTime}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}\ *stream\ );}
+\DoxyCodeLine{01053\ }
+\DoxyCodeLine{01054\ }
+\DoxyCodeLine{01071\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{portaudio_8h_a83b8c624464dd7bb6a01b06ab596c115}{Pa\_GetStreamCpuLoad}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}*\ stream\ );}
+\DoxyCodeLine{01072\ }
+\DoxyCodeLine{01073\ }
+\DoxyCodeLine{01095\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a0b62d4b74b5d3d88368e9e4c0b8b2dc7}{Pa\_ReadStream}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}*\ stream,}
+\DoxyCodeLine{01096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *buffer,}
+\DoxyCodeLine{01097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ frames\ );}
+\DoxyCodeLine{01098\ }
+\DoxyCodeLine{01099\ }
+\DoxyCodeLine{01122\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a075a6efb503a728213bdae24347ed27d}{Pa\_WriteStream}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}*\ stream,}
+\DoxyCodeLine{01123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buffer,}
+\DoxyCodeLine{01124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ frames\ );}
+\DoxyCodeLine{01125\ }
+\DoxyCodeLine{01126\ }
+\DoxyCodeLine{01135\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{portaudio_8h_ad04c33f045fa58d7b705b56b1fd3e816}{Pa\_GetStreamReadAvailable}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}*\ stream\ );}
+\DoxyCodeLine{01136\ }
+\DoxyCodeLine{01137\ }
+\DoxyCodeLine{01146\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{portaudio_8h_a25595acf48733ec32045aa189c3caa61}{Pa\_GetStreamWriteAvailable}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}*\ stream\ );}
+\DoxyCodeLine{01147\ }
+\DoxyCodeLine{01148\ }
+\DoxyCodeLine{01149\ \textcolor{comment}{/*\ Miscellaneous\ utilities\ */}}
+\DoxyCodeLine{01150\ }
+\DoxyCodeLine{01151\ }
+\DoxyCodeLine{01157\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{portaudio_8h_a541ed0b734df2631bc4c229acf92abc1}{Pa\_GetSampleSize}}(\ \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}}\ format\ );}
+\DoxyCodeLine{01158\ }
+\DoxyCodeLine{01159\ }
+\DoxyCodeLine{01167\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{portaudio_8h_a1b3c20044c9401c42add29475636e83d}{Pa\_Sleep}}(\ \textcolor{keywordtype}{long}\ msec\ );}
+\DoxyCodeLine{01168\ }
+\DoxyCodeLine{01169\ }
+\DoxyCodeLine{01170\ }
+\DoxyCodeLine{01171\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{01172\ \}}
+\DoxyCodeLine{01173\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01174\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PORTAUDIO\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

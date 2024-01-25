@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pa__win__wdmks_8h" xml:lang="en-US">
+<title>packages/portaudio.0.19.1/build/native/include/pa_win_wdmks.h File Reference</title>
+<indexterm><primary>packages/portaudio.0.19.1/build/native/include/pa_win_wdmks.h</primary></indexterm>
+<para>
+
+<para>WDM Kernel Streaming-specific PortAudio API extension header file. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;portaudio.h&quot;<?linebreak?>#include &lt;windows.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_pa_win_w_d_m_k_s_info">PaWinWDMKSInfo</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_pa_win_w_d_m_k_s_device_info">PaWinWDMKSDeviceInfo</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_pa_w_d_m_k_s_direction_specific_stream_info">PaWDMKSDirectionSpecificStreamInfo</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_pa_w_d_m_k_s_specific_stream_info">PaWDMKSSpecificStreamInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_pa__win__wdmks_8h_1a5c908c7323f6478676a8c2ce8acd71f2"/>typedef struct PaWinWDMKSInfo <emphasis role="strong">PaWinWDMKSInfo</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wdmks_8h_1aed95d8decaad8511126206f575287df4"/>typedef enum PaWDMKSType <emphasis role="strong">PaWDMKSType</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wdmks_8h_1aea1e9e518e29ef55658d1d2ae8745991"/>typedef enum PaWDMKSSubType <emphasis role="strong">PaWDMKSSubType</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wdmks_8h_1ad0f32a25b7b56fce987a6adf9576a1ec"/>typedef struct PaWinWDMKSDeviceInfo <emphasis role="strong">PaWinWDMKSDeviceInfo</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wdmks_8h_1a58357b969802c0f04f37f9237b5165f9"/>typedef struct PaWDMKSDirectionSpecificStreamInfo <emphasis role="strong">PaWDMKSDirectionSpecificStreamInfo</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wdmks_8h_1acce060d2c2c243c34649513537f13d95"/>typedef struct PaWDMKSSpecificStreamInfo <emphasis role="strong">PaWDMKSSpecificStreamInfo</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_pa__win__wdmks_8h_1ae95ef18411a817c541880a08fe5ca1f8"/>enum <emphasis role="strong">PaWDMKSType</emphasis> { <emphasis role="strong">Type_kNotUsed</emphasis>
+, <emphasis role="strong">Type_kWaveCyclic</emphasis>
+, <emphasis role="strong">Type_kWaveRT</emphasis>
+, <emphasis role="strong">Type_kCnt</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__win__wdmks_8h_1ab1fecd3bd8c22ca5820fee46fc9d89c2"/>enum <emphasis role="strong">PaWDMKSSubType</emphasis> { <emphasis role="strong">SubType_kUnknown</emphasis>
+, <emphasis role="strong">SubType_kNotification</emphasis>
+, <emphasis role="strong">SubType_kPolled</emphasis>
+, <emphasis role="strong">SubType_kCnt</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>WDM Kernel Streaming-specific PortAudio API extension header file. </para>
+</section>
+</section>

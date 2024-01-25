@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_dynamic_audio_1_1_note" xml:lang="en-US">
+<title>DynamicAudio::Note Struct Reference</title>
+<indexterm><primary>DynamicAudio::Note</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <emphasis role="strong">Duration</emphasis></para>
+</listitem>
+            <listitem><para>struct <emphasis role="strong">Value</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_dynamic_audio_1_1_note_1a423696fc1f0170418afa313057355084"/><emphasis role="strong">Note</emphasis> (NoteValueType _value, NoteDurationType _duration)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_dynamic_audio_1_1_note_1ab409989bba7afbdd9622d9a7e0cf169d"/><emphasis role="strong">Note</emphasis> (NoteValueType _value)</para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_dynamic_audio_1_1_note_1a8827919f5db76b634058ce1ff14c91a5">transpose</link> (NoteValueType semitones)</para>
+
+<para>Transpose the <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_dynamic_audio_1_1_note_1ab6afeb3e78f615b0d623b5a27e5c6ce0"/>double <emphasis role="strong">calculateFrequency</emphasis> ()</para>
+
+<para>Calculates the notes frequency. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_dynamic_audio_1_1_note_1a93afb4fad6c3c44795659b03c04f9083"/><link linkend="_struct_dynamic_audio_1_1_note">Note</link> <emphasis role="strong">operator+</emphasis> (const NoteValueType &amp;semitones)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_dynamic_audio_1_1_note_1ab81b6ba8f0d63618aa7cf6b6e87b0d23"/>static <link linkend="_struct_dynamic_audio_1_1_note">Note</link> <emphasis role="strong">null</emphasis> (NoteDurationType <link linkend="_struct_dynamic_audio_1_1_note_1a63379e312a71432e2c3d81ebedf2a919">duration</link>=Duration::Semibreve)</para>
+
+<para>Returns a <link linkend="_struct_dynamic_audio_1_1_note">Note</link> with no value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_dynamic_audio_1_1_note_1a495e3b2c5015739a97b00977af10b262"/>NoteValueType <emphasis role="strong">value</emphasis></para>
+
+<para>The value of the note. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_dynamic_audio_1_1_note_1a63379e312a71432e2c3d81ebedf2a919"/>NoteDurationType <emphasis role="strong">duration</emphasis></para>
+
+<para>The duration of the note. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_dynamic_audio_1_1_note_1a0b9e8ca84f1ee30aff88f8c524c9f583"/>bool <emphasis role="strong">operator==</emphasis> (const <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &amp;lhs, const <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &amp;rhs)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_dynamic_audio_1_1_note_1a5d88c24438eacd611b572221345fbfe8"/>bool <emphasis role="strong">operator!=</emphasis> (const <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &amp;lhs, const <link linkend="_struct_dynamic_audio_1_1_note">Note</link> &amp;rhs)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_dynamic_audio_1_1_note_1a8827919f5db76b634058ce1ff14c91a5"/><section>
+    <title>transpose()</title>
+<indexterm><primary>transpose</primary><secondary>DynamicAudio::Note</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Note</primary><secondary>transpose</secondary></indexterm>
+<para><computeroutput>void DynamicAudio::Note::transpose (NoteValueType semitones)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Transpose the <link linkend="_struct_dynamic_audio_1_1_note">Note</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>semitones</entry><entry>
+<para>The amount of semitones to transpose by. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Note.h</section>
+</section>

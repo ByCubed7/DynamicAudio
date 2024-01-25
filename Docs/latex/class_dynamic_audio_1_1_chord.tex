@@ -1,0 +1,255 @@
+\doxysection{Dynamic\+Audio\+::Chord Class Reference}
+\hypertarget{class_dynamic_audio_1_1_chord}{}\label{class_dynamic_audio_1_1_chord}\index{DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dynamic_audio_1_1_chord_a39a962330e9b97b0c3e88d5cefc7f83a}\label{class_dynamic_audio_1_1_chord_a39a962330e9b97b0c3e88d5cefc7f83a} 
+{\bfseries Chord} (const std\+::vector$<$ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} $>$ \&notes)
+\item 
+void \mbox{\hyperlink{class_dynamic_audio_1_1_chord_aeaafcbcfe06743f8739c144b769e7064}{add\+Note}} (const \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \&note)
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{struct_dynamic_audio_1_1_note}{Note} to the \doxylink{class_dynamic_audio_1_1_chord}{Chord}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dynamic_audio_1_1_chord_aaf29475c17f6a870177d64f9a313f06d}{add\+Null}} (double duration)
+\begin{DoxyCompactList}\small\item\em Adds an empty \doxylink{struct_dynamic_audio_1_1_note}{Note}. \end{DoxyCompactList}\item 
+\Hypertarget{class_dynamic_audio_1_1_chord_adf95fabc477782c8145fb9d7f48b71e6}\label{class_dynamic_audio_1_1_chord_adf95fabc477782c8145fb9d7f48b71e6} 
+const std\+::vector$<$ \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} $>$ \& {\bfseries all\+Notes} () const
+\begin{DoxyCompactList}\small\item\em \begin{DoxyReturn}{Returns}
+A vector of the \doxylink{struct_dynamic_audio_1_1_note}{Note} collection. 
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dynamic_audio_1_1_chord_ac9f75e81eefc82d166a89b17c2e76b40}{remove\+Note}} (const \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \&note)
+\begin{DoxyCompactList}\small\item\em Removes the given \doxylink{struct_dynamic_audio_1_1_note}{Note} from the \doxylink{class_dynamic_audio_1_1_chord}{Chord}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dynamic_audio_1_1_chord_a230dd2fb9472a272153ae00800535b7b}{remove\+Note}} (int index)
+\begin{DoxyCompactList}\small\item\em Remove a \doxylink{struct_dynamic_audio_1_1_note}{Note} by index. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dynamic_audio_1_1_chord_a2818fc32db79290a616fee3ffdcf0a39}{has\+Note}} (const \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \&note) const
+\begin{DoxyCompactList}\small\item\em Whether the \doxylink{class_dynamic_audio_1_1_chord}{Chord} has the given \doxylink{struct_dynamic_audio_1_1_note}{Note}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dynamic_audio_1_1_chord_adbed9edfabdc85f351d0378590d850db}{transpose}} (const Note\+Value \&semitones)
+\begin{DoxyCompactList}\small\item\em Transpose the entire \doxylink{class_dynamic_audio_1_1_chord}{Chord}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \mbox{\hyperlink{class_dynamic_audio_1_1_chord_a1a21766f30d571e99fead468a58b014e}{first}} () const
+\begin{DoxyCompactList}\small\item\em The first \doxylink{struct_dynamic_audio_1_1_note}{Note} in the \doxylink{class_dynamic_audio_1_1_chord}{Chord}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dynamic_audio_1_1_chord_a786a2518b3d5bf8cb402a9921cdb1c3f}{max\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Gets the longest \doxylink{struct_dynamic_audio_1_1_note}{Note} in the \doxylink{class_dynamic_audio_1_1_chord}{Chord}. This is how long the \doxylink{class_dynamic_audio_1_1_chord}{Chord} will play for. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} \mbox{\hyperlink{class_dynamic_audio_1_1_chord_a03c53471b220dcec7d49f8a1c45ec1ed}{get\+Scale}} (\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} root)
+\begin{DoxyCompactList}\small\item\em Calculates the \doxylink{class_dynamic_audio_1_1_chord}{Chord} scale. For simplicity, we\textquotesingle{}ll assume a major \doxylink{class_dynamic_audio_1_1_chord}{Chord}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} \mbox{\hyperlink{class_dynamic_audio_1_1_chord_ace3534997f4ee6423d2cc116d710dea0}{get\+Arpeggio}} (\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} root)
+\begin{DoxyCompactList}\small\item\em Calculates the \doxylink{class_dynamic_audio_1_1_chord}{Chord} arpeggio. For simplicity, we\textquotesingle{}ll assume a major \doxylink{class_dynamic_audio_1_1_chord}{Chord}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} \mbox{\hyperlink{class_dynamic_audio_1_1_chord_a34b9e5af3c2b4813d53b02df1a4bbddf}{null}} (Note\+Length length)
+\begin{DoxyCompactList}\small\item\em Creates a null \doxylink{class_dynamic_audio_1_1_chord}{Chord} of a given duration. This just contains a null \doxylink{struct_dynamic_audio_1_1_note}{Note}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} \mbox{\hyperlink{class_dynamic_audio_1_1_chord_ae45ea9ad5dea672253c02a5a31402fe2}{from\+Note}} (\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} note)
+\begin{DoxyCompactList}\small\item\em Converts the given \doxylink{struct_dynamic_audio_1_1_note}{Note} to a given \doxylink{class_dynamic_audio_1_1_chord}{Chord}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} \mbox{\hyperlink{class_dynamic_audio_1_1_chord_a473fb03158b675b5309a00c9aa5d3d40}{empty}} ()
+\begin{DoxyCompactList}\small\item\em An empty \doxylink{class_dynamic_audio_1_1_chord}{Chord}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dynamic_audio_1_1_chord_aeaafcbcfe06743f8739c144b769e7064}\label{class_dynamic_audio_1_1_chord_aeaafcbcfe06743f8739c144b769e7064} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!addNote@{addNote}}
+\index{addNote@{addNote}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{addNote()}{addNote()}}
+{\footnotesize\ttfamily void Dynamic\+Audio\+::\+Chord\+::add\+Note (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \&}]{note }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a \doxylink{struct_dynamic_audio_1_1_note}{Note} to the \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em note} & The note to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dynamic_audio_1_1_chord_aaf29475c17f6a870177d64f9a313f06d}\label{class_dynamic_audio_1_1_chord_aaf29475c17f6a870177d64f9a313f06d} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!addNull@{addNull}}
+\index{addNull@{addNull}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{addNull()}{addNull()}}
+{\footnotesize\ttfamily void Dynamic\+Audio\+::\+Chord\+::add\+Null (\begin{DoxyParamCaption}\item[{double}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds an empty \doxylink{struct_dynamic_audio_1_1_note}{Note}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & The duration of the empty \doxylink{struct_dynamic_audio_1_1_note}{Note}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dynamic_audio_1_1_chord_a473fb03158b675b5309a00c9aa5d3d40}\label{class_dynamic_audio_1_1_chord_a473fb03158b675b5309a00c9aa5d3d40} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!empty@{empty}}
+\index{empty@{empty}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} Dynamic\+Audio\+::\+Chord\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+An empty \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_dynamic_audio_1_1_chord}{Chord} with nothing inside. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_audio_1_1_chord_a1a21766f30d571e99fead468a58b014e}\label{class_dynamic_audio_1_1_chord_a1a21766f30d571e99fead468a58b014e} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!first@{first}}
+\index{first@{first}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} Dynamic\+Audio\+::\+Chord\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The first \doxylink{struct_dynamic_audio_1_1_note}{Note} in the \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+
+\begin{DoxyReturn}{Returns}
+The first \doxylink{struct_dynamic_audio_1_1_note}{Note} in the \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_audio_1_1_chord_ae45ea9ad5dea672253c02a5a31402fe2}\label{class_dynamic_audio_1_1_chord_ae45ea9ad5dea672253c02a5a31402fe2} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!fromNote@{fromNote}}
+\index{fromNote@{fromNote}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{fromNote()}{fromNote()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} Dynamic\+Audio\+::\+Chord\+::from\+Note (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}}]{note }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Converts the given \doxylink{struct_dynamic_audio_1_1_note}{Note} to a given \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em note} & The \doxylink{struct_dynamic_audio_1_1_note}{Note} to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_audio_1_1_chord_ace3534997f4ee6423d2cc116d710dea0}\label{class_dynamic_audio_1_1_chord_ace3534997f4ee6423d2cc116d710dea0} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!getArpeggio@{getArpeggio}}
+\index{getArpeggio@{getArpeggio}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{getArpeggio()}{getArpeggio()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} Dynamic\+Audio\+::\+Chord\+::get\+Arpeggio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the \doxylink{class_dynamic_audio_1_1_chord}{Chord} arpeggio. For simplicity, we\textquotesingle{}ll assume a major \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & The root \doxylink{struct_dynamic_audio_1_1_note}{Note} to calculate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{class_dynamic_audio_1_1_chord}{Chord} of the arpeggio-\/ed \doxylink{struct_dynamic_audio_1_1_note}{Note}. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_audio_1_1_chord_a03c53471b220dcec7d49f8a1c45ec1ed}\label{class_dynamic_audio_1_1_chord_a03c53471b220dcec7d49f8a1c45ec1ed} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!getScale@{getScale}}
+\index{getScale@{getScale}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} Dynamic\+Audio\+::\+Chord\+::get\+Scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}}}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the \doxylink{class_dynamic_audio_1_1_chord}{Chord} scale. For simplicity, we\textquotesingle{}ll assume a major \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & The root \doxylink{struct_dynamic_audio_1_1_note}{Note} to calculate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{class_dynamic_audio_1_1_chord}{Chord} of the scaled \doxylink{struct_dynamic_audio_1_1_note}{Note}. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_audio_1_1_chord_a2818fc32db79290a616fee3ffdcf0a39}\label{class_dynamic_audio_1_1_chord_a2818fc32db79290a616fee3ffdcf0a39} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!hasNote@{hasNote}}
+\index{hasNote@{hasNote}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{hasNote()}{hasNote()}}
+{\footnotesize\ttfamily bool Dynamic\+Audio\+::\+Chord\+::has\+Note (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \&}]{note }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Whether the \doxylink{class_dynamic_audio_1_1_chord}{Chord} has the given \doxylink{struct_dynamic_audio_1_1_note}{Note}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em note} & The \doxylink{struct_dynamic_audio_1_1_note}{Note} to check for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the \doxylink{class_dynamic_audio_1_1_chord}{Chord} has the given \doxylink{struct_dynamic_audio_1_1_note}{Note}. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_audio_1_1_chord_a786a2518b3d5bf8cb402a9921cdb1c3f}\label{class_dynamic_audio_1_1_chord_a786a2518b3d5bf8cb402a9921cdb1c3f} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!maxDuration@{maxDuration}}
+\index{maxDuration@{maxDuration}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{maxDuration()}{maxDuration()}}
+{\footnotesize\ttfamily double Dynamic\+Audio\+::\+Chord\+::max\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the longest \doxylink{struct_dynamic_audio_1_1_note}{Note} in the \doxylink{class_dynamic_audio_1_1_chord}{Chord}. This is how long the \doxylink{class_dynamic_audio_1_1_chord}{Chord} will play for. 
+
+\begin{DoxyReturn}{Returns}
+The length on the longest \doxylink{struct_dynamic_audio_1_1_note}{Note}. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_audio_1_1_chord_a34b9e5af3c2b4813d53b02df1a4bbddf}\label{class_dynamic_audio_1_1_chord_a34b9e5af3c2b4813d53b02df1a4bbddf} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!null@{null}}
+\index{null@{null}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{null()}{null()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_dynamic_audio_1_1_chord}{Chord}} Dynamic\+Audio\+::\+Chord\+::null (\begin{DoxyParamCaption}\item[{Note\+Length}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a null \doxylink{class_dynamic_audio_1_1_chord}{Chord} of a given duration. This just contains a null \doxylink{struct_dynamic_audio_1_1_note}{Note}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & The duration of the nulled \doxylink{class_dynamic_audio_1_1_chord}{Chord}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A null \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_audio_1_1_chord_ac9f75e81eefc82d166a89b17c2e76b40}\label{class_dynamic_audio_1_1_chord_ac9f75e81eefc82d166a89b17c2e76b40} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!removeNote@{removeNote}}
+\index{removeNote@{removeNote}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{removeNote()}{removeNote()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dynamic\+Audio\+::\+Chord\+::remove\+Note (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_dynamic_audio_1_1_note}{Note}} \&}]{note }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes the given \doxylink{struct_dynamic_audio_1_1_note}{Note} from the \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em note} & The \doxylink{struct_dynamic_audio_1_1_note}{Note} to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dynamic_audio_1_1_chord_a230dd2fb9472a272153ae00800535b7b}\label{class_dynamic_audio_1_1_chord_a230dd2fb9472a272153ae00800535b7b} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!removeNote@{removeNote}}
+\index{removeNote@{removeNote}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{removeNote()}{removeNote()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dynamic\+Audio\+::\+Chord\+::remove\+Note (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove a \doxylink{struct_dynamic_audio_1_1_note}{Note} by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the \doxylink{struct_dynamic_audio_1_1_note}{Note} to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dynamic_audio_1_1_chord_adbed9edfabdc85f351d0378590d850db}\label{class_dynamic_audio_1_1_chord_adbed9edfabdc85f351d0378590d850db} 
+\index{DynamicAudio::Chord@{DynamicAudio::Chord}!transpose@{transpose}}
+\index{transpose@{transpose}!DynamicAudio::Chord@{DynamicAudio::Chord}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily void Dynamic\+Audio\+::\+Chord\+::transpose (\begin{DoxyParamCaption}\item[{const Note\+Value \&}]{semitones }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transpose the entire \doxylink{class_dynamic_audio_1_1_chord}{Chord}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em semitones} & The amount of semitones to transpose by. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Chord.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pa__win__waveformat_8h_source" xml:lang="en-US">
+<title>pa_win_waveformat.h</title>
+<indexterm><primary>packages/portaudio.0.19.1/build/native/include/pa_win_waveformat.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;PA_WIN_WAVEFORMAT_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;PA_WIN_WAVEFORMAT_H</emphasis>
+3 
+4 <emphasis role="comment">/*</emphasis>
+5 <emphasis role="comment">&#32;*&#32;PortAudio&#32;Portable&#32;Real-Time&#32;Audio&#32;Library</emphasis>
+6 <emphasis role="comment">&#32;*&#32;Windows&#32;WAVEFORMAT*&#32;data&#32;structure&#32;utilities</emphasis>
+7 <emphasis role="comment">&#32;*&#32;portaudio.h&#32;should&#32;be&#32;included&#32;before&#32;this&#32;file.</emphasis>
+8 <emphasis role="comment">&#32;*</emphasis>
+9 <emphasis role="comment">&#32;*&#32;Copyright&#32;(c)&#32;2007&#32;Ross&#32;Bencina</emphasis>
+10 <emphasis role="comment">&#32;*</emphasis>
+11 <emphasis role="comment">&#32;*&#32;Permission&#32;is&#32;hereby&#32;granted,&#32;free&#32;of&#32;charge,&#32;to&#32;any&#32;person&#32;obtaining</emphasis>
+12 <emphasis role="comment">&#32;*&#32;a&#32;copy&#32;of&#32;this&#32;software&#32;and&#32;associated&#32;documentation&#32;files</emphasis>
+13 <emphasis role="comment">&#32;*&#32;(the&#32;&quot;Software&quot;),&#32;to&#32;deal&#32;in&#32;the&#32;Software&#32;without&#32;restriction,</emphasis>
+14 <emphasis role="comment">&#32;*&#32;including&#32;without&#32;limitation&#32;the&#32;rights&#32;to&#32;use,&#32;copy,&#32;modify,&#32;merge,</emphasis>
+15 <emphasis role="comment">&#32;*&#32;publish,&#32;distribute,&#32;sublicense,&#32;and/or&#32;sell&#32;copies&#32;of&#32;the&#32;Software,</emphasis>
+16 <emphasis role="comment">&#32;*&#32;and&#32;to&#32;permit&#32;persons&#32;to&#32;whom&#32;the&#32;Software&#32;is&#32;furnished&#32;to&#32;do&#32;so,</emphasis>
+17 <emphasis role="comment">&#32;*&#32;subject&#32;to&#32;the&#32;following&#32;conditions:</emphasis>
+18 <emphasis role="comment">&#32;*</emphasis>
+19 <emphasis role="comment">&#32;*&#32;The&#32;above&#32;copyright&#32;notice&#32;and&#32;this&#32;permission&#32;notice&#32;shall&#32;be</emphasis>
+20 <emphasis role="comment">&#32;*&#32;included&#32;in&#32;all&#32;copies&#32;or&#32;substantial&#32;portions&#32;of&#32;the&#32;Software.</emphasis>
+21 <emphasis role="comment">&#32;*</emphasis>
+22 <emphasis role="comment">&#32;*&#32;THE&#32;SOFTWARE&#32;IS&#32;PROVIDED&#32;&quot;AS&#32;IS&quot;,&#32;WITHOUT&#32;WARRANTY&#32;OF&#32;ANY&#32;KIND,</emphasis>
+23 <emphasis role="comment">&#32;*&#32;EXPRESS&#32;OR&#32;IMPLIED,&#32;INCLUDING&#32;BUT&#32;NOT&#32;LIMITED&#32;TO&#32;THE&#32;WARRANTIES&#32;OF</emphasis>
+24 <emphasis role="comment">&#32;*&#32;MERCHANTABILITY,&#32;FITNESS&#32;FOR&#32;A&#32;PARTICULAR&#32;PURPOSE&#32;AND&#32;NONINFRINGEMENT.</emphasis>
+25 <emphasis role="comment">&#32;*&#32;IN&#32;NO&#32;EVENT&#32;SHALL&#32;THE&#32;AUTHORS&#32;OR&#32;COPYRIGHT&#32;HOLDERS&#32;BE&#32;LIABLE&#32;FOR</emphasis>
+26 <emphasis role="comment">&#32;*&#32;ANY&#32;CLAIM,&#32;DAMAGES&#32;OR&#32;OTHER&#32;LIABILITY,&#32;WHETHER&#32;IN&#32;AN&#32;ACTION&#32;OF</emphasis>
+27 <emphasis role="comment">&#32;*&#32;CONTRACT,&#32;TORT&#32;OR&#32;OTHERWISE,&#32;ARISING&#32;FROM,&#32;OUT&#32;OF&#32;OR&#32;IN&#32;CONNECTION</emphasis>
+28 <emphasis role="comment">&#32;*&#32;WITH&#32;THE&#32;SOFTWARE&#32;OR&#32;THE&#32;USE&#32;OR&#32;OTHER&#32;DEALINGS&#32;IN&#32;THE&#32;SOFTWARE.</emphasis>
+29 <emphasis role="comment">&#32;*/</emphasis>
+30 
+31 <emphasis role="comment">/*</emphasis>
+32 <emphasis role="comment">&#32;*&#32;The&#32;text&#32;above&#32;constitutes&#32;the&#32;entire&#32;PortAudio&#32;license;&#32;however,&#32;</emphasis>
+33 <emphasis role="comment">&#32;*&#32;the&#32;PortAudio&#32;community&#32;also&#32;makes&#32;the&#32;following&#32;non-binding&#32;requests:</emphasis>
+34 <emphasis role="comment">&#32;*</emphasis>
+35 <emphasis role="comment">&#32;*&#32;Any&#32;person&#32;wishing&#32;to&#32;distribute&#32;modifications&#32;to&#32;the&#32;Software&#32;is</emphasis>
+36 <emphasis role="comment">&#32;*&#32;requested&#32;to&#32;send&#32;the&#32;modifications&#32;to&#32;the&#32;original&#32;developer&#32;so&#32;that</emphasis>
+37 <emphasis role="comment">&#32;*&#32;they&#32;can&#32;be&#32;incorporated&#32;into&#32;the&#32;canonical&#32;version.&#32;It&#32;is&#32;also&#32;</emphasis>
+38 <emphasis role="comment">&#32;*&#32;requested&#32;that&#32;these&#32;non-binding&#32;requests&#32;be&#32;included&#32;along&#32;with&#32;the&#32;</emphasis>
+39 <emphasis role="comment">&#32;*&#32;license&#32;above.</emphasis>
+40 <emphasis role="comment">&#32;*/</emphasis>
+41 
+47 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+48 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+49 <emphasis role="preprocessor">#endif</emphasis>
+50 
+51 <emphasis role="comment">/*</emphasis>
+52 <emphasis role="comment">&#32;&#32;&#32;&#32;The&#32;following&#32;#defines&#32;for&#32;speaker&#32;channel&#32;masks&#32;are&#32;the&#32;same</emphasis>
+53 <emphasis role="comment">&#32;&#32;&#32;&#32;as&#32;those&#32;in&#32;ksmedia.h,&#32;except&#32;with&#32;PAWIN_&#32;prepended,&#32;KSAUDIO_&#32;removed</emphasis>
+54 <emphasis role="comment">&#32;&#32;&#32;&#32;in&#32;some&#32;cases,&#32;and&#32;casts&#32;to&#32;PaWinWaveFormatChannelMask&#32;added.</emphasis>
+55 <emphasis role="comment">*/</emphasis>
+56 
+57 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;PaWinWaveFormatChannelMask;
+58 
+59 <emphasis role="comment">/*&#32;Speaker&#32;Positions:&#32;*/</emphasis>
+60 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_FRONT_LEFT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x1)</emphasis>
+61 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_FRONT_RIGHT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x2)</emphasis>
+62 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_FRONT_CENTER&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x4)</emphasis>
+63 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_LOW_FREQUENCY&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x8)</emphasis>
+64 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_BACK_LEFT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x10)</emphasis>
+65 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_BACK_RIGHT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x20)</emphasis>
+66 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_FRONT_LEFT_OF_CENTER&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x40)</emphasis>
+67 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_FRONT_RIGHT_OF_CENTER&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x80)</emphasis>
+68 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_BACK_CENTER&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x100)</emphasis>
+69 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_SIDE_LEFT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x200)</emphasis>
+70 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_SIDE_RIGHT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x400)</emphasis>
+71 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_TOP_CENTER&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x800)</emphasis>
+72 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_TOP_FRONT_LEFT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x1000)</emphasis>
+73 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_TOP_FRONT_CENTER&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x2000)</emphasis>
+74 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_TOP_FRONT_RIGHT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x4000)</emphasis>
+75 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_TOP_BACK_LEFT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x8000)</emphasis>
+76 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_TOP_BACK_CENTER&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x10000)</emphasis>
+77 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_TOP_BACK_RIGHT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x20000)</emphasis>
+78 
+79 <emphasis role="comment">/*&#32;Bit&#32;mask&#32;locations&#32;reserved&#32;for&#32;future&#32;use&#32;*/</emphasis>
+80 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_RESERVED&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x7FFC0000)</emphasis>
+81 
+82 <emphasis role="comment">/*&#32;Used&#32;to&#32;specify&#32;that&#32;any&#32;possible&#32;permutation&#32;of&#32;speaker&#32;configurations&#32;*/</emphasis>
+83 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_ALL&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PaWinWaveFormatChannelMask)0x80000000)</emphasis>
+84 
+85 <emphasis role="comment">/*&#32;DirectSound&#32;Speaker&#32;Config&#32;*/</emphasis>
+86 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_DIRECTOUT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0</emphasis>
+87 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_MONO&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PAWIN_SPEAKER_FRONT_CENTER)</emphasis>
+88 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_STEREO&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PAWIN_SPEAKER_FRONT_LEFT&#32;|&#32;PAWIN_SPEAKER_FRONT_RIGHT)</emphasis>
+89 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_QUAD&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PAWIN_SPEAKER_FRONT_LEFT&#32;|&#32;PAWIN_SPEAKER_FRONT_RIGHT&#32;|&#32;\</emphasis>
+90 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_BACK_LEFT&#32;&#32;|&#32;PAWIN_SPEAKER_BACK_RIGHT)</emphasis>
+91 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_SURROUND&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PAWIN_SPEAKER_FRONT_LEFT&#32;|&#32;PAWIN_SPEAKER_FRONT_RIGHT&#32;|&#32;\</emphasis>
+92 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_FRONT_CENTER&#32;|&#32;PAWIN_SPEAKER_BACK_CENTER)</emphasis>
+93 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_5POINT1&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PAWIN_SPEAKER_FRONT_LEFT&#32;|&#32;PAWIN_SPEAKER_FRONT_RIGHT&#32;|&#32;\</emphasis>
+94 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_FRONT_CENTER&#32;|&#32;PAWIN_SPEAKER_LOW_FREQUENCY&#32;|&#32;\</emphasis>
+95 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_BACK_LEFT&#32;&#32;|&#32;PAWIN_SPEAKER_BACK_RIGHT)</emphasis>
+96 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_7POINT1&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PAWIN_SPEAKER_FRONT_LEFT&#32;|&#32;PAWIN_SPEAKER_FRONT_RIGHT&#32;|&#32;\</emphasis>
+97 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_FRONT_CENTER&#32;|&#32;PAWIN_SPEAKER_LOW_FREQUENCY&#32;|&#32;\</emphasis>
+98 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_BACK_LEFT&#32;|&#32;PAWIN_SPEAKER_BACK_RIGHT&#32;|&#32;\</emphasis>
+99 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_FRONT_LEFT_OF_CENTER&#32;|&#32;PAWIN_SPEAKER_FRONT_RIGHT_OF_CENTER)</emphasis>
+100 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_5POINT1_SURROUND&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PAWIN_SPEAKER_FRONT_LEFT&#32;|&#32;PAWIN_SPEAKER_FRONT_RIGHT&#32;|&#32;\</emphasis>
+101 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_FRONT_CENTER&#32;|&#32;PAWIN_SPEAKER_LOW_FREQUENCY&#32;|&#32;\</emphasis>
+102 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_SIDE_LEFT&#32;&#32;|&#32;PAWIN_SPEAKER_SIDE_RIGHT)</emphasis>
+103 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_7POINT1_SURROUND&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PAWIN_SPEAKER_FRONT_LEFT&#32;|&#32;PAWIN_SPEAKER_FRONT_RIGHT&#32;|&#32;\</emphasis>
+104 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_FRONT_CENTER&#32;|&#32;PAWIN_SPEAKER_LOW_FREQUENCY&#32;|&#32;\</emphasis>
+105 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_BACK_LEFT&#32;|&#32;PAWIN_SPEAKER_BACK_RIGHT&#32;|&#32;\</emphasis>
+106 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_SIDE_LEFT&#32;|&#32;PAWIN_SPEAKER_SIDE_RIGHT)</emphasis>
+107 <emphasis role="comment">/*</emphasis>
+108 <emphasis role="comment">&#32;According&#32;to&#32;the&#32;Microsoft&#32;documentation:</emphasis>
+109 <emphasis role="comment">&#32;The&#32;following&#32;are&#32;obsolete&#32;5.1&#32;and&#32;7.1&#32;settings&#32;(they&#32;lack&#32;side&#32;speakers).&#32;&#32;Note&#32;this&#32;means</emphasis>
+110 <emphasis role="comment">&#32;that&#32;the&#32;default&#32;5.1&#32;and&#32;7.1&#32;settings&#32;(KSAUDIO_SPEAKER_5POINT1&#32;and&#32;KSAUDIO_SPEAKER_7POINT1&#32;are</emphasis>
+111 <emphasis role="comment">&#32;similarly&#32;obsolete&#32;but&#32;are&#32;unchanged&#32;for&#32;compatibility&#32;reasons).</emphasis>
+112 <emphasis role="comment">*/</emphasis>
+113 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_5POINT1_BACK&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_5POINT1</emphasis>
+114 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_7POINT1_WIDE&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_7POINT1</emphasis>
+115 
+116 <emphasis role="comment">/*&#32;DVD&#32;Speaker&#32;Positions&#32;*/</emphasis>
+117 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_GROUND_FRONT_LEFT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_FRONT_LEFT</emphasis>
+118 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_GROUND_FRONT_CENTER&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_FRONT_CENTER</emphasis>
+119 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_GROUND_FRONT_RIGHT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_FRONT_RIGHT</emphasis>
+120 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_GROUND_REAR_LEFT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_BACK_LEFT</emphasis>
+121 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_GROUND_REAR_RIGHT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_BACK_RIGHT</emphasis>
+122 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_TOP_MIDDLE&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_TOP_CENTER</emphasis>
+123 <emphasis role="preprocessor">#define&#32;PAWIN_SPEAKER_SUPER_WOOFER&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PAWIN_SPEAKER_LOW_FREQUENCY</emphasis>
+124 
+125 
+126 <emphasis role="comment">/*</emphasis>
+127 <emphasis role="comment">&#32;&#32;&#32;&#32;PaWinWaveFormat&#32;is&#32;defined&#32;here&#32;to&#32;provide&#32;compatibility&#32;with</emphasis>
+128 <emphasis role="comment">&#32;&#32;&#32;&#32;compilation&#32;environments&#32;which&#32;don&apos;t&#32;have&#32;headers&#32;defining&#32;</emphasis>
+129 <emphasis role="comment">&#32;&#32;&#32;&#32;WAVEFORMATEXTENSIBLE&#32;(e.g.&#32;older&#32;versions&#32;of&#32;MSVC,&#32;Borland&#32;C++&#32;etc.</emphasis>
+130 <emphasis role="comment"></emphasis>
+131 <emphasis role="comment">&#32;&#32;&#32;&#32;The&#32;fields&#32;for&#32;WAVEFORMATEX&#32;and&#32;WAVEFORMATEXTENSIBLE&#32;are&#32;declared&#32;as&#32;an</emphasis>
+132 <emphasis role="comment">&#32;&#32;&#32;&#32;unsigned&#32;char&#32;array&#32;here&#32;to&#32;avoid&#32;clients&#32;who&#32;include&#32;this&#32;file&#32;having&#32;</emphasis>
+133 <emphasis role="comment">&#32;&#32;&#32;&#32;a&#32;dependency&#32;on&#32;windows.h&#32;and&#32;mmsystem.h,&#32;and&#32;also&#32;to&#32;to&#32;avoid&#32;having</emphasis>
+134 <emphasis role="comment">&#32;&#32;&#32;&#32;to&#32;write&#32;separate&#32;packing&#32;pragmas&#32;for&#32;each&#32;compiler.</emphasis>
+135 <emphasis role="comment">*/</emphasis>
+136 <emphasis role="preprocessor">#define&#32;PAWIN_SIZEOF_WAVEFORMATEX&#32;&#32;&#32;18</emphasis>
+137 <emphasis role="preprocessor">#define&#32;PAWIN_SIZEOF_WAVEFORMATEXTENSIBLE&#32;(PAWIN_SIZEOF_WAVEFORMATEX&#32;+&#32;22)</emphasis>
+138 
+139 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>{
+140 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;fields[&#32;PAWIN_SIZEOF_WAVEFORMATEXTENSIBLE&#32;];
+141 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;extraLongForAlignment;&#32;<emphasis role="comment">/*&#32;ensure&#32;that&#32;compiler&#32;aligns&#32;struct&#32;to&#32;DWORD&#32;*/</emphasis>&#32;
+142 }&#32;<link linkend="_struct_pa_win_wave_format">PaWinWaveFormat</link>;
+143 
+144 <emphasis role="comment">/*</emphasis>
+145 <emphasis role="comment">&#32;&#32;&#32;&#32;WAVEFORMATEXTENSIBLE&#32;fields:</emphasis>
+146 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+147 <emphasis role="comment">&#32;&#32;&#32;&#32;union&#32;&#32;{</emphasis>
+148 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;WORD&#32;&#32;wValidBitsPerSample;&#32;&#32;&#32;&#32;</emphasis>
+149 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;WORD&#32;&#32;wSamplesPerBlock;&#32;&#32;&#32;&#32;</emphasis>
+150 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;WORD&#32;&#32;wReserved;&#32;&#32;</emphasis>
+151 <emphasis role="comment">&#32;&#32;&#32;&#32;}&#32;Samples;</emphasis>
+152 <emphasis role="comment">&#32;&#32;&#32;&#32;DWORD&#32;&#32;dwChannelMask;&#32;&#32;</emphasis>
+153 <emphasis role="comment">&#32;&#32;&#32;&#32;GUID&#32;&#32;SubFormat;</emphasis>
+154 <emphasis role="comment">*/</emphasis>
+155 
+156 <emphasis role="preprocessor">#define&#32;PAWIN_INDEXOF_WVALIDBITSPERSAMPLE&#32;&#32;&#32;(PAWIN_SIZEOF_WAVEFORMATEX+0)</emphasis>
+157 <emphasis role="preprocessor">#define&#32;PAWIN_INDEXOF_DWCHANNELMASK&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PAWIN_SIZEOF_WAVEFORMATEX+2)</emphasis>
+158 <emphasis role="preprocessor">#define&#32;PAWIN_INDEXOF_SUBFORMAT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PAWIN_SIZEOF_WAVEFORMATEX+6)</emphasis>
+159 
+160 
+161 <emphasis role="comment">/*</emphasis>
+162 <emphasis role="comment">&#32;&#32;&#32;&#32;Valid&#32;values&#32;to&#32;pass&#32;for&#32;the&#32;waveFormatTag&#32;PaWin_InitializeWaveFormatEx&#32;and</emphasis>
+163 <emphasis role="comment">&#32;&#32;&#32;&#32;PaWin_InitializeWaveFormatExtensible&#32;functions&#32;below.&#32;These&#32;must&#32;match</emphasis>
+164 <emphasis role="comment">&#32;&#32;&#32;&#32;the&#32;standard&#32;Windows&#32;WAVE_FORMAT_*&#32;values.</emphasis>
+165 <emphasis role="comment">*/</emphasis>
+166 <emphasis role="preprocessor">#define&#32;PAWIN_WAVE_FORMAT_PCM&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(1)</emphasis>
+167 <emphasis role="preprocessor">#define&#32;PAWIN_WAVE_FORMAT_IEEE_FLOAT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(3)</emphasis>
+168 <emphasis role="preprocessor">#define&#32;PAWIN_WAVE_FORMAT_DOLBY_AC3_SPDIF&#32;&#32;&#32;(0x0092)</emphasis>
+169 <emphasis role="preprocessor">#define&#32;PAWIN_WAVE_FORMAT_WMA_SPDIF&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(0x0164)</emphasis>
+170 
+171 
+172 <emphasis role="comment">/*</emphasis>
+173 <emphasis role="comment">&#32;&#32;&#32;&#32;returns&#32;PAWIN_WAVE_FORMAT_PCM&#32;or&#32;PAWIN_WAVE_FORMAT_IEEE_FLOAT</emphasis>
+174 <emphasis role="comment">&#32;&#32;&#32;&#32;depending&#32;on&#32;the&#32;sampleFormat&#32;parameter.</emphasis>
+175 <emphasis role="comment">*/</emphasis>
+176 <emphasis role="keywordtype">int</emphasis>&#32;PaWin_SampleFormatToLinearWaveFormatTag(&#32;<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>&#32;sampleFormat&#32;);
+177 
+178 <emphasis role="comment">/*</emphasis>
+179 <emphasis role="comment">&#32;&#32;&#32;&#32;Use&#32;the&#32;following&#32;two&#32;functions&#32;to&#32;initialize&#32;the&#32;waveformat&#32;structure.</emphasis>
+180 <emphasis role="comment">*/</emphasis>
+181 
+182 <emphasis role="keywordtype">void</emphasis>&#32;PaWin_InitializeWaveFormatEx(&#32;<link linkend="_struct_pa_win_wave_format">PaWinWaveFormat</link>&#32;*waveFormat,&#32;
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numChannels,&#32;<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>&#32;sampleFormat,&#32;<emphasis role="keywordtype">int</emphasis>&#32;waveFormatTag,&#32;<emphasis role="keywordtype">double</emphasis>&#32;sampleRate&#32;);
+184 
+185 
+186 <emphasis role="keywordtype">void</emphasis>&#32;PaWin_InitializeWaveFormatExtensible(&#32;<link linkend="_struct_pa_win_wave_format">PaWinWaveFormat</link>&#32;*waveFormat,&#32;
+187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numChannels,&#32;<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>&#32;sampleFormat,&#32;<emphasis role="keywordtype">int</emphasis>&#32;waveFormatTag,&#32;<emphasis role="keywordtype">double</emphasis>&#32;sampleRate,
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PaWinWaveFormatChannelMask&#32;channelMask&#32;);
+189 
+190 
+191 <emphasis role="comment">/*&#32;Map&#32;a&#32;channel&#32;count&#32;to&#32;a&#32;speaker&#32;channel&#32;mask&#32;*/</emphasis>
+192 PaWinWaveFormatChannelMask&#32;PaWin_DefaultChannelMask(&#32;<emphasis role="keywordtype">int</emphasis>&#32;numChannels&#32;);
+193 
+194 
+195 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+196 }
+197 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__cplusplus&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+198 
+199 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;PA_WIN_WAVEFORMAT_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

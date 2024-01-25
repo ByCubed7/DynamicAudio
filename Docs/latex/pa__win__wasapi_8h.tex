@@ -1,0 +1,347 @@
+\doxysection{packages/portaudio.0.19.1/build/native/include/pa\+\_\+win\+\_\+wasapi.h File Reference}
+\hypertarget{pa__win__wasapi_8h}{}\label{pa__win__wasapi_8h}\index{packages/portaudio.0.19.1/build/native/include/pa\_win\_wasapi.h@{packages/portaudio.0.19.1/build/native/include/pa\_win\_wasapi.h}}
+
+
+WASAPI-\/specific Port\+Audio API extension header file.  
+
+
+{\ttfamily \#include "{}portaudio.\+h"{}}\newline
+{\ttfamily \#include "{}pa\+\_\+win\+\_\+waveformat.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}}
+\item 
+struct \mbox{\hyperlink{struct_pa_wasapi_stream_info}{Pa\+Wasapi\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pa__win__wasapi_8h_a52079738ea6bdb82c7672850d72643d0}\label{pa__win__wasapi_8h_a52079738ea6bdb82c7672850d72643d0} 
+\#define {\bfseries pa\+Win\+Wasapi\+Exclusive}~(pa\+Win\+Wasapi\+Exclusive)
+\item 
+\Hypertarget{pa__win__wasapi_8h_a04b5df0ea5e1b6e9299b07963e96f1ff}\label{pa__win__wasapi_8h_a04b5df0ea5e1b6e9299b07963e96f1ff} 
+\#define {\bfseries pa\+Win\+Wasapi\+Redirect\+Host\+Processor}~(pa\+Win\+Wasapi\+Redirect\+Host\+Processor)
+\item 
+\Hypertarget{pa__win__wasapi_8h_af47a337bb1cf6a3036978844001da434}\label{pa__win__wasapi_8h_af47a337bb1cf6a3036978844001da434} 
+\#define {\bfseries pa\+Win\+Wasapi\+Use\+Channel\+Mask}~(pa\+Win\+Wasapi\+Use\+Channel\+Mask)
+\item 
+\Hypertarget{pa__win__wasapi_8h_ab7cfc855244ee76f5fddb20584218270}\label{pa__win__wasapi_8h_ab7cfc855244ee76f5fddb20584218270} 
+\#define {\bfseries pa\+Win\+Wasapi\+Polling}~(pa\+Win\+Wasapi\+Polling)
+\item 
+\Hypertarget{pa__win__wasapi_8h_adb59e164778bb67e97fc7ac1dacb6af9}\label{pa__win__wasapi_8h_adb59e164778bb67e97fc7ac1dacb6af9} 
+\#define {\bfseries pa\+Win\+Wasapi\+Thread\+Priority}~(pa\+Win\+Wasapi\+Thread\+Priority)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pa__win__wasapi_8h_aca93d4fb6ff41577bf28a1709ce92315}\label{pa__win__wasapi_8h_aca93d4fb6ff41577bf28a1709ce92315} 
+typedef enum Pa\+Wasapi\+Flags {\bfseries Pa\+Wasapi\+Flags}
+\item 
+\Hypertarget{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006}\label{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006} 
+typedef void(\texorpdfstring{$\ast$}{*} {\bfseries Pa\+Wasapi\+Host\+Processor\+Callback}) (void \texorpdfstring{$\ast$}{*}input\+Buffer, long input\+Frames, void \texorpdfstring{$\ast$}{*}output\+Buffer, long output\+Frames, void \texorpdfstring{$\ast$}{*}user\+Data)
+\item 
+\Hypertarget{pa__win__wasapi_8h_ad7a1d18abc52a140d31c2626b178c60f}\label{pa__win__wasapi_8h_ad7a1d18abc52a140d31c2626b178c60f} 
+typedef enum Pa\+Wasapi\+Device\+Role {\bfseries Pa\+Wasapi\+Device\+Role}
+\item 
+\Hypertarget{pa__win__wasapi_8h_aeb2cb341fe64427ae7c9f3d15eb630f7}\label{pa__win__wasapi_8h_aeb2cb341fe64427ae7c9f3d15eb630f7} 
+typedef enum Pa\+Wasapi\+Jack\+Connection\+Type {\bfseries Pa\+Wasapi\+Jack\+Connection\+Type}
+\item 
+\Hypertarget{pa__win__wasapi_8h_a77d9dd45efc5838ad3ebc1921472ff3c}\label{pa__win__wasapi_8h_a77d9dd45efc5838ad3ebc1921472ff3c} 
+typedef enum Pa\+Wasapi\+Jack\+Geo\+Location {\bfseries Pa\+Wasapi\+Jack\+Geo\+Location}
+\item 
+\Hypertarget{pa__win__wasapi_8h_a37e4450ba37d9a290b476f7a76073434}\label{pa__win__wasapi_8h_a37e4450ba37d9a290b476f7a76073434} 
+typedef enum Pa\+Wasapi\+Jack\+Gen\+Location {\bfseries Pa\+Wasapi\+Jack\+Gen\+Location}
+\item 
+\Hypertarget{pa__win__wasapi_8h_a9840a1ca66f5ad6a2a51268e1efdb9e1}\label{pa__win__wasapi_8h_a9840a1ca66f5ad6a2a51268e1efdb9e1} 
+typedef enum Pa\+Wasapi\+Jack\+Port\+Connection {\bfseries Pa\+Wasapi\+Jack\+Port\+Connection}
+\item 
+\Hypertarget{pa__win__wasapi_8h_a988e1a219d7df7ad42d5874fd86b2415}\label{pa__win__wasapi_8h_a988e1a219d7df7ad42d5874fd86b2415} 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} {\bfseries Pa\+Wasapi\+Thread\+Priority}
+\item 
+\Hypertarget{pa__win__wasapi_8h_aa0a6e4c17a3e55f1f8e52fa3e68b7376}\label{pa__win__wasapi_8h_aa0a6e4c17a3e55f1f8e52fa3e68b7376} 
+typedef struct Pa\+Wasapi\+Jack\+Description {\bfseries Pa\+Wasapi\+Jack\+Description}
+\item 
+\Hypertarget{pa__win__wasapi_8h_a9c03609bc5516f40cc62744e03a75811}\label{pa__win__wasapi_8h_a9c03609bc5516f40cc62744e03a75811} 
+typedef struct Pa\+Wasapi\+Stream\+Info {\bfseries Pa\+Wasapi\+Stream\+Info}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725be}\label{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725be} 
+enum {\bfseries Pa\+Wasapi\+Flags} \{ \newline
+{\bfseries pa\+Win\+Wasapi\+Exclusive} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, {\bfseries pa\+Win\+Wasapi\+Redirect\+Host\+Processor} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+, {\bfseries pa\+Win\+Wasapi\+Use\+Channel\+Mask} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+, {\bfseries pa\+Win\+Wasapi\+Polling} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3)
+, \newline
+{\bfseries pa\+Win\+Wasapi\+Thread\+Priority} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4)
+ \}
+\item 
+\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de} 
+enum {\bfseries Pa\+Wasapi\+Device\+Role} \{ \newline
+{\bfseries e\+Role\+Remote\+Network\+Device} = 0
+, {\bfseries e\+Role\+Speakers}
+, {\bfseries e\+Role\+Line\+Level}
+, {\bfseries e\+Role\+Headphones}
+, \newline
+{\bfseries e\+Role\+Microphone}
+, {\bfseries e\+Role\+Headset}
+, {\bfseries e\+Role\+Handset}
+, {\bfseries e\+Role\+Unknown\+Digital\+Passthrough}
+, \newline
+{\bfseries e\+Role\+SPDIF}
+, {\bfseries e\+Role\+HDMI}
+, {\bfseries e\+Role\+Unknown\+Form\+Factor}
+ \}
+\item 
+\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1} 
+enum {\bfseries Pa\+Wasapi\+Jack\+Connection\+Type} \{ \newline
+{\bfseries e\+Jack\+Conn\+Type\+Unknown}
+, {\bfseries e\+Jack\+Conn\+Type3\+Point5mm}
+, {\bfseries e\+Jack\+Conn\+Type\+Quarter}
+, {\bfseries e\+Jack\+Conn\+Type\+Atapi\+Internal}
+, \newline
+{\bfseries e\+Jack\+Conn\+Type\+RCA}
+, {\bfseries e\+Jack\+Conn\+Type\+Optical}
+, {\bfseries e\+Jack\+Conn\+Type\+Other\+Digital}
+, {\bfseries e\+Jack\+Conn\+Type\+Other\+Analog}
+, \newline
+{\bfseries e\+Jack\+Conn\+Type\+Multichannel\+Analog\+DIN}
+, {\bfseries e\+Jack\+Conn\+Type\+Xlr\+Professional}
+, {\bfseries e\+Jack\+Conn\+Type\+RJ11\+Modem}
+, {\bfseries e\+Jack\+Conn\+Type\+Combination}
+ \}
+\item 
+\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188} 
+enum {\bfseries Pa\+Wasapi\+Jack\+Geo\+Location} \{ \newline
+{\bfseries e\+Jack\+Geo\+Loc\+Unk} = 0
+, {\bfseries e\+Jack\+Geo\+Loc\+Rear} = 0x1
+, {\bfseries e\+Jack\+Geo\+Loc\+Front}
+, {\bfseries e\+Jack\+Geo\+Loc\+Left}
+, \newline
+{\bfseries e\+Jack\+Geo\+Loc\+Right}
+, {\bfseries e\+Jack\+Geo\+Loc\+Top}
+, {\bfseries e\+Jack\+Geo\+Loc\+Bottom}
+, {\bfseries e\+Jack\+Geo\+Loc\+Rear\+Panel}
+, \newline
+{\bfseries e\+Jack\+Geo\+Loc\+Riser}
+, {\bfseries e\+Jack\+Geo\+Loc\+Inside\+Mobile\+Lid}
+, {\bfseries e\+Jack\+Geo\+Loc\+Drivebay}
+, {\bfseries e\+Jack\+Geo\+Loc\+HDMI}
+, \newline
+{\bfseries e\+Jack\+Geo\+Loc\+Outside\+Mobile\+Lid}
+, {\bfseries e\+Jack\+Geo\+Loc\+ATAPI}
+, {\bfseries e\+Jack\+Geo\+Loc\+Reserved5}
+, {\bfseries e\+Jack\+Geo\+Loc\+Reserved6}
+ \}
+\item 
+\Hypertarget{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cf}\label{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cf} 
+enum {\bfseries Pa\+Wasapi\+Jack\+Gen\+Location} \{ {\bfseries e\+Jack\+Gen\+Loc\+Primary\+Box} = 0
+, {\bfseries e\+Jack\+Gen\+Loc\+Internal}
+, {\bfseries e\+Jack\+Gen\+Loc\+Separate}
+, {\bfseries e\+Jack\+Gen\+Loc\+Other}
+ \}
+\item 
+\Hypertarget{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893d}\label{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893d} 
+enum {\bfseries Pa\+Wasapi\+Jack\+Port\+Connection} \{ {\bfseries e\+Jack\+Port\+Conn\+Jack} = 0
+, {\bfseries e\+Jack\+Port\+Conn\+Integrated\+Device}
+, {\bfseries e\+Jack\+Port\+Conn\+Both\+Integrated\+And\+Jack}
+, {\bfseries e\+Jack\+Port\+Conn\+Unknown}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} \{ \newline
+{\bfseries e\+Thread\+Priority\+None} = 0
+, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a06c9f997fd5d9e11d4ef8bf67342f031}{e\+Thread\+Priority\+Audio}}
+, {\bfseries e\+Thread\+Priority\+Capture}
+, {\bfseries e\+Thread\+Priority\+Distribution}
+, \newline
+{\bfseries e\+Thread\+Priority\+Games}
+, {\bfseries e\+Thread\+Priority\+Playback}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a9a34413b0a045f4c44d10a49d3357187}{e\+Thread\+Priority\+Pro\+Audio}}
+, {\bfseries e\+Thread\+Priority\+Window\+Manager}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pa__win__wasapi_8h_aa42c66da0ae19959d25a190e9dd82005}{Pa\+Wasapi\+\_\+\+Get\+Device\+Default\+Format}} (void \texorpdfstring{$\ast$}{*}p\+Format, unsigned int n\+Format\+Size, \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} n\+Device)
+\item 
+int \mbox{\hyperlink{pa__win__wasapi_8h_a6a8c5307dff661ae7ee0d7bb8bf73469}{Pa\+Wasapi\+\_\+\+Get\+Device\+Role}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} n\+Device)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_a2d48ae4d2124209ed8a6264c6febedc7}{Pa\+Wasapi\+\_\+\+Thread\+Priority\+Boost}} (void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}h\+Task, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} n\+Priority\+Class)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_ac5c875fb9165712ff696512f750f7de3}{Pa\+Wasapi\+\_\+\+Thread\+Priority\+Revert}} (void \texorpdfstring{$\ast$}{*}h\+Task)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_af8f04003c6123e6fdcfdf7308761a75e}{Pa\+Wasapi\+\_\+\+Get\+Frames\+Per\+Host\+Buffer}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} \texorpdfstring{$\ast$}{*}p\+Stream, unsigned int \texorpdfstring{$\ast$}{*}n\+Input, unsigned int \texorpdfstring{$\ast$}{*}n\+Output)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_a46583f8e4b1132c198e2451fd48f7490}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Count}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} n\+Device, int \texorpdfstring{$\ast$}{*}jcount)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_a042829efac1aca1d77608d136a523465}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Description}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} n\+Device, int jindex, \mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}} \texorpdfstring{$\ast$}{*}p\+Jack\+Description)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+WASAPI-\/specific Port\+Audio API extension header file. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiThreadPriority@{PaWasapiThreadPriority}}
+\index{PaWasapiThreadPriority@{PaWasapiThreadPriority}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiThreadPriority}{PaWasapiThreadPriority}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eThreadPriorityAudio@{eThreadPriorityAudio}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eThreadPriorityAudio@{eThreadPriorityAudio}}}\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a06c9f997fd5d9e11d4ef8bf67342f031}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a06c9f997fd5d9e11d4ef8bf67342f031} 
+e\+Thread\+Priority\+Audio&Default for Shared mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eThreadPriorityProAudio@{eThreadPriorityProAudio}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eThreadPriorityProAudio@{eThreadPriorityProAudio}}}\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a9a34413b0a045f4c44d10a49d3357187}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a9a34413b0a045f4c44d10a49d3357187} 
+e\+Thread\+Priority\+Pro\+Audio&Default for Exclusive mode. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pa__win__wasapi_8h_aa42c66da0ae19959d25a190e9dd82005}\label{pa__win__wasapi_8h_aa42c66da0ae19959d25a190e9dd82005} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetDeviceDefaultFormat@{PaWasapi\_GetDeviceDefaultFormat}}
+\index{PaWasapi\_GetDeviceDefaultFormat@{PaWasapi\_GetDeviceDefaultFormat}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetDeviceDefaultFormat()}{PaWasapi\_GetDeviceDefaultFormat()}}
+{\footnotesize\ttfamily int Pa\+Wasapi\+\_\+\+Get\+Device\+Default\+Format (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+Format,  }\item[{unsigned int}]{n\+Format\+Size,  }\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{n\+Device }\end{DoxyParamCaption})}
+
+Returns default sound format for device. Format is represented by \doxylink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format} or WAVEFORMATEXTENSIBLE structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Format} & Pointer to \doxylink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format} or WAVEFORMATEXTENSIBLE structure. \\
+\hline
+{\em n\+Format\+Size} & Size of \doxylink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format} or WAVEFORMATEXTENSIBLE structure in bytes. \\
+\hline
+{\em n\+Device} & Device index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative value indicating the number of bytes copied into format decriptor or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\Hypertarget{pa__win__wasapi_8h_a6a8c5307dff661ae7ee0d7bb8bf73469}\label{pa__win__wasapi_8h_a6a8c5307dff661ae7ee0d7bb8bf73469} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetDeviceRole@{PaWasapi\_GetDeviceRole}}
+\index{PaWasapi\_GetDeviceRole@{PaWasapi\_GetDeviceRole}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetDeviceRole()}{PaWasapi\_GetDeviceRole()}}
+{\footnotesize\ttfamily int Pa\+Wasapi\+\_\+\+Get\+Device\+Role (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{n\+Device }\end{DoxyParamCaption})}
+
+Returns device role (Pa\+Wasapi\+Device\+Role enum).
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Device} & device index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative value indicating device role or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\Hypertarget{pa__win__wasapi_8h_af8f04003c6123e6fdcfdf7308761a75e}\label{pa__win__wasapi_8h_af8f04003c6123e6fdcfdf7308761a75e} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetFramesPerHostBuffer@{PaWasapi\_GetFramesPerHostBuffer}}
+\index{PaWasapi\_GetFramesPerHostBuffer@{PaWasapi\_GetFramesPerHostBuffer}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetFramesPerHostBuffer()}{PaWasapi\_GetFramesPerHostBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Frames\+Per\+Host\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} \texorpdfstring{$\ast$}{*}}]{p\+Stream,  }\item[{unsigned int \texorpdfstring{$\ast$}{*}}]{n\+Input,  }\item[{unsigned int \texorpdfstring{$\ast$}{*}}]{n\+Output }\end{DoxyParamCaption})}
+
+Get number of frames per host buffer. This is maximal value of frames of WASAPI buffer which can be locked for operations. Use this method as helper to findout maximal values of input\+Frames/output\+Frames of Pa\+Wasapi\+Host\+Processor\+Callback.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Stream} & Pointer to Pa\+Stream to query. \\
+\hline
+{\em n\+Input} & Pointer to variable to receive number of input frames. Can be NULL. \\
+\hline
+{\em n\+Output} & Pointer to variable to receive number of output frames. Can be NULL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Pa\+Wasapi\+Host\+Processor\+Callback 
+\end{DoxySeeAlso}
+\Hypertarget{pa__win__wasapi_8h_a46583f8e4b1132c198e2451fd48f7490}\label{pa__win__wasapi_8h_a46583f8e4b1132c198e2451fd48f7490} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetJackCount@{PaWasapi\_GetJackCount}}
+\index{PaWasapi\_GetJackCount@{PaWasapi\_GetJackCount}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetJackCount()}{PaWasapi\_GetJackCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Jack\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{n\+Device,  }\item[{int \texorpdfstring{$\ast$}{*}}]{jcount }\end{DoxyParamCaption})}
+
+Get number of jacks associated with a WASAPI device. Use this method to determine if there are any jacks associated with the provided WASAPI device. Not all audio devices will support this capability. This is valid for both input and output devices. 
+\begin{DoxyParams}{Parameters}
+{\em n\+Device} & device index. \\
+\hline
+{\em jcount} & Number of jacks is returned in this variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{pa__win__wasapi_8h_a042829efac1aca1d77608d136a523465}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Description} 
+\end{DoxySeeAlso}
+\Hypertarget{pa__win__wasapi_8h_a042829efac1aca1d77608d136a523465}\label{pa__win__wasapi_8h_a042829efac1aca1d77608d136a523465} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetJackDescription@{PaWasapi\_GetJackDescription}}
+\index{PaWasapi\_GetJackDescription@{PaWasapi\_GetJackDescription}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetJackDescription()}{PaWasapi\_GetJackDescription()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Jack\+Description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{n\+Device,  }\item[{int}]{jindex,  }\item[{\mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}} \texorpdfstring{$\ast$}{*}}]{p\+Jack\+Description }\end{DoxyParamCaption})}
+
+Get the jack description associated with a WASAPI device and jack number Before this function is called, use Pa\+Wasapi\+\_\+\+Get\+Jack\+Count to determine the number of jacks associated with device. If jcount is greater than zero, then each jack from 0 to jcount can be queried with this function to get the jack description. 
+\begin{DoxyParams}{Parameters}
+{\em n\+Device} & device index. \\
+\hline
+{\em jindex} & Which jack to return information \\
+\hline
+{\em KSJACK\+\_\+\+DESCRIPTION} & This structure filled in on success. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{pa__win__wasapi_8h_a46583f8e4b1132c198e2451fd48f7490}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Count} 
+\end{DoxySeeAlso}
+\Hypertarget{pa__win__wasapi_8h_a2d48ae4d2124209ed8a6264c6febedc7}\label{pa__win__wasapi_8h_a2d48ae4d2124209ed8a6264c6febedc7} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_ThreadPriorityBoost@{PaWasapi\_ThreadPriorityBoost}}
+\index{PaWasapi\_ThreadPriorityBoost@{PaWasapi\_ThreadPriorityBoost}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_ThreadPriorityBoost()}{PaWasapi\_ThreadPriorityBoost()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Thread\+Priority\+Boost (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{h\+Task,  }\item[{\mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}}}]{n\+Priority\+Class }\end{DoxyParamCaption})}
+
+Boost thread priority of calling thread (MMCSS). Use it for Blocking Interface only for thread which makes calls to Pa\+\_\+\+Write\+Stream/\+Pa\+\_\+\+Read\+Stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Task} & Handle to pointer to priority task. Must be used with Pa\+Wasapi\+\_\+\+Revert\+Thread\+Priority method to revert thread priority to initial state.\\
+\hline
+{\em n\+Priority\+Class} & Id of thread priority of Pa\+Wasapi\+Thread\+Priority type. Specifying e\+Thread\+Priority\+None does nothing.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Pa\+Wasapi\+\_\+\+Revert\+Thread\+Priority 
+\end{DoxySeeAlso}
+\Hypertarget{pa__win__wasapi_8h_ac5c875fb9165712ff696512f750f7de3}\label{pa__win__wasapi_8h_ac5c875fb9165712ff696512f750f7de3} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_ThreadPriorityRevert@{PaWasapi\_ThreadPriorityRevert}}
+\index{PaWasapi\_ThreadPriorityRevert@{PaWasapi\_ThreadPriorityRevert}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_ThreadPriorityRevert()}{PaWasapi\_ThreadPriorityRevert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Thread\+Priority\+Revert (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{h\+Task }\end{DoxyParamCaption})}
+
+Boost thread priority of calling thread (MMCSS). Use it for Blocking Interface only for thread which makes calls to Pa\+\_\+\+Write\+Stream/\+Pa\+\_\+\+Read\+Stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Task} & Task handle obtained by Pa\+Wasapi\+\_\+\+Boost\+Thread\+Priority method. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Pa\+Wasapi\+\_\+\+Boost\+Thread\+Priority 
+\end{DoxySeeAlso}

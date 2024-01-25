@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pa__win__wasapi_8h_source" xml:lang="en-US">
+<title>pa_win_wasapi.h</title>
+<indexterm><primary>packages/portaudio.0.19.1/build/native/include/pa_win_wasapi.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;PA_WIN_WASAPI_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;PA_WIN_WASAPI_H</emphasis>
+3 <emphasis role="comment">/*</emphasis>
+4 <emphasis role="comment">&#32;*&#32;$Id:&#32;&#32;$</emphasis>
+5 <emphasis role="comment">&#32;*&#32;PortAudio&#32;Portable&#32;Real-Time&#32;Audio&#32;Library</emphasis>
+6 <emphasis role="comment">&#32;*&#32;DirectSound&#32;specific&#32;extensions</emphasis>
+7 <emphasis role="comment">&#32;*</emphasis>
+8 <emphasis role="comment">&#32;*&#32;Copyright&#32;(c)&#32;1999-2007&#32;Ross&#32;Bencina&#32;and&#32;Phil&#32;Burk</emphasis>
+9 <emphasis role="comment">&#32;*</emphasis>
+10 <emphasis role="comment">&#32;*&#32;Permission&#32;is&#32;hereby&#32;granted,&#32;free&#32;of&#32;charge,&#32;to&#32;any&#32;person&#32;obtaining</emphasis>
+11 <emphasis role="comment">&#32;*&#32;a&#32;copy&#32;of&#32;this&#32;software&#32;and&#32;associated&#32;documentation&#32;files</emphasis>
+12 <emphasis role="comment">&#32;*&#32;(the&#32;&quot;Software&quot;),&#32;to&#32;deal&#32;in&#32;the&#32;Software&#32;without&#32;restriction,</emphasis>
+13 <emphasis role="comment">&#32;*&#32;including&#32;without&#32;limitation&#32;the&#32;rights&#32;to&#32;use,&#32;copy,&#32;modify,&#32;merge,</emphasis>
+14 <emphasis role="comment">&#32;*&#32;publish,&#32;distribute,&#32;sublicense,&#32;and/or&#32;sell&#32;copies&#32;of&#32;the&#32;Software,</emphasis>
+15 <emphasis role="comment">&#32;*&#32;and&#32;to&#32;permit&#32;persons&#32;to&#32;whom&#32;the&#32;Software&#32;is&#32;furnished&#32;to&#32;do&#32;so,</emphasis>
+16 <emphasis role="comment">&#32;*&#32;subject&#32;to&#32;the&#32;following&#32;conditions:</emphasis>
+17 <emphasis role="comment">&#32;*</emphasis>
+18 <emphasis role="comment">&#32;*&#32;The&#32;above&#32;copyright&#32;notice&#32;and&#32;this&#32;permission&#32;notice&#32;shall&#32;be</emphasis>
+19 <emphasis role="comment">&#32;*&#32;included&#32;in&#32;all&#32;copies&#32;or&#32;substantial&#32;portions&#32;of&#32;the&#32;Software.</emphasis>
+20 <emphasis role="comment">&#32;*</emphasis>
+21 <emphasis role="comment">&#32;*&#32;THE&#32;SOFTWARE&#32;IS&#32;PROVIDED&#32;&quot;AS&#32;IS&quot;,&#32;WITHOUT&#32;WARRANTY&#32;OF&#32;ANY&#32;KIND,</emphasis>
+22 <emphasis role="comment">&#32;*&#32;EXPRESS&#32;OR&#32;IMPLIED,&#32;INCLUDING&#32;BUT&#32;NOT&#32;LIMITED&#32;TO&#32;THE&#32;WARRANTIES&#32;OF</emphasis>
+23 <emphasis role="comment">&#32;*&#32;MERCHANTABILITY,&#32;FITNESS&#32;FOR&#32;A&#32;PARTICULAR&#32;PURPOSE&#32;AND&#32;NONINFRINGEMENT.</emphasis>
+24 <emphasis role="comment">&#32;*&#32;IN&#32;NO&#32;EVENT&#32;SHALL&#32;THE&#32;AUTHORS&#32;OR&#32;COPYRIGHT&#32;HOLDERS&#32;BE&#32;LIABLE&#32;FOR</emphasis>
+25 <emphasis role="comment">&#32;*&#32;ANY&#32;CLAIM,&#32;DAMAGES&#32;OR&#32;OTHER&#32;LIABILITY,&#32;WHETHER&#32;IN&#32;AN&#32;ACTION&#32;OF</emphasis>
+26 <emphasis role="comment">&#32;*&#32;CONTRACT,&#32;TORT&#32;OR&#32;OTHERWISE,&#32;ARISING&#32;FROM,&#32;OUT&#32;OF&#32;OR&#32;IN&#32;CONNECTION</emphasis>
+27 <emphasis role="comment">&#32;*&#32;WITH&#32;THE&#32;SOFTWARE&#32;OR&#32;THE&#32;USE&#32;OR&#32;OTHER&#32;DEALINGS&#32;IN&#32;THE&#32;SOFTWARE.</emphasis>
+28 <emphasis role="comment">&#32;*/</emphasis>
+29 
+30 <emphasis role="comment">/*</emphasis>
+31 <emphasis role="comment">&#32;*&#32;The&#32;text&#32;above&#32;constitutes&#32;the&#32;entire&#32;PortAudio&#32;license;&#32;however,&#32;</emphasis>
+32 <emphasis role="comment">&#32;*&#32;the&#32;PortAudio&#32;community&#32;also&#32;makes&#32;the&#32;following&#32;non-binding&#32;requests:</emphasis>
+33 <emphasis role="comment">&#32;*</emphasis>
+34 <emphasis role="comment">&#32;*&#32;Any&#32;person&#32;wishing&#32;to&#32;distribute&#32;modifications&#32;to&#32;the&#32;Software&#32;is</emphasis>
+35 <emphasis role="comment">&#32;*&#32;requested&#32;to&#32;send&#32;the&#32;modifications&#32;to&#32;the&#32;original&#32;developer&#32;so&#32;that</emphasis>
+36 <emphasis role="comment">&#32;*&#32;they&#32;can&#32;be&#32;incorporated&#32;into&#32;the&#32;canonical&#32;version.&#32;It&#32;is&#32;also&#32;</emphasis>
+37 <emphasis role="comment">&#32;*&#32;requested&#32;that&#32;these&#32;non-binding&#32;requests&#32;be&#32;included&#32;along&#32;with&#32;the&#32;</emphasis>
+38 <emphasis role="comment">&#32;*&#32;license&#32;above.</emphasis>
+39 <emphasis role="comment">&#32;*/</emphasis>
+40 
+46 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_portaudio_8h">portaudio.h</link>&quot;</emphasis>
+47 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_pa__win__waveformat_8h">pa_win_waveformat.h</link>&quot;</emphasis>
+48 
+49 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+50 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>
+51 {
+52 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__cplusplus&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+53 
+54 
+55 <emphasis role="comment">/*&#32;Setup&#32;flags&#32;*/</emphasis>
+56 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;PaWasapiFlags
+57 {
+58 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;puts&#32;WASAPI&#32;into&#32;exclusive&#32;mode&#32;*/</emphasis>
+59 &#32;&#32;&#32;&#32;paWinWasapiExclusive&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;(1&#32;&lt;&lt;&#32;0),
+60 
+61 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;allows&#32;to&#32;skip&#32;internal&#32;PA&#32;processing&#32;completely&#32;*/</emphasis>
+62 &#32;&#32;&#32;&#32;paWinWasapiRedirectHostProcessor&#32;&#32;&#32;&#32;=&#32;(1&#32;&lt;&lt;&#32;1),
+63 
+64 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;assigns&#32;custom&#32;channel&#32;mask&#32;*/</emphasis>
+65 &#32;&#32;&#32;&#32;paWinWasapiUseChannelMask&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;(1&#32;&lt;&lt;&#32;2),
+66 
+67 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;selects&#32;non-Event&#32;driven&#32;method&#32;of&#32;data&#32;read/write</emphasis>
+68 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;Note:&#32;WASAPI&#32;Event&#32;driven&#32;core&#32;is&#32;capable&#32;of&#32;2ms&#32;latency!!!,&#32;but&#32;Polling</emphasis>
+69 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;method&#32;can&#32;only&#32;provide&#32;15-20ms&#32;latency.&#32;*/</emphasis>
+70 &#32;&#32;&#32;&#32;paWinWasapiPolling&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;(1&#32;&lt;&lt;&#32;3),
+71 
+72 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;forces&#32;custom&#32;thread&#32;priority&#32;setting.&#32;must&#32;be&#32;used&#32;if&#32;PaWasapiStreamInfo::threadPriority&#32;</emphasis>
+73 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;is&#32;set&#32;to&#32;custom&#32;value.&#32;*/</emphasis>
+74 &#32;&#32;&#32;&#32;paWinWasapiThreadPriority&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;(1&#32;&lt;&lt;&#32;4)
+75 }
+76 PaWasapiFlags;
+77 <emphasis role="preprocessor">#define&#32;paWinWasapiExclusive&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(paWinWasapiExclusive)</emphasis>
+78 <emphasis role="preprocessor">#define&#32;paWinWasapiRedirectHostProcessor&#32;(paWinWasapiRedirectHostProcessor)</emphasis>
+79 <emphasis role="preprocessor">#define&#32;paWinWasapiUseChannelMask&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(paWinWasapiUseChannelMask)</emphasis>
+80 <emphasis role="preprocessor">#define&#32;paWinWasapiPolling&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(paWinWasapiPolling)</emphasis>
+81 <emphasis role="preprocessor">#define&#32;paWinWasapiThreadPriority&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(paWinWasapiThreadPriority)</emphasis>
+82 
+83 
+84 <emphasis role="comment">/*&#32;Host&#32;processor.&#32;Allows&#32;to&#32;skip&#32;internal&#32;PA&#32;processing&#32;completely.&#32;</emphasis>
+85 <emphasis role="comment">&#32;&#32;&#32;You&#32;must&#32;set&#32;paWinWasapiRedirectHostProcessor&#32;flag&#32;to&#32;PaWasapiStreamInfo::flags&#32;member</emphasis>
+86 <emphasis role="comment">&#32;&#32;&#32;in&#32;order&#32;to&#32;have&#32;host&#32;processor&#32;redirected&#32;to&#32;your&#32;callback.</emphasis>
+87 <emphasis role="comment">&#32;&#32;&#32;Use&#32;with&#32;caution!&#32;inputFrames&#32;and&#32;outputFrames&#32;depend&#32;solely&#32;on&#32;final&#32;device&#32;setup.</emphasis>
+88 <emphasis role="comment">&#32;&#32;&#32;To&#32;query&#32;maximal&#32;values&#32;of&#32;inputFrames/outputFrames&#32;use&#32;PaWasapi_GetFramesPerHostBuffer.</emphasis>
+89 <emphasis role="comment">*/</emphasis>
+90 <emphasis role="keyword">typedef</emphasis>&#32;void&#32;(*PaWasapiHostProcessorCallback)&#32;(<emphasis role="keywordtype">void</emphasis>&#32;*inputBuffer,&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;inputFrames,
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*outputBuffer,&#32;<emphasis role="keywordtype">long</emphasis>&#32;outputFrames,
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*userData);
+93 
+94 <emphasis role="comment">/*&#32;Device&#32;role&#32;*/</emphasis>
+95 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;PaWasapiDeviceRole
+96 {
+97 &#32;&#32;&#32;&#32;eRoleRemoteNetworkDevice&#32;=&#32;0,
+98 &#32;&#32;&#32;&#32;eRoleSpeakers,
+99 &#32;&#32;&#32;&#32;eRoleLineLevel,
+100 &#32;&#32;&#32;&#32;eRoleHeadphones,
+101 &#32;&#32;&#32;&#32;eRoleMicrophone,
+102 &#32;&#32;&#32;&#32;eRoleHeadset,
+103 &#32;&#32;&#32;&#32;eRoleHandset,
+104 &#32;&#32;&#32;&#32;eRoleUnknownDigitalPassthrough,
+105 &#32;&#32;&#32;&#32;eRoleSPDIF,
+106 &#32;&#32;&#32;&#32;eRoleHDMI,
+107 &#32;&#32;&#32;&#32;eRoleUnknownFormFactor
+108 }
+109 PaWasapiDeviceRole;
+110 
+111 
+112 <emphasis role="comment">/*&#32;Jack&#32;connection&#32;type&#32;*/</emphasis>
+113 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;PaWasapiJackConnectionType
+114 {
+115 &#32;&#32;&#32;&#32;eJackConnTypeUnknown,
+116 &#32;&#32;&#32;&#32;eJackConnType3Point5mm,
+117 &#32;&#32;&#32;&#32;eJackConnTypeQuarter,
+118 &#32;&#32;&#32;&#32;eJackConnTypeAtapiInternal,
+119 &#32;&#32;&#32;&#32;eJackConnTypeRCA,
+120 &#32;&#32;&#32;&#32;eJackConnTypeOptical,
+121 &#32;&#32;&#32;&#32;eJackConnTypeOtherDigital,
+122 &#32;&#32;&#32;&#32;eJackConnTypeOtherAnalog,
+123 &#32;&#32;&#32;&#32;eJackConnTypeMultichannelAnalogDIN,
+124 &#32;&#32;&#32;&#32;eJackConnTypeXlrProfessional,
+125 &#32;&#32;&#32;&#32;eJackConnTypeRJ11Modem,
+126 &#32;&#32;&#32;&#32;eJackConnTypeCombination
+127 }&#32;
+128 PaWasapiJackConnectionType;
+129 
+130 
+131 <emphasis role="comment">/*&#32;Jack&#32;geometric&#32;location&#32;*/</emphasis>
+132 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;PaWasapiJackGeoLocation
+133 {
+134 &#32;&#32;&#32;&#32;eJackGeoLocUnk&#32;=&#32;0,
+135 &#32;&#32;&#32;&#32;eJackGeoLocRear&#32;=&#32;0x1,&#32;<emphasis role="comment">/*&#32;matches&#32;EPcxGeoLocation::eGeoLocRear&#32;*/</emphasis>
+136 &#32;&#32;&#32;&#32;eJackGeoLocFront,
+137 &#32;&#32;&#32;&#32;eJackGeoLocLeft,
+138 &#32;&#32;&#32;&#32;eJackGeoLocRight,
+139 &#32;&#32;&#32;&#32;eJackGeoLocTop,
+140 &#32;&#32;&#32;&#32;eJackGeoLocBottom,
+141 &#32;&#32;&#32;&#32;eJackGeoLocRearPanel,
+142 &#32;&#32;&#32;&#32;eJackGeoLocRiser,
+143 &#32;&#32;&#32;&#32;eJackGeoLocInsideMobileLid,
+144 &#32;&#32;&#32;&#32;eJackGeoLocDrivebay,
+145 &#32;&#32;&#32;&#32;eJackGeoLocHDMI,
+146 &#32;&#32;&#32;&#32;eJackGeoLocOutsideMobileLid,
+147 &#32;&#32;&#32;&#32;eJackGeoLocATAPI,
+148 &#32;&#32;&#32;&#32;eJackGeoLocReserved5,
+149 &#32;&#32;&#32;&#32;eJackGeoLocReserved6,
+150 }&#32;
+151 PaWasapiJackGeoLocation;
+152 
+153 
+154 <emphasis role="comment">/*&#32;Jack&#32;general&#32;location&#32;*/</emphasis>
+155 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;PaWasapiJackGenLocation
+156 {
+157 &#32;&#32;&#32;&#32;eJackGenLocPrimaryBox&#32;=&#32;0,
+158 &#32;&#32;&#32;&#32;eJackGenLocInternal,
+159 &#32;&#32;&#32;&#32;eJackGenLocSeparate,
+160 &#32;&#32;&#32;&#32;eJackGenLocOther
+161 }&#32;
+162 PaWasapiJackGenLocation;
+163 
+164 
+165 <emphasis role="comment">/*&#32;Jack&apos;s&#32;type&#32;of&#32;port&#32;*/</emphasis>
+166 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;PaWasapiJackPortConnection
+167 {
+168 &#32;&#32;&#32;&#32;eJackPortConnJack&#32;=&#32;0,
+169 &#32;&#32;&#32;&#32;eJackPortConnIntegratedDevice,
+170 &#32;&#32;&#32;&#32;eJackPortConnBothIntegratedAndJack,
+171 &#32;&#32;&#32;&#32;eJackPortConnUnknown
+172 }&#32;
+173 PaWasapiJackPortConnection;
+174 
+175 
+176 <emphasis role="comment">/*&#32;Thread&#32;priority&#32;*/</emphasis>
+177 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661">PaWasapiThreadPriority</link>
+178 {
+179 &#32;&#32;&#32;&#32;eThreadPriorityNone&#32;=&#32;0,
+180 &#32;&#32;&#32;&#32;<link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661a06c9f997fd5d9e11d4ef8bf67342f031">eThreadPriorityAudio</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+181 &#32;&#32;&#32;&#32;eThreadPriorityCapture,
+182 &#32;&#32;&#32;&#32;eThreadPriorityDistribution,
+183 &#32;&#32;&#32;&#32;eThreadPriorityGames,
+184 &#32;&#32;&#32;&#32;eThreadPriorityPlayback,
+185 &#32;&#32;&#32;&#32;<link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661a9a34413b0a045f4c44d10a49d3357187">eThreadPriorityProAudio</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+186 &#32;&#32;&#32;&#32;eThreadPriorityWindowManager
+187 }
+188 <link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661">PaWasapiThreadPriority</link>;
+189 
+190 
+191 <emphasis role="comment">/*&#32;Stream&#32;descriptor.&#32;*/</emphasis>
+192 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_pa_wasapi_jack_description">PaWasapiJackDescription</link>&#32;
+193 {
+194 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;channelMapping;
+195 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;color;&#32;<emphasis role="comment">/*&#32;derived&#32;from&#32;macro:&#32;#define&#32;RGB(r,g,b)&#32;((COLORREF)(((BYTE)(r)|((WORD)((BYTE)(g))&lt;&lt;8))|(((DWORD)(BYTE)(b))&lt;&lt;16)))&#32;*/</emphasis>
+196 &#32;&#32;&#32;&#32;PaWasapiJackConnectionType&#32;connectionType;
+197 &#32;&#32;&#32;&#32;PaWasapiJackGeoLocation&#32;&#32;&#32;&#32;geoLocation;
+198 &#32;&#32;&#32;&#32;PaWasapiJackGenLocation&#32;&#32;&#32;&#32;genLocation;
+199 &#32;&#32;&#32;&#32;PaWasapiJackPortConnection&#32;portConnection;
+200 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;isConnected;
+201 }
+202 <link linkend="_struct_pa_wasapi_jack_description">PaWasapiJackDescription</link>;
+203 
+204 
+205 <emphasis role="comment">/*&#32;Stream&#32;descriptor.&#32;*/</emphasis>
+206 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_pa_wasapi_stream_info">PaWasapiStreamInfo</link>&#32;
+207 {
+208 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_struct_pa_wasapi_stream_info_1ae491f41ce5954cddd438624dc69eba1b">size</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+209 &#32;&#32;&#32;&#32;<link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link>&#32;<link linkend="_struct_pa_wasapi_stream_info_1a931bf93691d5b36b621d49402d1d2255">hostApiType</link>;&#32;&#32;&#32;&#32;
+210 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_struct_pa_wasapi_stream_info_1a3045f4432a92d761e4a1b95eba97ae49">version</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+212 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_struct_pa_wasapi_stream_info_1a85bfbe1a00e6b48df75528eb6f967a2c">flags</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+214 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Support&#32;for&#32;WAVEFORMATEXTENSIBLE&#32;channel&#32;masks.&#32;If&#32;flags&#32;contains</emphasis>
+215 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;paWinWasapiUseChannelMask&#32;this&#32;allows&#32;you&#32;to&#32;specify&#32;which&#32;speakers&#32;</emphasis>
+216 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;to&#32;address&#32;in&#32;a&#32;multichannel&#32;stream.&#32;Constants&#32;for&#32;channelMask</emphasis>
+217 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;are&#32;specified&#32;in&#32;pa_win_waveformat.h.&#32;Will&#32;be&#32;used&#32;only&#32;if&#32;</emphasis>
+218 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;paWinWasapiUseChannelMask&#32;flag&#32;is&#32;specified.</emphasis>
+219 <emphasis role="comment">&#32;&#32;&#32;&#32;*/</emphasis>
+220 &#32;&#32;&#32;&#32;PaWinWaveFormatChannelMask&#32;channelMask;
+221 
+222 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Delivers&#32;raw&#32;data&#32;to&#32;callback&#32;obtained&#32;from&#32;GetBuffer()&#32;methods&#32;skipping&#32;</emphasis>
+223 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;internal&#32;PortAudio&#32;processing&#32;inventory&#32;completely.&#32;userData&#32;parameter&#32;will&#32;</emphasis>
+224 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;be&#32;the&#32;same&#32;that&#32;was&#32;passed&#32;to&#32;Pa_OpenStream&#32;method.&#32;Will&#32;be&#32;used&#32;only&#32;if&#32;</emphasis>
+225 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;paWinWasapiRedirectHostProcessor&#32;flag&#32;is&#32;specified.</emphasis>
+226 <emphasis role="comment">&#32;&#32;&#32;&#32;*/</emphasis>
+227 &#32;&#32;&#32;&#32;PaWasapiHostProcessorCallback&#32;hostProcessorOutput;
+228 &#32;&#32;&#32;&#32;PaWasapiHostProcessorCallback&#32;hostProcessorInput;
+229 
+230 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Specifies&#32;thread&#32;priority&#32;explicitly.&#32;Will&#32;be&#32;used&#32;only&#32;if&#32;paWinWasapiThreadPriority&#32;flag</emphasis>
+231 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;is&#32;specified.</emphasis>
+232 <emphasis role="comment"></emphasis>
+233 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;Please&#32;note,&#32;if&#32;Input/Output&#32;streams&#32;are&#32;opened&#32;simultaniously&#32;(Full-Duplex&#32;mode)</emphasis>
+234 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;you&#32;shall&#32;specify&#32;same&#32;value&#32;for&#32;threadPriority&#32;or&#32;othervise&#32;one&#32;of&#32;the&#32;values&#32;will&#32;be&#32;used</emphasis>
+235 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;to&#32;setup&#32;thread&#32;priority.</emphasis>
+236 <emphasis role="comment">&#32;&#32;&#32;&#32;*/</emphasis>
+237 &#32;&#32;&#32;&#32;<link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661">PaWasapiThreadPriority</link>&#32;threadPriority;
+238 }&#32;
+239 <link linkend="_struct_pa_wasapi_stream_info">PaWasapiStreamInfo</link>;
+240 
+241 
+253 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_pa__win__wasapi_8h_1aa42c66da0ae19959d25a190e9dd82005">PaWasapi_GetDeviceDefaultFormat</link>(&#32;<emphasis role="keywordtype">void</emphasis>&#32;*pFormat,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;nFormatSize,&#32;<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link>&#32;nDevice&#32;);
+254 
+255 
+263 <emphasis role="keywordtype">int</emphasis><emphasis role="comment">/*PaWasapiDeviceRole*/</emphasis>&#32;<link linkend="_pa__win__wasapi_8h_1a6a8c5307dff661ae7ee0d7bb8bf73469">PaWasapi_GetDeviceRole</link>(&#32;<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link>&#32;nDevice&#32;);
+264 
+265 
+278 <link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link>&#32;<link linkend="_pa__win__wasapi_8h_1a2d48ae4d2124209ed8a6264c6febedc7">PaWasapi_ThreadPriorityBoost</link>(&#32;<emphasis role="keywordtype">void</emphasis>&#32;**hTask,&#32;<link linkend="_pa__win__wasapi_8h_1a561291b0188f6f29246ea669b48e2661">PaWasapiThreadPriority</link>&#32;nPriorityClass&#32;);
+279 
+280 
+288 <link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link>&#32;<link linkend="_pa__win__wasapi_8h_1ac5c875fb9165712ff696512f750f7de3">PaWasapi_ThreadPriorityRevert</link>(&#32;<emphasis role="keywordtype">void</emphasis>&#32;*hTask&#32;);
+289 
+290 
+301 <link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link>&#32;<link linkend="_pa__win__wasapi_8h_1af8f04003c6123e6fdcfdf7308761a75e">PaWasapi_GetFramesPerHostBuffer</link>(&#32;<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link>&#32;*pStream,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;*nInput,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;*nOutput&#32;);
+302 
+303 
+312 <link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link>&#32;<link linkend="_pa__win__wasapi_8h_1a46583f8e4b1132c198e2451fd48f7490">PaWasapi_GetJackCount</link>(<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link>&#32;nDevice,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*jcount);
+313 
+314 
+326 <link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link>&#32;<link linkend="_pa__win__wasapi_8h_1a042829efac1aca1d77608d136a523465">PaWasapi_GetJackDescription</link>(<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link>&#32;nDevice,&#32;<emphasis role="keywordtype">int</emphasis>&#32;jindex,&#32;<link linkend="_struct_pa_wasapi_jack_description">PaWasapiJackDescription</link>&#32;*pJackDescription);
+327 
+328 
+329 <emphasis role="comment">/*</emphasis>
+330 <emphasis role="comment">&#32;&#32;&#32;&#32;IMPORTANT:</emphasis>
+331 <emphasis role="comment"></emphasis>
+332 <emphasis role="comment">&#32;&#32;&#32;&#32;WASAPI&#32;is&#32;implemented&#32;for&#32;Callback&#32;and&#32;Blocking&#32;interfaces.&#32;It&#32;supports&#32;Shared&#32;and&#32;Exclusive</emphasis>
+333 <emphasis role="comment">&#32;&#32;&#32;&#32;share&#32;modes.&#32;</emphasis>
+334 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+335 <emphasis role="comment">&#32;&#32;&#32;&#32;Exclusive&#32;Mode:</emphasis>
+336 <emphasis role="comment"></emphasis>
+337 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Exclusive&#32;mode&#32;allows&#32;to&#32;deliver&#32;audio&#32;data&#32;directly&#32;to&#32;hardware&#32;bypassing</emphasis>
+338 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;software&#32;mixing.</emphasis>
+339 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Exclusive&#32;mode&#32;is&#32;specified&#32;by&#32;&apos;paWinWasapiExclusive&apos;&#32;flag.</emphasis>
+340 <emphasis role="comment"></emphasis>
+341 <emphasis role="comment">&#32;&#32;&#32;&#32;Callback&#32;Interface:</emphasis>
+342 <emphasis role="comment"></emphasis>
+343 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Provides&#32;best&#32;audio&#32;quality&#32;with&#32;low&#32;latency.&#32;Callback&#32;interface&#32;is&#32;implemented&#32;in&#32;</emphasis>
+344 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;two&#32;versions:</emphasis>
+345 <emphasis role="comment"></emphasis>
+346 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;1)&#32;Event-Driven:</emphasis>
+347 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;This&#32;is&#32;the&#32;most&#32;powerful&#32;WASAPI&#32;implementation&#32;which&#32;provides&#32;glitch-free</emphasis>
+348 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;audio&#32;at&#32;around&#32;3ms&#32;latency&#32;in&#32;Exclusive&#32;mode.&#32;Lowest&#32;possible&#32;latency&#32;for&#32;this&#32;mode&#32;is&#32;</emphasis>
+349 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;3&#32;ms&#32;for&#32;HD&#32;Audio&#32;class&#32;audio&#32;chips.&#32;For&#32;the&#32;Shared&#32;mode&#32;latency&#32;can&#32;not&#32;be&#32;</emphasis>
+350 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lower&#32;than&#32;20&#32;ms.</emphasis>
+351 <emphasis role="comment"></emphasis>
+352 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;2)&#32;Poll-Driven:</emphasis>
+353 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Polling&#32;is&#32;another&#32;2-nd&#32;method&#32;to&#32;operate&#32;with&#32;WASAPI.&#32;It&#32;is&#32;less&#32;efficient&#32;than&#32;Event-Driven</emphasis>
+354 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;and&#32;provides&#32;latency&#32;at&#32;around&#32;10-13ms.&#32;Polling&#32;must&#32;be&#32;used&#32;to&#32;overcome&#32;a&#32;system&#32;bug</emphasis>
+355 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;under&#32;Windows&#32;Vista&#32;x64&#32;when&#32;application&#32;is&#32;WOW64(32-bit)&#32;and&#32;Event-Driven&#32;method&#32;simply&#32;</emphasis>
+356 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;times&#32;out&#32;(event&#32;handle&#32;is&#32;never&#32;signalled&#32;on&#32;buffer&#32;completion).&#32;Please&#32;note,&#32;such&#32;WOW64&#32;bug&#32;</emphasis>
+357 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;does&#32;not&#32;exist&#32;in&#32;Vista&#32;x86&#32;or&#32;Windows&#32;7.</emphasis>
+358 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Polling&#32;can&#32;be&#32;setup&#32;by&#32;speciying&#32;&apos;paWinWasapiPolling&apos;&#32;flag.&#32;Our&#32;WASAPI&#32;implementation&#32;detects</emphasis>
+359 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;WOW64&#32;bug&#32;and&#32;sets&#32;&apos;paWinWasapiPolling&apos;&#32;automatically.</emphasis>
+360 <emphasis role="comment"></emphasis>
+361 <emphasis role="comment">&#32;&#32;&#32;&#32;Thread&#32;priority:</emphasis>
+362 <emphasis role="comment"></emphasis>
+363 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Normally&#32;thread&#32;priority&#32;is&#32;set&#32;automatically&#32;and&#32;does&#32;not&#32;require&#32;modification.&#32;Although</emphasis>
+364 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if&#32;user&#32;wants&#32;some&#32;tweaking&#32;thread&#32;priority&#32;can&#32;be&#32;modified&#32;by&#32;setting&#32;&apos;paWinWasapiThreadPriority&apos;</emphasis>
+365 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;flag&#32;and&#32;specifying&#32;&apos;PaWasapiStreamInfo::threadPriority&apos;&#32;with&#32;value&#32;from&#32;PaWasapiThreadPriority&#32;</emphasis>
+366 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;enum.</emphasis>
+367 <emphasis role="comment"></emphasis>
+368 <emphasis role="comment">&#32;&#32;&#32;&#32;Blocking&#32;Interface:</emphasis>
+369 <emphasis role="comment"></emphasis>
+370 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Blocking&#32;interface&#32;is&#32;implemented&#32;but&#32;due&#32;to&#32;above&#32;described&#32;Poll-Driven&#32;method&#32;can&#32;not</emphasis>
+371 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;deliver&#32;lowest&#32;possible&#32;latency.&#32;Specifying&#32;too&#32;low&#32;latency&#32;in&#32;Shared&#32;mode&#32;will&#32;result&#32;in&#32;</emphasis>
+372 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;distorted&#32;audio&#32;although&#32;Exclusive&#32;mode&#32;adds&#32;stability.</emphasis>
+373 <emphasis role="comment"></emphasis>
+374 <emphasis role="comment">&#32;&#32;&#32;&#32;Pa_IsFormatSupported:</emphasis>
+375 <emphasis role="comment"></emphasis>
+376 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;To&#32;check&#32;format&#32;with&#32;correct&#32;Share&#32;Mode&#32;(Exclusive/Shared)&#32;you&#32;must&#32;supply</emphasis>
+377 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PaWasapiStreamInfo&#32;with&#32;flags&#32;paWinWasapiExclusive&#32;set&#32;through&#32;member&#32;of&#32;</emphasis>
+378 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PaStreamParameters::hostApiSpecificStreamInfo&#32;structure.</emphasis>
+379 <emphasis role="comment"></emphasis>
+380 <emphasis role="comment">&#32;&#32;&#32;&#32;Pa_OpenStream:</emphasis>
+381 <emphasis role="comment"></emphasis>
+382 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;To&#32;set&#32;desired&#32;Share&#32;Mode&#32;(Exclusive/Shared)&#32;you&#32;must&#32;supply</emphasis>
+383 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PaWasapiStreamInfo&#32;with&#32;flags&#32;paWinWasapiExclusive&#32;set&#32;through&#32;member&#32;of&#32;</emphasis>
+384 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PaStreamParameters::hostApiSpecificStreamInfo&#32;structure.</emphasis>
+385 <emphasis role="comment">*/</emphasis>
+386 
+387 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+388 }
+389 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__cplusplus&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+390 
+391 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;PA_WIN_WASAPI_H&#32;*/</emphasis><emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+</programlisting></section>

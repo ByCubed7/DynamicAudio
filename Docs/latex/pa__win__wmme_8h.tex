@@ -1,0 +1,135 @@
+\doxysection{packages/portaudio.0.19.1/build/native/include/pa\+\_\+win\+\_\+wmme.h File Reference}
+\hypertarget{pa__win__wmme_8h}{}\label{pa__win__wmme_8h}\index{packages/portaudio.0.19.1/build/native/include/pa\_win\_wmme.h@{packages/portaudio.0.19.1/build/native/include/pa\_win\_wmme.h}}
+
+
+WMME-\/specific Port\+Audio API extension header file.  
+
+
+{\ttfamily \#include "{}portaudio.\+h"{}}\newline
+{\ttfamily \#include "{}pa\+\_\+win\+\_\+waveformat.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_mme_device_and_channel_count}{Pa\+Win\+Mme\+Device\+And\+Channel\+Count}}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_mme_stream_info}{Pa\+Win\+Mme\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pa__win__wmme_8h_a730c8a906c8991134bbb419cff40a0a0}\label{pa__win__wmme_8h_a730c8a906c8991134bbb419cff40a0a0} 
+\#define {\bfseries pa\+Win\+Mme\+Use\+Low\+Level\+Latency\+Parameters}~(0x01)
+\item 
+\Hypertarget{pa__win__wmme_8h_ae6e9b45c6ff5fd7442e532dab6fc3c93}\label{pa__win__wmme_8h_ae6e9b45c6ff5fd7442e532dab6fc3c93} 
+\#define {\bfseries pa\+Win\+Mme\+Use\+Multiple\+Devices}~(0x02)  /\texorpdfstring{$\ast$}{*} use mme specific multiple device feature \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{pa__win__wmme_8h_a9a7c36329821a882b95b3e9a0d9016a9}\label{pa__win__wmme_8h_a9a7c36329821a882b95b3e9a0d9016a9} 
+\#define {\bfseries pa\+Win\+Mme\+Use\+Channel\+Mask}~(0x04)
+\item 
+\Hypertarget{pa__win__wmme_8h_a89f82596ff104d9b994e97af07022a34}\label{pa__win__wmme_8h_a89f82596ff104d9b994e97af07022a34} 
+\#define {\bfseries pa\+Win\+Mme\+Dont\+Throttle\+Overloaded\+Processing\+Thread}~(0x08)
+\item 
+\Hypertarget{pa__win__wmme_8h_a0253c24374587b8c74029287d5146d36}\label{pa__win__wmme_8h_a0253c24374587b8c74029287d5146d36} 
+\#define {\bfseries pa\+Win\+Mme\+Wave\+Format\+Dolby\+Ac3\+Spdif}~(0x10)
+\item 
+\Hypertarget{pa__win__wmme_8h_a1f5896b4c9be407cff3e067210a74784}\label{pa__win__wmme_8h_a1f5896b4c9be407cff3e067210a74784} 
+\#define {\bfseries pa\+Win\+Mme\+Wave\+Format\+Wma\+Spdif}~(0x20)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pa__win__wmme_8h_af39aa9c30a3ee4628622fca2128f4202}\label{pa__win__wmme_8h_af39aa9c30a3ee4628622fca2128f4202} 
+typedef struct Pa\+Win\+Mme\+Device\+And\+Channel\+Count {\bfseries Pa\+Win\+Mme\+Device\+And\+Channel\+Count}
+\item 
+\Hypertarget{pa__win__wmme_8h_a7a128685b5547c0b4ad8fc6b5ccbb0ef}\label{pa__win__wmme_8h_a7a128685b5547c0b4ad8fc6b5ccbb0ef} 
+typedef struct Pa\+Win\+Mme\+Stream\+Info {\bfseries Pa\+Win\+Mme\+Stream\+Info}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pa__win__wmme_8h_aaa47c87fb51f29024ad2db1c3ba85db5}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle\+Count}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} \texorpdfstring{$\ast$}{*}stream)
+\item 
+HWAVEIN \mbox{\hyperlink{pa__win__wmme_8h_a67a4c1e3b4d2a5830c11bc1c4e7d2caa}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} \texorpdfstring{$\ast$}{*}stream, int handle\+Index)
+\item 
+int \mbox{\hyperlink{pa__win__wmme_8h_a8eae212f83c77fc92eb3e8e95216ede7}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle\+Count}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} \texorpdfstring{$\ast$}{*}stream)
+\item 
+HWAVEOUT \mbox{\hyperlink{pa__win__wmme_8h_ac7311604a84f712ef70fe90510f96be6}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} \texorpdfstring{$\ast$}{*}stream, int handle\+Index)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+WMME-\/specific Port\+Audio API extension header file. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pa__win__wmme_8h_a67a4c1e3b4d2a5830c11bc1c4e7d2caa}\label{pa__win__wmme_8h_a67a4c1e3b4d2a5830c11bc1c4e7d2caa} 
+\index{pa\_win\_wmme.h@{pa\_win\_wmme.h}!PaWinMME\_GetStreamInputHandle@{PaWinMME\_GetStreamInputHandle}}
+\index{PaWinMME\_GetStreamInputHandle@{PaWinMME\_GetStreamInputHandle}!pa\_win\_wmme.h@{pa\_win\_wmme.h}}
+\doxysubsubsection{\texorpdfstring{PaWinMME\_GetStreamInputHandle()}{PaWinMME\_GetStreamInputHandle()}}
+{\footnotesize\ttfamily HWAVEIN Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{int}]{handle\+Index }\end{DoxyParamCaption})}
+
+Retrieve a wave in handle used by a Port\+Audio Win\+MME stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The stream to query. \\
+\hline
+{\em handle\+Index} & The zero based index of the wave in handle to retrieve. This should be in the range \mbox{[}0, Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle\+Count(stream)-\/1\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A valid wave in handle, or NULL if an error occurred.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{pa__win__wmme_8h_a67a4c1e3b4d2a5830c11bc1c4e7d2caa}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle} 
+\end{DoxySeeAlso}
+\Hypertarget{pa__win__wmme_8h_aaa47c87fb51f29024ad2db1c3ba85db5}\label{pa__win__wmme_8h_aaa47c87fb51f29024ad2db1c3ba85db5} 
+\index{pa\_win\_wmme.h@{pa\_win\_wmme.h}!PaWinMME\_GetStreamInputHandleCount@{PaWinMME\_GetStreamInputHandleCount}}
+\index{PaWinMME\_GetStreamInputHandleCount@{PaWinMME\_GetStreamInputHandleCount}!pa\_win\_wmme.h@{pa\_win\_wmme.h}}
+\doxysubsubsection{\texorpdfstring{PaWinMME\_GetStreamInputHandleCount()}{PaWinMME\_GetStreamInputHandleCount()}}
+{\footnotesize\ttfamily int Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} \texorpdfstring{$\ast$}{*}}]{stream }\end{DoxyParamCaption})}
+
+Retrieve the number of wave in handles used by a Port\+Audio Win\+MME stream. Returns zero if the stream is output only.
+
+\begin{DoxyReturn}{Returns}
+A non-\/negative value indicating the number of wave in handles or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{pa__win__wmme_8h_a67a4c1e3b4d2a5830c11bc1c4e7d2caa}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle} 
+\end{DoxySeeAlso}
+\Hypertarget{pa__win__wmme_8h_ac7311604a84f712ef70fe90510f96be6}\label{pa__win__wmme_8h_ac7311604a84f712ef70fe90510f96be6} 
+\index{pa\_win\_wmme.h@{pa\_win\_wmme.h}!PaWinMME\_GetStreamOutputHandle@{PaWinMME\_GetStreamOutputHandle}}
+\index{PaWinMME\_GetStreamOutputHandle@{PaWinMME\_GetStreamOutputHandle}!pa\_win\_wmme.h@{pa\_win\_wmme.h}}
+\doxysubsubsection{\texorpdfstring{PaWinMME\_GetStreamOutputHandle()}{PaWinMME\_GetStreamOutputHandle()}}
+{\footnotesize\ttfamily HWAVEOUT Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{int}]{handle\+Index }\end{DoxyParamCaption})}
+
+Retrieve a wave out handle used by a Port\+Audio Win\+MME stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The stream to query. \\
+\hline
+{\em handle\+Index} & The zero based index of the wave out handle to retrieve. This should be in the range \mbox{[}0, Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle\+Count(stream)-\/1\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A valid wave out handle, or NULL if an error occurred.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{pa__win__wmme_8h_a8eae212f83c77fc92eb3e8e95216ede7}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle\+Count} 
+\end{DoxySeeAlso}
+\Hypertarget{pa__win__wmme_8h_a8eae212f83c77fc92eb3e8e95216ede7}\label{pa__win__wmme_8h_a8eae212f83c77fc92eb3e8e95216ede7} 
+\index{pa\_win\_wmme.h@{pa\_win\_wmme.h}!PaWinMME\_GetStreamOutputHandleCount@{PaWinMME\_GetStreamOutputHandleCount}}
+\index{PaWinMME\_GetStreamOutputHandleCount@{PaWinMME\_GetStreamOutputHandleCount}!pa\_win\_wmme.h@{pa\_win\_wmme.h}}
+\doxysubsubsection{\texorpdfstring{PaWinMME\_GetStreamOutputHandleCount()}{PaWinMME\_GetStreamOutputHandleCount()}}
+{\footnotesize\ttfamily int Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} \texorpdfstring{$\ast$}{*}}]{stream }\end{DoxyParamCaption})}
+
+Retrieve the number of wave out handles used by a Port\+Audio Win\+MME stream. Returns zero if the stream is input only.
+
+\begin{DoxyReturn}{Returns}
+A non-\/negative value indicating the number of wave out handles or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{pa__win__wmme_8h_ac7311604a84f712ef70fe90510f96be6}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle} 
+\end{DoxySeeAlso}

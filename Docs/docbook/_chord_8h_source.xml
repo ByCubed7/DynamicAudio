@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__chord_8h_source" xml:lang="en-US">
+<title>Chord.h</title>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 
+3 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+4 <emphasis role="preprocessor">#include&#32;&quot;Note.h&quot;</emphasis>
+5 
+6 <emphasis role="keyword">namespace&#32;</emphasis>DynamicAudio&#32;{
+7 
+8 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;{
+9 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+10 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;Note&gt;&#32;notes;
+11 
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default&#32;Constructor</emphasis>
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>()&#32;:&#32;notes()&#32;{}
+15 
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Constructor&#32;to&#32;create&#32;a&#32;Chord&#32;from&#32;a&#32;vector&#32;of&#32;Note</emphasis>
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>(<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;Note&gt;&amp;&#32;notes)&#32;:&#32;notes(notes)&#32;{}
+18 
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1aeaafcbcfe06743f8739c144b769e7064">addNote</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&amp;&#32;note)&#32;{
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;notes.push_back(note);
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+24 
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1aaf29475c17f6a870177d64f9a313f06d">addNull</link>(<emphasis role="keywordtype">double</emphasis>&#32;duration)&#32;{
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;notes.push_back(
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_dynamic_audio_1_1_note_1ab81b6ba8f0d63618aa7cf6b6e87b0d23">Note::null</link>(duration)
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;);
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+32 
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;Note&gt;&amp;&#32;<link linkend="_class_dynamic_audio_1_1_chord_1adf95fabc477782c8145fb9d7f48b71e6">allNotes</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;notes;
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+37 
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1ac9f75e81eefc82d166a89b17c2e76b40">removeNote</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&amp;&#32;note)&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;it&#32;=&#32;std::remove_if(notes.begin(),&#32;notes.end(),&#32;[&amp;note](<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&amp;&#32;n)&#32;{
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;n&#32;==&#32;note;
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;});
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;notes.erase(it,&#32;notes.end());
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+46 
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1a230dd2fb9472a272153ae00800535b7b">removeNote</link>(<emphasis role="keywordtype">int</emphasis>&#32;index)&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;notes.erase(notes.begin()&#32;+&#32;index);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+52 
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1a2818fc32db79290a616fee3ffdcf0a39">hasNote</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&amp;&#32;note)<emphasis role="keyword">&#32;const&#32;</emphasis>{
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::find(notes.begin(),&#32;notes.end(),&#32;note)&#32;!=&#32;notes.end();
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+59 
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1adbed9edfabdc85f351d0378590d850db">transpose</link>(<emphasis role="keyword">const</emphasis>&#32;NoteValue&amp;&#32;semitones)&#32;{
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">auto</emphasis>&amp;&#32;note&#32;:&#32;notes)&#32;{
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;note.value&#32;=&#32;Note::Value::transpose(note.value,&#32;semitones);
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+67 
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1a1a21766f30d571e99fead468a58b014e">first</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;notes[0];
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+73 
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;total&#32;duration&#32;of&#32;the&#32;chord</emphasis>
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//int&#32;getTotalDuration()&#32;const&#32;{</emphasis>
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;int&#32;duration&#32;=&#32;0;</emphasis>
+77 
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;for&#32;(Note&#32;note&#32;:&#32;notes)</emphasis>
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;duration&#32;+=&#32;note.duration;</emphasis>
+80 
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;return&#32;duration;</emphasis>
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//}</emphasis>
+83 
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1a786a2518b3d5bf8cb402a9921cdb1c3f">maxDuration</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;longestTime&#32;=&#32;0;
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&amp;&#32;note&#32;:&#32;notes)
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;longestTime&#32;=&#32;std::max(longestTime,&#32;note.duration);
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;longestTime;
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+95 
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Chord&#32;getScale()&#32;const&#32;{</emphasis>
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;return&#32;getScale(first());</emphasis>
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//}</emphasis>
+99 
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Chord&#32;getArpeggio()&#32;const&#32;{</emphasis>
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;return&#32;getArpeggio(first());</emphasis>
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//}</emphasis>
+103 
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;</emphasis>
+105 
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1a03c53471b220dcec7d49f8a1c45ec1ed">getScale</link>(<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&#32;root)&#32;{
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;Note&gt;&#32;scale;
+114 
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;other&#32;notes&#32;based&#32;on&#32;the&#32;chord&#32;type&#32;(e.g.,&#32;major,&#32;minor,&#32;etc.)</emphasis>
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;For&#32;simplicity,&#32;we&apos;ll&#32;assume&#32;a&#32;major&#32;chord&#32;here</emphasis>
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale.push_back(root);
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale.push_back(root&#32;+&#32;2);&#32;<emphasis role="comment">//&#32;Major&#32;third</emphasis>
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale.push_back(root&#32;+&#32;4);&#32;<emphasis role="comment">//&#32;Perfect&#32;fifth</emphasis>
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale.push_back(root&#32;+&#32;5);&#32;<emphasis role="comment">//&#32;Major&#32;sixth</emphasis>
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale.push_back(root&#32;+&#32;7);&#32;<emphasis role="comment">//&#32;Minor&#32;seventh</emphasis>
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale.push_back(root&#32;+&#32;9);&#32;<emphasis role="comment">//&#32;Major&#32;ninth</emphasis>
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scale.push_back(root&#32;+&#32;11);&#32;<emphasis role="comment">//&#32;Perfect&#32;eleventh</emphasis>
+124 
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>(scale);
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+127 
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1ace3534997f4ee6423d2cc116d710dea0">getArpeggio</link>(<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&#32;root)&#32;{
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;Note&gt;&#32;arpeggio;
+136 
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;other&#32;notes&#32;based&#32;on&#32;the&#32;chord&#32;type&#32;(e.g.,&#32;major,&#32;minor,&#32;etc.)</emphasis>
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;For&#32;simplicity,&#32;we&apos;ll&#32;assume&#32;a&#32;major&#32;arpeggio&#32;here</emphasis>
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;arpeggio.push_back(root);
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;arpeggio.push_back(root&#32;+&#32;4);&#32;&#32;<emphasis role="comment">//&#32;Major&#32;third</emphasis>
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;arpeggio.push_back(root&#32;+&#32;7);&#32;&#32;<emphasis role="comment">//&#32;Perfect&#32;fifth</emphasis>
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;arpeggio.push_back(root&#32;+&#32;11);&#32;<emphasis role="comment">//&#32;Major&#32;ninth</emphasis>
+143 
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>(arpeggio);
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+146 
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1a34b9e5af3c2b4813d53b02df1a4bbddf">null</link>(NoteLength&#32;length)&#32;{
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;Note&gt;&#32;<link linkend="_class_dynamic_audio_1_1_chord_1a473fb03158b675b5309a00c9aa5d3d40">empty</link>;
+155 
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord_1a473fb03158b675b5309a00c9aa5d3d40">empty</link>.push_back(<link linkend="_struct_dynamic_audio_1_1_note_1ab81b6ba8f0d63618aa7cf6b6e87b0d23">Note::null</link>(length));
+157 
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>(<link linkend="_class_dynamic_audio_1_1_chord_1a473fb03158b675b5309a00c9aa5d3d40">empty</link>);
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+160 
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1ae45ea9ad5dea672253c02a5a31402fe2">fromNote</link>(<link linkend="_struct_dynamic_audio_1_1_note">Note</link>&#32;note)&#32;{
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;chord&#32;=&#32;{};
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chord.<link linkend="_class_dynamic_audio_1_1_chord_1aeaafcbcfe06743f8739c144b769e7064">addNote</link>(note);
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;chord;
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+171 
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_class_dynamic_audio_1_1_chord">Chord</link>&#32;<link linkend="_class_dynamic_audio_1_1_chord_1a473fb03158b675b5309a00c9aa5d3d40">empty</link>()&#32;{
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;{};
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+179 &#32;&#32;&#32;&#32;};
+180 }
+</programlisting></section>

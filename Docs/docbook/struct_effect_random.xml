@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_effect_random" xml:lang="en-US">
+<title>EffectRandom Struct Reference</title>
+<indexterm><primary>EffectRandom</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_random_1a9d4835d47a4ac8c6bb082d65777df10e"/><emphasis role="strong">EffectRandom</emphasis> (unsigned int seed_, <link linkend="_struct_effect_abstract">EffectAbstract</link> *minu_, <link linkend="_struct_effect_abstract">EffectAbstract</link> *maxi_)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_random_1a344f78aa13ce775b9c78fcf7fb503891"/>value <emphasis role="strong">get</emphasis> (value in)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_random_1a73047f8d7047be3459b3b2d16a54d40e"/>unsigned int <emphasis role="strong">seed</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_random_1a4d88dc77c802bb05cdb39cd26531f41e"/><link linkend="_struct_effect_abstract">EffectAbstract</link> * <emphasis role="strong">minu</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_random_1a788d87f73a15f3f89e17430ba3532cc5"/><link linkend="_struct_effect_abstract">EffectAbstract</link> * <emphasis role="strong">maxi</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+EffectBase.h</section>

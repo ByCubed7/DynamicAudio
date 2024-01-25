@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_dynamic_audio_1_1_notes" xml:lang="en-US">
+<title>DynamicAudio::Notes Namespace Reference</title>
+<indexterm><primary>DynamicAudio::Notes</primary></indexterm>
+<para>
+
+<para>AAAAAAA. </para>
+ 
+</para>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a73baf4c9d16475dfa7fbfc9430b7fb40"/>const NoteValue <emphasis role="strong">Cf</emphasis> = 59</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1aad6841f7e65bc9b150f0d8c814aa8b20"/>const NoteValue <emphasis role="strong">C</emphasis> = 60</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1aad8324cfe11ec0f5da6db7f73e3ff0a5"/>const NoteValue <emphasis role="strong">Cs</emphasis> = 61</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1aac906b79df0533bcc1a8b24978c5faf5"/>const NoteValue <emphasis role="strong">Df</emphasis> = 61</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a3a8b78c4e913e762971972a5feb34f6a"/>const NoteValue <emphasis role="strong">D</emphasis> = 62</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1add3e7a838c0b05bdb95e399f2f514385"/>const NoteValue <emphasis role="strong">Ds</emphasis> = 63</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a216b431540da93329e8e7f6b94151609"/>const NoteValue <emphasis role="strong">Ef</emphasis> = 63</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a9f54c8be63e2df56d1c060f0c54b9cc7"/>const NoteValue <emphasis role="strong">E</emphasis> = 64</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a346a43dc13509d5d790ff4c97f2db697"/>const NoteValue <emphasis role="strong">F</emphasis> = 65</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a66fe33e767987beeae0f3fbe1069b958"/>const NoteValue <emphasis role="strong">Fs</emphasis> = 66</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1aa88f76430deb6d3469357f89c999ee8a"/>const NoteValue <emphasis role="strong">Gf</emphasis> = 66</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a68eaae6ec743c65f9db4d7c79713b255"/>const NoteValue <emphasis role="strong">G</emphasis> = 67</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a3d0096526fb2f6a93e1d5d4171a7ed82"/>const NoteValue <emphasis role="strong">Gs</emphasis> = 68</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a274aee3e1d3be93ee72d2761868ea73c"/>const NoteValue <emphasis role="strong">Af</emphasis> = 68</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a6b0f8c6379a15aa11b9c921fc296b9bd"/>const NoteValue <emphasis role="strong">A</emphasis> = 69</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1ad8d4cb3c6ae8388f7d0f1f60178c6971"/>const NoteValue <emphasis role="strong">As</emphasis> = 70</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1aad3ddde8f94fd42cc699bd33dc8b8a89"/>const NoteValue <emphasis role="strong">Bf</emphasis> = 70</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a5cf234a95623c1186a756b31cba20b12"/>const NoteValue <emphasis role="strong">B</emphasis> = 71</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a3be354b2da022648a0fc8dad1bb416ea"/>const NoteValue <emphasis role="strong">Middle_C</emphasis> = C</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a6fa4cd5aeb62f358c9bf2431fd9628c1"/>const NoteValue <emphasis role="strong">MIDI_A440</emphasis> = A</para>
+</listitem>
+            <listitem><para><anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a7eb27ce517596dae3329810101cbe664"/>const NoteValue <emphasis role="strong">null</emphasis> = 0</para>
+</listitem>
+            <listitem><para>const std::map&lt; std::string, NoteValue &gt; <link linkend="_namespace_dynamic_audio_1_1_notes_1a505a534ae61ba6aa46574fc59f3becdc">mapStringToValue</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>AAAAAAA. </para>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespace_dynamic_audio_1_1_notes_1a505a534ae61ba6aa46574fc59f3becdc"/><section>
+    <title>mapStringToValue</title>
+<indexterm><primary>mapStringToValue</primary><secondary>DynamicAudio::Notes</secondary></indexterm>
+<indexterm><primary>DynamicAudio::Notes</primary><secondary>mapStringToValue</secondary></indexterm>
+<para><computeroutput>const std::map&lt;std::string, NoteValue&gt; DynamicAudio::Notes::mapStringToValue</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">=&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;C&quot;</emphasis>,&#32;&#32;C},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;Cs&quot;</emphasis>,&#32;Cs},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;D&quot;</emphasis>,&#32;&#32;D},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;Ds&quot;</emphasis>,&#32;Ds},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;E&quot;</emphasis>,&#32;&#32;E},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;F&quot;</emphasis>,&#32;&#32;F},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;Fs&quot;</emphasis>,&#32;Fs},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;G&quot;</emphasis>,&#32;&#32;G},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;Gs&quot;</emphasis>,&#32;Gs},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;A&quot;</emphasis>,&#32;&#32;A},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;As&quot;</emphasis>,&#32;As},
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{<emphasis role="stringliteral">&quot;B&quot;</emphasis>,&#32;&#32;B}
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+</section>

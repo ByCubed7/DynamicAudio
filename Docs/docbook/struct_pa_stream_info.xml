@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_stream_info" xml:lang="en-US">
+<title>PaStreamInfo Struct Reference</title>
+<indexterm><primary>PaStreamInfo</primary></indexterm>
+<para>
+<computeroutput>#include &lt;portaudio.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_struct_pa_stream_info_1a5e053a3f0f6232a5d1ec0dee0f9a943b">structVersion</link></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> <link linkend="_struct_pa_stream_info_1a1f5339e0fef75cea66d9153235698399">inputLatency</link></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> <link linkend="_struct_pa_stream_info_1a372a81f39d90a85ae62225e9f57a7840">outputLatency</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_pa_stream_info_1a9200fdee790d9155bc35d03be51ee2dd">sampleRate</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A structure containing unchanging information about an open stream. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1ab9207d6191bb1f1725470a9cae98436d">Pa_GetStreamInfo</link> </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_pa_stream_info_1a1f5339e0fef75cea66d9153235698399"/><section>
+    <title>inputLatency</title>
+<indexterm><primary>inputLatency</primary><secondary>PaStreamInfo</secondary></indexterm>
+<indexterm><primary>PaStreamInfo</primary><secondary>inputLatency</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> PaStreamInfo::inputLatency</computeroutput></para>
+<para>The input latency of the stream in seconds. This value provides the most accurate estimate of input latency available to the implementation. It may differ significantly from the suggestedLatency value passed to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link>. The value of this field will be zero (0.) for output-only streams. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_struct_pa_stream_info_1a372a81f39d90a85ae62225e9f57a7840"/><section>
+    <title>outputLatency</title>
+<indexterm><primary>outputLatency</primary><secondary>PaStreamInfo</secondary></indexterm>
+<indexterm><primary>PaStreamInfo</primary><secondary>outputLatency</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> PaStreamInfo::outputLatency</computeroutput></para>
+<para>The output latency of the stream in seconds. This value provides the most accurate estimate of output latency available to the implementation. It may differ significantly from the suggestedLatency value passed to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link>. The value of this field will be zero (0.) for input-only streams. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_struct_pa_stream_info_1a9200fdee790d9155bc35d03be51ee2dd"/><section>
+    <title>sampleRate</title>
+<indexterm><primary>sampleRate</primary><secondary>PaStreamInfo</secondary></indexterm>
+<indexterm><primary>PaStreamInfo</primary><secondary>sampleRate</secondary></indexterm>
+<para><computeroutput>double PaStreamInfo::sampleRate</computeroutput></para>
+<para>The sample rate of the stream in Hertz (samples per second). In cases where the hardware sample rate is inaccurate and PortAudio is aware of it, the value of this field may be different from the sampleRate parameter passed to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link>. If information about the actual hardware sample rate is not available, this field will have the same value as the sampleRate parameter passed to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link>. </para>
+</section>
+<anchor xml:id="_struct_pa_stream_info_1a5e053a3f0f6232a5d1ec0dee0f9a943b"/><section>
+    <title>structVersion</title>
+<indexterm><primary>structVersion</primary><secondary>PaStreamInfo</secondary></indexterm>
+<indexterm><primary>PaStreamInfo</primary><secondary>structVersion</secondary></indexterm>
+<para><computeroutput>int PaStreamInfo::structVersion</computeroutput></para>
+<para>this is struct version 1 </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_portaudio_8h">portaudio.h</link></section>
+</section>

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_effect_1_1_time_since" xml:lang="en-US">
+<title>Effect::TimeSince Struct Reference</title>
+<indexterm><primary>Effect::TimeSince</primary></indexterm>
+<para>
+
+<para>Returns the time stamp from start. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;EffectBase.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Effect::TimeSince:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_effect_1_1_time_since.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_time_since_1aa3021b93d970ec6400a428a2fa5b5e4c"/><emphasis role="strong">TimeSince</emphasis> ()</para>
+
+<para>Constructor Definition. </para>
+</listitem>
+            <listitem><para>value <link linkend="_struct_effect_1_1_time_since_1a45899ea4231e0fbcdf6e97a414355b3c">get</link> (value in) override</para>
+
+<para>Gets the calculated effects value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_time_since_1a28044121a1a784f0888838883f22169f"/>std::chrono::steady_clock::time_point <emphasis role="strong">start</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Returns the time stamp from start. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_effect_1_1_time_since_1a45899ea4231e0fbcdf6e97a414355b3c"/><section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>Effect::TimeSince</secondary></indexterm>
+<indexterm><primary>Effect::TimeSince</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>value Effect::TimeSince::get (value in)<computeroutput>[inline]</computeroutput>, <computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Gets the calculated effects value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>
+<para>The value passed in. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The value passed out. </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_struct_effect_1_1_abstract_1ac72d7f8db28f06f9794ad457cc6d4d86">Effect::Abstract</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+EffectBase.h</section>
+</section>

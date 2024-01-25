@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pa__asio_8h" xml:lang="en-US">
+<title>packages/portaudio.0.19.1/build/native/include/pa_asio.h File Reference</title>
+<indexterm><primary>packages/portaudio.0.19.1/build/native/include/pa_asio.h</primary></indexterm>
+<para>
+
+<para>ASIO-specific PortAudio API extension header file. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;portaudio.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_pa_asio_stream_info">PaAsioStreamInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_pa__asio_8h_1a73860435fa4ce6edbb85d360bc825e05">PaAsio_GetAvailableLatencyValues</link>&#160;&#160;&#160;<link linkend="_pa__asio_8h_1a95dbac9747083dcee51b1e0e4695a912">PaAsio_GetAvailableBufferSizes</link></para>
+</listitem>
+            <listitem><para><anchor xml:id="_pa__asio_8h_1a79421fc86f6f900602f6c735aaead654"/>#define <emphasis role="strong">paAsioUseChannelSelectors</emphasis>&#160;&#160;&#160;(0x01)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_pa__asio_8h_1a943a839eab0c7c9d71f1afa875d1fb2d"/>typedef struct PaAsioStreamInfo <emphasis role="strong">PaAsioStreamInfo</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__asio_8h_1a95dbac9747083dcee51b1e0e4695a912">PaAsio_GetAvailableBufferSizes</link> (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> device, long *minBufferSizeFrames, long *maxBufferSizeFrames, long *preferredBufferSizeFrames, long *granularity)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__asio_8h_1ac9449ca8f0aedaa7b93027cdca3d6ba3">PaAsio_ShowControlPanel</link> (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> device, void *systemSpecific)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__asio_8h_1abaafacb711225e7c6158fff3b3e8b87a">PaAsio_GetInputChannelName</link> (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> device, int channelIndex, const char **channelName)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__asio_8h_1a97bd5b2192c1321a492ba24d7ef843fa">PaAsio_GetOutputChannelName</link> (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> device, int channelIndex, const char **channelName)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__asio_8h_1a838e2a8ed83db7cf5f2864492f3c78fc">PaAsio_SetStreamSampleRate</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream, double sampleRate)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>ASIO-specific PortAudio API extension header file. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_pa__asio_8h_1a73860435fa4ce6edbb85d360bc825e05"/><section>
+    <title>PaAsio_GetAvailableLatencyValues</title>
+<indexterm><primary>PaAsio_GetAvailableLatencyValues</primary><secondary>pa_asio.h</secondary></indexterm>
+<indexterm><primary>pa_asio.h</primary><secondary>PaAsio_GetAvailableLatencyValues</secondary></indexterm>
+<para><computeroutput>#define PaAsio_GetAvailableLatencyValues&#160;&#160;&#160;<link linkend="_pa__asio_8h_1a95dbac9747083dcee51b1e0e4695a912">PaAsio_GetAvailableBufferSizes</link></computeroutput></para>
+<para>Backwards compatibility alias for PaAsio_GetAvailableBufferSizes</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_pa__asio_8h_1a95dbac9747083dcee51b1e0e4695a912">PaAsio_GetAvailableBufferSizes</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_pa__asio_8h_1a95dbac9747083dcee51b1e0e4695a912"/><section>
+    <title>PaAsio_GetAvailableBufferSizes()</title>
+<indexterm><primary>PaAsio_GetAvailableBufferSizes</primary><secondary>pa_asio.h</secondary></indexterm>
+<indexterm><primary>pa_asio.h</primary><secondary>PaAsio_GetAvailableBufferSizes</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaAsio_GetAvailableBufferSizes (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> device, long * minBufferSizeFrames, long * maxBufferSizeFrames, long * preferredBufferSizeFrames, long * granularity)</computeroutput></para>
+<para>Retrieve legal native buffer sizes for the specificed device, in sample frames.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device</entry><entry>
+<para>The global index of the device about which the query is being made. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>minBufferSizeFrames</entry><entry>
+<para>A pointer to the location which will receive the minimum buffer size value. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>maxBufferSizeFrames</entry><entry>
+<para>A pointer to the location which will receive the maximum buffer size value. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>preferredBufferSizeFrames</entry><entry>
+<para>A pointer to the location which will receive the preferred buffer size value. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>granularity</entry><entry>
+<para>A pointer to the location which will receive the &quot;granularity&quot;. This value determines the step size used to compute the legal values between minBufferSizeFrames and maxBufferSizeFrames. If granularity is -1 then available buffer size values are powers of two.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>See also</title>
+
+<para>ASIOGetBufferSize in the ASIO SDK.</para>
+</formalpara>
+<note><title>Note</title>
+
+<para>: this function used to be called PaAsio_GetAvailableLatencyValues. There is a #define that maps PaAsio_GetAvailableLatencyValues to this function for backwards compatibility. </para>
+</note>
+</para>
+</section>
+<anchor xml:id="_pa__asio_8h_1abaafacb711225e7c6158fff3b3e8b87a"/><section>
+    <title>PaAsio_GetInputChannelName()</title>
+<indexterm><primary>PaAsio_GetInputChannelName</primary><secondary>pa_asio.h</secondary></indexterm>
+<indexterm><primary>pa_asio.h</primary><secondary>PaAsio_GetInputChannelName</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaAsio_GetInputChannelName (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> device, int channelIndex, const char ** channelName)</computeroutput></para>
+<para>Retrieve a pointer to a string containing the name of the specified input channel. The string is valid until Pa_Terminate is called.</para>
+
+<para>The string will be no longer than 32 characters including the null terminator. </para>
+</section>
+<anchor xml:id="_pa__asio_8h_1a97bd5b2192c1321a492ba24d7ef843fa"/><section>
+    <title>PaAsio_GetOutputChannelName()</title>
+<indexterm><primary>PaAsio_GetOutputChannelName</primary><secondary>pa_asio.h</secondary></indexterm>
+<indexterm><primary>pa_asio.h</primary><secondary>PaAsio_GetOutputChannelName</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaAsio_GetOutputChannelName (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> device, int channelIndex, const char ** channelName)</computeroutput></para>
+<para>Retrieve a pointer to a string containing the name of the specified input channel. The string is valid until Pa_Terminate is called.</para>
+
+<para>The string will be no longer than 32 characters including the null terminator. </para>
+</section>
+<anchor xml:id="_pa__asio_8h_1a838e2a8ed83db7cf5f2864492f3c78fc"/><section>
+    <title>PaAsio_SetStreamSampleRate()</title>
+<indexterm><primary>PaAsio_SetStreamSampleRate</primary><secondary>pa_asio.h</secondary></indexterm>
+<indexterm><primary>pa_asio.h</primary><secondary>PaAsio_SetStreamSampleRate</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaAsio_SetStreamSampleRate (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream, double sampleRate)</computeroutput></para>
+<para>Set the sample rate of an open paASIO stream.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stream</entry><entry>
+<para>The stream to operate on. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>sampleRate</entry><entry>
+<para>The new sample rate.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Note that this function may fail if the stream is alredy running and the ASIO driver does not support switching the sample rate of a running stream.</para>
+
+<para>Returns paIncompatibleStreamHostApi if stream is not a paASIO stream. </para>
+</section>
+<anchor xml:id="_pa__asio_8h_1ac9449ca8f0aedaa7b93027cdca3d6ba3"/><section>
+    <title>PaAsio_ShowControlPanel()</title>
+<indexterm><primary>PaAsio_ShowControlPanel</primary><secondary>pa_asio.h</secondary></indexterm>
+<indexterm><primary>pa_asio.h</primary><secondary>PaAsio_ShowControlPanel</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaAsio_ShowControlPanel (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> device, void * systemSpecific)</computeroutput></para>
+<para>Display the ASIO control panel for the specified device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device</entry><entry>
+<para>The global index of the device whose control panel is to be displayed. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>systemSpecific</entry><entry>
+<para>On Windows, the calling application&apos;s main window handle, on Macintosh this value should be zero. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+</section>

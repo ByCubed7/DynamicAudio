@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_win_mme_stream_info" xml:lang="en-US">
+<title>PaWinMmeStreamInfo Struct Reference</title>
+<indexterm><primary>PaWinMmeStreamInfo</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>unsigned long <link linkend="_struct_pa_win_mme_stream_info_1a62c0f8888229904962efdbec924d2527">size</link></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> <link linkend="_struct_pa_win_mme_stream_info_1a393237910fb36b3f42396a365184ce01">hostApiType</link></para>
+</listitem>
+            <listitem><para>unsigned long <link linkend="_struct_pa_win_mme_stream_info_1a881694ff44db0af4d0f3067453c3db38">version</link></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_win_mme_stream_info_1a3c253061ac0a54f2298f979343af90c4"/>unsigned long <emphasis role="strong">flags</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_win_mme_stream_info_1a187a4ecd4f51bb767eccbf9e9e19781b"/>unsigned long <emphasis role="strong">framesPerBuffer</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_win_mme_stream_info_1aec154a2fcc5f3267e9007b2b46d4368c"/>unsigned long <emphasis role="strong">bufferCount</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_win_mme_stream_info_1a5418cc496f75d7f93de251fa1953aba3"/><link linkend="_struct_pa_win_mme_device_and_channel_count">PaWinMmeDeviceAndChannelCount</link> * <emphasis role="strong">devices</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_win_mme_stream_info_1af811daf754308ad195bdd16cefcc99dd"/>unsigned long <emphasis role="strong">deviceCount</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_win_mme_stream_info_1a8ee3a7c32e2e393826e306472a034bd1"/>PaWinWaveFormatChannelMask <emphasis role="strong">channelMask</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_pa_win_mme_stream_info_1a393237910fb36b3f42396a365184ce01"/><section>
+    <title>hostApiType</title>
+<indexterm><primary>hostApiType</primary><secondary>PaWinMmeStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWinMmeStreamInfo</primary><secondary>hostApiType</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> PaWinMmeStreamInfo::hostApiType</computeroutput></para>
+<para>paMME </para>
+</section>
+<anchor xml:id="_struct_pa_win_mme_stream_info_1a62c0f8888229904962efdbec924d2527"/><section>
+    <title>size</title>
+<indexterm><primary>size</primary><secondary>PaWinMmeStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWinMmeStreamInfo</primary><secondary>size</secondary></indexterm>
+<para><computeroutput>unsigned long PaWinMmeStreamInfo::size</computeroutput></para>
+<para>sizeof(PaWinMmeStreamInfo) </para>
+</section>
+<anchor xml:id="_struct_pa_win_mme_stream_info_1a881694ff44db0af4d0f3067453c3db38"/><section>
+    <title>version</title>
+<indexterm><primary>version</primary><secondary>PaWinMmeStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWinMmeStreamInfo</primary><secondary>version</secondary></indexterm>
+<para><computeroutput>unsigned long PaWinMmeStreamInfo::version</computeroutput></para>
+<para>1 </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_pa__win__wmme_8h">pa_win_wmme.h</link></section>
+</section>

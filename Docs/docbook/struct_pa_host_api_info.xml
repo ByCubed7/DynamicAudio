@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_host_api_info" xml:lang="en-US">
+<title>PaHostApiInfo Struct Reference</title>
+<indexterm><primary>PaHostApiInfo</primary></indexterm>
+<para>
+<computeroutput>#include &lt;portaudio.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_struct_pa_host_api_info_1a1f3a8c465488e7af8024237256d80c14">structVersion</link></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> <link linkend="_struct_pa_host_api_info_1a5424bfcdf9f73b17cddc89e827a45d3f">type</link></para>
+</listitem>
+            <listitem><para>const char * <link linkend="_struct_pa_host_api_info_1a78afe5d557543c82cd9773229e25a8ec">name</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_pa_host_api_info_1a44e3adfaba0117a6780e2493468c96b1">deviceCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> <link linkend="_struct_pa_host_api_info_1a85a62057c3479d3efaa477d8562cf21d">defaultInputDevice</link></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> <link linkend="_struct_pa_host_api_info_1a62632690b5f7906d3c9bfdab91e7f4b2">defaultOutputDevice</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A structure containing information about a particular host API. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_pa_host_api_info_1a85a62057c3479d3efaa477d8562cf21d"/><section>
+    <title>defaultInputDevice</title>
+<indexterm><primary>defaultInputDevice</primary><secondary>PaHostApiInfo</secondary></indexterm>
+<indexterm><primary>PaHostApiInfo</primary><secondary>defaultInputDevice</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> PaHostApiInfo::defaultInputDevice</computeroutput></para>
+<para>The default input device for this host API. The value will be a device index ranging from 0 to (<link linkend="_portaudio_8h_1acfe4d3c5ec1a343f459981bfa2057f8d">Pa_GetDeviceCount()</link>-1), or paNoDevice if no default input device is available. </para>
+</section>
+<anchor xml:id="_struct_pa_host_api_info_1a62632690b5f7906d3c9bfdab91e7f4b2"/><section>
+    <title>defaultOutputDevice</title>
+<indexterm><primary>defaultOutputDevice</primary><secondary>PaHostApiInfo</secondary></indexterm>
+<indexterm><primary>PaHostApiInfo</primary><secondary>defaultOutputDevice</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> PaHostApiInfo::defaultOutputDevice</computeroutput></para>
+<para>The default output device for this host API. The value will be a device index ranging from 0 to (<link linkend="_portaudio_8h_1acfe4d3c5ec1a343f459981bfa2057f8d">Pa_GetDeviceCount()</link>-1), or paNoDevice if no default output device is available. </para>
+</section>
+<anchor xml:id="_struct_pa_host_api_info_1a44e3adfaba0117a6780e2493468c96b1"/><section>
+    <title>deviceCount</title>
+<indexterm><primary>deviceCount</primary><secondary>PaHostApiInfo</secondary></indexterm>
+<indexterm><primary>PaHostApiInfo</primary><secondary>deviceCount</secondary></indexterm>
+<para><computeroutput>int PaHostApiInfo::deviceCount</computeroutput></para>
+<para>The number of devices belonging to this host API. This field may be used in conjunction with <link linkend="_portaudio_8h_1a54f306b5e5258323c95a27c5722258cd">Pa_HostApiDeviceIndexToDeviceIndex()</link> to enumerate all devices for this host API. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a54f306b5e5258323c95a27c5722258cd">Pa_HostApiDeviceIndexToDeviceIndex</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_struct_pa_host_api_info_1a78afe5d557543c82cd9773229e25a8ec"/><section>
+    <title>name</title>
+<indexterm><primary>name</primary><secondary>PaHostApiInfo</secondary></indexterm>
+<indexterm><primary>PaHostApiInfo</primary><secondary>name</secondary></indexterm>
+<para><computeroutput>const char* PaHostApiInfo::name</computeroutput></para>
+<para>A textual description of the host API for display on user interfaces. </para>
+</section>
+<anchor xml:id="_struct_pa_host_api_info_1a1f3a8c465488e7af8024237256d80c14"/><section>
+    <title>structVersion</title>
+<indexterm><primary>structVersion</primary><secondary>PaHostApiInfo</secondary></indexterm>
+<indexterm><primary>PaHostApiInfo</primary><secondary>structVersion</secondary></indexterm>
+<para><computeroutput>int PaHostApiInfo::structVersion</computeroutput></para>
+<para>this is struct version 1 </para>
+</section>
+<anchor xml:id="_struct_pa_host_api_info_1a5424bfcdf9f73b17cddc89e827a45d3f"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>PaHostApiInfo</secondary></indexterm>
+<indexterm><primary>PaHostApiInfo</primary><secondary>type</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> PaHostApiInfo::type</computeroutput></para>
+<para>The well known unique identifier of this host API <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_portaudio_8h">portaudio.h</link></section>
+</section>

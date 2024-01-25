@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_win_direct_sound_stream_info" xml:lang="en-US">
+<title>PaWinDirectSoundStreamInfo Struct Reference</title>
+<indexterm><primary>PaWinDirectSoundStreamInfo</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>unsigned long <link linkend="_struct_pa_win_direct_sound_stream_info_1a628ca7f8b755a42182a76f9e88202ea0">size</link></para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> <link linkend="_struct_pa_win_direct_sound_stream_info_1a86baa9ebeb0f10ca2f4fe24c41cd3bea">hostApiType</link></para>
+</listitem>
+            <listitem><para>unsigned long <link linkend="_struct_pa_win_direct_sound_stream_info_1a9baec8b75c5b93b59217625b790bebbe">version</link></para>
+</listitem>
+            <listitem><para>unsigned long <link linkend="_struct_pa_win_direct_sound_stream_info_1a72f9dcac1303ba51fd1e36965a7cda46">flags</link></para>
+</listitem>
+            <listitem><para>unsigned long <link linkend="_struct_pa_win_direct_sound_stream_info_1adb9fc9098994e07ac7e1e7e9ac2175d7">framesPerBuffer</link></para>
+</listitem>
+            <listitem><para>PaWinWaveFormatChannelMask <link linkend="_struct_pa_win_direct_sound_stream_info_1aa9282b945c2331e1dd3f13b64fa7e927">channelMask</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_pa_win_direct_sound_stream_info_1aa9282b945c2331e1dd3f13b64fa7e927"/><section>
+    <title>channelMask</title>
+<indexterm><primary>channelMask</primary><secondary>PaWinDirectSoundStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWinDirectSoundStreamInfo</primary><secondary>channelMask</secondary></indexterm>
+<para><computeroutput>PaWinWaveFormatChannelMask PaWinDirectSoundStreamInfo::channelMask</computeroutput></para>
+<para>support for WAVEFORMATEXTENSIBLE channel masks. If flags contains paWinDirectSoundUseChannelMask this allows you to specify which speakers to address in a multichannel stream. Constants for channelMask are specified in <link linkend="_pa__win__waveformat_8h">pa_win_waveformat.h</link> </para>
+</section>
+<anchor xml:id="_struct_pa_win_direct_sound_stream_info_1a72f9dcac1303ba51fd1e36965a7cda46"/><section>
+    <title>flags</title>
+<indexterm><primary>flags</primary><secondary>PaWinDirectSoundStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWinDirectSoundStreamInfo</primary><secondary>flags</secondary></indexterm>
+<para><computeroutput>unsigned long PaWinDirectSoundStreamInfo::flags</computeroutput></para>
+<para>enable other features of this struct </para>
+</section>
+<anchor xml:id="_struct_pa_win_direct_sound_stream_info_1adb9fc9098994e07ac7e1e7e9ac2175d7"/><section>
+    <title>framesPerBuffer</title>
+<indexterm><primary>framesPerBuffer</primary><secondary>PaWinDirectSoundStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWinDirectSoundStreamInfo</primary><secondary>framesPerBuffer</secondary></indexterm>
+<para><computeroutput>unsigned long PaWinDirectSoundStreamInfo::framesPerBuffer</computeroutput></para>
+<para>low-level latency setting support Sets the size of the DirectSound host buffer. When flags contains the paWinDirectSoundUseLowLevelLatencyParameters this size will be used instead of interpreting the generic latency parameters to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link>. If the flag is not set this value is ignored.</para>
+
+<para>If the stream is a full duplex stream the implementation requires that the values of framesPerBuffer for input and output match (if both are specified). </para>
+</section>
+<anchor xml:id="_struct_pa_win_direct_sound_stream_info_1a86baa9ebeb0f10ca2f4fe24c41cd3bea"/><section>
+    <title>hostApiType</title>
+<indexterm><primary>hostApiType</primary><secondary>PaWinDirectSoundStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWinDirectSoundStreamInfo</primary><secondary>hostApiType</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> PaWinDirectSoundStreamInfo::hostApiType</computeroutput></para>
+<para>paDirectSound </para>
+</section>
+<anchor xml:id="_struct_pa_win_direct_sound_stream_info_1a628ca7f8b755a42182a76f9e88202ea0"/><section>
+    <title>size</title>
+<indexterm><primary>size</primary><secondary>PaWinDirectSoundStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWinDirectSoundStreamInfo</primary><secondary>size</secondary></indexterm>
+<para><computeroutput>unsigned long PaWinDirectSoundStreamInfo::size</computeroutput></para>
+<para>sizeof(PaWinDirectSoundStreamInfo) </para>
+</section>
+<anchor xml:id="_struct_pa_win_direct_sound_stream_info_1a9baec8b75c5b93b59217625b790bebbe"/><section>
+    <title>version</title>
+<indexterm><primary>version</primary><secondary>PaWinDirectSoundStreamInfo</secondary></indexterm>
+<indexterm><primary>PaWinDirectSoundStreamInfo</primary><secondary>version</secondary></indexterm>
+<para><computeroutput>unsigned long PaWinDirectSoundStreamInfo::version</computeroutput></para>
+<para>2 </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_pa__win__ds_8h">pa_win_ds.h</link></section>
+</section>

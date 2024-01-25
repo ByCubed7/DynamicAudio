@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_audio_loader_wav_1_1_r_i_f_f" xml:lang="en-US">
+<title>AudioLoaderWav::RIFF Struct Reference</title>
+<indexterm><primary>AudioLoaderWav::RIFF</primary></indexterm>
+<para>Inheritance diagram for AudioLoaderWav::RIFF:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_audio_loader_wav_1_1_r_i_f_f.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_r_i_f_f_1a89e0a62c833728d54fec8328de36dbd5"/>uint8_t <emphasis role="strong">format</emphasis> [4]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Attributes inherited from <link linkend="_struct_audio_loader_wav_1_1_chunk_info">AudioLoaderWav::ChunkInfo</link>        <itemizedlist>
+            <listitem><para>uint8_t <emphasis role="strong">chunkID</emphasis> [4]</para>
+</listitem>
+            <listitem><para>uint32_t <emphasis role="strong">chunkSize</emphasis></para>
+</listitem>
+        </itemizedlist>
+<para>
+The documentation for this struct was generated from the following file:</para>
+AudioLoaderWav.h</section>

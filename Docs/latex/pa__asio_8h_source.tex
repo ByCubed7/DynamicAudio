@@ -1,0 +1,105 @@
+\doxysection{pa\+\_\+asio.\+h}
+\hypertarget{pa__asio_8h_source}{}\label{pa__asio_8h_source}\index{packages/portaudio.0.19.1/build/native/include/pa\_asio.h@{packages/portaudio.0.19.1/build/native/include/pa\_asio.h}}
+\mbox{\hyperlink{pa__asio_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PA\_ASIO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PA\_ASIO\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \$Id:\ pa\_asio.h\ 1667\ 2011-\/05-\/02\ 15:49:20Z\ rossb\ \$}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ PortAudio\ Portable\ Real-\/Time\ Audio\ Library}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ ASIO\ specific\ extensions}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ Copyright\ (c)\ 1999-\/2000\ Ross\ Bencina\ and\ Phil\ Burk}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ a\ copy\ of\ this\ software\ and\ associated\ documentation\ files}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ included\ in\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,\ OUT\ OF\ OR\ IN\ CONNECTION}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ The\ text\ above\ constitutes\ the\ entire\ PortAudio\ license;\ however,\ }}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ the\ PortAudio\ community\ also\ makes\ the\ following\ non-\/binding\ requests:}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ Any\ person\ wishing\ to\ distribute\ modifications\ to\ the\ Software\ is}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ requested\ to\ send\ the\ modifications\ to\ the\ original\ developer\ so\ that}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ they\ can\ be\ incorporated\ into\ the\ canonical\ version.\ It\ is\ also\ }}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ requested\ that\ these\ non-\/binding\ requests\ be\ included\ along\ with\ the\ }}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ license\ above.}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00050\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00070\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__asio_8h_a95dbac9747083dcee51b1e0e4695a912}{PaAsio\_GetAvailableBufferSizes}}(\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ device,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ *minBufferSizeFrames,\ \textcolor{keywordtype}{long}\ *maxBufferSizeFrames,\ \textcolor{keywordtype}{long}\ *preferredBufferSizeFrames,\ \textcolor{keywordtype}{long}\ *granularity\ );}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ PaAsio\_GetAvailableLatencyValues\ PaAsio\_GetAvailableBufferSizes}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00087\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__asio_8h_ac9449ca8f0aedaa7b93027cdca3d6ba3}{PaAsio\_ShowControlPanel}}(\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ device,\ \textcolor{keywordtype}{void}*\ systemSpecific\ );}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__asio_8h_abaafacb711225e7c6158fff3b3e8b87a}{PaAsio\_GetInputChannelName}}(\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ device,\ \textcolor{keywordtype}{int}\ channelIndex,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ channelName\ );}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__asio_8h_a97bd5b2192c1321a492ba24d7ef843fa}{PaAsio\_GetOutputChannelName}}(\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ device,\ \textcolor{keywordtype}{int}\ channelIndex,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ channelName\ );}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00120\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__asio_8h_a838e2a8ed83db7cf5f2864492f3c78fc}{PaAsio\_SetStreamSampleRate}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}*\ stream,\ \textcolor{keywordtype}{double}\ sampleRate\ );}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ paAsioUseChannelSelectors\ \ \ \ \ \ (0x01)}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_asio_stream_info}{PaAsioStreamInfo}}\{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_pa_asio_stream_info_a64b7653dba1527f04b9d1ab3b642687e}{size}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}}\ \mbox{\hyperlink{struct_pa_asio_stream_info_aa89dc033f30cd1549d33f44074c79358}{hostApiType}};\ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_pa_asio_stream_info_a1399d6368fe7cfd3297667c1140a24a0}{version}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ flags;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{/*\ Support\ for\ opening\ only\ specific\ channels\ of\ an\ ASIO\ device.}}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ \ \ \ \ \ \ \ If\ the\ paAsioUseChannelSelectors\ flag\ is\ set,\ channelSelectors\ is\ a}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ \ \ \ \ \ \ \ pointer\ to\ an\ array\ of\ integers\ specifying\ the\ device\ channels\ to\ use.}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ \ \ \ \ \ \ \ When\ used,\ the\ length\ of\ the\ channelSelectors\ array\ must\ match\ the}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ \ \ \ \ \ \ \ corresponding\ channelCount\ parameter\ to\ Pa\_OpenStream()\ otherwise\ a}}
+\DoxyCodeLine{00137\ \textcolor{comment}{\ \ \ \ \ \ \ \ crash\ may\ result.}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ \ \ \ \ \ \ \ The\ values\ in\ the\ selectors\ array\ must\ specify\ channels\ within\ the}}
+\DoxyCodeLine{00139\ \textcolor{comment}{\ \ \ \ \ \ \ \ range\ of\ supported\ channels\ for\ the\ device\ or\ paInvalidChannelCount\ will}}
+\DoxyCodeLine{00140\ \textcolor{comment}{\ \ \ \ \ \ \ \ result.}}
+\DoxyCodeLine{00141\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{int}\ *channelSelectors;}
+\DoxyCodeLine{00143\ \}\mbox{\hyperlink{struct_pa_asio_stream_info}{PaAsioStreamInfo}};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00147\ \}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PA\_ASIO\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

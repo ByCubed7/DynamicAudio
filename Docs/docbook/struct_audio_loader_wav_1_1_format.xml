@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_audio_loader_wav_1_1_format" xml:lang="en-US">
+<title>AudioLoaderWav::Format Struct Reference</title>
+<indexterm><primary>AudioLoaderWav::Format</primary></indexterm>
+<para>Inheritance diagram for AudioLoaderWav::Format:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_audio_loader_wav_1_1_format.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_format_1ab7bc9f97f9629cfa08c4e03c78474fb1"/>uint16_t <emphasis role="strong">audioFormat</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_format_1ae81ab28bc50b5b19353b02133e8a79f5"/>uint16_t <emphasis role="strong">numChannels</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_format_1a1a8be263768ea5f87c918518ebd0c35a"/>uint32_t <emphasis role="strong">sampleRate</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_format_1af61e2f10bfaf29a71d3865d3b810c2e0"/>uint32_t <emphasis role="strong">byteRate</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_format_1a1a1774980e565433c072275a61d48f3d"/>uint16_t <emphasis role="strong">blockAlign</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_audio_loader_wav_1_1_format_1adfa7afe220b745726dc8aa7a1bf50561"/>uint16_t <emphasis role="strong">bitsPerSample</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Attributes inherited from <link linkend="_struct_audio_loader_wav_1_1_chunk_info">AudioLoaderWav::ChunkInfo</link>        <itemizedlist>
+            <listitem><para>uint8_t <emphasis role="strong">chunkID</emphasis> [4]</para>
+</listitem>
+            <listitem><para>uint32_t <emphasis role="strong">chunkSize</emphasis></para>
+</listitem>
+        </itemizedlist>
+<para>
+The documentation for this struct was generated from the following file:</para>
+AudioLoaderWav.h</section>

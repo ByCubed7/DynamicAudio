@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_effect_1_1_random" xml:lang="en-US">
+<title>Effect::Random Struct Reference</title>
+<indexterm><primary>Effect::Random</primary></indexterm>
+<para>
+
+<para>Gets a random value. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;EffectBase.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Effect::Random:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_effect_1_1_random.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_random_1a95b9e103c637bde804bb5356e2e63db3"/><emphasis role="strong">Random</emphasis> (unsigned int seed_, <link linkend="_struct_effect_1_1_abstract">Abstract</link> *minu_, <link linkend="_struct_effect_1_1_abstract">Abstract</link> *maxi_)</para>
+
+<para>Constructor Definition. </para>
+</listitem>
+            <listitem><para>value <link linkend="_struct_effect_1_1_random_1a03c81b2cc63e72f3fedfae9e06b0abbb">get</link> (value in) override</para>
+
+<para>Gets the calculated effects value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_random_1a1a269cad4715317585e440d2226da753"/>unsigned int <emphasis role="strong">seed</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_random_1afc2056ef167435cec75bf30f8d470a84"/><link linkend="_struct_effect_1_1_abstract">Abstract</link> * <emphasis role="strong">minu</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_random_1a9e59677b7d4a26aec1e4a8cd4c921c12"/><link linkend="_struct_effect_1_1_abstract">Abstract</link> * <emphasis role="strong">maxi</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Gets a random value. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_effect_1_1_random_1a03c81b2cc63e72f3fedfae9e06b0abbb"/><section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>Effect::Random</secondary></indexterm>
+<indexterm><primary>Effect::Random</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>value Effect::Random::get (value in)<computeroutput>[inline]</computeroutput>, <computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Gets the calculated effects value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>
+<para>The value passed in. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The value passed out. </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_struct_effect_1_1_abstract_1ac72d7f8db28f06f9794ad457cc6d4d86">Effect::Abstract</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+EffectBase.h</section>
+</section>

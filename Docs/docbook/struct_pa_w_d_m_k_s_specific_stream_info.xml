@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_w_d_m_k_s_specific_stream_info" xml:lang="en-US">
+<title>PaWDMKSSpecificStreamInfo Struct Reference</title>
+<indexterm><primary>PaWDMKSSpecificStreamInfo</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_pa_w_d_m_k_s_specific_stream_info_1addb405c49554ab4c9e11122f4b85d384"/><link linkend="_struct_pa_w_d_m_k_s_direction_specific_stream_info">PaWDMKSDirectionSpecificStreamInfo</link> <emphasis role="strong">input</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_w_d_m_k_s_specific_stream_info_1a99f218f86f2ee9c1f56ae657e1de62cb"/><link linkend="_struct_pa_w_d_m_k_s_direction_specific_stream_info">PaWDMKSDirectionSpecificStreamInfo</link> <emphasis role="strong">output</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_pa__win__wdmks_8h">pa_win_wdmks.h</link></section>

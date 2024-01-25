@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_pa_win_mme_device_and_channel_count" xml:lang="en-US">
+<title>PaWinMmeDeviceAndChannelCount Struct Reference</title>
+<indexterm><primary>PaWinMmeDeviceAndChannelCount</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_pa_win_mme_device_and_channel_count_1afeb111df3482e661fa903bbc0ee0f908"/><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> <emphasis role="strong">device</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_pa_win_mme_device_and_channel_count_1ab022a761007bd0a86305da52e70ed32b"/>int <emphasis role="strong">channelCount</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+packages/portaudio.0.19.1/build/native/include/<link linkend="_pa__win__wmme_8h">pa_win_wmme.h</link></section>

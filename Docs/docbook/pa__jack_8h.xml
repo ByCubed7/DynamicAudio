@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pa__jack_8h" xml:lang="en-US">
+<title>packages/portaudio.0.19.1/build/native/include/pa_jack.h File Reference</title>
+<indexterm><primary>packages/portaudio.0.19.1/build/native/include/pa_jack.h</primary></indexterm>
+<para>
+
+<para>JACK-specific PortAudio API extension header file. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;portaudio.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__jack_8h_1a20862b4b1a9dacea0deac5bedd225fc6">PaJack_SetClientName</link> (const char *name)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_pa__jack_8h_1a0582bde20a75bf2a8e70c46c71ac9a5e">PaJack_GetClientName</link> (const char **clientName)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>JACK-specific PortAudio API extension header file. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_pa__jack_8h_1a0582bde20a75bf2a8e70c46c71ac9a5e"/><section>
+    <title>PaJack_GetClientName()</title>
+<indexterm><primary>PaJack_GetClientName</primary><secondary>pa_jack.h</secondary></indexterm>
+<indexterm><primary>pa_jack.h</primary><secondary>PaJack_GetClientName</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaJack_GetClientName (const char ** clientName)</computeroutput></para>
+<para>Get the JACK client name used by PA JACK.</para>
+
+<para>The caller is responsible for freeing the returned pointer. </para>
+</section>
+<anchor xml:id="_pa__jack_8h_1a20862b4b1a9dacea0deac5bedd225fc6"/><section>
+    <title>PaJack_SetClientName()</title>
+<indexterm><primary>PaJack_SetClientName</primary><secondary>pa_jack.h</secondary></indexterm>
+<indexterm><primary>pa_jack.h</primary><secondary>PaJack_SetClientName</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> PaJack_SetClientName (const char * name)</computeroutput></para>
+<para>Set the JACK client name.</para>
+
+<para>During Pa_Initialize, When PA JACK connects as a client of the JACK server, it requests a certain name, which is for instance prepended to port names. By default this name is &quot;PortAudio&quot;. The JACK server may append a suffix to the client name, in order to avoid clashes among clients that try to connect with the same name (e.g., different PA JACK clients).</para>
+
+<para>This function must be called before Pa_Initialize, otherwise it won&apos;t have any effect. Note that the string is not copied, but instead referenced directly, so it must not be freed for as long as PA might need it. <formalpara><title>See also</title>
+
+<para><link linkend="_pa__jack_8h_1a0582bde20a75bf2a8e70c46c71ac9a5e">PaJack_GetClientName</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

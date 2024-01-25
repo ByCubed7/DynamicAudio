@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__effect_base_8h_source" xml:lang="en-US">
+<title>EffectBase.h</title>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 
+3 <emphasis role="preprocessor">#include&#32;&lt;cstdint&gt;</emphasis>
+4 <emphasis role="preprocessor">#include&#32;&lt;cstdlib&gt;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&quot;AudioLoaderWav.h&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&lt;chrono&gt;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;AudioLoaderWav.h&quot;</emphasis>
+8 
+9 <emphasis role="keyword">namespace&#32;</emphasis>Effect&#32;{
+10 
+11 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Unknown&#32;what&#32;the&#32;return&#32;type&#32;is</emphasis>
+12 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Maybe&#32;template&#32;it?</emphasis>
+13 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#define&#32;value&#32;uint8_t</emphasis>
+14 
+16 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_effect_1_1_abstract">Abstract</link>
+17 &#32;&#32;&#32;&#32;{
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;value&#32;<link linkend="_struct_effect_1_1_abstract_1ac72d7f8db28f06f9794ad457cc6d4d86">get</link>(value&#32;in&#32;=&#32;0)&#32;=&#32;0;
+22 &#32;&#32;&#32;&#32;};
+23 
+25 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_effect_1_1_const">Const</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_struct_effect_1_1_abstract">Abstract</link>
+26 &#32;&#32;&#32;&#32;{
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;value&#32;<link linkend="_struct_effect_1_1_const_1a648b4cff4cc43fccbf55a0692361e0e7">constant</link>;
+29 
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_effect_1_1_const_1a491f5975492e1777c847bdd68d466750">Const</link>(value&#32;constant_)&#32;:&#32;<link linkend="_struct_effect_1_1_const_1a648b4cff4cc43fccbf55a0692361e0e7">constant</link>(constant_)&#32;{}
+32 
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;value&#32;<link linkend="_struct_effect_1_1_const_1a0b9b495edd1a6809bd91219ae8008057">get</link>(value&#32;in)<emphasis role="keyword">&#32;override&#32;</emphasis>{
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_effect_1_1_const_1a648b4cff4cc43fccbf55a0692361e0e7">constant</link>;
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+36 
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">operator</emphasis>&#32;value()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_effect_1_1_const_1a648b4cff4cc43fccbf55a0692361e0e7">constant</link>;&#32;}
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">operator</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;value()<emphasis role="keyword">&#32;const&#32;</emphasis>{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_effect_1_1_const_1a648b4cff4cc43fccbf55a0692361e0e7">constant</link>;&#32;}
+41 &#32;&#32;&#32;&#32;};
+42 
+44 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_effect_1_1_random">Random</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_struct_effect_1_1_abstract">Abstract</link>
+45 &#32;&#32;&#32;&#32;{
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;seed;
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_effect_1_1_abstract">Abstract</link>*&#32;minu;
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_effect_1_1_abstract">Abstract</link>*&#32;maxi;
+49 
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_effect_1_1_random_1a95b9e103c637bde804bb5356e2e63db3">Random</link>(<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;seed_,&#32;<link linkend="_struct_effect_1_1_abstract">Abstract</link>*&#32;minu_,&#32;<link linkend="_struct_effect_1_1_abstract">Abstract</link>*&#32;maxi_)
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;seed(seed_),&#32;minu(minu_),&#32;maxi(maxi_)&#32;{
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::srand(seed);
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+55 
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;value&#32;<link linkend="_struct_effect_1_1_random_1a03c81b2cc63e72f3fedfae9e06b0abbb">get</link>(value&#32;in)<emphasis role="keyword">&#32;override&#32;</emphasis>{
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;minu-&gt;<link linkend="_struct_effect_1_1_abstract_1ac72d7f8db28f06f9794ad457cc6d4d86">get</link>(in)&#32;+&#32;std::rand()&#32;%&#32;(maxi-&gt;<link linkend="_struct_effect_1_1_abstract_1ac72d7f8db28f06f9794ad457cc6d4d86">get</link>(in)&#32;-&#32;minu-&gt;<link linkend="_struct_effect_1_1_abstract_1ac72d7f8db28f06f9794ad457cc6d4d86">get</link>(in));
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+59 &#32;&#32;&#32;&#32;};
+60 
+62 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_effect_1_1_time_since">TimeSince</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_struct_effect_1_1_abstract">Abstract</link>
+63 &#32;&#32;&#32;&#32;{
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::chrono::steady_clock::time_point&#32;start;
+65 
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_effect_1_1_time_since_1aa3021b93d970ec6400a428a2fa5b5e4c">TimeSince</link>()
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;start(std::chrono::high_resolution_clock::now())&#32;{
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+70 
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;value&#32;<link linkend="_struct_effect_1_1_time_since_1a45899ea4231e0fbcdf6e97a414355b3c">get</link>(value&#32;in)<emphasis role="keyword">&#32;override&#32;</emphasis>{
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::chrono::steady_clock::time_point&#32;now&#32;=&#32;std::chrono::high_resolution_clock::now();
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;duration&#32;=&#32;std::chrono::duration_cast&lt;std::chrono::seconds&gt;(now&#32;-&#32;start);
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;duration.count();
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+76 &#32;&#32;&#32;&#32;};
+77 
+78 
+79 <emphasis role="preprocessor">#ifdef&#32;max</emphasis>
+80 <emphasis role="preprocessor">#undef&#32;max</emphasis>
+81 <emphasis role="preprocessor">#undef&#32;min</emphasis>
+82 <emphasis role="preprocessor">#endif</emphasis>
+83 
+85 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_effect_1_1_wav_stream">WavStream</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_struct_effect_1_1_abstract">Abstract</link>
+86 &#32;&#32;&#32;&#32;{
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_effect_1_1_abstract">Abstract</link>*&#32;timestamp;
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_audio_loader_wav_1_1_wav">AudioLoaderWav::Wav</link>&#32;wav;
+89 
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_effect_1_1_wav_stream_1a5be119ba3aab435e3d3d606b788b8aef">WavStream</link>(<link linkend="_struct_effect_1_1_abstract">Abstract</link>*&#32;timestamp_,&#32;<link linkend="_struct_audio_loader_wav_1_1_wav">AudioLoaderWav::Wav</link>&#32;wav_)
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;timestamp(timestamp_),&#32;wav(wav_)&#32;{}
+93 
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;value&#32;<link linkend="_struct_effect_1_1_wav_stream_1acc11dabc6d262d8dc997ea2fe4b39352">get</link>(value&#32;in)<emphasis role="keyword">&#32;override&#32;</emphasis>{
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;TODO:&#32;multiply&#32;timestamp&#32;by&#32;wav&#32;streams&#32;per&#32;second,&#32;ect..</emphasis>
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;stamp&#32;=&#32;std::max(timestamp-&gt;<link linkend="_struct_effect_1_1_abstract_1ac72d7f8db28f06f9794ad457cc6d4d86">get</link>(),&#32;(uint8_t)wav.data.chunkSize);
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;wav.data.data[stamp];
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+99 &#32;&#32;&#32;&#32;};
+100 
+101 }
+</programlisting></section>

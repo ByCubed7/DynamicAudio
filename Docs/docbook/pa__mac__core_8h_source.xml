@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pa__mac__core_8h_source" xml:lang="en-US">
+<title>pa_mac_core.h</title>
+<indexterm><primary>packages/portaudio.0.19.1/build/native/include/pa_mac_core.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;PA_MAC_CORE_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;PA_MAC_CORE_H</emphasis>
+3 <emphasis role="comment">/*</emphasis>
+4 <emphasis role="comment">&#32;*&#32;PortAudio&#32;Portable&#32;Real-Time&#32;Audio&#32;Library</emphasis>
+5 <emphasis role="comment">&#32;*&#32;Macintosh&#32;Core&#32;Audio&#32;specific&#32;extensions</emphasis>
+6 <emphasis role="comment">&#32;*&#32;portaudio.h&#32;should&#32;be&#32;included&#32;before&#32;this&#32;file.</emphasis>
+7 <emphasis role="comment">&#32;*</emphasis>
+8 <emphasis role="comment">&#32;*&#32;Copyright&#32;(c)&#32;2005-2006&#32;Bjorn&#32;Roche</emphasis>
+9 <emphasis role="comment">&#32;*</emphasis>
+10 <emphasis role="comment">&#32;*&#32;Permission&#32;is&#32;hereby&#32;granted,&#32;free&#32;of&#32;charge,&#32;to&#32;any&#32;person&#32;obtaining</emphasis>
+11 <emphasis role="comment">&#32;*&#32;a&#32;copy&#32;of&#32;this&#32;software&#32;and&#32;associated&#32;documentation&#32;files</emphasis>
+12 <emphasis role="comment">&#32;*&#32;(the&#32;&quot;Software&quot;),&#32;to&#32;deal&#32;in&#32;the&#32;Software&#32;without&#32;restriction,</emphasis>
+13 <emphasis role="comment">&#32;*&#32;including&#32;without&#32;limitation&#32;the&#32;rights&#32;to&#32;use,&#32;copy,&#32;modify,&#32;merge,</emphasis>
+14 <emphasis role="comment">&#32;*&#32;publish,&#32;distribute,&#32;sublicense,&#32;and/or&#32;sell&#32;copies&#32;of&#32;the&#32;Software,</emphasis>
+15 <emphasis role="comment">&#32;*&#32;and&#32;to&#32;permit&#32;persons&#32;to&#32;whom&#32;the&#32;Software&#32;is&#32;furnished&#32;to&#32;do&#32;so,</emphasis>
+16 <emphasis role="comment">&#32;*&#32;subject&#32;to&#32;the&#32;following&#32;conditions:</emphasis>
+17 <emphasis role="comment">&#32;*</emphasis>
+18 <emphasis role="comment">&#32;*&#32;The&#32;above&#32;copyright&#32;notice&#32;and&#32;this&#32;permission&#32;notice&#32;shall&#32;be</emphasis>
+19 <emphasis role="comment">&#32;*&#32;included&#32;in&#32;all&#32;copies&#32;or&#32;substantial&#32;portions&#32;of&#32;the&#32;Software.</emphasis>
+20 <emphasis role="comment">&#32;*</emphasis>
+21 <emphasis role="comment">&#32;*&#32;THE&#32;SOFTWARE&#32;IS&#32;PROVIDED&#32;&quot;AS&#32;IS&quot;,&#32;WITHOUT&#32;WARRANTY&#32;OF&#32;ANY&#32;KIND,</emphasis>
+22 <emphasis role="comment">&#32;*&#32;EXPRESS&#32;OR&#32;IMPLIED,&#32;INCLUDING&#32;BUT&#32;NOT&#32;LIMITED&#32;TO&#32;THE&#32;WARRANTIES&#32;OF</emphasis>
+23 <emphasis role="comment">&#32;*&#32;MERCHANTABILITY,&#32;FITNESS&#32;FOR&#32;A&#32;PARTICULAR&#32;PURPOSE&#32;AND&#32;NONINFRINGEMENT.</emphasis>
+24 <emphasis role="comment">&#32;*&#32;IN&#32;NO&#32;EVENT&#32;SHALL&#32;THE&#32;AUTHORS&#32;OR&#32;COPYRIGHT&#32;HOLDERS&#32;BE&#32;LIABLE&#32;FOR</emphasis>
+25 <emphasis role="comment">&#32;*&#32;ANY&#32;CLAIM,&#32;DAMAGES&#32;OR&#32;OTHER&#32;LIABILITY,&#32;WHETHER&#32;IN&#32;AN&#32;ACTION&#32;OF</emphasis>
+26 <emphasis role="comment">&#32;*&#32;CONTRACT,&#32;TORT&#32;OR&#32;OTHERWISE,&#32;ARISING&#32;FROM,&#32;OUT&#32;OF&#32;OR&#32;IN&#32;CONNECTION</emphasis>
+27 <emphasis role="comment">&#32;*&#32;WITH&#32;THE&#32;SOFTWARE&#32;OR&#32;THE&#32;USE&#32;OR&#32;OTHER&#32;DEALINGS&#32;IN&#32;THE&#32;SOFTWARE.</emphasis>
+28 <emphasis role="comment">&#32;*/</emphasis>
+29 
+30 <emphasis role="comment">/*</emphasis>
+31 <emphasis role="comment">&#32;*&#32;The&#32;text&#32;above&#32;constitutes&#32;the&#32;entire&#32;PortAudio&#32;license;&#32;however,&#32;</emphasis>
+32 <emphasis role="comment">&#32;*&#32;the&#32;PortAudio&#32;community&#32;also&#32;makes&#32;the&#32;following&#32;non-binding&#32;requests:</emphasis>
+33 <emphasis role="comment">&#32;*</emphasis>
+34 <emphasis role="comment">&#32;*&#32;Any&#32;person&#32;wishing&#32;to&#32;distribute&#32;modifications&#32;to&#32;the&#32;Software&#32;is</emphasis>
+35 <emphasis role="comment">&#32;*&#32;requested&#32;to&#32;send&#32;the&#32;modifications&#32;to&#32;the&#32;original&#32;developer&#32;so&#32;that</emphasis>
+36 <emphasis role="comment">&#32;*&#32;they&#32;can&#32;be&#32;incorporated&#32;into&#32;the&#32;canonical&#32;version.&#32;It&#32;is&#32;also&#32;</emphasis>
+37 <emphasis role="comment">&#32;*&#32;requested&#32;that&#32;these&#32;non-binding&#32;requests&#32;be&#32;included&#32;along&#32;with&#32;the&#32;</emphasis>
+38 <emphasis role="comment">&#32;*&#32;license&#32;above.</emphasis>
+39 <emphasis role="comment">&#32;*/</emphasis>
+40 
+46 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_portaudio_8h">portaudio.h</link>&quot;</emphasis>
+47 
+48 <emphasis role="preprocessor">#include&#32;&lt;AudioUnit/AudioUnit.h&gt;</emphasis>
+49 <emphasis role="preprocessor">#include&#32;&lt;AudioToolbox/AudioToolbox.h&gt;</emphasis>
+50 
+51 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+52 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+53 <emphasis role="preprocessor">#endif</emphasis>
+54 
+55 
+63 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>
+64 {
+65 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;size;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+66 &#32;&#32;&#32;&#32;<link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link>&#32;<link linkend="_struct_pa_mac_core_stream_info_1a63f4110b767bfbf2fa09b88f3252d91e">hostApiType</link>;&#32;&#32;
+67 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_struct_pa_mac_core_stream_info_1ad5ef9592026b8e98f2bf17a61677b064">version</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+68 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_struct_pa_mac_core_stream_info_1afe018712e7c57198176ed72cb18f9938">flags</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+69 &#32;&#32;&#32;&#32;SInt32&#32;<emphasis role="keyword">const</emphasis>&#32;*&#32;<link linkend="_struct_pa_mac_core_stream_info_1a2339c27ad6b84924be79bf73e4402bd4">channelMap</link>;&#32;&#32;&#32;&#32;
+70 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_struct_pa_mac_core_stream_info_1aab3ecc35ef267ecebc8874d399061b87">channelMapSize</link>;&#32;
+71 }&#32;<link linkend="_struct_pa_mac_core_stream_info">PaMacCoreStreamInfo</link>;
+72 
+84 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_pa__mac__core_8h_1a7fa54d8ad032394157bdb67c9b13087d">PaMacCore_SetupStreamInfo</link>(&#32;<link linkend="_struct_pa_mac_core_stream_info">PaMacCoreStreamInfo</link>&#32;*data,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;flags&#32;);
+85 
+91 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_pa__mac__core_8h_1abc811b4cd7b56e5e5d4b4613a49d9356">PaMacCore_SetupChannelMap</link>(&#32;<link linkend="_struct_pa_mac_core_stream_info">PaMacCoreStreamInfo</link>&#32;*data,&#32;<emphasis role="keyword">const</emphasis>&#32;SInt32&#32;*&#32;<emphasis role="keyword">const</emphasis>&#32;channelMap,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;channelMapSize&#32;);
+92 
+100 AudioDeviceID&#32;<link linkend="_pa__mac__core_8h_1ad1631115a64682f8e14fadd0a75c027f">PaMacCore_GetStreamInputDevice</link>(&#32;<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link>*&#32;s&#32;);
+101 &#32;
+109 AudioDeviceID&#32;<link linkend="_pa__mac__core_8h_1a25379f181725095041d159e3bdc8cd8c">PaMacCore_GetStreamOutputDevice</link>(&#32;<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link>*&#32;s&#32;);
+110 
+125 <emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_pa__mac__core_8h_1ad96583c722e0fa8d6017b5878d90d8fd">PaMacCore_GetChannelName</link>(&#32;<emphasis role="keywordtype">int</emphasis>&#32;device,&#32;<emphasis role="keywordtype">int</emphasis>&#32;channelIndex,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;input&#32;);
+126 
+127 &#32;&#32;&#32;&#32;
+136 <link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link>&#32;<link linkend="_pa__mac__core_8h_1aa470cfe0a7a53a6bc7eab4b18f670d31">PaMacCore_GetBufferSizeRange</link>(&#32;<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link>&#32;device,
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;*minBufferSizeFrames,&#32;<emphasis role="keywordtype">long</emphasis>&#32;*maxBufferSizeFrames&#32;);
+138 
+139 
+154 <emphasis role="preprocessor">#define&#32;paMacCoreChangeDeviceParameters&#32;(0x01)</emphasis>
+155 
+159 <emphasis role="preprocessor">#define&#32;paMacCoreFailIfConversionRequired&#32;(0x02)</emphasis>
+160 
+163 <emphasis role="preprocessor">#define&#32;paMacCoreConversionQualityMin&#32;&#32;&#32;&#32;(0x0100)</emphasis>
+164 <emphasis role="preprocessor">#define&#32;paMacCoreConversionQualityMedium&#32;(0x0200)</emphasis>
+165 <emphasis role="preprocessor">#define&#32;paMacCoreConversionQualityLow&#32;&#32;&#32;&#32;(0x0300)</emphasis>
+166 <emphasis role="preprocessor">#define&#32;paMacCoreConversionQualityHigh&#32;&#32;&#32;(0x0400)</emphasis>
+167 <emphasis role="preprocessor">#define&#32;paMacCoreConversionQualityMax&#32;&#32;&#32;&#32;(0x0000)</emphasis>
+168 
+177 <emphasis role="preprocessor">#define&#32;paMacCorePlayNice&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(0x00)</emphasis>
+180 <emphasis role="preprocessor">#define&#32;paMacCorePro&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(0x01)</emphasis>
+182 <emphasis role="preprocessor">#define&#32;paMacCoreMinimizeCPUButPlayNice&#32;&#32;&#32;&#32;&#32;&#32;(0x0100)</emphasis>
+184 <emphasis role="preprocessor">#define&#32;paMacCoreMinimizeCPU&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(0x0101)</emphasis>
+185 
+186 
+187 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+188 }
+189 <emphasis role="preprocessor">#endif&#32;</emphasis>
+191 <emphasis role="preprocessor">#endif&#32;</emphasis>
+</programlisting></section>

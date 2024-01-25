@@ -1,0 +1,1699 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_portaudio_8h" xml:lang="en-US">
+<title>packages/portaudio.0.19.1/build/native/include/portaudio.h File Reference</title>
+<indexterm><primary>packages/portaudio.0.19.1/build/native/include/portaudio.h</primary></indexterm>
+<para>
+
+<para>The portable PortAudio API. </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_pa_host_api_info">PaHostApiInfo</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_pa_host_error_info">PaHostErrorInfo</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_pa_device_info">PaDeviceInfo</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_pa_stream_callback_time_info">PaStreamCallbackTimeInfo</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_pa_stream_info">PaStreamInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a8c26dd5e6f28bb4cda7a1f5460282297">paNoDevice</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link>)-1)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a14795fe3377c3b037025a61e550d44b5">paUseHostApiSpecificDeviceSpecification</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link>)-2)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a2f16d29916725b8791eae60ab9e0b081">paFloat32</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000001)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a6fea69f3d81b628288325c06310b2fcf">paInt32</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000002)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a7f891a0bd9e94a94a8f446c176b749e7">paInt24</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000004)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1ab284f8e0a161d78ede863aec45461dbd">paInt16</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000008)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a058ecfb48ac9f0efad7a7b0d446efe3e">paInt8</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000010)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1ad826044e4ffe7b16bf990803ab77df37">paUInt8</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000020)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1aba595f6b645c8134a8ac3004957b9ff7">paCustomFormat</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00010000)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a1d79f0b88812cef5364b276dbbc898b5">paNonInterleaved</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x80000000)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a400df642339bf4112333060af6a43c0f">paFormatIsSupported</link>&#160;&#160;&#160;(0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1ac1e20b97c1858a59bc62823573c59f0b">paFramesPerBufferUnspecified</link>&#160;&#160;&#160;(0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1ad33384abe3754a39f4773f2561773595">paNoFlag</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>) 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a837b8a81be3f7e36c96003e0d8dcec12">paClipOff</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>) 0x00000001)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1add037e93aec78fa8d67f7a59ed500707">paDitherOff</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>) 0x00000002)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1ad89be5ed5279fc4c4a8495c775e1d5d5">paNeverDropInput</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>) 0x00000004)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1ad7b862a223edd680d7985c33c847e31d">paPrimeOutputBuffersUsingStreamCallback</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>) 0x00000008)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a8522957e1bf814b9782d3a0e314c8b51">paPlatformSpecificFlags</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>)0xFFFF0000)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1a57d1879f52406bdedfdda8f79f458e15">paInputUnderflow</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link>) 0x00000001)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1aea144f0edaf02d0ac8b113f41fb95c47">paInputOverflow</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link>) 0x00000002)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1aa17c91c859b12ebbf53a1440def53c89">paOutputUnderflow</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link>) 0x00000004)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1ac22bb260d47b348bd3aab8813fd45462">paOutputOverflow</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link>) 0x00000008)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_portaudio_8h_1ad6616980c2259866a39eb2b76fa4697d">paPrimingOutput</link>&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link>) 0x00000010)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef int <link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link></para>
+</listitem>
+            <listitem><para><anchor xml:id="_portaudio_8h_1a06b9de8a0f242a1d3beb2326f65ebce3"/>typedef enum PaErrorCode <emphasis role="strong">PaErrorCode</emphasis></para>
+</listitem>
+            <listitem><para>typedef int <link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link></para>
+</listitem>
+            <listitem><para>typedef int <link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> <link linkend="_portaudio_8h_1a7e36542045f98de11a13f548113dc895">PaHostApiTypeId</link></para>
+</listitem>
+            <listitem><para>typedef struct PaHostApiInfo <link linkend="_portaudio_8h_1ae32c4bc6235b2d0e5233d2148b4dfef0">PaHostApiInfo</link></para>
+</listitem>
+            <listitem><para>typedef struct PaHostErrorInfo <link linkend="_portaudio_8h_1aae5f7523aa88f6e1ab05230103bd3560">PaHostErrorInfo</link></para>
+</listitem>
+            <listitem><para>typedef double <link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link></para>
+</listitem>
+            <listitem><para>typedef unsigned long <link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link></para>
+</listitem>
+            <listitem><para>typedef struct PaDeviceInfo <link linkend="_portaudio_8h_1a6c6fa3fb5640759651ae5a5e69e45cdc">PaDeviceInfo</link></para>
+</listitem>
+            <listitem><para>typedef struct PaStreamParameters <link linkend="_portaudio_8h_1a978b2ed65ea4740d6999a402b0c3ee76">PaStreamParameters</link></para>
+</listitem>
+            <listitem><para>typedef void <link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link></para>
+</listitem>
+            <listitem><para>typedef unsigned long <link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link></para>
+</listitem>
+            <listitem><para>typedef struct PaStreamCallbackTimeInfo <link linkend="_portaudio_8h_1a1832c268abf8a9074265c436c7f1207d">PaStreamCallbackTimeInfo</link></para>
+</listitem>
+            <listitem><para>typedef unsigned long <link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link></para>
+</listitem>
+            <listitem><para>typedef enum <link linkend="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32">PaStreamCallbackResult</link> <link linkend="_portaudio_8h_1a602b93feba60c685a74b154f08508702">PaStreamCallbackResult</link></para>
+</listitem>
+            <listitem><para>typedef int <link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link>(const void *input, void *output, unsigned long frameCount, const <link linkend="_struct_pa_stream_callback_time_info">PaStreamCallbackTimeInfo</link> *timeInfo, <link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link> statusFlags, void *userData)</para>
+</listitem>
+            <listitem><para>typedef void <link linkend="_portaudio_8h_1ab2530ee0cb756c67726f9074d3482ef2">PaStreamFinishedCallback</link>(void *userData)</para>
+</listitem>
+            <listitem><para>typedef struct PaStreamInfo <link linkend="_portaudio_8h_1a65f7a59ec586145cf5de77fccd1ecac9">PaStreamInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_portaudio_8h_1a2e45bf8b5145f131a91c128af2bdaec7"/>enum <emphasis role="strong">PaErrorCode</emphasis> { <?linebreak?><emphasis role="strong">paNoError</emphasis> = 0
+, <emphasis role="strong">paNotInitialized</emphasis> = -10000
+, <emphasis role="strong">paUnanticipatedHostError</emphasis>
+, <emphasis role="strong">paInvalidChannelCount</emphasis>
+, <?linebreak?><emphasis role="strong">paInvalidSampleRate</emphasis>
+, <emphasis role="strong">paInvalidDevice</emphasis>
+, <emphasis role="strong">paInvalidFlag</emphasis>
+, <emphasis role="strong">paSampleFormatNotSupported</emphasis>
+, <?linebreak?><emphasis role="strong">paBadIODeviceCombination</emphasis>
+, <emphasis role="strong">paInsufficientMemory</emphasis>
+, <emphasis role="strong">paBufferTooBig</emphasis>
+, <emphasis role="strong">paBufferTooSmall</emphasis>
+, <?linebreak?><emphasis role="strong">paNullCallback</emphasis>
+, <emphasis role="strong">paBadStreamPtr</emphasis>
+, <emphasis role="strong">paTimedOut</emphasis>
+, <emphasis role="strong">paInternalError</emphasis>
+, <?linebreak?><emphasis role="strong">paDeviceUnavailable</emphasis>
+, <emphasis role="strong">paIncompatibleHostApiSpecificStreamInfo</emphasis>
+, <emphasis role="strong">paStreamIsStopped</emphasis>
+, <emphasis role="strong">paStreamIsNotStopped</emphasis>
+, <?linebreak?><emphasis role="strong">paInputOverflowed</emphasis>
+, <emphasis role="strong">paOutputUnderflowed</emphasis>
+, <emphasis role="strong">paHostApiNotFound</emphasis>
+, <emphasis role="strong">paInvalidHostApi</emphasis>
+, <?linebreak?><emphasis role="strong">paCanNotReadFromACallbackStream</emphasis>
+, <emphasis role="strong">paCanNotWriteToACallbackStream</emphasis>
+, <emphasis role="strong">paCanNotReadFromAnOutputOnlyStream</emphasis>
+, <emphasis role="strong">paCanNotWriteToAnInputOnlyStream</emphasis>
+, <?linebreak?><emphasis role="strong">paIncompatibleStreamHostApi</emphasis>
+, <emphasis role="strong">paBadBufferPtr</emphasis>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> { <?linebreak?><emphasis role="strong">paInDevelopment</emphasis> =0
+, <emphasis role="strong">paDirectSound</emphasis> =1
+, <emphasis role="strong">paMME</emphasis> =2
+, <emphasis role="strong">paASIO</emphasis> =3
+, <?linebreak?><emphasis role="strong">paSoundManager</emphasis> =4
+, <emphasis role="strong">paCoreAudio</emphasis> =5
+, <emphasis role="strong">paOSS</emphasis> =7
+, <emphasis role="strong">paALSA</emphasis> =8
+, <?linebreak?><emphasis role="strong">paAL</emphasis> =9
+, <emphasis role="strong">paBeOS</emphasis> =10
+, <emphasis role="strong">paWDMKS</emphasis> =11
+, <emphasis role="strong">paJACK</emphasis> =12
+, <?linebreak?><emphasis role="strong">paWASAPI</emphasis> =13
+, <emphasis role="strong">paAudioScienceHPI</emphasis> =14
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32">PaStreamCallbackResult</link> { <link linkend="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32acba49cbf0e3bf605bb3deecef3b4fce3">paContinue</link> =0
+, <link linkend="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32aa01800db52ead393d8b0016f63d76650">paComplete</link> =1
+, <link linkend="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32acaf141eb5d71420ffb4474da1dbd8de2">paAbort</link> =2
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_portaudio_8h_1a66da08bcf908e0849c62a6b47f50d7b4">Pa_GetVersion</link> (void)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_portaudio_8h_1a5bc90e52be8c57a8a7dc8f44693412f0">Pa_GetVersionText</link> (void)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_portaudio_8h_1ae84ae07ba25bf959e00f3b0ab4d17acb">Pa_GetErrorText</link> (<link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> errorCode)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1abed859482d156622d9332dff9b2d89da">Pa_Initialize</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a0db317604e916e8bd6098e60e6237221">Pa_Terminate</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> <link linkend="_portaudio_8h_1a19dbdb7c8702e3f4bfc0cdb99dac3dd9">Pa_GetHostApiCount</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> <link linkend="_portaudio_8h_1ae55c77f9b7e3f8eb301a6f1c0e2347ac">Pa_GetDefaultHostApi</link> (void)</para>
+</listitem>
+            <listitem><para>const <link linkend="_struct_pa_host_api_info">PaHostApiInfo</link> * <link linkend="_portaudio_8h_1afdd67ffc394c90f3ee78d51e51f8f22f">Pa_GetHostApiInfo</link> (<link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> hostApi)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> <link linkend="_portaudio_8h_1a081c3975126d20b4226facfb7ba0620f">Pa_HostApiTypeIdToHostApiIndex</link> (<link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> type)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> <link linkend="_portaudio_8h_1a54f306b5e5258323c95a27c5722258cd">Pa_HostApiDeviceIndexToDeviceIndex</link> (<link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> hostApi, int hostApiDeviceIndex)</para>
+</listitem>
+            <listitem><para>const <link linkend="_struct_pa_host_error_info">PaHostErrorInfo</link> * <link linkend="_portaudio_8h_1a1d0652aef223200f9401bb28fe04a3ad">Pa_GetLastHostErrorInfo</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> <link linkend="_portaudio_8h_1acfe4d3c5ec1a343f459981bfa2057f8d">Pa_GetDeviceCount</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> <link linkend="_portaudio_8h_1abf9f2f82da95553d5adb929af670f74b">Pa_GetDefaultInputDevice</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> <link linkend="_portaudio_8h_1adc955dfab007624000695c48d4f876dc">Pa_GetDefaultOutputDevice</link> (void)</para>
+</listitem>
+            <listitem><para>const <link linkend="_struct_pa_device_info">PaDeviceInfo</link> * <link linkend="_portaudio_8h_1ab7a149915fdbf90cff993d588619e7e8">Pa_GetDeviceInfo</link> (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> device)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1abdb313743d6efef26cecdae787a2bd3d">Pa_IsFormatSupported</link> (const <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> *inputParameters, const <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> *outputParameters, double sampleRate)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> **stream, const <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> *inputParameters, const <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> *outputParameters, double sampleRate, unsigned long framesPerBuffer, <link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link> streamFlags, <link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link> *streamCallback, void *userData)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a0a12735ac191200f696a43b87667b714">Pa_OpenDefaultStream</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> **stream, int numInputChannels, int numOutputChannels, <link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> sampleFormat, double sampleRate, unsigned long framesPerBuffer, <link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link> *streamCallback, void *userData)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a92f56f88cbd14da0e8e03077e835d104">Pa_CloseStream</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1aa11e7b06b2cde8621551f5d527965838">Pa_SetStreamFinishedCallback</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream, <link linkend="_portaudio_8h_1ab2530ee0cb756c67726f9074d3482ef2">PaStreamFinishedCallback</link> *streamFinishedCallback)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a7432aadd26c40452da12fa99fc1a047b">Pa_StartStream</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1af18dd60220251286c337631a855e38a0">Pa_StopStream</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a138e57abde4e833c457b64895f638a25">Pa_AbortStream</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a52d778c985ae9d566de7e13529cc771f">Pa_IsStreamStopped</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a1f8709c4971932643681a6f374c4bb5a">Pa_IsStreamActive</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para>const <link linkend="_struct_pa_stream_info">PaStreamInfo</link> * <link linkend="_portaudio_8h_1ab9207d6191bb1f1725470a9cae98436d">Pa_GetStreamInfo</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> <link linkend="_portaudio_8h_1a2b3fb60e6949f37f7f134105ff425749">Pa_GetStreamTime</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para>double <link linkend="_portaudio_8h_1a83b8c624464dd7bb6a01b06ab596c115">Pa_GetStreamCpuLoad</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a0b62d4b74b5d3d88368e9e4c0b8b2dc7">Pa_ReadStream</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream, void *buffer, unsigned long frames)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a075a6efb503a728213bdae24347ed27d">Pa_WriteStream</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream, const void *buffer, unsigned long frames)</para>
+</listitem>
+            <listitem><para>signed long <link linkend="_portaudio_8h_1ad04c33f045fa58d7b705b56b1fd3e816">Pa_GetStreamReadAvailable</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para>signed long <link linkend="_portaudio_8h_1a25595acf48733ec32045aa189c3caa61">Pa_GetStreamWriteAvailable</link> (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> *stream)</para>
+</listitem>
+            <listitem><para><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> <link linkend="_portaudio_8h_1a541ed0b734df2631bc4c229acf92abc1">Pa_GetSampleSize</link> (<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> format)</para>
+</listitem>
+            <listitem><para>void <link linkend="_portaudio_8h_1a1b3c20044c9401c42add29475636e83d">Pa_Sleep</link> (long msec)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The portable PortAudio API. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_portaudio_8h_1a837b8a81be3f7e36c96003e0d8dcec12"/><section>
+    <title>paClipOff</title>
+<indexterm><primary>paClipOff</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paClipOff</secondary></indexterm>
+<para><computeroutput>#define paClipOff&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>) 0x00000001)</computeroutput></para>
+<para>Disable default clipping of out of range samples. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1aba595f6b645c8134a8ac3004957b9ff7"/><section>
+    <title>paCustomFormat</title>
+<indexterm><primary>paCustomFormat</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paCustomFormat</secondary></indexterm>
+<para><computeroutput>#define paCustomFormat&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00010000)</computeroutput></para>
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1add037e93aec78fa8d67f7a59ed500707"/><section>
+    <title>paDitherOff</title>
+<indexterm><primary>paDitherOff</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paDitherOff</secondary></indexterm>
+<para><computeroutput>#define paDitherOff&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>) 0x00000002)</computeroutput></para>
+<para>Disable default dithering. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a2f16d29916725b8791eae60ab9e0b081"/><section>
+    <title>paFloat32</title>
+<indexterm><primary>paFloat32</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paFloat32</secondary></indexterm>
+<para><computeroutput>#define paFloat32&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000001)</computeroutput></para>
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a400df642339bf4112333060af6a43c0f"/><section>
+    <title>paFormatIsSupported</title>
+<indexterm><primary>paFormatIsSupported</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paFormatIsSupported</secondary></indexterm>
+<para><computeroutput>#define paFormatIsSupported&#160;&#160;&#160;(0)</computeroutput></para>
+<para>Return code for Pa_IsFormatSupported indicating success. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1ac1e20b97c1858a59bc62823573c59f0b"/><section>
+    <title>paFramesPerBufferUnspecified</title>
+<indexterm><primary>paFramesPerBufferUnspecified</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paFramesPerBufferUnspecified</secondary></indexterm>
+<para><computeroutput>#define paFramesPerBufferUnspecified&#160;&#160;&#160;(0)</computeroutput></para>
+<para>Can be passed as the framesPerBuffer parameter to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link> or <link linkend="_portaudio_8h_1a0a12735ac191200f696a43b87667b714">Pa_OpenDefaultStream()</link> to indicate that the stream callback will accept buffers of any size. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1aea144f0edaf02d0ac8b113f41fb95c47"/><section>
+    <title>paInputOverflow</title>
+<indexterm><primary>paInputOverflow</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paInputOverflow</secondary></indexterm>
+<para><computeroutput>#define paInputOverflow&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link>) 0x00000002)</computeroutput></para>
+<para>In a stream opened with paFramesPerBufferUnspecified, indicates that data prior to the first sample of the input buffer was discarded due to an overflow, possibly because the stream callback is using too much CPU time. Otherwise indicates that data prior to one or more samples in the input buffer was discarded. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a57d1879f52406bdedfdda8f79f458e15"/><section>
+    <title>paInputUnderflow</title>
+<indexterm><primary>paInputUnderflow</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paInputUnderflow</secondary></indexterm>
+<para><computeroutput>#define paInputUnderflow&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link>) 0x00000001)</computeroutput></para>
+<para>In a stream opened with paFramesPerBufferUnspecified, indicates that input data is all silence (zeros) because no real data is available. In a stream opened without paFramesPerBufferUnspecified, it indicates that one or more zero samples have been inserted into the input buffer to compensate for an input underflow. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ab284f8e0a161d78ede863aec45461dbd"/><section>
+    <title>paInt16</title>
+<indexterm><primary>paInt16</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paInt16</secondary></indexterm>
+<para><computeroutput>#define paInt16&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000008)</computeroutput></para>
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a7f891a0bd9e94a94a8f446c176b749e7"/><section>
+    <title>paInt24</title>
+<indexterm><primary>paInt24</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paInt24</secondary></indexterm>
+<para><computeroutput>#define paInt24&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000004)</computeroutput></para>
+<para>Packed 24 bit format. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a6fea69f3d81b628288325c06310b2fcf"/><section>
+    <title>paInt32</title>
+<indexterm><primary>paInt32</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paInt32</secondary></indexterm>
+<para><computeroutput>#define paInt32&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000002)</computeroutput></para>
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a058ecfb48ac9f0efad7a7b0d446efe3e"/><section>
+    <title>paInt8</title>
+<indexterm><primary>paInt8</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paInt8</secondary></indexterm>
+<para><computeroutput>#define paInt8&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000010)</computeroutput></para>
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ad89be5ed5279fc4c4a8495c775e1d5d5"/><section>
+    <title>paNeverDropInput</title>
+<indexterm><primary>paNeverDropInput</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paNeverDropInput</secondary></indexterm>
+<para><computeroutput>#define paNeverDropInput&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>) 0x00000004)</computeroutput></para>
+<para>Flag requests that where possible a full duplex stream will not discard overflowed input samples without calling the stream callback. This flag is only valid for full duplex callback streams and only when used in combination with the paFramesPerBufferUnspecified (0) framesPerBuffer parameter. Using this flag incorrectly results in a paInvalidFlag error being returned from Pa_OpenStream and Pa_OpenDefaultStream.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>, <link linkend="_portaudio_8h_1ac1e20b97c1858a59bc62823573c59f0b">paFramesPerBufferUnspecified</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a8c26dd5e6f28bb4cda7a1f5460282297"/><section>
+    <title>paNoDevice</title>
+<indexterm><primary>paNoDevice</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paNoDevice</secondary></indexterm>
+<para><computeroutput>#define paNoDevice&#160;&#160;&#160;((<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link>)-1)</computeroutput></para>
+<para>A special PaDeviceIndex value indicating that no device is available, or should be used.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ad33384abe3754a39f4773f2561773595"/><section>
+    <title>paNoFlag</title>
+<indexterm><primary>paNoFlag</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paNoFlag</secondary></indexterm>
+<para><computeroutput>#define paNoFlag&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>) 0)</computeroutput></para>
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a1d79f0b88812cef5364b276dbbc898b5"/><section>
+    <title>paNonInterleaved</title>
+<indexterm><primary>paNonInterleaved</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paNonInterleaved</secondary></indexterm>
+<para><computeroutput>#define paNonInterleaved&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x80000000)</computeroutput></para>
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ac22bb260d47b348bd3aab8813fd45462"/><section>
+    <title>paOutputOverflow</title>
+<indexterm><primary>paOutputOverflow</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paOutputOverflow</secondary></indexterm>
+<para><computeroutput>#define paOutputOverflow&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link>) 0x00000008)</computeroutput></para>
+<para>Indicates that output data will be discarded because no room is available. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1aa17c91c859b12ebbf53a1440def53c89"/><section>
+    <title>paOutputUnderflow</title>
+<indexterm><primary>paOutputUnderflow</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paOutputUnderflow</secondary></indexterm>
+<para><computeroutput>#define paOutputUnderflow&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link>) 0x00000004)</computeroutput></para>
+<para>Indicates that output data (or a gap) was inserted, possibly because the stream callback is using too much CPU time. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a8522957e1bf814b9782d3a0e314c8b51"/><section>
+    <title>paPlatformSpecificFlags</title>
+<indexterm><primary>paPlatformSpecificFlags</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paPlatformSpecificFlags</secondary></indexterm>
+<para><computeroutput>#define paPlatformSpecificFlags&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>)0xFFFF0000)</computeroutput></para>
+<para>A mask specifying the platform specific bits. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ad7b862a223edd680d7985c33c847e31d"/><section>
+    <title>paPrimeOutputBuffersUsingStreamCallback</title>
+<indexterm><primary>paPrimeOutputBuffersUsingStreamCallback</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paPrimeOutputBuffersUsingStreamCallback</secondary></indexterm>
+<para><computeroutput>#define paPrimeOutputBuffersUsingStreamCallback&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link>) 0x00000008)</computeroutput></para>
+<para>Call the stream callback to fill initial output buffers, rather than the default behavior of priming the buffers with zeros (silence). This flag has no effect for input-only and blocking read/write streams.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ad6616980c2259866a39eb2b76fa4697d"/><section>
+    <title>paPrimingOutput</title>
+<indexterm><primary>paPrimingOutput</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paPrimingOutput</secondary></indexterm>
+<para><computeroutput>#define paPrimingOutput&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link>) 0x00000010)</computeroutput></para>
+<para>Some of all of the output data will be used to prime the stream, input data may be zero. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ad826044e4ffe7b16bf990803ab77df37"/><section>
+    <title>paUInt8</title>
+<indexterm><primary>paUInt8</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paUInt8</secondary></indexterm>
+<para><computeroutput>#define paUInt8&#160;&#160;&#160;((<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link>) 0x00000020)</computeroutput></para>
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a14795fe3377c3b037025a61e550d44b5"/><section>
+    <title>paUseHostApiSpecificDeviceSpecification</title>
+<indexterm><primary>paUseHostApiSpecificDeviceSpecification</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paUseHostApiSpecificDeviceSpecification</secondary></indexterm>
+<para><computeroutput>#define paUseHostApiSpecificDeviceSpecification&#160;&#160;&#160;((<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link>)-2)</computeroutput></para>
+<para>A special PaDeviceIndex value indicating that the device(s) to be used are specified in the host api specific stream info structure.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361"/><section>
+    <title>PaDeviceIndex</title>
+<indexterm><primary>PaDeviceIndex</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaDeviceIndex</secondary></indexterm>
+<para><computeroutput>typedef int <link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link></computeroutput></para>
+<para>The type used to refer to audio devices. Values of this type usually range from 0 to (<link linkend="_portaudio_8h_1acfe4d3c5ec1a343f459981bfa2057f8d">Pa_GetDeviceCount()</link>-1), and may also take on the PaNoDevice and paUseHostApiSpecificDeviceSpecification values.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1acfe4d3c5ec1a343f459981bfa2057f8d">Pa_GetDeviceCount</link>, <link linkend="_portaudio_8h_1a8c26dd5e6f28bb4cda7a1f5460282297">paNoDevice</link>, <link linkend="_portaudio_8h_1a14795fe3377c3b037025a61e550d44b5">paUseHostApiSpecificDeviceSpecification</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a6c6fa3fb5640759651ae5a5e69e45cdc"/><section>
+    <title>PaDeviceInfo</title>
+<indexterm><primary>PaDeviceInfo</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaDeviceInfo</secondary></indexterm>
+<para><computeroutput>typedef struct PaDeviceInfo PaDeviceInfo</computeroutput></para>
+<para>A structure providing information and capabilities of PortAudio devices. Devices may support input, output or both input and output. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d"/><section>
+    <title>PaError</title>
+<indexterm><primary>PaError</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaError</secondary></indexterm>
+<para><computeroutput>typedef int <link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link></computeroutput></para>
+<para>Error codes returned by PortAudio functions. Note that with the exception of paNoError, all PaErrorCodes are negative. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930"/><section>
+    <title>PaHostApiIndex</title>
+<indexterm><primary>PaHostApiIndex</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaHostApiIndex</secondary></indexterm>
+<para><computeroutput>typedef int <link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link></computeroutput></para>
+<para>The type used to enumerate to host APIs at runtime. Values of this type range from 0 to (<link linkend="_portaudio_8h_1a19dbdb7c8702e3f4bfc0cdb99dac3dd9">Pa_GetHostApiCount()</link>-1).</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a19dbdb7c8702e3f4bfc0cdb99dac3dd9">Pa_GetHostApiCount</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ae32c4bc6235b2d0e5233d2148b4dfef0"/><section>
+    <title>PaHostApiInfo</title>
+<indexterm><primary>PaHostApiInfo</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaHostApiInfo</secondary></indexterm>
+<para><computeroutput>typedef struct PaHostApiInfo PaHostApiInfo</computeroutput></para>
+<para>A structure containing information about a particular host API. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1a7e36542045f98de11a13f548113dc895"/><section>
+    <title>PaHostApiTypeId</title>
+<indexterm><primary>PaHostApiTypeId</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaHostApiTypeId</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> <link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link></computeroutput></para>
+<para>Unchanging unique identifiers for each supported host API. This type is used in the <link linkend="_struct_pa_host_api_info">PaHostApiInfo</link> structure. The values are guaranteed to be unique and to never change, thus allowing code to be written that conditionally uses host API specific extensions.</para>
+
+<para>New type ids will be allocated when support for a host API reaches &quot;public alpha&quot; status, prior to that developers should use the paInDevelopment type id.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_pa_host_api_info">PaHostApiInfo</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1aae5f7523aa88f6e1ab05230103bd3560"/><section>
+    <title>PaHostErrorInfo</title>
+<indexterm><primary>PaHostErrorInfo</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaHostErrorInfo</secondary></indexterm>
+<para><computeroutput>typedef struct PaHostErrorInfo PaHostErrorInfo</computeroutput></para>
+<para>Structure used to return information about a host error condition. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96"/><section>
+    <title>PaSampleFormat</title>
+<indexterm><primary>PaSampleFormat</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaSampleFormat</secondary></indexterm>
+<para><computeroutput>typedef unsigned long <link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link></computeroutput></para>
+<para>A type used to specify one or more sample formats. Each value indicates a possible format for sound data passed to and from the stream callback, Pa_ReadStream and Pa_WriteStream.</para>
+
+<para>The standard formats paFloat32, paInt16, paInt32, paInt24, paInt8 and aUInt8 are usually implemented by all implementations.</para>
+
+<para>The floating point representation (paFloat32) uses +1.0 and -1.0 as the maximum and minimum respectively.</para>
+
+<para>paUInt8 is an unsigned 8 bit format where 128 is considered &quot;ground&quot;</para>
+
+<para>The paNonInterleaved flag indicates that audio data is passed as an array of pointers to separate buffers, one buffer for each channel. Usually, when this flag is not used, audio data is passed as a single buffer with all channels interleaved.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream</link>, <link linkend="_portaudio_8h_1a0a12735ac191200f696a43b87667b714">Pa_OpenDefaultStream</link>, <link linkend="_struct_pa_device_info">PaDeviceInfo</link> </para>
+
+<para><link linkend="_portaudio_8h_1a2f16d29916725b8791eae60ab9e0b081">paFloat32</link>, <link linkend="_portaudio_8h_1ab284f8e0a161d78ede863aec45461dbd">paInt16</link>, <link linkend="_portaudio_8h_1a6fea69f3d81b628288325c06310b2fcf">paInt32</link>, <link linkend="_portaudio_8h_1a7f891a0bd9e94a94a8f446c176b749e7">paInt24</link>, <link linkend="_portaudio_8h_1a058ecfb48ac9f0efad7a7b0d446efe3e">paInt8</link> </para>
+
+<para><link linkend="_portaudio_8h_1ad826044e4ffe7b16bf990803ab77df37">paUInt8</link>, <link linkend="_portaudio_8h_1aba595f6b645c8134a8ac3004957b9ff7">paCustomFormat</link>, <link linkend="_portaudio_8h_1a1d79f0b88812cef5364b276dbbc898b5">paNonInterleaved</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a19874734f89958fccf86785490d53b4c"/><section>
+    <title>PaStream</title>
+<indexterm><primary>PaStream</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaStream</secondary></indexterm>
+<para><computeroutput>typedef void <link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link></computeroutput></para>
+<para>A single PaStream can provide multiple channels of real-time streaming audio input and output to a client application. A stream provides access to audio hardware represented by one or more PaDevices. Depending on the underlying Host API, it may be possible to open multiple streams using the same device, however this behavior is implementation defined. Portable applications should assume that a PaDevice may be simultaneously used by at most one PaStream.</para>
+
+<para>Pointers to PaStream objects are passed between PortAudio functions that operate on streams.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream</link>, <link linkend="_portaudio_8h_1a0a12735ac191200f696a43b87667b714">Pa_OpenDefaultStream</link>, <link linkend="_portaudio_8h_1a0a12735ac191200f696a43b87667b714">Pa_OpenDefaultStream</link>, <link linkend="_portaudio_8h_1a92f56f88cbd14da0e8e03077e835d104">Pa_CloseStream</link>, <link linkend="_portaudio_8h_1a7432aadd26c40452da12fa99fc1a047b">Pa_StartStream</link>, <link linkend="_portaudio_8h_1af18dd60220251286c337631a855e38a0">Pa_StopStream</link>, <link linkend="_portaudio_8h_1a138e57abde4e833c457b64895f638a25">Pa_AbortStream</link>, <link linkend="_portaudio_8h_1a1f8709c4971932643681a6f374c4bb5a">Pa_IsStreamActive</link>, <link linkend="_portaudio_8h_1a2b3fb60e6949f37f7f134105ff425749">Pa_GetStreamTime</link>, <link linkend="_portaudio_8h_1a83b8c624464dd7bb6a01b06ab596c115">Pa_GetStreamCpuLoad</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710"/><section>
+    <title>PaStreamCallback</title>
+<indexterm><primary>PaStreamCallback</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaStreamCallback</secondary></indexterm>
+<para><computeroutput>typedef int PaStreamCallback(const void *input, void *output, unsigned long frameCount, const <link linkend="_struct_pa_stream_callback_time_info">PaStreamCallbackTimeInfo</link> *timeInfo, <link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link> statusFlags, void *userData)</computeroutput></para>
+<para>Functions of type PaStreamCallback are implemented by PortAudio clients. They consume, process or generate audio in response to requests from an active PortAudio stream.</para>
+
+<para>When a stream is running, PortAudio calls the stream callback periodically. The callback function is responsible for processing buffers of audio samples passed via the input and output parameters.</para>
+
+<para>The PortAudio stream callback runs at very high or real-time priority. It is required to consistently meet its time deadlines. Do not allocate memory, access the file system, call library functions or call other functions from the stream callback that may block or take an unpredictable amount of time to complete.</para>
+
+<para>In order for a stream to maintain glitch-free operation the callback must consume and return audio data faster than it is recorded and/or played. PortAudio anticipates that each callback invocation may execute for a duration approaching the duration of frameCount audio frames at the stream sample rate. It is reasonable to expect to be able to utilise 70% or more of the available CPU time in the PortAudio callback. However, due to buffer size adaption and other factors, not all host APIs are able to guarantee audio stability under heavy CPU load with arbitrary fixed callback buffer sizes. When high callback CPU utilisation is required the most robust behavior can be achieved by using paFramesPerBufferUnspecified as the <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link> framesPerBuffer parameter.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>input</entry><entry>
+<para>and</para>
+</entry>
+                            </row>
+                            <row>
+<entry>output</entry><entry>
+<para>are either arrays of interleaved samples or; if non-interleaved samples were requested using the paNonInterleaved sample format flag, an array of buffer pointers, one non-interleaved buffer for each channel.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                The format, packing and number of channels used by the buffers are determined by parameters to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>frameCount</entry><entry>
+<para>The number of sample frames to be processed by the stream callback.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>timeInfo</entry><entry>
+<para>Timestamps indicating the ADC capture time of the first sample in the input buffer, the DAC output time of the first sample in the output buffer and the time the callback was invoked. See <link linkend="_struct_pa_stream_callback_time_info">PaStreamCallbackTimeInfo</link> and <link linkend="_portaudio_8h_1a2b3fb60e6949f37f7f134105ff425749">Pa_GetStreamTime()</link></para>
+</entry>
+                            </row>
+                            <row>
+<entry>statusFlags</entry><entry>
+<para>Flags indicating whether input and/or output buffers have been inserted or will be dropped to overcome underflow or overflow conditions.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>userData</entry><entry>
+<para>The value of a user supplied pointer passed to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link> intended for storing synthesis data etc.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The stream callback should return one of the values in the <link linkend="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32">PaStreamCallbackResult</link> enumeration. To ensure that the callback continues to be called, it should return paContinue (0). Either paComplete or paAbort can be returned to finish stream processing, after either of these values is returned the callback will not be called again. If paAbort is returned the stream will finish as soon as possible. If paComplete is returned, the stream will continue until all buffers generated by the callback have been played. This may be useful in applications such as soundfile players where a specific duration of output is required. However, it is not necessary to utilize this mechanism as <link linkend="_portaudio_8h_1af18dd60220251286c337631a855e38a0">Pa_StopStream()</link>, <link linkend="_portaudio_8h_1a138e57abde4e833c457b64895f638a25">Pa_AbortStream()</link> or <link linkend="_portaudio_8h_1a92f56f88cbd14da0e8e03077e835d104">Pa_CloseStream()</link> can also be used to stop the stream. The callback must always fill the entire output buffer irrespective of its return value.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream</link>, <link linkend="_portaudio_8h_1a0a12735ac191200f696a43b87667b714">Pa_OpenDefaultStream</link></para>
+</formalpara>
+<note><title>Note</title>
+
+<para>With the exception of <link linkend="_portaudio_8h_1a83b8c624464dd7bb6a01b06ab596c115">Pa_GetStreamCpuLoad()</link> it is not permissible to call PortAudio API functions from within the stream callback. </para>
+</note>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82"/><section>
+    <title>PaStreamCallbackFlags</title>
+<indexterm><primary>PaStreamCallbackFlags</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaStreamCallbackFlags</secondary></indexterm>
+<para><computeroutput>typedef unsigned long <link linkend="_portaudio_8h_1a55a005924bcfa0424594f4f65cd4ae82">PaStreamCallbackFlags</link></computeroutput></para>
+<para>Flag bit constants for the statusFlags to PaStreamCallback.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a57d1879f52406bdedfdda8f79f458e15">paInputUnderflow</link>, <link linkend="_portaudio_8h_1aea144f0edaf02d0ac8b113f41fb95c47">paInputOverflow</link>, <link linkend="_portaudio_8h_1aa17c91c859b12ebbf53a1440def53c89">paOutputUnderflow</link>, <link linkend="_portaudio_8h_1ac22bb260d47b348bd3aab8813fd45462">paOutputOverflow</link>, <link linkend="_portaudio_8h_1ad6616980c2259866a39eb2b76fa4697d">paPrimingOutput</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a602b93feba60c685a74b154f08508702"/><section>
+    <title>PaStreamCallbackResult</title>
+<indexterm><primary>PaStreamCallbackResult</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaStreamCallbackResult</secondary></indexterm>
+<para><computeroutput>typedef enum <link linkend="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32">PaStreamCallbackResult</link> <link linkend="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32">PaStreamCallbackResult</link></computeroutput></para>
+<para>Allowable return values for the PaStreamCallback. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a1832c268abf8a9074265c436c7f1207d"/><section>
+    <title>PaStreamCallbackTimeInfo</title>
+<indexterm><primary>PaStreamCallbackTimeInfo</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaStreamCallbackTimeInfo</secondary></indexterm>
+<para><computeroutput>typedef struct PaStreamCallbackTimeInfo PaStreamCallbackTimeInfo</computeroutput></para>
+<para>Timing information for the buffers passed to the stream callback.</para>
+
+<para>Time values are expressed in seconds and are synchronised with the time base used by <link linkend="_portaudio_8h_1a2b3fb60e6949f37f7f134105ff425749">Pa_GetStreamTime()</link> for the associated stream.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link>, <link linkend="_portaudio_8h_1a2b3fb60e6949f37f7f134105ff425749">Pa_GetStreamTime</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ab2530ee0cb756c67726f9074d3482ef2"/><section>
+    <title>PaStreamFinishedCallback</title>
+<indexterm><primary>PaStreamFinishedCallback</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaStreamFinishedCallback</secondary></indexterm>
+<para><computeroutput>typedef void PaStreamFinishedCallback(void *userData)</computeroutput></para>
+<para>Functions of type PaStreamFinishedCallback are implemented by PortAudio clients. They can be registered with a stream using the Pa_SetStreamFinishedCallback function. Once registered they are called when the stream becomes inactive (ie once a call to <link linkend="_portaudio_8h_1af18dd60220251286c337631a855e38a0">Pa_StopStream()</link> will not block). A stream will become inactive after the stream callback returns non-zero, or when Pa_StopStream or Pa_AbortStream is called. For a stream providing audio output, if the stream callback returns paComplete, or Pa_StopStream is called, the stream finished callback will not be called until all generated sample data has been played.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>userData</entry><entry>
+<para>The userData parameter supplied to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1aa11e7b06b2cde8621551f5d527965838">Pa_SetStreamFinishedCallback</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6"/><section>
+    <title>PaStreamFlags</title>
+<indexterm><primary>PaStreamFlags</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaStreamFlags</secondary></indexterm>
+<para><computeroutput>typedef unsigned long <link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link></computeroutput></para>
+<para>Flags used to control the behavior of a stream. They are passed as parameters to Pa_OpenStream or Pa_OpenDefaultStream. Multiple flags may be ORed together.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream</link>, <link linkend="_portaudio_8h_1a0a12735ac191200f696a43b87667b714">Pa_OpenDefaultStream</link> </para>
+
+<para><link linkend="_portaudio_8h_1ad33384abe3754a39f4773f2561773595">paNoFlag</link>, <link linkend="_portaudio_8h_1a837b8a81be3f7e36c96003e0d8dcec12">paClipOff</link>, <link linkend="_portaudio_8h_1add037e93aec78fa8d67f7a59ed500707">paDitherOff</link>, <link linkend="_portaudio_8h_1ad89be5ed5279fc4c4a8495c775e1d5d5">paNeverDropInput</link>, <link linkend="_portaudio_8h_1ad7b862a223edd680d7985c33c847e31d">paPrimeOutputBuffersUsingStreamCallback</link>, <link linkend="_portaudio_8h_1a8522957e1bf814b9782d3a0e314c8b51">paPlatformSpecificFlags</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a65f7a59ec586145cf5de77fccd1ecac9"/><section>
+    <title>PaStreamInfo</title>
+<indexterm><primary>PaStreamInfo</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaStreamInfo</secondary></indexterm>
+<para><computeroutput>typedef struct PaStreamInfo PaStreamInfo</computeroutput></para>
+<para>A structure containing unchanging information about an open stream. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1ab9207d6191bb1f1725470a9cae98436d">Pa_GetStreamInfo</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a978b2ed65ea4740d6999a402b0c3ee76"/><section>
+    <title>PaStreamParameters</title>
+<indexterm><primary>PaStreamParameters</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaStreamParameters</secondary></indexterm>
+<para><computeroutput>typedef struct PaStreamParameters PaStreamParameters</computeroutput></para>
+<para>Parameters for one direction (input or output) of a stream. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd"/><section>
+    <title>PaTime</title>
+<indexterm><primary>PaTime</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaTime</secondary></indexterm>
+<para><computeroutput>typedef double <link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link></computeroutput></para>
+<para>The type used to represent monotonic time in seconds. PaTime is used for the fields of the <link linkend="_struct_pa_stream_callback_time_info">PaStreamCallbackTimeInfo</link> argument to the PaStreamCallback and as the result of <link linkend="_portaudio_8h_1a2b3fb60e6949f37f7f134105ff425749">Pa_GetStreamTime()</link>.</para>
+
+<para>PaTime values have unspecified origin.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link>, <link linkend="_struct_pa_stream_callback_time_info">PaStreamCallbackTimeInfo</link>, <link linkend="_portaudio_8h_1a2b3fb60e6949f37f7f134105ff425749">Pa_GetStreamTime</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae"/><section>
+    <title>PaHostApiTypeId</title>
+<indexterm><primary>PaHostApiTypeId</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaHostApiTypeId</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link></computeroutput></para>
+<para>Unchanging unique identifiers for each supported host API. This type is used in the <link linkend="_struct_pa_host_api_info">PaHostApiInfo</link> structure. The values are guaranteed to be unique and to never change, thus allowing code to be written that conditionally uses host API specific extensions.</para>
+
+<para>New type ids will be allocated when support for a host API reaches &quot;public alpha&quot; status, prior to that developers should use the paInDevelopment type id.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_pa_host_api_info">PaHostApiInfo</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32"/><section>
+    <title>PaStreamCallbackResult</title>
+<indexterm><primary>PaStreamCallbackResult</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>PaStreamCallbackResult</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32">PaStreamCallbackResult</link></computeroutput></para>
+<para>Allowable return values for the PaStreamCallback. <formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link> </para>
+</formalpara>
+</para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>paContinue</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paContinue</secondary></indexterm>
+<anchor xml:id="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32acba49cbf0e3bf605bb3deecef3b4fce3"/>paContinue</entry><entry>
+<para>Signal that the stream should continue invoking the callback and processing audio. </para>
+</entry></row><row><entry><indexterm><primary>paComplete</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paComplete</secondary></indexterm>
+<anchor xml:id="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32aa01800db52ead393d8b0016f63d76650"/>paComplete</entry><entry>
+<para>Signal that the stream should stop invoking the callback and finish once all output samples have played. </para>
+</entry></row><row><entry><indexterm><primary>paAbort</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>paAbort</secondary></indexterm>
+<anchor xml:id="_portaudio_8h_1ae9bfb9c4e1895326f30f80d415c66c32acaf141eb5d71420ffb4474da1dbd8de2"/>paAbort</entry><entry>
+<para>Signal that the stream should stop invoking the callback and finish as soon as possible. </para>
+</entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_portaudio_8h_1a138e57abde4e833c457b64895f638a25"/><section>
+    <title>Pa_AbortStream()</title>
+<indexterm><primary>Pa_AbortStream</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_AbortStream</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_AbortStream (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Terminates audio processing immediately without waiting for pending buffers to complete. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1a92f56f88cbd14da0e8e03077e835d104"/><section>
+    <title>Pa_CloseStream()</title>
+<indexterm><primary>Pa_CloseStream</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_CloseStream</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_CloseStream (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Closes an audio stream. If the audio stream is active it discards any pending buffers as if <link linkend="_portaudio_8h_1a138e57abde4e833c457b64895f638a25">Pa_AbortStream()</link> had been called. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1ae55c77f9b7e3f8eb301a6f1c0e2347ac"/><section>
+    <title>Pa_GetDefaultHostApi()</title>
+<indexterm><primary>Pa_GetDefaultHostApi</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetDefaultHostApi</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> Pa_GetDefaultHostApi (void )</computeroutput></para>
+<para>Retrieve the index of the default host API. The default host API will be the lowest common denominator host API on the current platform and is unlikely to provide the best performance.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A non-negative value ranging from 0 to (<link linkend="_portaudio_8h_1a19dbdb7c8702e3f4bfc0cdb99dac3dd9">Pa_GetHostApiCount()</link>-1) indicating the default host API index or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1abf9f2f82da95553d5adb929af670f74b"/><section>
+    <title>Pa_GetDefaultInputDevice()</title>
+<indexterm><primary>Pa_GetDefaultInputDevice</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetDefaultInputDevice</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> Pa_GetDefaultInputDevice (void )</computeroutput></para>
+<para>Retrieve the index of the default input device. The result can be used in the inputDevice parameter to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link>.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The default input device index for the default host API, or paNoDevice if no default input device is available or an error was encountered. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1adc955dfab007624000695c48d4f876dc"/><section>
+    <title>Pa_GetDefaultOutputDevice()</title>
+<indexterm><primary>Pa_GetDefaultOutputDevice</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetDefaultOutputDevice</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> Pa_GetDefaultOutputDevice (void )</computeroutput></para>
+<para>Retrieve the index of the default output device. The result can be used in the outputDevice parameter to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link>.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The default output device index for the default host API, or paNoDevice if no default output device is available or an error was encountered.</para>
+</formalpara>
+<note><title>Note</title>
+
+<para>On the PC, the user can specify a default device by setting an environment variable. For example, to use device #1. <literallayout>
+ set PA_RECOMMENDED_OUTPUT_DEVICE=1
+</literallayout> The user should first determine the available device ids by using the supplied application &quot;pa_devs&quot;. </para>
+</note>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1acfe4d3c5ec1a343f459981bfa2057f8d"/><section>
+    <title>Pa_GetDeviceCount()</title>
+<indexterm><primary>Pa_GetDeviceCount</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetDeviceCount</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> Pa_GetDeviceCount (void )</computeroutput></para>
+<para>Retrieve the number of available devices. The number of available devices may be zero.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A non-negative value indicating the number of available devices or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ab7a149915fdbf90cff993d588619e7e8"/><section>
+    <title>Pa_GetDeviceInfo()</title>
+<indexterm><primary>Pa_GetDeviceInfo</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetDeviceInfo</secondary></indexterm>
+<para><computeroutput>const <link linkend="_struct_pa_device_info">PaDeviceInfo</link> * Pa_GetDeviceInfo (<link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> device)</computeroutput></para>
+<para>Retrieve a pointer to a <link linkend="_struct_pa_device_info">PaDeviceInfo</link> structure containing information about the specified device. <formalpara><title>Returns</title>
+
+<para>A pointer to an immutable <link linkend="_struct_pa_device_info">PaDeviceInfo</link> structure. If the device parameter is out of range the function returns NULL.</para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device</entry><entry>
+<para>A valid device index in the range 0 to (<link linkend="_portaudio_8h_1acfe4d3c5ec1a343f459981bfa2057f8d">Pa_GetDeviceCount()</link>-1)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <note><title>Note</title>
+
+<para>PortAudio manages the memory referenced by the returned pointer, the client must not manipulate or free the memory. The pointer is only guaranteed to be valid between calls to <link linkend="_portaudio_8h_1abed859482d156622d9332dff9b2d89da">Pa_Initialize()</link> and <link linkend="_portaudio_8h_1a0db317604e916e8bd6098e60e6237221">Pa_Terminate()</link>.</para>
+</note>
+<formalpara><title>See also</title>
+
+<para><link linkend="_struct_pa_device_info">PaDeviceInfo</link>, <link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ae84ae07ba25bf959e00f3b0ab4d17acb"/><section>
+    <title>Pa_GetErrorText()</title>
+<indexterm><primary>Pa_GetErrorText</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetErrorText</secondary></indexterm>
+<para><computeroutput>const char * Pa_GetErrorText (<link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> errorCode)</computeroutput></para>
+<para>Translate the supplied PortAudio error code into a human readable message. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1a19dbdb7c8702e3f4bfc0cdb99dac3dd9"/><section>
+    <title>Pa_GetHostApiCount()</title>
+<indexterm><primary>Pa_GetHostApiCount</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetHostApiCount</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> Pa_GetHostApiCount (void )</computeroutput></para>
+<para>Retrieve the number of available host APIs. Even if a host API is available it may have no devices available.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A non-negative value indicating the number of available host APIs or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1afdd67ffc394c90f3ee78d51e51f8f22f"/><section>
+    <title>Pa_GetHostApiInfo()</title>
+<indexterm><primary>Pa_GetHostApiInfo</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetHostApiInfo</secondary></indexterm>
+<para><computeroutput>const <link linkend="_struct_pa_host_api_info">PaHostApiInfo</link> * Pa_GetHostApiInfo (<link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> hostApi)</computeroutput></para>
+<para>Retrieve a pointer to a structure containing information about a specific host Api.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>hostApi</entry><entry>
+<para>A valid host API index ranging from 0 to (<link linkend="_portaudio_8h_1a19dbdb7c8702e3f4bfc0cdb99dac3dd9">Pa_GetHostApiCount()</link>-1)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A pointer to an immutable <link linkend="_struct_pa_host_api_info">PaHostApiInfo</link> structure describing a specific host API. If the hostApi parameter is out of range or an error is encountered, the function returns NULL.</para>
+</formalpara>
+The returned structure is owned by the PortAudio implementation and must not be manipulated or freed. The pointer is only guaranteed to be valid between calls to <link linkend="_portaudio_8h_1abed859482d156622d9332dff9b2d89da">Pa_Initialize()</link> and <link linkend="_portaudio_8h_1a0db317604e916e8bd6098e60e6237221">Pa_Terminate()</link>. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1a1d0652aef223200f9401bb28fe04a3ad"/><section>
+    <title>Pa_GetLastHostErrorInfo()</title>
+<indexterm><primary>Pa_GetLastHostErrorInfo</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetLastHostErrorInfo</secondary></indexterm>
+<para><computeroutput>const <link linkend="_struct_pa_host_error_info">PaHostErrorInfo</link> * Pa_GetLastHostErrorInfo (void )</computeroutput></para>
+<para>Return information about the last host error encountered. The error information returned by <link linkend="_portaudio_8h_1a1d0652aef223200f9401bb28fe04a3ad">Pa_GetLastHostErrorInfo()</link> will never be modified asynchronously by errors occurring in other PortAudio owned threads (such as the thread that manages the stream callback.)</para>
+
+<para>This function is provided as a last resort, primarily to enhance debugging by providing clients with access to all available error information.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A pointer to an immutable structure constraining information about the host error. The values in this structure will only be valid if a PortAudio function has previously returned the paUnanticipatedHostError error code. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a541ed0b734df2631bc4c229acf92abc1"/><section>
+    <title>Pa_GetSampleSize()</title>
+<indexterm><primary>Pa_GetSampleSize</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetSampleSize</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_GetSampleSize (<link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> format)</computeroutput></para>
+<para>Retrieve the size of a given sample format in bytes.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The size in bytes of a single sample in the specified format, or paSampleFormatNotSupported if the format is not supported. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a83b8c624464dd7bb6a01b06ab596c115"/><section>
+    <title>Pa_GetStreamCpuLoad()</title>
+<indexterm><primary>Pa_GetStreamCpuLoad</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetStreamCpuLoad</secondary></indexterm>
+<para><computeroutput>double Pa_GetStreamCpuLoad (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Retrieve CPU usage information for the specified stream. The &quot;CPU Load&quot; is a fraction of total CPU time consumed by a callback stream&apos;s audio processing routines including, but not limited to the client supplied stream callback. This function does not work with blocking read/write streams.</para>
+
+<para>This function may be called from the stream callback function or the application.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A floating point value, typically between 0.0 and 1.0, where 1.0 indicates that the stream callback is consuming the maximum number of CPU cycles possible to maintain real-time operation. A value of 0.5 would imply that PortAudio and the stream callback was consuming roughly 50% of the available CPU time. The return value may exceed 1.0. A value of 0.0 will always be returned for a blocking read/write stream, or if an error occurs. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ab9207d6191bb1f1725470a9cae98436d"/><section>
+    <title>Pa_GetStreamInfo()</title>
+<indexterm><primary>Pa_GetStreamInfo</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetStreamInfo</secondary></indexterm>
+<para><computeroutput>const <link linkend="_struct_pa_stream_info">PaStreamInfo</link> * Pa_GetStreamInfo (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Retrieve a pointer to a <link linkend="_struct_pa_stream_info">PaStreamInfo</link> structure containing information about the specified stream. <formalpara><title>Returns</title>
+
+<para>A pointer to an immutable <link linkend="_struct_pa_stream_info">PaStreamInfo</link> structure. If the stream parameter is invalid, or an error is encountered, the function returns NULL.</para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stream</entry><entry>
+<para>A pointer to an open stream previously created with Pa_OpenStream.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <note><title>Note</title>
+
+<para>PortAudio manages the memory referenced by the returned pointer, the client must not manipulate or free the memory. The pointer is only guaranteed to be valid until the specified stream is closed.</para>
+</note>
+<formalpara><title>See also</title>
+
+<para><link linkend="_struct_pa_stream_info">PaStreamInfo</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1ad04c33f045fa58d7b705b56b1fd3e816"/><section>
+    <title>Pa_GetStreamReadAvailable()</title>
+<indexterm><primary>Pa_GetStreamReadAvailable</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetStreamReadAvailable</secondary></indexterm>
+<para><computeroutput>signed long Pa_GetStreamReadAvailable (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Retrieve the number of frames that can be read from the stream without waiting.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Returns a non-negative value representing the maximum number of frames that can be read from the stream without blocking or busy waiting or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a2b3fb60e6949f37f7f134105ff425749"/><section>
+    <title>Pa_GetStreamTime()</title>
+<indexterm><primary>Pa_GetStreamTime</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetStreamTime</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link> Pa_GetStreamTime (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Returns the current time in seconds for a stream according to the same clock used to generate callback <link linkend="_struct_pa_stream_callback_time_info">PaStreamCallbackTimeInfo</link> timestamps. The time values are monotonically increasing and have unspecified origin.</para>
+
+<para>Pa_GetStreamTime returns valid time values for the entire life of the stream, from when the stream is opened until it is closed. Starting and stopping the stream does not affect the passage of time returned by Pa_GetStreamTime.</para>
+
+<para>This time may be used for synchronizing other events to the audio stream, for example synchronizing audio to MIDI.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The stream&apos;s current time in seconds, or 0 if an error occurred.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1af17a7e6d0471a23071acf8dbd7bbe4bd">PaTime</link>, <link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link>, <link linkend="_struct_pa_stream_callback_time_info">PaStreamCallbackTimeInfo</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a25595acf48733ec32045aa189c3caa61"/><section>
+    <title>Pa_GetStreamWriteAvailable()</title>
+<indexterm><primary>Pa_GetStreamWriteAvailable</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetStreamWriteAvailable</secondary></indexterm>
+<para><computeroutput>signed long Pa_GetStreamWriteAvailable (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Retrieve the number of frames that can be written to the stream without waiting.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Returns a non-negative value representing the maximum number of frames that can be written to the stream without blocking or busy waiting or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a66da08bcf908e0849c62a6b47f50d7b4"/><section>
+    <title>Pa_GetVersion()</title>
+<indexterm><primary>Pa_GetVersion</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetVersion</secondary></indexterm>
+<para><computeroutput>int Pa_GetVersion (void )</computeroutput></para>
+<para>Retrieve the release number of the currently running PortAudio build, eg 1900. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1a5bc90e52be8c57a8a7dc8f44693412f0"/><section>
+    <title>Pa_GetVersionText()</title>
+<indexterm><primary>Pa_GetVersionText</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_GetVersionText</secondary></indexterm>
+<para><computeroutput>const char * Pa_GetVersionText (void )</computeroutput></para>
+<para>Retrieve a textual description of the current PortAudio build, eg &quot;PortAudio V19-devel 13 October 2002&quot;. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1a54f306b5e5258323c95a27c5722258cd"/><section>
+    <title>Pa_HostApiDeviceIndexToDeviceIndex()</title>
+<indexterm><primary>Pa_HostApiDeviceIndexToDeviceIndex</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_HostApiDeviceIndexToDeviceIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1ad79317e65bde63d76c4b8e711ac5a361">PaDeviceIndex</link> Pa_HostApiDeviceIndexToDeviceIndex (<link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> hostApi, int hostApiDeviceIndex)</computeroutput></para>
+<para>Convert a host-API-specific device index to standard PortAudio device index. This function may be used in conjunction with the deviceCount field of <link linkend="_struct_pa_host_api_info">PaHostApiInfo</link> to enumerate all devices for the specified host API.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>hostApi</entry><entry>
+<para>A valid host API index ranging from 0 to (<link linkend="_portaudio_8h_1a19dbdb7c8702e3f4bfc0cdb99dac3dd9">Pa_GetHostApiCount()</link>-1)</para>
+</entry>
+                            </row>
+                            <row>
+<entry>hostApiDeviceIndex</entry><entry>
+<para>A valid per-host device index in the range 0 to (Pa_GetHostApiInfo(hostApi)-&gt;deviceCount-1)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A non-negative PaDeviceIndex ranging from 0 to (<link linkend="_portaudio_8h_1acfe4d3c5ec1a343f459981bfa2057f8d">Pa_GetDeviceCount()</link>-1) or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered.</para>
+</formalpara>
+A paInvalidHostApi error code indicates that the host API index specified by the hostApi parameter is out of range.</para>
+
+<para>A paInvalidDevice error code indicates that the hostApiDeviceIndex parameter is out of range.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_pa_host_api_info">PaHostApiInfo</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a081c3975126d20b4226facfb7ba0620f"/><section>
+    <title>Pa_HostApiTypeIdToHostApiIndex()</title>
+<indexterm><primary>Pa_HostApiTypeIdToHostApiIndex</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_HostApiTypeIdToHostApiIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1aeef6da084c57c70aa94be97411e19930">PaHostApiIndex</link> Pa_HostApiTypeIdToHostApiIndex (<link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> type)</computeroutput></para>
+<para>Convert a static host API unique identifier, into a runtime host API index.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>type</entry><entry>
+<para>A unique host API identifier belonging to the PaHostApiTypeId enumeration.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A valid PaHostApiIndex ranging from 0 to (<link linkend="_portaudio_8h_1a19dbdb7c8702e3f4bfc0cdb99dac3dd9">Pa_GetHostApiCount()</link>-1) or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered.</para>
+</formalpara>
+The paHostApiNotFound error code indicates that the host API specified by the type parameter is not available.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a8eaebe3d39c5ea45598da8f86dc2e5ae">PaHostApiTypeId</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1abed859482d156622d9332dff9b2d89da"/><section>
+    <title>Pa_Initialize()</title>
+<indexterm><primary>Pa_Initialize</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_Initialize</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_Initialize (void )</computeroutput></para>
+<para>Library initialization function - call this before using PortAudio. This function initializes internal data structures and prepares underlying host APIs for use. With the exception of <link linkend="_portaudio_8h_1a66da08bcf908e0849c62a6b47f50d7b4">Pa_GetVersion()</link>, <link linkend="_portaudio_8h_1a5bc90e52be8c57a8a7dc8f44693412f0">Pa_GetVersionText()</link>, and <link linkend="_portaudio_8h_1ae84ae07ba25bf959e00f3b0ab4d17acb">Pa_GetErrorText()</link>, this function MUST be called before using any other PortAudio API functions.</para>
+
+<para>If <link linkend="_portaudio_8h_1abed859482d156622d9332dff9b2d89da">Pa_Initialize()</link> is called multiple times, each successful call must be matched with a corresponding call to <link linkend="_portaudio_8h_1a0db317604e916e8bd6098e60e6237221">Pa_Terminate()</link>. Pairs of calls to <link linkend="_portaudio_8h_1abed859482d156622d9332dff9b2d89da">Pa_Initialize()</link>/Pa_Terminate() may overlap, and are not required to be fully nested.</para>
+
+<para>Note that if <link linkend="_portaudio_8h_1abed859482d156622d9332dff9b2d89da">Pa_Initialize()</link> returns an error code, <link linkend="_portaudio_8h_1a0db317604e916e8bd6098e60e6237221">Pa_Terminate()</link> should NOT be called.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>paNoError if successful, otherwise an error code indicating the cause of failure.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a0db317604e916e8bd6098e60e6237221">Pa_Terminate</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1abdb313743d6efef26cecdae787a2bd3d"/><section>
+    <title>Pa_IsFormatSupported()</title>
+<indexterm><primary>Pa_IsFormatSupported</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_IsFormatSupported</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_IsFormatSupported (const <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> * inputParameters, const <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> * outputParameters, double sampleRate)</computeroutput></para>
+<para>Determine whether it would be possible to open a stream with the specified parameters.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>inputParameters</entry><entry>
+<para>A structure that describes the input parameters used to open a stream. The suggestedLatency field is ignored. See <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> for a description of these parameters. inputParameters must be NULL for output-only streams.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>outputParameters</entry><entry>
+<para>A structure that describes the output parameters used to open a stream. The suggestedLatency field is ignored. See <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> for a description of these parameters. outputParameters must be NULL for input-only streams.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>sampleRate</entry><entry>
+<para>The required sampleRate. For full-duplex streams it is the sample rate for both input and output</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns 0 if the format is supported, and an error code indicating why the format is not supported otherwise. The constant paFormatIsSupported is provided to compare with the return value for success.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a400df642339bf4112333060af6a43c0f">paFormatIsSupported</link>, <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a1f8709c4971932643681a6f374c4bb5a"/><section>
+    <title>Pa_IsStreamActive()</title>
+<indexterm><primary>Pa_IsStreamActive</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_IsStreamActive</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_IsStreamActive (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Determine whether the stream is active. A stream is active after a successful call to <link linkend="_portaudio_8h_1a7432aadd26c40452da12fa99fc1a047b">Pa_StartStream()</link>, until it becomes inactive either as a result of a call to <link linkend="_portaudio_8h_1af18dd60220251286c337631a855e38a0">Pa_StopStream()</link> or <link linkend="_portaudio_8h_1a138e57abde4e833c457b64895f638a25">Pa_AbortStream()</link>, or as a result of a return value other than paContinue from the stream callback. In the latter case, the stream is considered inactive after the last buffer has finished playing.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Returns one (1) when the stream is active (ie playing or recording audio), zero (0) when not playing or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1af18dd60220251286c337631a855e38a0">Pa_StopStream</link>, <link linkend="_portaudio_8h_1a138e57abde4e833c457b64895f638a25">Pa_AbortStream</link>, <link linkend="_portaudio_8h_1a52d778c985ae9d566de7e13529cc771f">Pa_IsStreamStopped</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a52d778c985ae9d566de7e13529cc771f"/><section>
+    <title>Pa_IsStreamStopped()</title>
+<indexterm><primary>Pa_IsStreamStopped</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_IsStreamStopped</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_IsStreamStopped (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Determine whether the stream is stopped. A stream is considered to be stopped prior to a successful call to Pa_StartStream and after a successful call to Pa_StopStream or Pa_AbortStream. If a stream callback returns a value other than paContinue the stream is NOT considered to be stopped.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Returns one (1) when the stream is stopped, zero (0) when the stream is running or, a PaErrorCode (which are always negative) if PortAudio is not initialized or an error is encountered.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1af18dd60220251286c337631a855e38a0">Pa_StopStream</link>, <link linkend="_portaudio_8h_1a138e57abde4e833c457b64895f638a25">Pa_AbortStream</link>, <link linkend="_portaudio_8h_1a1f8709c4971932643681a6f374c4bb5a">Pa_IsStreamActive</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a0a12735ac191200f696a43b87667b714"/><section>
+    <title>Pa_OpenDefaultStream()</title>
+<indexterm><primary>Pa_OpenDefaultStream</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_OpenDefaultStream</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_OpenDefaultStream (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> ** stream, int numInputChannels, int numOutputChannels, <link linkend="_portaudio_8h_1a4582d93c2c2e60e12be3d74c5fe00b96">PaSampleFormat</link> sampleFormat, double sampleRate, unsigned long framesPerBuffer, <link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link> * streamCallback, void * userData)</computeroutput></para>
+<para>A simplified version of <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link> that opens the default input and/or output devices.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stream</entry><entry>
+<para>The address of a PaStream pointer which will receive a pointer to the newly opened stream.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>numInputChannels</entry><entry>
+<para>The number of channels of sound that will be supplied to the stream callback or returned by Pa_ReadStream. It can range from 1 to the value of maxInputChannels in the <link linkend="_struct_pa_device_info">PaDeviceInfo</link> record for the default input device. If 0 the stream is opened as an output-only stream.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>numOutputChannels</entry><entry>
+<para>The number of channels of sound to be delivered to the stream callback or passed to Pa_WriteStream. It can range from 1 to the value of maxOutputChannels in the <link linkend="_struct_pa_device_info">PaDeviceInfo</link> record for the default output device. If 0 the stream is opened as an output-only stream.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>sampleFormat</entry><entry>
+<para>The sample format of both the input and output buffers provided to the callback or passed to and from Pa_ReadStream and Pa_WriteStream. sampleFormat may be any of the formats described by the PaSampleFormat enumeration.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>sampleRate</entry><entry>
+<para>Same as Pa_OpenStream parameter of the same name. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>framesPerBuffer</entry><entry>
+<para>Same as Pa_OpenStream parameter of the same name. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>streamCallback</entry><entry>
+<para>Same as Pa_OpenStream parameter of the same name. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>userData</entry><entry>
+<para>Same as Pa_OpenStream parameter of the same name.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>As for Pa_OpenStream</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream</link>, <link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a443ad16338191af364e3be988014cbbe"/><section>
+    <title>Pa_OpenStream()</title>
+<indexterm><primary>Pa_OpenStream</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_OpenStream</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_OpenStream (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> ** stream, const <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> * inputParameters, const <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> * outputParameters, double sampleRate, unsigned long framesPerBuffer, <link linkend="_portaudio_8h_1a37c7ac3ace7d2dd1430f40ecdee4ebb6">PaStreamFlags</link> streamFlags, <link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link> * streamCallback, void * userData)</computeroutput></para>
+<para>Opens a stream for either input, output or both.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stream</entry><entry>
+<para>The address of a PaStream pointer which will receive a pointer to the newly opened stream.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>inputParameters</entry><entry>
+<para>A structure that describes the input parameters used by the opened stream. See <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> for a description of these parameters. inputParameters must be NULL for output-only streams.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>outputParameters</entry><entry>
+<para>A structure that describes the output parameters used by the opened stream. See <link linkend="_struct_pa_stream_parameters">PaStreamParameters</link> for a description of these parameters. outputParameters must be NULL for input-only streams.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>sampleRate</entry><entry>
+<para>The desired sampleRate. For full-duplex streams it is the sample rate for both input and output</para>
+</entry>
+                            </row>
+                            <row>
+<entry>framesPerBuffer</entry><entry>
+<para>The number of frames passed to the stream callback function, or the preferred block granularity for a blocking read/write stream. The special value paFramesPerBufferUnspecified (0) may be used to request that the stream callback will receive an optimal (and possibly varying) number of frames based on host requirements and the requested latency settings. Note: With some host APIs, the use of non-zero framesPerBuffer for a callback stream may introduce an additional layer of buffering which could introduce additional latency. PortAudio guarantees that the additional latency will be kept to the theoretical minimum however, it is strongly recommended that a non-zero framesPerBuffer value only be used when your algorithm requires a fixed number of frames per stream callback.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>streamFlags</entry><entry>
+<para>Flags which modify the behavior of the streaming process. This parameter may contain a combination of flags ORed together. Some flags may only be relevant to certain buffer formats.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>streamCallback</entry><entry>
+<para>A pointer to a client supplied function that is responsible for processing and filling input and output buffers. If this parameter is NULL the stream will be opened in &apos;blocking read/write&apos; mode. In blocking mode, the client can receive sample data using Pa_ReadStream and write sample data using Pa_WriteStream, the number of samples that may be read or written without blocking is returned by Pa_GetStreamReadAvailable and Pa_GetStreamWriteAvailable respectively.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>userData</entry><entry>
+<para>A client supplied pointer which is passed to the stream callback function. It could for example, contain a pointer to instance data necessary for processing the audio buffers. This parameter is ignored if streamCallback is NULL.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Upon success <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link> returns paNoError and places a pointer to a valid PaStream in the stream argument. The stream is inactive (stopped). If a call to <link linkend="_portaudio_8h_1a443ad16338191af364e3be988014cbbe">Pa_OpenStream()</link> fails, a non-zero error code is returned (see PaError for possible error codes) and the value of stream is invalid.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_struct_pa_stream_parameters">PaStreamParameters</link>, <link linkend="_portaudio_8h_1a8a60fb2a5ec9cbade3f54a9c978e2710">PaStreamCallback</link>, <link linkend="_portaudio_8h_1a0b62d4b74b5d3d88368e9e4c0b8b2dc7">Pa_ReadStream</link>, <link linkend="_portaudio_8h_1a075a6efb503a728213bdae24347ed27d">Pa_WriteStream</link>, <link linkend="_portaudio_8h_1ad04c33f045fa58d7b705b56b1fd3e816">Pa_GetStreamReadAvailable</link>, <link linkend="_portaudio_8h_1a25595acf48733ec32045aa189c3caa61">Pa_GetStreamWriteAvailable</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a0b62d4b74b5d3d88368e9e4c0b8b2dc7"/><section>
+    <title>Pa_ReadStream()</title>
+<indexterm><primary>Pa_ReadStream</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_ReadStream</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_ReadStream (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream, void * buffer, unsigned long frames)</computeroutput></para>
+<para>Read samples from an input stream. The function doesn&apos;t return until the entire buffer has been filled - this may involve waiting for the operating system to supply the data.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stream</entry><entry>
+<para>A pointer to an open stream previously created with Pa_OpenStream.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>buffer</entry><entry>
+<para>A pointer to a buffer of sample frames. The buffer contains samples in the format specified by the inputParameters-&gt;sampleFormat field used to open the stream, and the number of channels specified by inputParameters-&gt;numChannels. If non-interleaved samples were requested using the paNonInterleaved sample format flag, buffer is a pointer to the first element of an array of buffer pointers, one non-interleaved buffer for each channel.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>frames</entry><entry>
+<para>The number of frames to be read into buffer. This parameter is not constrained to a specific range, however high performance applications will want to match this parameter to the framesPerBuffer parameter used when opening the stream.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>On success PaNoError will be returned, or PaInputOverflowed if input data was discarded by PortAudio after the previous call and before this call. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1aa11e7b06b2cde8621551f5d527965838"/><section>
+    <title>Pa_SetStreamFinishedCallback()</title>
+<indexterm><primary>Pa_SetStreamFinishedCallback</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_SetStreamFinishedCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_SetStreamFinishedCallback (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream, <link linkend="_portaudio_8h_1ab2530ee0cb756c67726f9074d3482ef2">PaStreamFinishedCallback</link> * streamFinishedCallback)</computeroutput></para>
+<para>Register a stream finished callback function which will be called when the stream becomes inactive. See the description of PaStreamFinishedCallback for further details about when the callback will be called.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stream</entry><entry>
+<para>a pointer to a PaStream that is in the stopped state - if the stream is not stopped, the stream&apos;s finished callback will remain unchanged and an error code will be returned.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>streamFinishedCallback</entry><entry>
+<para>a pointer to a function with the same signature as PaStreamFinishedCallback, that will be called when the stream becomes inactive. Passing NULL for this parameter will un-register a previously registered stream finished callback function.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>on success returns paNoError, otherwise an error code indicating the cause of the error.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1ab2530ee0cb756c67726f9074d3482ef2">PaStreamFinishedCallback</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a1b3c20044c9401c42add29475636e83d"/><section>
+    <title>Pa_Sleep()</title>
+<indexterm><primary>Pa_Sleep</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_Sleep</secondary></indexterm>
+<para><computeroutput>void Pa_Sleep (long msec)</computeroutput></para>
+<para>Put the caller to sleep for at least &apos;msec&apos; milliseconds. This function is provided only as a convenience for authors of portable code (such as the tests and examples in the PortAudio distribution.)</para>
+
+<para>The function may sleep longer than requested so don&apos;t rely on this for accurate musical timing. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1a7432aadd26c40452da12fa99fc1a047b"/><section>
+    <title>Pa_StartStream()</title>
+<indexterm><primary>Pa_StartStream</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_StartStream</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_StartStream (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Commences audio processing. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1af18dd60220251286c337631a855e38a0"/><section>
+    <title>Pa_StopStream()</title>
+<indexterm><primary>Pa_StopStream</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_StopStream</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_StopStream (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream)</computeroutput></para>
+<para>Terminates audio processing. It waits until all pending audio buffers have been played before it returns. </para>
+</section>
+<anchor xml:id="_portaudio_8h_1a0db317604e916e8bd6098e60e6237221"/><section>
+    <title>Pa_Terminate()</title>
+<indexterm><primary>Pa_Terminate</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_Terminate</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_Terminate (void )</computeroutput></para>
+<para>Library termination function - call this when finished using PortAudio. This function deallocates all resources allocated by PortAudio since it was initialized by a call to <link linkend="_portaudio_8h_1abed859482d156622d9332dff9b2d89da">Pa_Initialize()</link>. In cases where Pa_Initialise() has been called multiple times, each call must be matched with a corresponding call to <link linkend="_portaudio_8h_1a0db317604e916e8bd6098e60e6237221">Pa_Terminate()</link>. The final matching call to <link linkend="_portaudio_8h_1a0db317604e916e8bd6098e60e6237221">Pa_Terminate()</link> will automatically close any PortAudio streams that are still open.</para>
+
+<para><link linkend="_portaudio_8h_1a0db317604e916e8bd6098e60e6237221">Pa_Terminate()</link> MUST be called before exiting a program which uses PortAudio. Failure to do so may result in serious resource leaks, such as audio devices not being available until the next reboot.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>paNoError if successful, otherwise an error code indicating the cause of failure.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_portaudio_8h_1abed859482d156622d9332dff9b2d89da">Pa_Initialize</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_portaudio_8h_1a075a6efb503a728213bdae24347ed27d"/><section>
+    <title>Pa_WriteStream()</title>
+<indexterm><primary>Pa_WriteStream</primary><secondary>portaudio.h</secondary></indexterm>
+<indexterm><primary>portaudio.h</primary><secondary>Pa_WriteStream</secondary></indexterm>
+<para><computeroutput><link linkend="_portaudio_8h_1a4949e4a8ef9f9dbe8cbee414ce69841d">PaError</link> Pa_WriteStream (<link linkend="_portaudio_8h_1a19874734f89958fccf86785490d53b4c">PaStream</link> * stream, const void * buffer, unsigned long frames)</computeroutput></para>
+<para>Write samples to an output stream. This function doesn&apos;t return until the entire buffer has been consumed - this may involve waiting for the operating system to consume the data.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stream</entry><entry>
+<para>A pointer to an open stream previously created with Pa_OpenStream.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>buffer</entry><entry>
+<para>A pointer to a buffer of sample frames. The buffer contains samples in the format specified by the outputParameters-&gt;sampleFormat field used to open the stream, and the number of channels specified by outputParameters-&gt;numChannels. If non-interleaved samples were requested using the paNonInterleaved sample format flag, buffer is a pointer to the first element of an array of buffer pointers, one non-interleaved buffer for each channel.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>frames</entry><entry>
+<para>The number of frames to be written from buffer. This parameter is not constrained to a specific range, however high performance applications will want to match this parameter to the framesPerBuffer parameter used when opening the stream.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>On success PaNoError will be returned, or paOutputUnderflowed if additional output data was inserted after the previous call and before this call. </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

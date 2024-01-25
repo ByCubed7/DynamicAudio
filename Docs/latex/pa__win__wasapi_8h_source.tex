@@ -1,0 +1,324 @@
+\doxysection{pa\+\_\+win\+\_\+wasapi.\+h}
+\hypertarget{pa__win__wasapi_8h_source}{}\label{pa__win__wasapi_8h_source}\index{packages/portaudio.0.19.1/build/native/include/pa\_win\_wasapi.h@{packages/portaudio.0.19.1/build/native/include/pa\_win\_wasapi.h}}
+\mbox{\hyperlink{pa__win__wasapi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PA\_WIN\_WASAPI\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PA\_WIN\_WASAPI\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \$Id:\ \ \$}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ PortAudio\ Portable\ Real-\/Time\ Audio\ Library}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ DirectSound\ specific\ extensions}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ Copyright\ (c)\ 1999-\/2007\ Ross\ Bencina\ and\ Phil\ Burk}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ a\ copy\ of\ this\ software\ and\ associated\ documentation\ files}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ included\ in\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,\ OUT\ OF\ OR\ IN\ CONNECTION}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ The\ text\ above\ constitutes\ the\ entire\ PortAudio\ license;\ however,\ }}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ the\ PortAudio\ community\ also\ makes\ the\ following\ non-\/binding\ requests:}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ Any\ person\ wishing\ to\ distribute\ modifications\ to\ the\ Software\ is}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ requested\ to\ send\ the\ modifications\ to\ the\ original\ developer\ so\ that}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ they\ can\ be\ incorporated\ into\ the\ canonical\ version.\ It\ is\ also\ }}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ requested\ that\ these\ non-\/binding\ requests\ be\ included\ along\ with\ the\ }}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ license\ above.}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pa__win__waveformat_8h}{pa\_win\_waveformat.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00050\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{/*\ Setup\ flags\ */}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ PaWasapiFlags}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{/*\ puts\ WASAPI\ into\ exclusive\ mode\ */}}
+\DoxyCodeLine{00059\ \ \ \ \ paWinWasapiExclusive\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (1\ <<\ 0),}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{/*\ allows\ to\ skip\ internal\ PA\ processing\ completely\ */}}
+\DoxyCodeLine{00062\ \ \ \ \ paWinWasapiRedirectHostProcessor\ \ \ \ =\ (1\ <<\ 1),}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{/*\ assigns\ custom\ channel\ mask\ */}}
+\DoxyCodeLine{00065\ \ \ \ \ paWinWasapiUseChannelMask\ \ \ \ \ \ \ \ \ \ \ =\ (1\ <<\ 2),}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{/*\ selects\ non-\/Event\ driven\ method\ of\ data\ read/write}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ \ \ \ \ \ \ Note:\ WASAPI\ Event\ driven\ core\ is\ capable\ of\ 2ms\ latency!!!,\ but\ Polling}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ method\ can\ only\ provide\ 15-\/20ms\ latency.\ */}}
+\DoxyCodeLine{00070\ \ \ \ \ paWinWasapiPolling\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (1\ <<\ 3),}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{/*\ forces\ custom\ thread\ priority\ setting.\ must\ be\ used\ if\ PaWasapiStreamInfo::threadPriority\ }}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ \ \ \ \ \ \ is\ set\ to\ custom\ value.\ */}}
+\DoxyCodeLine{00074\ \ \ \ \ paWinWasapiThreadPriority\ \ \ \ \ \ \ \ \ \ \ =\ (1\ <<\ 4)}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ PaWasapiFlags;}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ paWinWasapiExclusive\ \ \ \ \ \ \ \ \ \ \ \ \ (paWinWasapiExclusive)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ paWinWasapiRedirectHostProcessor\ (paWinWasapiRedirectHostProcessor)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ paWinWasapiUseChannelMask\ \ \ \ \ \ \ \ (paWinWasapiUseChannelMask)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ paWinWasapiPolling\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (paWinWasapiPolling)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ paWinWasapiThreadPriority\ \ \ \ \ \ \ \ (paWinWasapiThreadPriority)}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{/*\ Host\ processor.\ Allows\ to\ skip\ internal\ PA\ processing\ completely.\ }}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ \ \ You\ must\ set\ paWinWasapiRedirectHostProcessor\ flag\ to\ PaWasapiStreamInfo::flags\ member}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ \ \ in\ order\ to\ have\ host\ processor\ redirected\ to\ your\ callback.}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ \ \ Use\ with\ caution!\ inputFrames\ and\ outputFrames\ depend\ solely\ on\ final\ device\ setup.}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ \ \ To\ query\ maximal\ values\ of\ inputFrames/outputFrames\ use\ PaWasapi\_GetFramesPerHostBuffer.}}
+\DoxyCodeLine{00089\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{typedef}\ void\ (*PaWasapiHostProcessorCallback)\ (\textcolor{keywordtype}{void}\ *inputBuffer,\ \ \textcolor{keywordtype}{long}\ inputFrames,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *outputBuffer,\ \textcolor{keywordtype}{long}\ outputFrames,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *userData);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{comment}{/*\ Device\ role\ */}}
+\DoxyCodeLine{00095\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ PaWasapiDeviceRole}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ eRoleRemoteNetworkDevice\ =\ 0,}
+\DoxyCodeLine{00098\ \ \ \ \ eRoleSpeakers,}
+\DoxyCodeLine{00099\ \ \ \ \ eRoleLineLevel,}
+\DoxyCodeLine{00100\ \ \ \ \ eRoleHeadphones,}
+\DoxyCodeLine{00101\ \ \ \ \ eRoleMicrophone,}
+\DoxyCodeLine{00102\ \ \ \ \ eRoleHeadset,}
+\DoxyCodeLine{00103\ \ \ \ \ eRoleHandset,}
+\DoxyCodeLine{00104\ \ \ \ \ eRoleUnknownDigitalPassthrough,}
+\DoxyCodeLine{00105\ \ \ \ \ eRoleSPDIF,}
+\DoxyCodeLine{00106\ \ \ \ \ eRoleHDMI,}
+\DoxyCodeLine{00107\ \ \ \ \ eRoleUnknownFormFactor}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ PaWasapiDeviceRole;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{/*\ Jack\ connection\ type\ */}}
+\DoxyCodeLine{00113\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ PaWasapiJackConnectionType}
+\DoxyCodeLine{00114\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ eJackConnTypeUnknown,}
+\DoxyCodeLine{00116\ \ \ \ \ eJackConnType3Point5mm,}
+\DoxyCodeLine{00117\ \ \ \ \ eJackConnTypeQuarter,}
+\DoxyCodeLine{00118\ \ \ \ \ eJackConnTypeAtapiInternal,}
+\DoxyCodeLine{00119\ \ \ \ \ eJackConnTypeRCA,}
+\DoxyCodeLine{00120\ \ \ \ \ eJackConnTypeOptical,}
+\DoxyCodeLine{00121\ \ \ \ \ eJackConnTypeOtherDigital,}
+\DoxyCodeLine{00122\ \ \ \ \ eJackConnTypeOtherAnalog,}
+\DoxyCodeLine{00123\ \ \ \ \ eJackConnTypeMultichannelAnalogDIN,}
+\DoxyCodeLine{00124\ \ \ \ \ eJackConnTypeXlrProfessional,}
+\DoxyCodeLine{00125\ \ \ \ \ eJackConnTypeRJ11Modem,}
+\DoxyCodeLine{00126\ \ \ \ \ eJackConnTypeCombination}
+\DoxyCodeLine{00127\ \}\ }
+\DoxyCodeLine{00128\ PaWasapiJackConnectionType;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{comment}{/*\ Jack\ geometric\ location\ */}}
+\DoxyCodeLine{00132\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ PaWasapiJackGeoLocation}
+\DoxyCodeLine{00133\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ eJackGeoLocUnk\ =\ 0,}
+\DoxyCodeLine{00135\ \ \ \ \ eJackGeoLocRear\ =\ 0x1,\ \textcolor{comment}{/*\ matches\ EPcxGeoLocation::eGeoLocRear\ */}}
+\DoxyCodeLine{00136\ \ \ \ \ eJackGeoLocFront,}
+\DoxyCodeLine{00137\ \ \ \ \ eJackGeoLocLeft,}
+\DoxyCodeLine{00138\ \ \ \ \ eJackGeoLocRight,}
+\DoxyCodeLine{00139\ \ \ \ \ eJackGeoLocTop,}
+\DoxyCodeLine{00140\ \ \ \ \ eJackGeoLocBottom,}
+\DoxyCodeLine{00141\ \ \ \ \ eJackGeoLocRearPanel,}
+\DoxyCodeLine{00142\ \ \ \ \ eJackGeoLocRiser,}
+\DoxyCodeLine{00143\ \ \ \ \ eJackGeoLocInsideMobileLid,}
+\DoxyCodeLine{00144\ \ \ \ \ eJackGeoLocDrivebay,}
+\DoxyCodeLine{00145\ \ \ \ \ eJackGeoLocHDMI,}
+\DoxyCodeLine{00146\ \ \ \ \ eJackGeoLocOutsideMobileLid,}
+\DoxyCodeLine{00147\ \ \ \ \ eJackGeoLocATAPI,}
+\DoxyCodeLine{00148\ \ \ \ \ eJackGeoLocReserved5,}
+\DoxyCodeLine{00149\ \ \ \ \ eJackGeoLocReserved6,}
+\DoxyCodeLine{00150\ \}\ }
+\DoxyCodeLine{00151\ PaWasapiJackGeoLocation;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{comment}{/*\ Jack\ general\ location\ */}}
+\DoxyCodeLine{00155\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ PaWasapiJackGenLocation}
+\DoxyCodeLine{00156\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ eJackGenLocPrimaryBox\ =\ 0,}
+\DoxyCodeLine{00158\ \ \ \ \ eJackGenLocInternal,}
+\DoxyCodeLine{00159\ \ \ \ \ eJackGenLocSeparate,}
+\DoxyCodeLine{00160\ \ \ \ \ eJackGenLocOther}
+\DoxyCodeLine{00161\ \}\ }
+\DoxyCodeLine{00162\ PaWasapiJackGenLocation;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{comment}{/*\ Jack's\ type\ of\ port\ */}}
+\DoxyCodeLine{00166\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ PaWasapiJackPortConnection}
+\DoxyCodeLine{00167\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ eJackPortConnJack\ =\ 0,}
+\DoxyCodeLine{00169\ \ \ \ \ eJackPortConnIntegratedDevice,}
+\DoxyCodeLine{00170\ \ \ \ \ eJackPortConnBothIntegratedAndJack,}
+\DoxyCodeLine{00171\ \ \ \ \ eJackPortConnUnknown}
+\DoxyCodeLine{00172\ \}\ }
+\DoxyCodeLine{00173\ PaWasapiJackPortConnection;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{comment}{/*\ Thread\ priority\ */}}
+\DoxyCodeLine{00177\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{PaWasapiThreadPriority}}}
+\DoxyCodeLine{00178\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ eThreadPriorityNone\ =\ 0,}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a06c9f997fd5d9e11d4ef8bf67342f031}{eThreadPriorityAudio}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ eThreadPriorityCapture,}
+\DoxyCodeLine{00182\ \ \ \ \ eThreadPriorityDistribution,}
+\DoxyCodeLine{00183\ \ \ \ \ eThreadPriorityGames,}
+\DoxyCodeLine{00184\ \ \ \ \ eThreadPriorityPlayback,}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a9a34413b0a045f4c44d10a49d3357187}{eThreadPriorityProAudio}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ eThreadPriorityWindowManager}
+\DoxyCodeLine{00187\ \}}
+\DoxyCodeLine{00188\ \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{PaWasapiThreadPriority}};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{comment}{/*\ Stream\ descriptor.\ */}}
+\DoxyCodeLine{00192\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_wasapi_jack_description}{PaWasapiJackDescription}}\ }
+\DoxyCodeLine{00193\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ channelMapping;}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ color;\ \textcolor{comment}{/*\ derived\ from\ macro:\ \#define\ RGB(r,g,b)\ ((COLORREF)(((BYTE)(r)|((WORD)((BYTE)(g))<<8))|(((DWORD)(BYTE)(b))<<16)))\ */}}
+\DoxyCodeLine{00196\ \ \ \ \ PaWasapiJackConnectionType\ connectionType;}
+\DoxyCodeLine{00197\ \ \ \ \ PaWasapiJackGeoLocation\ \ \ \ geoLocation;}
+\DoxyCodeLine{00198\ \ \ \ \ PaWasapiJackGenLocation\ \ \ \ genLocation;}
+\DoxyCodeLine{00199\ \ \ \ \ PaWasapiJackPortConnection\ portConnection;}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isConnected;}
+\DoxyCodeLine{00201\ \}}
+\DoxyCodeLine{00202\ \mbox{\hyperlink{struct_pa_wasapi_jack_description}{PaWasapiJackDescription}};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{comment}{/*\ Stream\ descriptor.\ */}}
+\DoxyCodeLine{00206\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pa_wasapi_stream_info}{PaWasapiStreamInfo}}\ }
+\DoxyCodeLine{00207\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_pa_wasapi_stream_info_ae491f41ce5954cddd438624dc69eba1b}{size}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}}\ \mbox{\hyperlink{struct_pa_wasapi_stream_info_a931bf93691d5b36b621d49402d1d2255}{hostApiType}};\ \ \ \ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_pa_wasapi_stream_info_a3045f4432a92d761e4a1b95eba97ae49}{version}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_pa_wasapi_stream_info_a85bfbe1a00e6b48df75528eb6f967a2c}{flags}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{comment}{/*\ Support\ for\ WAVEFORMATEXTENSIBLE\ channel\ masks.\ If\ flags\ contains}}
+\DoxyCodeLine{00215\ \textcolor{comment}{\ \ \ \ \ \ \ paWinWasapiUseChannelMask\ this\ allows\ you\ to\ specify\ which\ speakers\ }}
+\DoxyCodeLine{00216\ \textcolor{comment}{\ \ \ \ \ \ \ to\ address\ in\ a\ multichannel\ stream.\ Constants\ for\ channelMask}}
+\DoxyCodeLine{00217\ \textcolor{comment}{\ \ \ \ \ \ \ are\ specified\ in\ pa\_win\_waveformat.h.\ Will\ be\ used\ only\ if\ }}
+\DoxyCodeLine{00218\ \textcolor{comment}{\ \ \ \ \ \ \ paWinWasapiUseChannelMask\ flag\ is\ specified.}}
+\DoxyCodeLine{00219\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00220\ \ \ \ \ PaWinWaveFormatChannelMask\ channelMask;}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{comment}{/*\ Delivers\ raw\ data\ to\ callback\ obtained\ from\ GetBuffer()\ methods\ skipping\ }}
+\DoxyCodeLine{00223\ \textcolor{comment}{\ \ \ \ \ \ \ internal\ PortAudio\ processing\ inventory\ completely.\ userData\ parameter\ will\ }}
+\DoxyCodeLine{00224\ \textcolor{comment}{\ \ \ \ \ \ \ be\ the\ same\ that\ was\ passed\ to\ Pa\_OpenStream\ method.\ Will\ be\ used\ only\ if\ }}
+\DoxyCodeLine{00225\ \textcolor{comment}{\ \ \ \ \ \ \ paWinWasapiRedirectHostProcessor\ flag\ is\ specified.}}
+\DoxyCodeLine{00226\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00227\ \ \ \ \ PaWasapiHostProcessorCallback\ hostProcessorOutput;}
+\DoxyCodeLine{00228\ \ \ \ \ PaWasapiHostProcessorCallback\ hostProcessorInput;}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{comment}{/*\ Specifies\ thread\ priority\ explicitly.\ Will\ be\ used\ only\ if\ paWinWasapiThreadPriority\ flag}}
+\DoxyCodeLine{00231\ \textcolor{comment}{\ \ \ \ \ \ \ is\ specified.}}
+\DoxyCodeLine{00232\ \textcolor{comment}{}}
+\DoxyCodeLine{00233\ \textcolor{comment}{\ \ \ \ \ \ \ Please\ note,\ if\ Input/Output\ streams\ are\ opened\ simultaniously\ (Full-\/Duplex\ mode)}}
+\DoxyCodeLine{00234\ \textcolor{comment}{\ \ \ \ \ \ \ you\ shall\ specify\ same\ value\ for\ threadPriority\ or\ othervise\ one\ of\ the\ values\ will\ be\ used}}
+\DoxyCodeLine{00235\ \textcolor{comment}{\ \ \ \ \ \ \ to\ setup\ thread\ priority.}}
+\DoxyCodeLine{00236\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{PaWasapiThreadPriority}}\ threadPriority;}
+\DoxyCodeLine{00238\ \}\ }
+\DoxyCodeLine{00239\ \mbox{\hyperlink{struct_pa_wasapi_stream_info}{PaWasapiStreamInfo}};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00253\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pa__win__wasapi_8h_aa42c66da0ae19959d25a190e9dd82005}{PaWasapi\_GetDeviceDefaultFormat}}(\ \textcolor{keywordtype}{void}\ *pFormat,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nFormatSize,\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ nDevice\ );}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00263\ \textcolor{keywordtype}{int}\textcolor{comment}{/*PaWasapiDeviceRole*/}\ \mbox{\hyperlink{pa__win__wasapi_8h_a6a8c5307dff661ae7ee0d7bb8bf73469}{PaWasapi\_GetDeviceRole}}(\ \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ nDevice\ );}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00278\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__win__wasapi_8h_a2d48ae4d2124209ed8a6264c6febedc7}{PaWasapi\_ThreadPriorityBoost}}(\ \textcolor{keywordtype}{void}\ **hTask,\ \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{PaWasapiThreadPriority}}\ nPriorityClass\ );}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00288\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__win__wasapi_8h_ac5c875fb9165712ff696512f750f7de3}{PaWasapi\_ThreadPriorityRevert}}(\ \textcolor{keywordtype}{void}\ *hTask\ );}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00301\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__win__wasapi_8h_af8f04003c6123e6fdcfdf7308761a75e}{PaWasapi\_GetFramesPerHostBuffer}}(\ \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}\ *pStream,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ *nInput,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ *nOutput\ );}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00312\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__win__wasapi_8h_a46583f8e4b1132c198e2451fd48f7490}{PaWasapi\_GetJackCount}}(\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ nDevice,\ \textcolor{keywordtype}{int}\ *jcount);}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00326\ \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}\ \mbox{\hyperlink{pa__win__wasapi_8h_a042829efac1aca1d77608d136a523465}{PaWasapi\_GetJackDescription}}(\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}}\ nDevice,\ \textcolor{keywordtype}{int}\ jindex,\ \mbox{\hyperlink{struct_pa_wasapi_jack_description}{PaWasapiJackDescription}}\ *pJackDescription);}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00330\ \textcolor{comment}{\ \ \ \ IMPORTANT:}}
+\DoxyCodeLine{00331\ \textcolor{comment}{}}
+\DoxyCodeLine{00332\ \textcolor{comment}{\ \ \ \ WASAPI\ is\ implemented\ for\ Callback\ and\ Blocking\ interfaces.\ It\ supports\ Shared\ and\ Exclusive}}
+\DoxyCodeLine{00333\ \textcolor{comment}{\ \ \ \ share\ modes.\ }}
+\DoxyCodeLine{00334\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{00335\ \textcolor{comment}{\ \ \ \ Exclusive\ Mode:}}
+\DoxyCodeLine{00336\ \textcolor{comment}{}}
+\DoxyCodeLine{00337\ \textcolor{comment}{\ \ \ \ \ \ \ \ Exclusive\ mode\ allows\ to\ deliver\ audio\ data\ directly\ to\ hardware\ bypassing}}
+\DoxyCodeLine{00338\ \textcolor{comment}{\ \ \ \ \ \ \ \ software\ mixing.}}
+\DoxyCodeLine{00339\ \textcolor{comment}{\ \ \ \ \ \ \ \ Exclusive\ mode\ is\ specified\ by\ 'paWinWasapiExclusive'\ flag.}}
+\DoxyCodeLine{00340\ \textcolor{comment}{}}
+\DoxyCodeLine{00341\ \textcolor{comment}{\ \ \ \ Callback\ Interface:}}
+\DoxyCodeLine{00342\ \textcolor{comment}{}}
+\DoxyCodeLine{00343\ \textcolor{comment}{\ \ \ \ \ \ \ \ Provides\ best\ audio\ quality\ with\ low\ latency.\ Callback\ interface\ is\ implemented\ in\ }}
+\DoxyCodeLine{00344\ \textcolor{comment}{\ \ \ \ \ \ \ \ two\ versions:}}
+\DoxyCodeLine{00345\ \textcolor{comment}{}}
+\DoxyCodeLine{00346\ \textcolor{comment}{\ \ \ \ \ \ \ \ 1)\ Event-\/Driven:}}
+\DoxyCodeLine{00347\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ is\ the\ most\ powerful\ WASAPI\ implementation\ which\ provides\ glitch-\/free}}
+\DoxyCodeLine{00348\ \textcolor{comment}{\ \ \ \ \ \ \ \ audio\ at\ around\ 3ms\ latency\ in\ Exclusive\ mode.\ Lowest\ possible\ latency\ for\ this\ mode\ is\ }}
+\DoxyCodeLine{00349\ \textcolor{comment}{\ \ \ \ \ \ \ \ 3\ ms\ for\ HD\ Audio\ class\ audio\ chips.\ For\ the\ Shared\ mode\ latency\ can\ not\ be\ }}
+\DoxyCodeLine{00350\ \textcolor{comment}{\ \ \ \ \ \ \ \ lower\ than\ 20\ ms.}}
+\DoxyCodeLine{00351\ \textcolor{comment}{}}
+\DoxyCodeLine{00352\ \textcolor{comment}{\ \ \ \ \ \ \ \ 2)\ Poll-\/Driven:}}
+\DoxyCodeLine{00353\ \textcolor{comment}{\ \ \ \ \ \ \ \ Polling\ is\ another\ 2-\/nd\ method\ to\ operate\ with\ WASAPI.\ It\ is\ less\ efficient\ than\ Event-\/Driven}}
+\DoxyCodeLine{00354\ \textcolor{comment}{\ \ \ \ \ \ \ \ and\ provides\ latency\ at\ around\ 10-\/13ms.\ Polling\ must\ be\ used\ to\ overcome\ a\ system\ bug}}
+\DoxyCodeLine{00355\ \textcolor{comment}{\ \ \ \ \ \ \ \ under\ Windows\ Vista\ x64\ when\ application\ is\ WOW64(32-\/bit)\ and\ Event-\/Driven\ method\ simply\ }}
+\DoxyCodeLine{00356\ \textcolor{comment}{\ \ \ \ \ \ \ \ times\ out\ (event\ handle\ is\ never\ signalled\ on\ buffer\ completion).\ Please\ note,\ such\ WOW64\ bug\ }}
+\DoxyCodeLine{00357\ \textcolor{comment}{\ \ \ \ \ \ \ \ does\ not\ exist\ in\ Vista\ x86\ or\ Windows\ 7.}}
+\DoxyCodeLine{00358\ \textcolor{comment}{\ \ \ \ \ \ \ \ Polling\ can\ be\ setup\ by\ speciying\ 'paWinWasapiPolling'\ flag.\ Our\ WASAPI\ implementation\ detects}}
+\DoxyCodeLine{00359\ \textcolor{comment}{\ \ \ \ \ \ \ \ WOW64\ bug\ and\ sets\ 'paWinWasapiPolling'\ automatically.}}
+\DoxyCodeLine{00360\ \textcolor{comment}{}}
+\DoxyCodeLine{00361\ \textcolor{comment}{\ \ \ \ Thread\ priority:}}
+\DoxyCodeLine{00362\ \textcolor{comment}{}}
+\DoxyCodeLine{00363\ \textcolor{comment}{\ \ \ \ \ \ \ \ Normally\ thread\ priority\ is\ set\ automatically\ and\ does\ not\ require\ modification.\ Although}}
+\DoxyCodeLine{00364\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ user\ wants\ some\ tweaking\ thread\ priority\ can\ be\ modified\ by\ setting\ 'paWinWasapiThreadPriority'}}
+\DoxyCodeLine{00365\ \textcolor{comment}{\ \ \ \ \ \ \ \ flag\ and\ specifying\ 'PaWasapiStreamInfo::threadPriority'\ with\ value\ from\ PaWasapiThreadPriority\ }}
+\DoxyCodeLine{00366\ \textcolor{comment}{\ \ \ \ \ \ \ \ enum.}}
+\DoxyCodeLine{00367\ \textcolor{comment}{}}
+\DoxyCodeLine{00368\ \textcolor{comment}{\ \ \ \ Blocking\ Interface:}}
+\DoxyCodeLine{00369\ \textcolor{comment}{}}
+\DoxyCodeLine{00370\ \textcolor{comment}{\ \ \ \ \ \ \ \ Blocking\ interface\ is\ implemented\ but\ due\ to\ above\ described\ Poll-\/Driven\ method\ can\ not}}
+\DoxyCodeLine{00371\ \textcolor{comment}{\ \ \ \ \ \ \ \ deliver\ lowest\ possible\ latency.\ Specifying\ too\ low\ latency\ in\ Shared\ mode\ will\ result\ in\ }}
+\DoxyCodeLine{00372\ \textcolor{comment}{\ \ \ \ \ \ \ \ distorted\ audio\ although\ Exclusive\ mode\ adds\ stability.}}
+\DoxyCodeLine{00373\ \textcolor{comment}{}}
+\DoxyCodeLine{00374\ \textcolor{comment}{\ \ \ \ Pa\_IsFormatSupported:}}
+\DoxyCodeLine{00375\ \textcolor{comment}{}}
+\DoxyCodeLine{00376\ \textcolor{comment}{\ \ \ \ \ \ \ \ To\ check\ format\ with\ correct\ Share\ Mode\ (Exclusive/Shared)\ you\ must\ supply}}
+\DoxyCodeLine{00377\ \textcolor{comment}{\ \ \ \ \ \ \ \ PaWasapiStreamInfo\ with\ flags\ paWinWasapiExclusive\ set\ through\ member\ of\ }}
+\DoxyCodeLine{00378\ \textcolor{comment}{\ \ \ \ \ \ \ \ PaStreamParameters::hostApiSpecificStreamInfo\ structure.}}
+\DoxyCodeLine{00379\ \textcolor{comment}{}}
+\DoxyCodeLine{00380\ \textcolor{comment}{\ \ \ \ Pa\_OpenStream:}}
+\DoxyCodeLine{00381\ \textcolor{comment}{}}
+\DoxyCodeLine{00382\ \textcolor{comment}{\ \ \ \ \ \ \ \ To\ set\ desired\ Share\ Mode\ (Exclusive/Shared)\ you\ must\ supply}}
+\DoxyCodeLine{00383\ \textcolor{comment}{\ \ \ \ \ \ \ \ PaWasapiStreamInfo\ with\ flags\ paWinWasapiExclusive\ set\ through\ member\ of\ }}
+\DoxyCodeLine{00384\ \textcolor{comment}{\ \ \ \ \ \ \ \ PaStreamParameters::hostApiSpecificStreamInfo\ structure.}}
+\DoxyCodeLine{00385\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00388\ \}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PA\_WIN\_WASAPI\_H\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+
+\end{DoxyCode}

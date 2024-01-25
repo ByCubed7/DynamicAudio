@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_effect_1_1_wav_stream" xml:lang="en-US">
+<title>Effect::WavStream Struct Reference</title>
+<indexterm><primary>Effect::WavStream</primary></indexterm>
+<para>
+
+<para>Gets the values of the WAV stream at the current time stamp. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;EffectBase.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Effect::WavStream:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_effect_1_1_wav_stream.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_wav_stream_1a5be119ba3aab435e3d3d606b788b8aef"/><emphasis role="strong">WavStream</emphasis> (<link linkend="_struct_effect_1_1_abstract">Abstract</link> *timestamp_, <link linkend="_struct_audio_loader_wav_1_1_wav">AudioLoaderWav::Wav</link> wav_)</para>
+
+<para>Constructor Definition. </para>
+</listitem>
+            <listitem><para>value <link linkend="_struct_effect_1_1_wav_stream_1acc11dabc6d262d8dc997ea2fe4b39352">get</link> (value in) override</para>
+
+<para>Gets the calculated effects value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_wav_stream_1a04070621885c889b853f34f6845e65e7"/><link linkend="_struct_effect_1_1_abstract">Abstract</link> * <emphasis role="strong">timestamp</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_effect_1_1_wav_stream_1ad6e447c26674869b7e4aa6dddf66cfe3"/><link linkend="_struct_audio_loader_wav_1_1_wav">AudioLoaderWav::Wav</link> <emphasis role="strong">wav</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Gets the values of the WAV stream at the current time stamp. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_effect_1_1_wav_stream_1acc11dabc6d262d8dc997ea2fe4b39352"/><section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>Effect::WavStream</secondary></indexterm>
+<indexterm><primary>Effect::WavStream</primary><secondary>get</secondary></indexterm>
+<para><computeroutput>value Effect::WavStream::get (value in)<computeroutput>[inline]</computeroutput>, <computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Gets the calculated effects value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>
+<para>The value passed in. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The value passed out. </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_struct_effect_1_1_abstract_1ac72d7f8db28f06f9794ad457cc6d4d86">Effect::Abstract</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+EffectBase.h</section>
+</section>

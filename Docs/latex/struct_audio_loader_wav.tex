@@ -1,0 +1,65 @@
+\doxysection{Audio\+Loader\+Wav Struct Reference}
+\hypertarget{struct_audio_loader_wav}{}\label{struct_audio_loader_wav}\index{AudioLoaderWav@{AudioLoaderWav}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_audio_loader_wav_1_1_chunk_info}{Chunk\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_audio_loader_wav_1_1_data}{Data}}
+\item 
+struct \mbox{\hyperlink{struct_audio_loader_wav_1_1_format}{Format}}
+\item 
+struct \mbox{\hyperlink{struct_audio_loader_wav_1_1_r_i_f_f}{RIFF}}
+\item 
+struct \mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{Wav}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_audio_loader_wav_ae253794926fddb3c76a623c3caaee671}\label{struct_audio_loader_wav_ae253794926fddb3c76a623c3caaee671} 
+static bool {\bfseries is\+FORMAT} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}id)
+\item 
+\Hypertarget{struct_audio_loader_wav_a45da6d4c453a8c0f9bed4a94daedf11b}\label{struct_audio_loader_wav_a45da6d4c453a8c0f9bed4a94daedf11b} 
+static bool {\bfseries is\+RIFF} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}id)
+\item 
+\Hypertarget{struct_audio_loader_wav_a942ea9a56a9b3df5680c64e07220f58d}\label{struct_audio_loader_wav_a942ea9a56a9b3df5680c64e07220f58d} 
+static bool {\bfseries is\+FMT} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}id)
+\item 
+\Hypertarget{struct_audio_loader_wav_a3220990814224ca0ba75ea89c0f4552d}\label{struct_audio_loader_wav_a3220990814224ca0ba75ea89c0f4552d} 
+static bool {\bfseries is\+DATA} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}id)
+\item 
+\Hypertarget{struct_audio_loader_wav_a64e7aa179405038ed7f6bf6d6d02bee9}\label{struct_audio_loader_wav_a64e7aa179405038ed7f6bf6d6d02bee9} 
+static Result {\bfseries load\+Raw\+File} (std\+::string filepath, \mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{Wav}} \&wav)
+\item 
+\Hypertarget{struct_audio_loader_wav_ae0b389d6d08779f4fdc10611cbc50459}\label{struct_audio_loader_wav_ae0b389d6d08779f4fdc10611cbc50459} 
+static bool {\bfseries check\+Result\+For\+Errors} (Result result)
+\item 
+\Hypertarget{struct_audio_loader_wav_ad103bb98d9cc345f92f4d32915ba25a5}\label{struct_audio_loader_wav_ad103bb98d9cc345f92f4d32915ba25a5} 
+static \mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{Wav}} {\bfseries load} (std\+::string filepath)
+\item 
+\Hypertarget{struct_audio_loader_wav_a90953df53f304c087f06c05ec2fac19c}\label{struct_audio_loader_wav_a90953df53f304c087f06c05ec2fac19c} 
+static void {\bfseries debug\+\_\+print\+Info} (const \mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{Wav}} \&wav)
+\item 
+\Hypertarget{struct_audio_loader_wav_a201ef142fbb241a883ce1eab3221ff23}\label{struct_audio_loader_wav_a201ef142fbb241a883ce1eab3221ff23} 
+static void {\bfseries debug\+\_\+play} (const \mbox{\hyperlink{struct_audio_loader_wav_1_1_wav}{Wav}} \&wav)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_audio_loader_wav_af083e907b54cac5bb58ee7b4bad82ef6}\label{struct_audio_loader_wav_af083e907b54cac5bb58ee7b4bad82ef6} 
+static constexpr char {\bfseries FORMAT} \mbox{[}4\mbox{]} = \{ \textquotesingle{}W\textquotesingle{},\textquotesingle{}A\textquotesingle{},\textquotesingle{}V\textquotesingle{},\textquotesingle{}E\textquotesingle{} \}
+\item 
+\Hypertarget{struct_audio_loader_wav_a24de69175475797c59b39da6ad14fb0c}\label{struct_audio_loader_wav_a24de69175475797c59b39da6ad14fb0c} 
+static constexpr char {\bfseries ID\+\_\+\+RIFF} \mbox{[}4\mbox{]} = \{ \textquotesingle{}R\textquotesingle{},\textquotesingle{}I\textquotesingle{},\textquotesingle{}F\textquotesingle{},\textquotesingle{}F\textquotesingle{} \}
+\item 
+\Hypertarget{struct_audio_loader_wav_a8bf9f84d093005705ddf6a4d55d890dd}\label{struct_audio_loader_wav_a8bf9f84d093005705ddf6a4d55d890dd} 
+static constexpr char {\bfseries ID\+\_\+\+FMT} \mbox{[}4\mbox{]} = \{ \textquotesingle{}f\textquotesingle{},\textquotesingle{}m\textquotesingle{},\textquotesingle{}t\textquotesingle{},\textquotesingle{} \textquotesingle{} \}
+\item 
+\Hypertarget{struct_audio_loader_wav_a78700405d74a4d85c8c8995f7aca5bc6}\label{struct_audio_loader_wav_a78700405d74a4d85c8c8995f7aca5bc6} 
+static constexpr char {\bfseries ID\+\_\+\+DATA} \mbox{[}4\mbox{]} = \{ \textquotesingle{}d\textquotesingle{},\textquotesingle{}a\textquotesingle{},\textquotesingle{}t\textquotesingle{},\textquotesingle{}a\textquotesingle{} \}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Audio\+Loader\+Wav.\+h\end{DoxyCompactItemize}

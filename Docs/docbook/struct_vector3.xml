@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_vector3" xml:lang="en-US">
+<title>Vector3 Struct Reference</title>
+<indexterm><primary>Vector3</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_vector3_1a1326880705c0f6ef9bbf0466288a232a"/><emphasis role="strong">Vector3</emphasis> (float value_)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_vector3_1ad843eb49e7d4fce292ca66bbd835cfe5"/><emphasis role="strong">Vector3</emphasis> (float x_, float y_, float z_)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_vector3_1a18bafba57e7da1ec55f517bf7e1e800a"/>float &amp; <emphasis role="strong">operator[]</emphasis> (int index)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_vector3_1a39c91d6b51507fca2217ff568d0978fa"/>static <link linkend="_struct_vector3">Vector3</link> <emphasis role="strong">add</emphasis> (const <link linkend="_struct_vector3">Vector3</link> &amp;first, const <link linkend="_struct_vector3">Vector3</link> &amp;second)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_vector3_1acd63b7d0ebb7c10867035bd1eddad6d1"/>static <link linkend="_struct_vector3">Vector3</link> <emphasis role="strong">subtract</emphasis> (const <link linkend="_struct_vector3">Vector3</link> &amp;first, const <link linkend="_struct_vector3">Vector3</link> &amp;second)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_vector3_1a8dd6bab0ff6e7969133614cddb6e77bc"/>static <link linkend="_struct_vector3">Vector3</link> <emphasis role="strong">multiply</emphasis> (const <link linkend="_struct_vector3">Vector3</link> &amp;first, const <link linkend="_struct_vector3">Vector3</link> &amp;second)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_vector3_1aea28d0f5d07d954c1f371446b7a1cf69"/>static <link linkend="_struct_vector3">Vector3</link> <emphasis role="strong">divide</emphasis> (const <link linkend="_struct_vector3">Vector3</link> &amp;first, const <link linkend="_struct_vector3">Vector3</link> &amp;second)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_vector3_1aa6c9c7699ae16f04a8724dff7c2ac581"/>union {</para>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_union_vector3_1_1_0d0_1a1a9090a7734384d3aeb8b83ad161b0a3"/>&#160;&#160;&#160;struct {</para>
+        <itemizedlist>
+            <listitem><para>&#160;&#160;&#160;&#160;&#160;&#160;float <emphasis role="strong">x</emphasis></para>
+</listitem>
+            <listitem><para>&#160;&#160;&#160;&#160;&#160;&#160;float <emphasis role="strong">y</emphasis></para>
+</listitem>
+            <listitem><para>&#160;&#160;&#160;&#160;&#160;&#160;float <emphasis role="strong">z</emphasis></para>
+</listitem>
+        </itemizedlist>
+</listitem>
+            <listitem><para>&#160;&#160;&#160;} </para>
+</listitem>
+            <listitem><para>&#160;&#160;&#160;float <emphasis role="strong">contents</emphasis> [3]</para>
+</listitem>
+        </itemizedlist>
+</listitem>
+            <listitem><para>}; </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+dllmain.cpp</section>
