@@ -71,7 +71,7 @@ namespace DynamicAudio {
         /// <summary> Gets all of the notes being played at this time. </summary>
         Chord getNotesAtTime(double time) {
             std::vector<Note> current = {};
-            double timeTillTarget = time;
+            double timeTillTarget = time + chords[0].maxDuration();
 
             for (const Chord& chord : chords)
             {
@@ -79,7 +79,7 @@ namespace DynamicAudio {
                 timeTillTarget -= chord.maxDuration();
 
                 // If past the target time
-                if (timeTillTarget <= 0) break;
+                if (timeTillTarget < 0) break;
 
                 // If the note will be played at our designated time, add it
                 for (const Note& note : chord.allNotes())
@@ -92,7 +92,7 @@ namespace DynamicAudio {
 
         /// <summary> Gets the most recent note being played at this time. This is for times where you only want one note. </summary>
         Note getNoteAtTime(double time) {
-            double timeTillTarget = time;
+            double timeTillTarget = time + chords[0].maxDuration();
 
             for (const Chord& chord : chords)
             {
@@ -108,7 +108,7 @@ namespace DynamicAudio {
                         return note;
             }
 
-            return Notes::null;
+            return Note::null();
         }
     };
 }

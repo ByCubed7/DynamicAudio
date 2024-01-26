@@ -46,7 +46,7 @@ namespace DynamicAudio {
 
         /// <summary> Remove a Note by index. </summary>
         /// <param name="index">The index of the Note to remove. </param>
-        void removeNote(int index) {
+        void removeNoteAtIndex(int index) {
             notes.erase(notes.begin() + index);
         }
 

@@ -10,7 +10,7 @@ namespace DynamicAudio {
     typedef double NoteDurationType;
 
     struct Note {
-        static struct Value {
+        struct Value {
             static const NoteValueType Cf = 59; // MIDI value for C flat
             static const NoteValueType C  = 60; // MIDI value for C natural
             static const NoteValueType Cs = 61; // MIDI value for C sharp
@@ -73,21 +73,7 @@ namespace DynamicAudio {
             }
 
             // Define the noteMap
-            static const std::map<std::string, NoteValueType> mapStringToValue;
-            std::map<std::string, NoteValueType> mapStringToValue = {
-                {"C",  Note::Value::C},
-                {"Cs", Note::Value::Cs},
-                {"D",  Note::Value::D},
-                {"Ds", Note::Value::Ds},
-                {"E",  Note::Value::E},
-                {"F",  Note::Value::F},
-                {"Fs", Note::Value::Fs},
-                {"G",  Note::Value::G},
-                {"Gs", Note::Value::Gs},
-                {"A",  Note::Value::A},
-                {"As", Note::Value::As},
-                {"B",  Note::Value::B}
-            };
+            static std::map<std::string, NoteValueType> mapStringToValue;
 
             // 
 
@@ -104,36 +90,22 @@ namespace DynamicAudio {
             }
         };
 
-        static struct Duration {
+        struct Duration {
             // Using the British naming convension
-            static const NoteDurationType Maxima;
-            static const NoteDurationType Long;
-            static const NoteDurationType Breve;
-            static const NoteDurationType Semibreve; // 1 whole note
-            static const NoteDurationType Minim;
-            static const NoteDurationType Crotchet;
-            static const NoteDurationType Quaver;
-            static const NoteDurationType Semiquaver;
-
-            NoteDurationType Maxima = 1 * 8;
-            NoteDurationType Long = 1 * 4;
-            NoteDurationType Breve = 1 * 2;
-            NoteDurationType Semibreve = 1; // 1 whole note
-            NoteDurationType Minim = 1 / 2;
-            NoteDurationType Crotchet = 1 / 4;
-            NoteDurationType Quaver = 1 / 8;
-            NoteDurationType Semiquaver = 1 / 16;
+            static NoteDurationType Maxima;
+            static NoteDurationType Long;
+            static NoteDurationType Breve;
+            static NoteDurationType Semibreve; // 1 whole note
+            static NoteDurationType Minim;
+            static NoteDurationType Crotchet;
+            static NoteDurationType Quaver;
+            static NoteDurationType Semiquaver;
 
             // A bit excessive:
-            static const NoteDurationType Demisemiquaver;  // 1/32
-            static const NoteDurationType Hemidemisemiquaver;  // 1/64
-            static const NoteDurationType Semihemidemisemiquaver;  // 1/128
-            static const NoteDurationType Demisemihemidemisemiquaver;
-
-            NoteDurationType Demisemiquaver = 1 / 32;
-            NoteDurationType Hemidemisemiquaver = 1 / 64;
-            NoteDurationType Semihemidemisemiquaver = 1 / 128;
-            NoteDurationType Demisemihemidemisemiquaver = 1 / 256;
+            static NoteDurationType Demisemiquaver;  // 1/32
+            static NoteDurationType Hemidemisemiquaver;  // 1/64
+            static NoteDurationType Semihemidemisemiquaver;  // 1/128
+            static NoteDurationType Demisemihemidemisemiquaver;
         };
 
 
@@ -187,3 +159,32 @@ namespace DynamicAudio {
         }
     };
 }
+
+
+std::map<std::string, DynamicAudio::NoteValueType> DynamicAudio::Note::Value::mapStringToValue = {
+    {"C",  DynamicAudio::Note::Value::C},
+    {"Cs", DynamicAudio::Note::Value::Cs},
+    {"D",  DynamicAudio::Note::Value::D},
+    {"Ds", DynamicAudio::Note::Value::Ds},
+    {"E",  DynamicAudio::Note::Value::E},
+    {"F",  DynamicAudio::Note::Value::F},
+    {"Fs", DynamicAudio::Note::Value::Fs},
+    {"G",  DynamicAudio::Note::Value::G},
+    {"Gs", DynamicAudio::Note::Value::Gs},
+    {"A",  DynamicAudio::Note::Value::A},
+    {"As", DynamicAudio::Note::Value::As},
+    {"B",  DynamicAudio::Note::Value::B}
+};
+
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Maxima = 1 * 8;
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Long = 1 * 4;
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Breve = 1 * 2;
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Semibreve = 1; // 1 whole note
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Minim = 1 / 2;
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Crotchet = 1 / 4;
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Quaver = 1 / 8;
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Semiquaver = 1 / 16;
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Demisemiquaver = 1 / 32;
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Hemidemisemiquaver = 1 / 64;
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Semihemidemisemiquaver = 1 / 128;
+DynamicAudio::NoteDurationType DynamicAudio::Note::Duration::Demisemihemidemisemiquaver = 1 / 256;
